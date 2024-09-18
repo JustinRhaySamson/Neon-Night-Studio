@@ -1550,13 +1550,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859099407}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23234011, y: -0.27599713, z: 0.06894423, w: 0.93010235}
+  m_LocalRotation: {x: 0.22390558, y: -0.37127486, z: 0.09274472, w: 0.89633685}
   m_LocalPosition: {x: 5.79, y: 5.55, z: -8.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 28.051, y: -33.055, z: 0}
+  m_LocalEulerAnglesHint: {x: 28.051, y: -45, z: 0}
 --- !u!114 &859099411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2998,6 +2998,7 @@ GameObject:
   - component: {fileID: 2050211511}
   - component: {fileID: 2050211514}
   - component: {fileID: 2050211513}
+  - component: {fileID: 2050211515}
   m_Layer: 0
   m_Name: Dummy_Character_V2
   m_TagString: Untagged
@@ -3069,7 +3070,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &2050211514
 CapsuleCollider:
@@ -3094,6 +3095,21 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &2050211515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050211510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694c2373b3848564b943ea1ef7c4b246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rb: {fileID: 2050211513}
+  _speed: 5
+  _turnSpeed: 360
 --- !u!1 &2109530964
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,6 @@ public class Attack_Check : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            print("LMAO GOTTEM");
             GameObject enemy = other.gameObject;
             health = enemy.GetComponent<Health>();
             health.Get_Hit();

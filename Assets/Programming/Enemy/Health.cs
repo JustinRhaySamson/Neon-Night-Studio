@@ -9,7 +9,6 @@ public class Health : MonoBehaviour
     public void Get_Hit()
     {
         HP--;
-        print(HP);
         if (HP <= 0)
         {
             Destroy(gameObject);

@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class Player_Controller : MonoBehaviour
 {
-    [SerializeField] private float _turnSpeed = 360;
     [SerializeField] private Collider attack;
     private Vector3 _input;
     Animator animator;
@@ -37,7 +36,7 @@ public class Player_Controller : MonoBehaviour
         if (_input == Vector3.zero) return;
 
         var rot = Quaternion.LookRotation(_input.ToIso(), Vector3.up);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, _turnSpeed * Time.deltaTime);
+        transform.rotation = rot;
     }
 
     private void Move()

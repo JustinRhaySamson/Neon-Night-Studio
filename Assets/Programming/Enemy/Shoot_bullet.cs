@@ -14,7 +14,7 @@ public class Shoot_bullet : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Shoot());
+        //StartCoroutine(Shoot());
     }
 
     // Update is called once per frame
@@ -34,15 +34,24 @@ public class Shoot_bullet : MonoBehaviour
         }
     }*/
 
+    public void StopShooting()
+    {
+        StopCoroutine(Shoot());
+    }
+
+    public void StartShooting()
+    {
+        StartCoroutine(Shoot());
+    }
+
     IEnumerator Shoot()
     {
-        while (not_stopped)
+        while (true)
         {
             yield return new WaitForSeconds(reload_time);
             GameObject bullet2 = Instantiate(bullet, firepoint.position, firepoint.rotation);
             Rigidbody rb = bullet2.GetComponent<Rigidbody>();
             rb.AddForce(firepoint.forward * force, ForceMode.Impulse);
- 
         }
     }
 }

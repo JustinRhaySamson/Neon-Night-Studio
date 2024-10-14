@@ -8,6 +8,10 @@ public class Shoot_bullet : MonoBehaviour
     public int force;
     public GameObject bullet;
     public Transform firepoint;
+    public bool not_stopped = true;
+
+    public bool restartShooting;
+
     void Start()
     {
         StartCoroutine(Shoot());
@@ -19,14 +23,26 @@ public class Shoot_bullet : MonoBehaviour
         
     }
 
+
+    /*public void RestartShooting()
+    {
+        if (restartShooting)
+        {
+            restartShooting = false;
+            StopAllCoroutines();
+            StartCoroutine(Shoot());
+        }
+    }*/
+
     IEnumerator Shoot()
     {
-        while (true)
+        while (not_stopped)
         {
             yield return new WaitForSeconds(reload_time);
             GameObject bullet2 = Instantiate(bullet, firepoint.position, firepoint.rotation);
             Rigidbody rb = bullet2.GetComponent<Rigidbody>();
             rb.AddForce(firepoint.forward * force, ForceMode.Impulse);
+ 
         }
     }
 }

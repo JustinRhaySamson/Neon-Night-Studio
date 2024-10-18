@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Enemy_Melee_Attack : MonoBehaviour
+
+public class Shooting_Enemy_Range : MonoBehaviour
 {
-    public Animator animator;
+    public UnityEvent trigger_entered;
+    public UnityEvent trigger_exited;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") || other.CompareTag("Invincible"))
         {
-            animator.SetBool("Swing", true);
+            trigger_entered.Invoke();
         }
     }
 
@@ -17,7 +21,7 @@ public class Enemy_Melee_Attack : MonoBehaviour
     {
         if (other.CompareTag("Player") || other.CompareTag("Invincible"))
         {
-            animator.SetBool("Swing", false);
+            trigger_exited.Invoke();
         }
     }
 }

@@ -6,7 +6,7 @@
             "id": "2bfa272d-864a-40ca-bc2d-e78a03715249",
             "actions": [
                 {
-                    "name": "Attack A",
+                    "name": "Attack",
                     "type": "Button",
                     "id": "2d19b09f-f1f3-41bc-8c7d-be344400ae67",
                     "expectedControlType": "Button",
@@ -15,7 +15,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack B",
+                    "name": "Special Attack",
                     "type": "Button",
                     "id": "3d1eac3b-6119-4c05-90a4-2ac34e642812",
                     "expectedControlType": "Button",
@@ -24,9 +24,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Time Stop",
+                    "name": "Time Stop 1",
                     "type": "Button",
                     "id": "8a93c80a-89c1-45e0-aa1b-075279ae3def",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Time Stop 2",
+                    "type": "Button",
+                    "id": "feebdf05-fd69-466a-8ff5-f95ccbb99403",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "e84fcdba-cc3e-45a4-970c-2efa6749cf0a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -41,18 +59,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Attack A",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "86380cf9-342f-4f5a-8371-e9ab816899ca",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Attack A",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -63,18 +81,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Attack B",
+                    "action": "Special Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "ec564098-4822-41d2-9372-68afd0d7a96f",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Attack B",
+                    "action": "Special Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -85,7 +103,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Time Stop",
+                    "action": "Time Stop 1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -96,7 +114,51 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Time Stop",
+                    "action": "Time Stop 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8a5c16af-e521-41d0-817b-26041132f82d",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d147ae8-9a9a-4d14-8c4f-e74da4ab46cc",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "92933d2c-5fc4-40a8-9bff-b6cf51bc44c6",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Time Stop 2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0111597b-d6dd-4dc4-a663-25d72f9cc6a9",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Time Stop 2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

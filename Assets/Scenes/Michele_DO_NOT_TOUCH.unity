@@ -1540,7 +1540,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 493032457}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b07fbf67d93578469ed625e340b77ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 1590ca201aade8b4782a4942fa31d71f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   trigger_entered:
@@ -2222,18 +2222,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_ActionId
       value: 8a93c80a-89c1-45e0-aa1b-075279ae3def
       objectReference: {fileID: 0}
     - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: e84fcdba-cc3e-45a4-970c-2efa6749cf0a
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: feebdf05-fd69-466a-8ff5-f95ccbb99403
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_ActionName
       value: Player/Time Stop[/Keyboard/q,/XInputControllerWindows/leftShoulder]
       objectReference: {fileID: 0}
     - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: Player/Dash[/Keyboard/shift,/XInputControllerWindows/buttonEast]
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: Player/Time Stop 2[/Keyboard/e,/XInputControllerWindows/rightShoulder]
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
@@ -2241,7 +2265,23 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 700690537}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2117898686}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 700690537}
     - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
@@ -2249,15 +2289,47 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeTime
+      value: LB_Check
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Dash
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RB_Check
       objectReference: {fileID: 0}
     - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Timemanager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player_Controller, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Timemanager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438389774333982084, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4482403242551266381, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
@@ -2451,6 +2523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6682e3e56bec59419a55f429bc00fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time_amount: 3
   Time_Stopped: 0
   enemies_shooter: []
   enemies_melee: []
@@ -5670,7 +5743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1709599773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6779,6 +6852,17 @@ Transform:
   - {fileID: 101455041}
   m_Father: {fileID: 185766933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2117898686 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2356342541964901734, guid: 46183d1b3dbe0ec4ea9bf6a070a10bd1, type: 3}
+  m_PrefabInstance: {fileID: 685024090}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694c2373b3848564b943ea1ef7c4b246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5532914714705447773
 PrefabInstance:
   m_ObjectHideFlags: 0

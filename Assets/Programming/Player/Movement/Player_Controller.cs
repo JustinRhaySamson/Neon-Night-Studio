@@ -86,5 +86,19 @@ public class Player_Controller : MonoBehaviour
         attack.enabled = false;
 
     }
+
+    public void Dash()
+    {
+        gameObject.tag = "Invincible";
+        animator.SetFloat("Dash_Speed", 2.5f);
+        StartCoroutine(Dash_Speedup(.3f));
+    }
+
+    IEnumerator Dash_Speedup(float time)
+    {
+        yield return new WaitForSeconds(time);
+        animator.SetFloat("Dash_Speed", 1);
+        gameObject.tag = "Player";
+    }
 }
 

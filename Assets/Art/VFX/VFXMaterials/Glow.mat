@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Hologram
-  m_Shader: {fileID: -6465566751694194690, guid: b6c77892098389243ab7ae184bd37084, type: 3}
+  m_Name: Glow
+  m_Shader: {fileID: -6465566751694194690, guid: fb5e0055b263d9449a2940621aabb9fe, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -17,7 +17,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses:
@@ -26,14 +26,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Flicker:
-        m_Texture: {fileID: 2800000, guid: 051db8373501a104f911e9d2d335cbd3, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Scanlines:
-        m_Texture: {fileID: 2800000, guid: 42230cf1e89271146bbaa3ae0866ed17, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -51,25 +43,22 @@ Material:
     - _Alpha: 1
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Blend: 1
+    - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
     - _DstBlend: 10
-    - _FresnelPower: 0.9
+    - _FresnelPower: 0.66
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _Surface: 1
-    - _VertOffset: 0.015
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _FresnelColour: {r: 0, g: 0.65882355, b: 0.89411765, a: 0}
-    - _Speed: {r: 0, g: 0.5, b: 0, a: 0}
-    - _Tiling: {r: 0, g: 30.3, b: 0, a: 0}
+    - _FresnelColour: {r: 0, g: 2.4253678, b: 4.679245, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &7599017529874345666
+--- !u!114 &7178871830412485163
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

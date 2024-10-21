@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Timemanager : MonoBehaviour
 {
@@ -14,15 +15,23 @@ public class Timemanager : MonoBehaviour
     bool LB_Press = false;
     bool RB_Press = false;
 
+    GameObject slider;
+    Slider slider_component;
+    float slider_time;
+
     void Start()
     {
-        //print(enemies_shooter.Length);
+        slider = GameObject.Find("Time_shower");
+        slider_component = slider.GetComponent<Slider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Time_Stopped)
+        {
+            slider_component.value = Time.time - slider_time;
+        }
     }
 
     public void LB_Check()
@@ -62,6 +71,8 @@ public class Timemanager : MonoBehaviour
     public void ChangeTime()
     {
         Time_Stopped = true;
+        slider_component.value = 0;
+        slider_time = Time.time;
 
         if (Time_Stopped)
         {
@@ -89,7 +100,7 @@ public class Timemanager : MonoBehaviour
         {
             enemies_shooter[i].RestartEnemy();
         }
-        for (int i = 0; i < enemies_shooter.Length; i++)
+        for (int i = 0; i < enemies_melee.Length; i++)
         {
             enemies_melee[i].RestartEnemy();
         }

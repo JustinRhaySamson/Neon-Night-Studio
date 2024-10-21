@@ -10,13 +10,16 @@ public class Health : MonoBehaviour
     Time_Stop_Check_Melee time_stop_check_melee;
     Time_Stop_Check_Shooter time_stop_check_shooter;
 
+    MeshRenderer renderer;
+
     private void Start()
     {
-        
+        renderer = GetComponent<MeshRenderer>();
     }
 
     public void Get_Hit()
     {
+        renderer.material.color = Color.red;
         HP--;
         if (HP <= 0)
         {
@@ -32,5 +35,13 @@ public class Health : MonoBehaviour
             }
             Destroy(gameObject);
         }
+        StartCoroutine(ChangeColor());
+    }
+
+    IEnumerator ChangeColor()
+    {
+        yield return new WaitForSeconds(.5f);
+        renderer.material.color = Color.white;
+
     }
 }

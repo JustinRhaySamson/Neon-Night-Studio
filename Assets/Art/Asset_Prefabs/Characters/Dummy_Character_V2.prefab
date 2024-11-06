@@ -1186,7 +1186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694c2373b3848564b943ea1ef7c4b246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _turnSpeed: 360
   attack: {fileID: 7661142225028691841}
   enemy:
     serializedVersion: 2
@@ -1248,6 +1247,18 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 3d1eac3b-6119-4c05-90a4-2ac34e642812
     m_ActionName: Player/Attack B[/Mouse/rightButton,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8a93c80a-89c1-45e0-aa1b-075279ae3def
+    m_ActionName: Player/Time Stop 1[/Keyboard/q,/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: feebdf05-fd69-466a-8ff5-f95ccbb99403
+    m_ActionName: Player/Time Stop 2[/Keyboard/e,/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e84fcdba-cc3e-45a4-970c-2efa6749cf0a
+    m_ActionName: Player/Dash[/Keyboard/shift,/XInputControllerWindows/buttonEast]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -2333,6 +2344,7 @@ GameObject:
   - component: {fileID: 5191767861839416748}
   - component: {fileID: 7661142225028691841}
   - component: {fileID: 5646494627010712504}
+  - component: {fileID: 6463867780877561901}
   m_Layer: 0
   m_Name: Attack
   m_TagString: Untagged
@@ -2388,6 +2400,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f2fc024dbf6344fba464607d292ec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6463867780877561901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6514775971137230261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e224d6d869b99074c85eda510eba45d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 300
 --- !u!1 &6578040296070265369
 GameObject:
   m_ObjectHideFlags: 0

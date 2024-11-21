@@ -23,6 +23,9 @@
         },
         {
             "m_Id": "4ec9a8f3f49e4df98c49d2a50ae2da52"
+        },
+        {
+            "m_Id": "0f22a76de0da42288308d916592231c3"
         }
     ],
     "m_Keywords": [],
@@ -645,8 +648,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 542.0,
-            "y": -180.00006103515626
+            "x": 816.9999389648438,
+            "y": -134.99998474121095
         },
         "m_Blocks": [
             {
@@ -662,8 +665,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 542.0,
-            "y": 19.999961853027345
+            "x": 816.9999389648438,
+            "y": 65.00006866455078
         },
         "m_Blocks": [
             {
@@ -863,6 +866,34 @@
         "w": 0.0
     },
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "0f22a76de0da42288308d916592231c3",
+    "m_Guid": {
+        "m_GuidSerialized": "d386c5cf-1c6e-406e-95e1-8d4390f02ead"
+    },
+    "m_Name": "Alpha",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Alpha",
+    "m_DefaultReferenceName": "_Alpha",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 1.0,
+    "m_FloatType": 1,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
 }
 
 {
@@ -1083,9 +1114,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -36.0000114440918,
-            "y": 55.000003814697269,
-            "width": 207.99998474121095,
+            "x": 153.99998474121095,
+            "y": 40.00000762939453,
+            "width": 208.00001525878907,
             "height": 302.0000305175781
         }
     },
@@ -1124,7 +1155,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "AlphaClipThreshold",
     "m_StageCapability": 2,
-    "m_Value": 0.5,
+    "m_Value": 0.0,
     "m_DefaultValue": 0.5,
     "m_Labels": []
 }
@@ -1899,6 +1930,9 @@
         },
         {
             "m_Id": "4ec9a8f3f49e4df98c49d2a50ae2da52"
+        },
+        {
+            "m_Id": "0f22a76de0da42288308d916592231c3"
         }
     ]
 }

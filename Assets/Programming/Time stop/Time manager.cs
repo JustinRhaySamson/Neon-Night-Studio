@@ -7,6 +7,7 @@ public class Timemanager : MonoBehaviour
 {
     public float time_amount = 0;
     public bool Time_Stopped = false;
+    public bool cooldown = false;
 
     public Time_Stop_Check_Shooter[] enemies_shooter;
     public Time_Stop_Check_Melee[] enemies_melee;
@@ -16,13 +17,18 @@ public class Timemanager : MonoBehaviour
     bool RB_Press = false;
 
     GameObject slider;
+    GameObject slider2;
     Slider slider_component;
+    Slider slider_component2;
     float slider_time;
+    float slider_time2;
 
     void Start()
     {
         slider = GameObject.Find("Time_shower");
         slider_component = slider.GetComponent<Slider>();
+        slider2 = GameObject.Find("Time_Cooldown");
+        slider_component2 = slider2.GetComponent<Slider>();
     }
 
     // Update is called once per frame
@@ -31,6 +37,10 @@ public class Timemanager : MonoBehaviour
         if (Time_Stopped)
         {
             slider_component.value = Time.time - slider_time;
+        }
+        if(!Time_Stopped && cooldown)
+        {
+            slider_component2.value = Time.time - slider_time2;
         }
     }
 
@@ -70,13 +80,13 @@ public class Timemanager : MonoBehaviour
 
     public void ChangeTime()
     {
-        Time_Stopped = true;
-        slider_component.value = 0;
-        slider_time = Time.time;
-
-        if (Time_Stopped)
+        if (!cooldown)
         {
-            for(int i = 0; i < enemies_shooter.Length; i++)
+            cooldown = true;
+            Time_Stopped = true;
+            slider_component.value = 0;
+            slider_time = Time.time;
+            for (int i = 0; i < enemies_shooter.Length; i++)
             {
                 enemies_shooter[i].StopEnemy();
             }
@@ -88,14 +98,17 @@ public class Timemanager : MonoBehaviour
             {
                 bullets[i].StopBullet();
             }
-        }
-        StartCoroutine(ResetTime(time_amount));
+            StartCoroutine(ResetTime(time_amount));
+            StartCoroutine(Cooldown_Timer());
+        } 
     }
 
     IEnumerator ResetTime(float time)
     {
         yield return new WaitForSeconds(time);
         Time_Stopped = false;
+        slider_component2.value = 0;
+        slider_time2 = Time.time;
         for (int i = 0; i < enemies_shooter.Length; i++)
         {
             enemies_shooter[i].RestartEnemy();
@@ -108,5 +121,11 @@ public class Timemanager : MonoBehaviour
         {
             bullets[i].RestartBullet();
         }
+    }
+
+    IEnumerator Cooldown_Timer()
+    {
+        yield return new WaitForSeconds(6f);
+        cooldown = false;
     }
 }

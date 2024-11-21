@@ -54,7 +54,5 @@ public class Basic_Bullet : MonoBehaviour
     public void RestartBullet()
     {
         rb.AddForce(transform.forward * 10, ForceMode.Impulse);
-        print("I am restarting");
-        print(forces + gameObject.name);
     }
 }

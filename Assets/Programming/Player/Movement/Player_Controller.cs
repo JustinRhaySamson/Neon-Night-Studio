@@ -90,14 +90,16 @@ public class Player_Controller : MonoBehaviour
     public void Dash()
     {
         gameObject.tag = "Invincible";
-        animator.SetFloat("Dash_Speed", 2.5f);
+        //animator.SetFloat("Dash_Speed", 2.5f);
+        animator.SetBool("Dash", true);
         StartCoroutine(Dash_Speedup(.3f));
     }
 
     IEnumerator Dash_Speedup(float time)
     {
         yield return new WaitForSeconds(time);
-        animator.SetFloat("Dash_Speed", 1);
+        //animator.SetFloat("Dash_Speed", 1);
+        animator.SetBool("Dash", false);
         gameObject.tag = "Player";
     }
 }

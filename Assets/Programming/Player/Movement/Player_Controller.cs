@@ -10,6 +10,7 @@ public class Player_Controller : MonoBehaviour
     Animator animator;
 
     public LayerMask enemy;
+    bool attacking = false;
 
     private void Start()
     {
@@ -36,7 +37,10 @@ public class Player_Controller : MonoBehaviour
         if (_input == Vector3.zero) return;
 
         var rot = Quaternion.LookRotation(_input.ToIso(), Vector3.up);
-        transform.rotation = rot;
+        if (!attacking)
+        {
+            transform.rotation = rot;
+        }
     }
 
     private void Move()
@@ -57,6 +61,7 @@ public class Player_Controller : MonoBehaviour
         {
             animator.SetBool("Attack1", true);
             StartCoroutine(Finish_Animation(1f, "Attack1"));
+            attacking = true;
             //attack.enabled = true;
         }
         /*else if (callbackContext.canceled)
@@ -72,6 +77,7 @@ public class Player_Controller : MonoBehaviour
             animator.SetBool("Attack2", true);
             StartCoroutine(Finish_Animation(1.5f, "Attack2"));
             //attack.enabled = true;
+            attacking = true;
         }
         /*else if (callbackContext.canceled)
         {
@@ -84,6 +90,7 @@ public class Player_Controller : MonoBehaviour
         yield return new WaitForSeconds(time);
         animator.SetBool(anim_name, false);
         //attack.enabled = false;
+        attacking = false;
 
     }
 

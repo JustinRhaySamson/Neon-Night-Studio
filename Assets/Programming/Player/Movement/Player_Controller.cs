@@ -11,6 +11,7 @@ public class Player_Controller : MonoBehaviour
 
     public LayerMask enemy;
     bool attacking = false;
+    bool attack_chain = false;
 
     private void Start()
     {
@@ -64,10 +65,12 @@ public class Player_Controller : MonoBehaviour
             attacking = true;
             //attack.enabled = true;
         }
-        /*else if (callbackContext.canceled)
+        if (attack_chain)
         {
-            animator.SetBool("Attack1", false);
-        }*/
+            animator.SetBool("ChainAttack", true);
+            attacking = true;
+            StartCoroutine(Finish_Animation(1f, "Attack1"));
+        }
     }
 
     public void Attack_B(InputAction.CallbackContext callbackContext)
@@ -79,10 +82,7 @@ public class Player_Controller : MonoBehaviour
             //attack.enabled = true;
             attacking = true;
         }
-        /*else if (callbackContext.canceled)
-        {
-            animator.SetBool("Attack2", false);
-        }*/
+        
     }
 
     IEnumerator Finish_Animation(float time, string anim_name)
@@ -109,5 +109,34 @@ public class Player_Controller : MonoBehaviour
         //animator.SetBool("Dash", false);
         gameObject.tag = "Player";
     }
+
+    public void AttackChainTrue()
+    {
+        attack_chain = true;
+    }
+
+    public void AttackChainFalse()
+    {
+        attack_chain = false;
+    }
+
+    public void NoChainAttack()
+    {
+        animator.SetBool("ChainAttack", false);
+    }
+
+    public void NoChainFailed()
+    {
+        animator.SetBool("ChainFailed", false);
+    }
+
+    public void ChainFailed()
+    {
+        if (animator.GetBool("ChainAttack") == false)
+        {
+            animator.SetBool("ChainFailed", true);
+        }
+    }
+
 }
 

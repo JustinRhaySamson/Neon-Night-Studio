@@ -37,6 +37,7 @@ public class Health : MonoBehaviour
                 time_stop_check_shooter = GetComponent<Time_Stop_Check_Shooter>();
                 time_stop_check_shooter.Die();
             }
+            room_counter_script.EnemyKilled();
             Destroy(gameObject);
         }
         StartCoroutine(ChangeColor());

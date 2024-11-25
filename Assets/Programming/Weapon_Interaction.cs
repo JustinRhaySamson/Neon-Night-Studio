@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-
-public class Trigger_Interaction_Enemy: MonoBehaviour
+public class Weapon_Interaction : MonoBehaviour
 {
     public UnityEvent trigger_entered;
     public UnityEvent trigger_exited;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Invincible"))
+        if (other.CompareTag("Player"))
         {
             trigger_entered.Invoke();
         }
@@ -19,7 +18,7 @@ public class Trigger_Interaction_Enemy: MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Invincible"))
+        if (other.CompareTag("Player"))
         {
             trigger_exited.Invoke();
         }

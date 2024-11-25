@@ -12,6 +12,7 @@ public class Player_Controller : MonoBehaviour
     public LayerMask enemy;
     bool attacking = false;
     bool attack_chain = false;
+    bool healing = false;
 
     private void Start()
     {
@@ -49,7 +50,14 @@ public class Player_Controller : MonoBehaviour
         //_rb.MovePosition(transform.position + transform.forward * _input.normalized.magnitude * _speed * Time.deltaTime);
         if (_input != Vector3.zero)
         {
-            animator.SetFloat("Running", 1);
+            if (healing == false)
+            {
+                animator.SetFloat("Running", 1);
+            }
+            else if (healing)
+            {
+
+            }
         }
         else if (_input == Vector3.zero)
         {
@@ -58,7 +66,7 @@ public class Player_Controller : MonoBehaviour
     }
     public void Attack_A(InputAction.CallbackContext callbackContext)
     {
-        if (callbackContext.performed)
+        if (callbackContext.performed && healing == false)
         {
             animator.SetBool("Attack1", true);
             StartCoroutine(Finish_Animation(1f, "Attack1"));
@@ -75,7 +83,7 @@ public class Player_Controller : MonoBehaviour
 
     public void Attack_B(InputAction.CallbackContext callbackContext)
     {
-        if (callbackContext.performed)
+        if (callbackContext.performed && healing == false)
         {
             animator.SetBool("Attack2", true);
             StartCoroutine(Finish_Animation(1.5f, "Attack2"));
@@ -96,10 +104,13 @@ public class Player_Controller : MonoBehaviour
 
     public void Dash()
     {
-        gameObject.tag = "Invincible";
-        animator.SetFloat("Dash_Speed", 2.5f);
-        //animator.SetBool("Dash", true);
-        StartCoroutine(Dash_Speedup(.3f));
+        if (!healing)
+        {
+            gameObject.tag = "Invincible";
+            animator.SetFloat("Dash_Speed", 2.5f);
+            //animator.SetBool("Dash", true);
+            StartCoroutine(Dash_Speedup(.3f));
+        } 
     }
 
     IEnumerator Dash_Speedup(float time)
@@ -137,6 +148,19 @@ public class Player_Controller : MonoBehaviour
             animator.SetBool("ChainFailed", true);
         }
     }
+
+    public void Heal(InputAction.CallbackContext callbackContext)
+    {
+        if (callbackContext.performed)
+        {
+            healing = true;
+        }
+        if (callbackContext.canceled)
+        {
+            healing = false;
+        }
+    }
+
 
 }
 

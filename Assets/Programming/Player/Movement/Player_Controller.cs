@@ -57,7 +57,7 @@ public class Player_Controller : MonoBehaviour
         {
             animator.SetBool("Attack1", true);
             StartCoroutine(Finish_Animation(1f, "Attack1"));
-            attack.enabled = true;
+            //attack.enabled = true;
         }
         /*else if (callbackContext.canceled)
         {
@@ -71,7 +71,7 @@ public class Player_Controller : MonoBehaviour
         {
             animator.SetBool("Attack2", true);
             StartCoroutine(Finish_Animation(1.5f, "Attack2"));
-            attack.enabled = true;
+            //attack.enabled = true;
         }
         /*else if (callbackContext.canceled)
         {
@@ -83,7 +83,7 @@ public class Player_Controller : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         animator.SetBool(anim_name, false);
-        attack.enabled = false;
+        //attack.enabled = false;
 
     }
 

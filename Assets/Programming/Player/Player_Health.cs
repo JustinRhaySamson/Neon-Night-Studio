@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 public class Player_Health : MonoBehaviour
 {
     public int HP = 2;
+    public int max_HP = 2;
     GameObject UI_Text;
     TMP_Text UI_HP;
     GameObject slider;
@@ -17,6 +18,8 @@ public class Player_Health : MonoBehaviour
     float heal_end = 1.7f;
     bool healing = false;
 
+    Player_Controller controller;
+
     private void Start()
     {
         UI_Text = GameObject.Find("HP number");
@@ -24,6 +27,7 @@ public class Player_Health : MonoBehaviour
         UI_HP.text = HP.ToString();
         slider = GameObject.Find("Heal_Timer");
         slider_component = slider.GetComponent<Slider>();
+        controller = gameObject.GetComponent<Player_Controller>();
     }
 
     public void Get_Hit()
@@ -40,10 +44,13 @@ public class Player_Health : MonoBehaviour
     {
         if (callbackContext.performed)
         {
-            heal_start = Time.time;
-            healing = true;
-            slider_component.value = 0;
-            print(healing + " " + heal_start);
+            if (HP < max_HP && controller.public_input == Vector3.zero)
+            {
+                heal_start = Time.time;
+                healing = true;
+                slider_component.value = 0;
+                print(healing + " " + heal_start);
+            }
         }
         if (callbackContext.canceled)
         {
@@ -64,6 +71,11 @@ public class Player_Health : MonoBehaviour
                 heal_start = Time.time;
                 slider_component.value = 0;
             }
+        }
+
+        if (HP >= max_HP)
+        {
+            healing = false;
         }
     }
 }

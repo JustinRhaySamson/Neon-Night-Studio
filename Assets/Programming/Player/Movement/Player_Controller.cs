@@ -7,9 +7,11 @@ public class Player_Controller : MonoBehaviour
 {
     [SerializeField] private Collider attack;
     private Vector3 _input;
+    public Vector3 public_input;
     Animator animator;
 
     public LayerMask enemy;
+    bool dashing = false;
     bool attacking = false;
     bool attack_chain = false;
     bool healing = false;
@@ -32,6 +34,7 @@ public class Player_Controller : MonoBehaviour
     private void GatherInput()
     {
         _input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        public_input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
     }
 
     private void Look()
@@ -102,14 +105,16 @@ public class Player_Controller : MonoBehaviour
 
     }
 
-    public void Dash()
+    public void Dash(InputAction.CallbackContext callbackContext)
     {
-        if (!healing)
+        if (callbackContext.performed && !dashing)
         {
             gameObject.tag = "Invincible";
             animator.SetFloat("Dash_Speed", 2.5f);
+            dashing = true;
             //animator.SetBool("Dash", true);
             StartCoroutine(Dash_Speedup(.3f));
+            StartCoroutine(Dash_Cooldown(.7f));
         } 
     }
 
@@ -119,6 +124,12 @@ public class Player_Controller : MonoBehaviour
         animator.SetFloat("Dash_Speed", 1);
         //animator.SetBool("Dash", false);
         gameObject.tag = "Player";
+    }
+
+    IEnumerator Dash_Cooldown(float time)
+    {
+        yield return new WaitForSeconds(time);
+        dashing = false;
     }
 
     public void AttackChainTrue()

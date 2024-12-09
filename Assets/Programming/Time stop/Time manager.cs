@@ -17,18 +17,14 @@ public class Timemanager : MonoBehaviour
     bool RB_Press = false;
 
     GameObject slider;
-    GameObject slider2;
     Slider slider_component;
-    Slider slider_component2;
     float slider_time;
     float slider_time2;
 
     void Start()
     {
-        slider = GameObject.Find("Time_shower");
+        slider = GameObject.Find("Slider_new");
         slider_component = slider.GetComponent<Slider>();
-        slider2 = GameObject.Find("Time_Cooldown");
-        slider_component2 = slider2.GetComponent<Slider>();
     }
 
     // Update is called once per frame
@@ -36,11 +32,11 @@ public class Timemanager : MonoBehaviour
     {
         if (Time_Stopped)
         {
-            slider_component.value = Time.time - slider_time;
+            slider_component.value = 2.9f - (Time.time - slider_time);
         }
         if(!Time_Stopped && cooldown)
         {
-            slider_component2.value = Time.time - slider_time2;
+            slider_component.value = Time.time - slider_time2;
         }
     }
 
@@ -80,11 +76,12 @@ public class Timemanager : MonoBehaviour
 
     public void ChangeTime()
     {
-        if (!cooldown)
+        if (!cooldown && slider_component.value == slider_component.maxValue)
         {
             cooldown = true;
             Time_Stopped = true;
-            slider_component.value = 0;
+            slider_component.maxValue = 2.9f;
+            slider_component.value = 2.9f;
             slider_time = Time.time;
             for (int i = 0; i < enemies_shooter.Length; i++)
             {
@@ -107,7 +104,7 @@ public class Timemanager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Time_Stopped = false;
-        slider_component2.value = 0;
+        slider_component.maxValue = 4;
         slider_time2 = Time.time;
         for (int i = 0; i < enemies_shooter.Length; i++)
         {
@@ -125,7 +122,7 @@ public class Timemanager : MonoBehaviour
 
     IEnumerator Cooldown_Timer()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(7.1f);
         cooldown = false;
     }
 }

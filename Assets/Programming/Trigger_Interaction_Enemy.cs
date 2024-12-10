@@ -11,7 +11,7 @@ public class Trigger_Interaction_Enemy: MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Invincible"))
         {
             trigger_entered.Invoke();
         }
@@ -19,7 +19,7 @@ public class Trigger_Interaction_Enemy: MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Invincible"))
         {
             trigger_exited.Invoke();
         }

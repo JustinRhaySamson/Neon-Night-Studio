@@ -19,6 +19,8 @@ public class Time_Stop_Check_Shooter: MonoBehaviour
     public SphereCollider sphere_Collider2;
 
     bool restart;
+    bool bullet_shooter_state;
+    bool navmesh_state;
     void Start()
     {
         time_stop_check_shooter = GetComponent<Time_Stop_Check_Shooter>();
@@ -40,22 +42,62 @@ public class Time_Stop_Check_Shooter: MonoBehaviour
         //shoot_Bullet.StopShooting();
         bullet_shooter.SetActive(false);
         nav_Agent.enabled = false;
-        sphere_Collider.enabled = false;
-        sphere_Collider2.enabled = false;
+        //sphere_Collider.enabled = false;
+        //sphere_Collider2.enabled = false;
     }
 
     public void RestartEnemy()
     {
         look_at.enabled = true;
-        nav_Agent.enabled = true;
-        sphere_Collider2.enabled = true;
-        sphere_Collider.enabled = true;
-        bullet_shooter.SetActive(true);
-        shoot_Bullet.StartShooting();
+        nav_Agent.enabled = navmesh_state;
+        //sphere_Collider2.enabled = true;
+        //sphere_Collider.enabled = true;
+        bullet_shooter.SetActive(bullet_shooter_state);
+        if (bullet_shooter_state)
+        {
+            shoot_Bullet.StartShooting();
+        }
     }
 
     public void Die()
     {
         time_manager.enemies_shooter = (Time_Stop_Check_Shooter[])ae.Remove(time_stop_check_shooter, time_manager.enemies_shooter);
+    }
+
+    public void Enter_Shooting_Sphere()
+    {
+        if (!time_manager.Time_Stopped)
+        {
+            bullet_shooter.SetActive(true);
+            shoot_Bullet.StartShooting();
+        }
+        bullet_shooter_state = true;
+    }
+
+    public void Exit_Shooting_Sphere()
+    {
+        if (!time_manager.Time_Stopped)
+        {
+            bullet_shooter.SetActive(false);
+        }
+        bullet_shooter_state = false;
+    }
+
+    public void Enter_Movement_Sphere()
+    {
+        if (!time_manager.Time_Stopped)
+        {
+            nav_Agent.enabled = false;
+        }
+        navmesh_state = false;
+    }
+
+    public void Exit_Movement_Sphere()
+    {
+        if (!time_manager.Time_Stopped)
+        {
+            nav_Agent.enabled = true;
+        }
+        navmesh_state = true;
     }
 }

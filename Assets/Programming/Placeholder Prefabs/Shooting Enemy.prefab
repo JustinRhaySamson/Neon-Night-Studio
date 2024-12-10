@@ -69,10 +69,10 @@ MonoBehaviour:
   trigger_entered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 809091954251022376}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 8987702324068644634}
+        m_TargetAssemblyTypeName: Time_Stop_Check_Shooter, Assembly-CSharp
+        m_MethodName: Enter_Movement_Sphere
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -84,10 +84,10 @@ MonoBehaviour:
   trigger_exited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 809091954251022376}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 8987702324068644634}
+        m_TargetAssemblyTypeName: Time_Stop_Check_Shooter, Assembly-CSharp
+        m_MethodName: Exit_Movement_Sphere
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -531,21 +531,9 @@ MonoBehaviour:
   trigger_entered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1303937347353979474}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1499571587749511192}
-        m_TargetAssemblyTypeName: Shoot_bullet, Assembly-CSharp
-        m_MethodName: StartShooting
+      - m_Target: {fileID: 8987702324068644634}
+        m_TargetAssemblyTypeName: Time_Stop_Check_Shooter, Assembly-CSharp
+        m_MethodName: Enter_Shooting_Sphere
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -558,10 +546,10 @@ MonoBehaviour:
   trigger_exited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1303937347353979474}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8987702324068644634}
+        m_TargetAssemblyTypeName: Time_Stop_Check_Shooter, Assembly-CSharp
+        m_MethodName: Exit_Shooting_Sphere
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

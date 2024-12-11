@@ -25,6 +25,7 @@ public class Player_Health : MonoBehaviour
     bool cooldown = false;
 
     Player_Controller controller;
+    Animator animator;
 
     private void Start()
     {
@@ -36,6 +37,7 @@ public class Player_Health : MonoBehaviour
         controller = gameObject.GetComponent<Player_Controller>();
         health_1 = GameObject.Find("Health1 2");
         health_2 = GameObject.Find("Health1");
+        animator = GetComponent<Animator>();
     }
 
     public void Get_Hit()
@@ -45,7 +47,7 @@ public class Player_Health : MonoBehaviour
         if (HP <= 0)
         {
             health_2.SetActive(false);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            animator.SetBool("Dead", true);
         }
     }
 
@@ -119,5 +121,15 @@ public class Player_Health : MonoBehaviour
         {
             health_1.SetActive(true);
         }
+    }
+
+    public void Restart_Scene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void False_Dead()
+    {
+        animator.SetBool("Dead", false);
     }
 }

@@ -15,6 +15,7 @@ public class Player_Controller : MonoBehaviour
     bool attacking = false;
     bool attack_chain = false;
     bool healing = false;
+    bool active_gravity = false;
 
     private void Start()
     {
@@ -24,6 +25,10 @@ public class Player_Controller : MonoBehaviour
     {
         GatherInput();
         Look();
+        if (active_gravity)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y - .1f, transform.position.z);
+        }
     }
 
     private void FixedUpdate()
@@ -172,6 +177,14 @@ public class Player_Controller : MonoBehaviour
         }
     }
 
-
+    public void Gravity_Active()
+    {
+        active_gravity = true;
+    }
+    public void Gravity_Not_Active()
+    {
+        active_gravity = false;
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+    }
 }
 

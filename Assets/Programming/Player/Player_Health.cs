@@ -44,6 +44,10 @@ public class Player_Health : MonoBehaviour
     {
         HP--;
         UI_HP.text = HP.ToString();
+        if(HP > 0)
+        {
+            animator.SetBool("Stagger", true);
+        }
         if (HP <= 0)
         {
             health_2.SetActive(false);
@@ -131,5 +135,10 @@ public class Player_Health : MonoBehaviour
     public void False_Dead()
     {
         animator.SetBool("Dead", false);
+    }
+
+    public void False_Stagger()
+    {
+        animator.SetBool("Stagger", false);
     }
 }

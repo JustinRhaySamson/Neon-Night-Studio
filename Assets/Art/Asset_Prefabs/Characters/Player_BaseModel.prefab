@@ -1251,7 +1251,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
@@ -1420,6 +1420,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 32113024-ab66-4920-b073-90c6571a617d
     m_ActionName: Player/Heal[/XInputControllerWindows/buttonSouth,/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9199dc36-cace-4cb5-bc2e-40f65241f83e
+    m_ActionName: Player/Open Menu[/XInputControllerWindows/start,/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1965,7 +1969,7 @@ Transform:
   m_GameObject: {fileID: 7716363774253156943}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.028599743, y: 0.86, z: 19.1}
+  m_LocalPosition: {x: -0.028599743, y: 0.86, z: 22.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -21,10 +21,17 @@ public class Timemanager : MonoBehaviour
     float slider_time;
     float slider_time2;
 
+    GameObject door;
+    Animator door_animator;
+    GameObject door_stopper;
+
     void Start()
     {
         slider = GameObject.Find("Slider_new");
         slider_component = slider.GetComponent<Slider>();
+        door = GameObject.Find("TimeStop_Door");
+        door_animator = door.GetComponent<Animator>();
+        door_stopper = GameObject.Find("Door_Stopper");
     }
 
     // Update is called once per frame
@@ -95,6 +102,11 @@ public class Timemanager : MonoBehaviour
             {
                 bullets[i].StopBullet();
             }
+            if (door_animator != null)
+            {
+                door_animator.SetFloat("Speed", 0);
+                door_stopper.SetActive(false);
+            }
             StartCoroutine(ResetTime(time_amount));
             StartCoroutine(Cooldown_Timer());
         } 
@@ -117,6 +129,11 @@ public class Timemanager : MonoBehaviour
         for (int i = 0; i < bullets.Length; i++)
         {
             bullets[i].RestartBullet();
+        }
+        if (door_animator != null)
+        {
+            door_animator.SetFloat("Speed", 1);
+            door_stopper.SetActive(true);
         }
     }
 

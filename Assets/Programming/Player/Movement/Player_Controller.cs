@@ -72,13 +72,13 @@ public class Player_Controller : MonoBehaviour
         if (callbackContext.performed && healing == false)
         {
             animator.SetBool("Attack1", true);
-            StartCoroutine(Finish_Animation(1f, "Attack1"));
+            StartCoroutine(Finish_Animation(.7f, "Attack1"));
             attacking = true;
             //attack.enabled = true;
         }
-        if (attack_chain)
+        if (callbackContext.performed && attack_chain)
         {
-            animator.SetBool("ChainAttack", true);
+            animator.SetBool("AttackFollowUp1", true);
             attacking = true;
             StartCoroutine(Finish_Animation(1f, "Attack1"));
         }
@@ -144,19 +144,19 @@ public class Player_Controller : MonoBehaviour
 
     public void NoChainAttack()
     {
-        animator.SetBool("ChainAttack", false);
+        animator.SetBool("AttackFollowUp1", false);
     }
 
     public void NoChainFailed()
     {
-        animator.SetBool("ChainFailed", false);
+        animator.SetBool("AttackChainStop", false);
     }
 
     public void ChainFailed()
     {
-        if (animator.GetBool("ChainAttack") == false)
+        if (animator.GetBool("AttackFollowUp1") == false)
         {
-            animator.SetBool("ChainFailed", true);
+            animator.SetBool("AttackChainStop", true);
         }
     }
 

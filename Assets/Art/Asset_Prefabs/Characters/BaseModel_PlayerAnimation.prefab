@@ -732,7 +732,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3888601469034451237}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: f6bceba5ae49f3846a0b6cf3dd13ff9d, type: 3}
+  m_Avatar: {fileID: 9000000, guid: ebe58f19d735a8547b4c2a557a67f9ed, type: 3}
   m_Controller: {fileID: 9100000, guid: 4a7e9a26bc4217d46bfea0dd4a0f808e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -807,6 +807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: {fileID: 0}
+  public_input: {x: 0, y: 0, z: 0}
   enemy:
     serializedVersion: 2
     m_Bits: 0
@@ -903,6 +904,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e84fcdba-cc3e-45a4-970c-2efa6749cf0a
     m_ActionName: Player/Dash[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 32113024-ab66-4920-b073-90c6571a617d
+    m_ActionName: Player/Heal[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9199dc36-cace-4cb5-bc2e-40f65241f83e
+    m_ActionName: Player/Open Menu[/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -921,6 +930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 2
+  max_HP: 2
 --- !u!1 &4150059518227296222
 GameObject:
   m_ObjectHideFlags: 0

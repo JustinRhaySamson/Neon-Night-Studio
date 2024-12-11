@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3222172115136933744}
   - component: {fileID: 3217056426419536433}
   m_Layer: 0
-  m_Name: HitEffect
+  m_Name: HitEffect (Enemy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,18 +50,63 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 1
+        m_Name: FlashRate
+        m_Overridden: 1
+      - m_Value: 0.2
+        m_Name: FlashLifetime
+        m_Overridden: 1
+      - m_Value: 8
+        m_Name: FlashSize
+        m_Overridden: 1
+      - m_Value: 2
+        m_Name: CrossRate
+        m_Overridden: 1
+      - m_Value: 0.3
+        m_Name: CrossLifetime
+        m_Overridden: 1
+      - m_Value: 6
+        m_Name: CrossSize
+        m_Overridden: 1
+      - m_Value: 0.3
+        m_Name: ParticlesLifetime
+        m_Overridden: 1
+      - m_Value: 20
+        m_Name: ParticlesRate
+        m_Overridden: 1
+      - m_Value: 0.8
+        m_Name: ParticlesSize
+        m_Overridden: 1
+      - m_Value: 30
+        m_Name: TrailsRate
+        m_Overridden: 1
+      - m_Value: 0.2
+        m_Name: TrailsLifetime
+        m_Overridden: 1
+      - m_Value: 0.2
+        m_Name: TrailsSize
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0.15, y: 1, z: 1}
+        m_Name: CrossScale
+        m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 4.867144, y: 2.0385942, z: 0.8664026, w: 1}
+      - m_Value: {x: 4.867145, y: 0.9499025, z: 0.8664027, w: 1}
         m_Name: TrailsColor
         m_Overridden: 1
-      - m_Value: {x: 9.082411, y: 3.8041513, z: 1.5692124, w: 1}
+      - m_Value: {x: 9.082411, y: 1.6167641, z: 1.6876773, w: 1}
         m_Name: CrossColor
+        m_Overridden: 1
+      - m_Value: {x: 7.8, y: 1.3476439, z: 1.6733458, w: 1}
+        m_Name: FlashColor
+        m_Overridden: 1
+      - m_Value: {x: 766.9961, y: 136.53333, z: 156.05281, w: 1}
+        m_Name: ParticlesColor
         m_Overridden: 1
     m_Uint:
       m_Array: []
@@ -74,7 +119,19 @@ VisualEffect:
     m_Gradient:
       m_Array: []
     m_NamedObject:
-      m_Array: []
+      m_Array:
+      - m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Name: FlashTexture
+        m_Overridden: 1
+      - m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Name: CrossTexture
+        m_Overridden: 1
+      - m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Name: ParticlesTexture
+        m_Overridden: 1
+      - m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Name: TrailsTexture
+        m_Overridden: 1
     m_Bool:
       m_Array: []
 --- !u!73398921 &3217056426419536433

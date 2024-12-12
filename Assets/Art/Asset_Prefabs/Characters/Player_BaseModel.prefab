@@ -1159,6 +1159,7 @@ GameObject:
   - component: {fileID: 4911031276024932795}
   - component: {fileID: 5762134575805767675}
   - component: {fileID: 8183649165846350006}
+  - component: {fileID: 2674390999108444893}
   m_Layer: 6
   m_Name: Player_BaseModel
   m_TagString: Player
@@ -1418,6 +1419,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2674390999108444893}
+        m_TargetAssemblyTypeName: Player_Interaction, Assembly-CSharp
+        m_MethodName: Interaction_Press
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 32113024-ab66-4920-b073-90c6571a617d
     m_ActionName: Player/Heal[/XInputControllerWindows/buttonSouth,/Keyboard/f]
   - m_PersistentCalls:
@@ -1429,6 +1442,18 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2674390999108444893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5797556716670839153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e659bafacb5a14f828a8c9366ea8e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5822847514879082519
 GameObject:
   m_ObjectHideFlags: 0

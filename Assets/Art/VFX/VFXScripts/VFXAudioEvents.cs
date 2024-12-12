@@ -4,17 +4,41 @@ using UnityEngine;
 
 public class VFXAudioEvents : MonoBehaviour
 {
-    public GameObject VFX;
+    public GameObject VFXA1,VFXA2,VFXA3;
 
-    void Activate()
+    void ActivateA1()
     {
-        VFX.SetActive(true);
+        VFXA1.SetActive(true);
+        Debug.Log("VFX activated");
+    }
+    
+    void ActivateA2()
+    {
+        VFXA2.SetActive(true);
+        Debug.Log("VFX activated");
+    }
+    
+    void ActivateA3()
+    {
+        VFXA3.SetActive(true);
         Debug.Log("VFX activated");
     }
 
-    void Deactivate()
+    void DeactivateA1()
     {
-        VFX.SetActive(false);
+        VFXA1.SetActive(false);
+        Debug.Log("VFX deactivated");
+    }
+    
+    void DeactivateA2()
+    {
+        VFXA2.SetActive(false);
+        Debug.Log("VFX deactivated");
+    }
+    
+    void DeactivateA3()
+    {
+        VFXA3.SetActive(false);
         Debug.Log("VFX deactivated");
     }
 }

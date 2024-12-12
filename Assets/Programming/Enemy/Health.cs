@@ -14,17 +14,20 @@ public class Health : MonoBehaviour
 
     MeshRenderer renderer;
 
+    GameObject hit_vfx;
     private void Start()
     {
         renderer = GetComponent<MeshRenderer>();
         GameObject room_counter = GameObject.Find("Room_Counter");
         room_counter_script = room_counter.GetComponent<Room_Counter>();
+        hit_vfx = transform.Find("HitEffect").gameObject;
     }
 
     public void Get_Hit()
     {
         renderer.material.color = Color.red;
         HP--;
+        hit_vfx.SetActive(true);
         if (HP <= 0)
         {
             if (!shooter)
@@ -47,6 +50,7 @@ public class Health : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         renderer.material.color = Color.white;
+        hit_vfx.SetActive(false);
 
     }
 }

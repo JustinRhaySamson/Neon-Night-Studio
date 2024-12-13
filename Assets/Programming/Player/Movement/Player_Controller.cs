@@ -121,7 +121,7 @@ public class Player_Controller : MonoBehaviour
             dashing = true;
             //animator.SetBool("Dash", true);
             DashVFX.SetActive(true);
-            StartCoroutine(Dash_Speedup(.3f));
+            StartCoroutine(Dash_Speedup(.4f));
             StartCoroutine(Dash_Cooldown(.7f));
         } 
     }

@@ -9,7 +9,7 @@ public class Shooting_Enemy_Movement : MonoBehaviour
     NavMeshAgent agent;
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.Find("Player");
         agent = GetComponent<NavMeshAgent>();
     }
 

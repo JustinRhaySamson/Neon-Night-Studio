@@ -22,12 +22,21 @@ public class MeshTrail : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(Input.GetKey (KeyCode.E) && Input.GetKey (KeyCode.Q)  && !isTrailActive)
 			{
-				isTrailActive = true;
-				StartCoroutine(ActiveTrail(activeTime));
+				
 			}
     }
+
+	public void Start_Trail()
+    {
+        if (!isTrailActive)
+        {
+			isTrailActive = true;
+			StartCoroutine(ActiveTrail(activeTime));
+		}
+	}
 
 	IEnumerator ActiveTrail(float timeActive)
 		{

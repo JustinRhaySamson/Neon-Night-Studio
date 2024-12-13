@@ -25,6 +25,9 @@ public class Timemanager : MonoBehaviour
     Animator door_animator;
     GameObject door_stopper;
 
+    GameObject player;
+    MeshTrail trail_script;
+
     void Start()
     {
         slider = GameObject.Find("Slider_new");
@@ -32,6 +35,8 @@ public class Timemanager : MonoBehaviour
         door = GameObject.Find("TimeStop_Door");
         door_animator = door.GetComponent<Animator>();
         door_stopper = GameObject.Find("Door_Stopper");
+        player = GameObject.Find("Player");
+        trail_script = player.GetComponent<MeshTrail>();
     }
 
     // Update is called once per frame
@@ -85,6 +90,7 @@ public class Timemanager : MonoBehaviour
     {
         if (!cooldown && slider_component.value == slider_component.maxValue)
         {
+            trail_script.Start_Trail();
             cooldown = true;
             Time_Stopped = true;
             slider_component.maxValue = 2.9f;

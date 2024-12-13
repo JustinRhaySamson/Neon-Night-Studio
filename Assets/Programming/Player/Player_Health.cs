@@ -20,7 +20,7 @@ public class Player_Health : MonoBehaviour
     GameObject health_1;
     GameObject health_2;
 
-    public GameObject VFX;
+    public GameObject VFX,HealVFX;
 
     float slider_time;
     float slider_value;
@@ -63,6 +63,7 @@ public class Player_Health : MonoBehaviour
         {
             if (HP < max_HP && controller.public_input == Vector3.zero)
             {
+                HealVFX.SetActive(true);
                 heal_start = Time.time;
                 healing = true;
                 slider_component.maxValue = heal_end;
@@ -74,6 +75,7 @@ public class Player_Health : MonoBehaviour
         {
             if (healing)
             {
+                HealVFX.SetActive(false);
                 slider_time = Time.time;
                 slider_component.maxValue = 4;
                 slider_component.value = slider_component.value * 2.35294117647f;
@@ -100,6 +102,7 @@ public class Player_Health : MonoBehaviour
                 slider_value = slider_component.value;
                 slider_component.maxValue = 4f;
                 slider_time = Time.time;
+                HealVFX.SetActive(false);
             }
         }
 

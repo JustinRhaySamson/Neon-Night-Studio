@@ -182,6 +182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Press (B) to Quit
 
+    Press (A) to Restart
+
     (XBox Controller)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -640,7 +642,19 @@ MonoBehaviour:
     m_ActionId: e84fcdba-cc3e-45a4-970c-2efa6749cf0a
     m_ActionName: Player/Dash[/Keyboard/shift,/XInputControllerWindows/buttonEast]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1341729275}
+        m_TargetAssemblyTypeName: Scene_Controller, Assembly-CSharp
+        m_MethodName: Change_Scene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Start_Screen
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 32113024-ab66-4920-b073-90c6571a617d
     m_ActionName: Player/Heal[/XInputControllerWindows/buttonSouth,/Keyboard/f]
   - m_PersistentCalls:

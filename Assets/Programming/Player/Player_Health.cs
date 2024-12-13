@@ -53,6 +53,7 @@ public class Player_Health : MonoBehaviour
         if (HP <= 0)
         {
             health_2.SetActive(false);
+            Invincible_Tag();
             animator.SetBool("Dead", true);
         }
     }

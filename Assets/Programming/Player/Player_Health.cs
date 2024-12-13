@@ -152,4 +152,14 @@ public class Player_Health : MonoBehaviour
     {
         VFX.SetActive(false);
     }
+
+    public void Invincible_Tag()
+    {
+        gameObject.tag = "Invincible";
+    }
+
+    public void Player_Tag()
+    {
+        gameObject.tag = "Player";
+    }
 }

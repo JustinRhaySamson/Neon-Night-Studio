@@ -33,7 +33,7 @@ public class Laser : MonoBehaviour
         if (callbackContext.performed)
         {
             coll.enabled = false;
-            StartCoroutine(Dash_Speedup(.3f));
+            StartCoroutine(Dash_Speedup(.4f));
         }
     }
 

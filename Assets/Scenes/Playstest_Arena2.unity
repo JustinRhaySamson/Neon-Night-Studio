@@ -19281,8 +19281,12 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6906154726076908355, guid: ecb6675c67b330a458fdef3fa70cf3c7, type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6906154726076908355, guid: ecb6675c67b330a458fdef3fa70cf3c7, type: 3}
       propertyPath: near clip plane
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6906154726076908355, guid: ecb6675c67b330a458fdef3fa70cf3c7, type: 3}
       propertyPath: orthographic size
@@ -19351,6 +19355,10 @@ PrefabInstance:
     - target: {fileID: 8615902206799836394, guid: ecb6675c67b330a458fdef3fa70cf3c7, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615902206799836394, guid: ecb6675c67b330a458fdef3fa70cf3c7, type: 3}
+      propertyPath: m_VolumeFrameworkUpdateModeOption
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9099705626783087903, guid: ecb6675c67b330a458fdef3fa70cf3c7, type: 3}
       propertyPath: m_Name

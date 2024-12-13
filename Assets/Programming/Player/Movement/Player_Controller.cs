@@ -17,6 +17,8 @@ public class Player_Controller : MonoBehaviour
     bool healing = false;
     bool active_gravity = false;
 
+    public GameObject DashVFX;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -118,6 +120,7 @@ public class Player_Controller : MonoBehaviour
             animator.SetFloat("Dash_Speed", 2.5f);
             dashing = true;
             //animator.SetBool("Dash", true);
+            DashVFX.SetActive(true);
             StartCoroutine(Dash_Speedup(.3f));
             StartCoroutine(Dash_Cooldown(.7f));
         } 
@@ -129,6 +132,7 @@ public class Player_Controller : MonoBehaviour
         animator.SetFloat("Dash_Speed", 1);
         //animator.SetBool("Dash", false);
         gameObject.tag = "Player";
+        DashVFX.SetActive(false);
     }
 
     IEnumerator Dash_Cooldown(float time)

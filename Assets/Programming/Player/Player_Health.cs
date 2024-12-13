@@ -20,6 +20,8 @@ public class Player_Health : MonoBehaviour
     GameObject health_1;
     GameObject health_2;
 
+    public GameObject VFX;
+
     float slider_time;
     float slider_value;
     bool cooldown = false;
@@ -140,5 +142,11 @@ public class Player_Health : MonoBehaviour
     public void False_Stagger()
     {
         animator.SetBool("Stagger", false);
+        VFX.SetActive(true);
+    }
+
+    public void Disable()
+    {
+        VFX.SetActive(false);
     }
 }

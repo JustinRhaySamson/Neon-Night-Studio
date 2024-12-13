@@ -22,7 +22,7 @@ public class MeshTrail : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown (KeyCode.Space) && !isTrailActive)
+        if(Input.GetKey (KeyCode.E) && Input.GetKey (KeyCode.Q)  && !isTrailActive)
 			{
 				isTrailActive = true;
 				StartCoroutine(ActiveTrail(activeTime));

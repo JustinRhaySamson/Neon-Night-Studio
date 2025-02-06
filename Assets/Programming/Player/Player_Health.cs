@@ -84,7 +84,6 @@ public class Player_Health : MonoBehaviour
                 cooldown = true;
             }
             healing = false;
-            print(healing);
         }
     }
 

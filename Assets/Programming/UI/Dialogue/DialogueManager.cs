@@ -58,7 +58,7 @@ public class DialogueManager : MonoBehaviour
 			EndDialogue();
 			return;
 		}
-		if (sentences.Count == dialogue1.SentenceNameChange[speakerNumber])
+		if (dialogue1.sentences.Length - sentences.Count + 1 == dialogue1.SentenceNameChange[speakerNumber])
 		{
 			print("I am displaying next sentence");
 			speakerNumber++;

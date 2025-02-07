@@ -16,6 +16,7 @@ public class Player_Controller : MonoBehaviour
     bool attack_chain = false;
     bool healing = false;
     bool active_gravity = false;
+    bool dialogue = false;
 
     public GameObject DashVFX;
 
@@ -46,7 +47,7 @@ public class Player_Controller : MonoBehaviour
 
     private void Look()
     {
-        if (_input == Vector3.zero) return;
+        if (_input == Vector3.zero || dialogue) return;
 
         var rot = Quaternion.LookRotation(_input.ToIso(), Vector3.up);
         if (!attacking)
@@ -58,7 +59,7 @@ public class Player_Controller : MonoBehaviour
     private void Move()
     {
         //_rb.MovePosition(transform.position + transform.forward * _input.normalized.magnitude * _speed * Time.deltaTime);
-        if (_input != Vector3.zero)
+        if (_input != Vector3.zero && !dialogue)
         {
             if (healing == false)
             {
@@ -69,38 +70,43 @@ public class Player_Controller : MonoBehaviour
 
             }
         }
-        else if (_input == Vector3.zero)
+        else if (_input == Vector3.zero || dialogue)
         {
             animator.SetFloat("Running", 0);
         }
     }
     public void Attack_A(InputAction.CallbackContext callbackContext)
     {
-        if (callbackContext.performed && healing == false)
+        if (!dialogue)
         {
-            animator.SetBool("Attack1", true);
-            StartCoroutine(Finish_Animation(.7f, "Attack1"));
-            attacking = true;
-            //attack.enabled = true;
-        }
-        if (callbackContext.performed && attack_chain)
-        {
-            animator.SetBool("AttackFollowUp1", true);
-            attacking = true;
-            StartCoroutine(Finish_Animation(1f, "Attack1"));
+            if (callbackContext.performed && healing == false)
+            {
+                animator.SetBool("Attack1", true);
+                StartCoroutine(Finish_Animation(.7f, "Attack1"));
+                attacking = true;
+                //attack.enabled = true;
+            }
+            if (callbackContext.performed && attack_chain)
+            {
+                animator.SetBool("AttackFollowUp1", true);
+                attacking = true;
+                StartCoroutine(Finish_Animation(1f, "Attack1"));
+            }
         }
     }
 
     public void Attack_B(InputAction.CallbackContext callbackContext)
     {
-        if (callbackContext.performed && healing == false)
+        if (!dialogue)
         {
-            animator.SetBool("Attack2", true);
-            StartCoroutine(Finish_Animation(1.5f, "Attack2"));
-            //attack.enabled = true;
-            attacking = true;
-        }
-        
+            if (callbackContext.performed && healing == false)
+            {
+                animator.SetBool("Attack2", true);
+                StartCoroutine(Finish_Animation(1.5f, "Attack2"));
+                //attack.enabled = true;
+                attacking = true;
+            }
+        }     
     }
 
     IEnumerator Finish_Animation(float time, string anim_name)
@@ -189,6 +195,16 @@ public class Player_Controller : MonoBehaviour
     {
         active_gravity = false;
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+    }
+
+    public void Change_Dialogue_True()
+    {
+        dialogue = true;
+    }
+
+    public void Change_Dialogue_False()
+    {
+        dialogue = false;
     }
 }
 

@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
 	public Image speakerImage;
 
 	public Animator animator;
+	public Player_Controller playerController;
 
 	[Header("Speakers Names")]
 
@@ -82,6 +83,7 @@ public class DialogueManager : MonoBehaviour
 
 	void EndDialogue()
 	{
+		playerController.Change_Dialogue_False();
 		animator.SetBool("IsOpen", false);
 	}
 

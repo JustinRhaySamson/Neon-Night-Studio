@@ -913,7 +913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2733376500886711020, guid: 6021c15494f19a44580c00de52de5cae, type: 3}
       propertyPath: trigger_entered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Change_Dialogue
+      value: Change_Dialogue_True
       objectReference: {fileID: 0}
     - target: {fileID: 2733376500886711020, guid: 6021c15494f19a44580c00de52de5cae, type: 3}
       propertyPath: trigger_entered.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
@@ -4280,7 +4280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2733376500886711020, guid: 6021c15494f19a44580c00de52de5cae, type: 3}
       propertyPath: trigger_entered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Change_Dialogue
+      value: Change_Dialogue_True
       objectReference: {fileID: 0}
     - target: {fileID: 2733376500886711020, guid: 6021c15494f19a44580c00de52de5cae, type: 3}
       propertyPath: trigger_entered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -6615,7 +6615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8417026767938292853, guid: 1d545a0b40a854c4bbbf7fda831106d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 12.64
       objectReference: {fileID: 0}
     - target: {fileID: 8417026767938292853, guid: 1d545a0b40a854c4bbbf7fda831106d2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7184,6 +7184,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3453959650677072586, guid: dd004407760331b46909805936b80f74, type: 3}
+      propertyPath: doorBool
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8687001567349255171, guid: dd004407760331b46909805936b80f74, type: 3}
       propertyPath: m_Name
       value: Time manager
@@ -7611,7 +7615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2998742055313279325, guid: fe099f87a2bc09e45b36e20b78439ef7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4797893500361341323, guid: fe099f87a2bc09e45b36e20b78439ef7, type: 3}
       propertyPath: m_LocalPosition.x

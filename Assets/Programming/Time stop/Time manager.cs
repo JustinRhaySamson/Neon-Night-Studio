@@ -8,6 +8,7 @@ public class Timemanager : MonoBehaviour
     public float time_amount = 0;
     public bool Time_Stopped = false;
     public bool cooldown = false;
+    public bool doorBool = false;
 
     public Time_Stop_Check_Shooter[] enemies_shooter;
     public Time_Stop_Check_Melee[] enemies_melee;
@@ -32,11 +33,14 @@ public class Timemanager : MonoBehaviour
     {
         slider = GameObject.Find("Slider_new");
         slider_component = slider.GetComponent<Slider>();
-        door = GameObject.Find("TimeStop_Door");
-        door_animator = door.GetComponent<Animator>();
-        door_stopper = GameObject.Find("Door_Stopper");
         player = GameObject.Find("Player");
         trail_script = player.GetComponent<MeshTrail>();
+        if (doorBool)
+        {
+            door = GameObject.Find("TimeStop_Door");
+            door_animator = door.GetComponent<Animator>();
+            door_stopper = GameObject.Find("Door_Stopper");
+        }
     }
 
     // Update is called once per frame
@@ -108,7 +112,7 @@ public class Timemanager : MonoBehaviour
             {
                 bullets[i].StopBullet();
             }
-            if (door_animator != null)
+            if (doorBool)
             {
                 door_animator.SetFloat("Speed", 0);
                 door_stopper.SetActive(false);
@@ -136,7 +140,7 @@ public class Timemanager : MonoBehaviour
         {
             bullets[i].RestartBullet();
         }
-        if (door_animator != null)
+        if (doorBool)
         {
             door_animator.SetFloat("Speed", 1);
             door_stopper.SetActive(true);

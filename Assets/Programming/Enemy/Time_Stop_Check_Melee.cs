@@ -37,16 +37,16 @@ public class Time_Stop_Check_Melee : MonoBehaviour
     {
         look_at.enabled = false;
         nav_Agent.enabled = false;
-        animator.SetFloat("Anim_speed", 0);
-        //sphere_Collider.enabled = false;
+        animator.SetFloat("Animation_Speed", 0);
+        sphere_Collider.enabled = false;
     }
 
     public void RestartEnemy()
     {
         //look_at.enabled = true;
         nav_Agent.enabled = true;
-        animator.SetFloat("Anim_speed", 1);
-        //sphere_Collider.enabled = true;
+        animator.SetFloat("Animation_Speed", 1);
+        sphere_Collider.enabled = true;
     }
 
     public void Die()

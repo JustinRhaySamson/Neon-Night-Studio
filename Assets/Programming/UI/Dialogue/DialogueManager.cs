@@ -40,7 +40,7 @@ public class DialogueManager : MonoBehaviour
 		speakerNumber = 0;
 
 		nameText.text = dialogue.name[0];
-		speakerImage.sprite = speakerSprites[0];;
+		Check_Image();
 
 		sentences.Clear();
 

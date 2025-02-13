@@ -8,11 +8,16 @@ public class Player_Store_Data : MonoBehaviour
     public string scene;
     public string checkpoint_name = "Checkpont 0";
     public string origonal_checkpoint_name = "Checkpont 0";
+    public int enemies_killed;
+
+    Room_Counter room_counter;
 
     void Start()
     {
         scene = SceneManager.GetActiveScene().name;
+        room_counter = GameObject.Find("Room_Counter").GetComponent<Room_Counter>();
         Load_player();
+        
     }
 
     // Update is called once per frame
@@ -39,6 +44,7 @@ public class Player_Store_Data : MonoBehaviour
 
         scene = data.scene;
         checkpoint_name = data.checkpoint_name;
+        room_counter.Set_Enemies_Killed(data.enemies_killed);
 
         //SceneManager.LoadScene(scene);
         
@@ -50,6 +56,8 @@ public class Player_Store_Data : MonoBehaviour
     public void Reset_Level()
     {
         checkpoint_name = origonal_checkpoint_name;
+        scene = SceneManager.GetActiveScene().name;
+        enemies_killed = 0;
         Save_player();
         SceneManager.LoadScene(scene);
     }

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player_Store_Data : MonoBehaviour
 {
+    public bool start_screen = false;
     public string scene;
     public string checkpoint_name = "Checkpont 0";
     public string origonal_checkpoint_name = "Checkpont 0";
@@ -14,10 +15,12 @@ public class Player_Store_Data : MonoBehaviour
 
     void Start()
     {
-        scene = SceneManager.GetActiveScene().name;
-        room_counter = GameObject.Find("Room_Counter").GetComponent<Room_Counter>();
+        if (!start_screen)
+        {
+            scene = SceneManager.GetActiveScene().name;
+            room_counter = GameObject.Find("Room_Counter").GetComponent<Room_Counter>();
+        }
         Load_player();
-        
     }
 
     // Update is called once per frame
@@ -43,6 +46,7 @@ public class Player_Store_Data : MonoBehaviour
         PlayerData data = Save_System.Load_Player();
 
         scene = data.scene;
+        print(data.scene);
         checkpoint_name = data.checkpoint_name;
         room_counter.Set_Enemies_Killed(data.enemies_killed);
 
@@ -60,5 +64,13 @@ public class Player_Store_Data : MonoBehaviour
         enemies_killed = 0;
         Save_player();
         SceneManager.LoadScene(scene);
+    }
+
+    public void New_Game(string level1)
+    {
+        checkpoint_name = origonal_checkpoint_name;
+        scene = level1;
+        enemies_killed = 0;
+        Save_player();
     }
 }

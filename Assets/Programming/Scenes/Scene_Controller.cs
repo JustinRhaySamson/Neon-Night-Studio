@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Controller : MonoBehaviour
 {
+    public GameObject continue_button;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,5 +26,11 @@ public class Scene_Controller : MonoBehaviour
     public void Quit_Game()
     {
         Application.Quit();
+    }
+
+    public void Continue()
+    {
+        PlayerData data = Save_System.Load_Player();
+        SceneManager.LoadScene(data.scene);
     }
 }

@@ -9,10 +9,13 @@ public class Timemanager : MonoBehaviour
     public bool Time_Stopped = false;
     public bool cooldown = false;
     public bool doorBool = false;
+    public bool boss1_scene = false;
 
     public Time_Stop_Check_Shooter[] enemies_shooter;
     public Time_Stop_Check_Melee[] enemies_melee;
     public Basic_Bullet[] bullets;
+    public Explosion_Script[] explosions;
+    
 
     bool LB_Press = false;
     bool RB_Press = false;
@@ -29,6 +32,10 @@ public class Timemanager : MonoBehaviour
     GameObject player;
     MeshTrail trail_script;
 
+    GameObject boss1;
+    Animator boss1_animator;
+    Vortex_Projectiles vortex_Projectiles;
+
     void Start()
     {
         slider = GameObject.Find("Slider_new");
@@ -40,6 +47,12 @@ public class Timemanager : MonoBehaviour
             door = GameObject.Find("TimeStop_Door");
             door_animator = door.GetComponent<Animator>();
             door_stopper = GameObject.Find("Door_Stopper");
+        }
+        if (boss1_scene)
+        {
+            boss1 = GameObject.Find("YOKAI_BOSS_ONI");
+            boss1_animator = boss1.GetComponent<Animator>();
+            vortex_Projectiles = GameObject.Find("Vortex Bullet Spawner").GetComponent<Vortex_Projectiles>();
         }
     }
 
@@ -112,10 +125,19 @@ public class Timemanager : MonoBehaviour
             {
                 bullets[i].StopBullet();
             }
+            for (int i = 0; i < explosions.Length; i++)
+            {
+                explosions[i].Stop_Explosion();
+            }
             if (doorBool)
             {
                 door_animator.SetFloat("Speed", 0);
                 door_stopper.SetActive(false);
+            }
+            if(boss1_scene)
+            {
+                vortex_Projectiles.StopAllCoroutines();
+                boss1_animator.SetFloat("Speed", 0);
             }
             StartCoroutine(ResetTime(time_amount));
             StartCoroutine(Cooldown_Timer());
@@ -140,10 +162,19 @@ public class Timemanager : MonoBehaviour
         {
             bullets[i].RestartBullet();
         }
+        for (int i = 0; i < explosions.Length; i++)
+        {
+            explosions[i].Restart_Explosion();
+        }
         if (doorBool)
         {
             door_animator.SetFloat("Speed", 1);
             door_stopper.SetActive(true);
+        }
+        if (boss1_scene)
+        {
+            vortex_Projectiles.Restart_Shooting();
+            boss1_animator.SetFloat("Speed", 1);
         }
     }
 

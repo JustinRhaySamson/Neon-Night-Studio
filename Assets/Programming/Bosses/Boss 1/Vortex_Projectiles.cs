@@ -14,6 +14,7 @@ public class Vortex_Projectiles : MonoBehaviour
 
     Transform parent_trasnform;
     int value = 0;
+    bool started = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,7 @@ public class Vortex_Projectiles : MonoBehaviour
     public void Start_Shooting()
     {
         value = 0;
+        started = true;
         StartCoroutine(Shooting());
     }
 
@@ -65,6 +67,15 @@ public class Vortex_Projectiles : MonoBehaviour
 
     public void Stop_Shooting()
     {
+        started = false;
         StopAllCoroutines();
+    }
+
+    public void Restart_Shooting()
+    {
+        if (started)
+        {
+            StartCoroutine(Shooting());
+        }
     }
 }

@@ -131,7 +131,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Vortex_Of_Pain
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7203421014798627406}
   m_Solo: 0
@@ -180,7 +183,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Death_Dive
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 964632615586876427}
   m_Solo: 0
@@ -387,7 +393,19 @@ AnimatorController:
   m_PrefabAsset: {fileID: 0}
   m_Name: YOKAI_BOSS_ONI
   serializedVersion: 5
-  m_AnimatorParameters: []
+  m_AnimatorParameters:
+  - m_Name: Death_Dive
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: Vortex_Of_Pain
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Phase 1
@@ -527,13 +545,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 964632615586876427}
-    m_Position: {x: 430, y: -70, z: 0}
+    m_Position: {x: 150, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6053118136693203101}
-    m_Position: {x: 580, y: -150, z: 0}
+    m_Position: {x: 370, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7203421014798627406}
-    m_Position: {x: 300, y: -150, z: 0}
+    m_Position: {x: -60, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7425758813159285511}
     m_Position: {x: 270, y: 110, z: 0}
@@ -542,13 +560,13 @@ AnimatorStateMachine:
     m_Position: {x: 270, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3027353372945799021}
-    m_Position: {x: 30, y: -150, z: 0}
+    m_Position: {x: -270, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7864077710915018491}
     m_Position: {x: 50, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7042537704642239414}
-    m_Position: {x: 630, y: -20, z: 0}
+    m_Position: {x: 450, y: -30, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -3753203471990281650}

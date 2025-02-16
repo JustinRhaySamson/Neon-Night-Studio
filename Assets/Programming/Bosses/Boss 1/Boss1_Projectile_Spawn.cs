@@ -48,5 +48,10 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
         weapon_collider.enabled = false;
     }
 
+    public void Rolling_Thunder_Bullets()
+    {
+        Vortex_Projectiles vortex_Projectiles = rotating_spawner.GetComponent<Vortex_Projectiles>();
+        vortex_Projectiles.Rolling_Tunder_Bullets();
+    }
 
 }

@@ -10,6 +10,7 @@ public class Vortex_Projectiles : MonoBehaviour
     public float force = 1;
     public float bullet_number = 8;
     public int roating_speed = 1;
+    public float bullet_scale = 0.5f;
 
 
     Transform parent_trasnform;
@@ -49,14 +50,14 @@ public class Vortex_Projectiles : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(shooting_time);
-            transform.rotation = Quaternion.Euler(0, 0 + value, 0);
+            Quaternion rotation_angle = Quaternion.Euler(0, 0 + value, 0);
             for (int i = 0; i < bullet_number; i++)
             {
                 GameObject bullet = Instantiate(projectile, transform.position,
-                Quaternion.Euler(rot_trans.rotation.x, rot_trans.rotation.y + i * 360/bullet_number + value,
-                rot_trans.rotation.z)) ;
+                Quaternion.Euler(rotation_angle.x, rotation_angle.y + i * 360/bullet_number + value,
+                rotation_angle.z)) ;
 
-                bullet.transform.localScale = new Vector3 (.5f,.5f,.5f);
+                bullet.transform.localScale = new Vector3 (bullet_scale, bullet_scale, bullet_scale);
 
                 Rigidbody rb = bullet.GetComponent<Rigidbody>();
                 rb.AddForce(bullet.transform.forward * force, ForceMode.Impulse);
@@ -76,6 +77,21 @@ public class Vortex_Projectiles : MonoBehaviour
         if (started)
         {
             StartCoroutine(Shooting());
+        }
+    }
+
+    public void Rolling_Tunder_Bullets()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            GameObject bullet = Instantiate(projectile, transform.position,
+            Quaternion.Euler(0, 90 + 180*i,
+            0));
+
+            bullet.transform.localScale = new Vector3(bullet_scale, bullet_scale, bullet_scale);
+
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            rb.AddForce(bullet.transform.forward * force, ForceMode.Impulse);
         }
     }
 }

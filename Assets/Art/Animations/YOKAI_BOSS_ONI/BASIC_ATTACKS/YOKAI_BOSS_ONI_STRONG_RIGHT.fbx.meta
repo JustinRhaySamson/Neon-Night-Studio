@@ -57,6 +57,20 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0
+        functionName: Reset_Damping
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.43036377
+        functionName: Damping_0
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.49064508
         functionName: Activate_Weapon
         data: 
@@ -64,8 +78,15 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.59999996
+      - time: 0.8656827
         functionName: Deactivate_Weapon
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.98745275
+        functionName: Chain_Attack_Up
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

@@ -35,6 +35,7 @@ public class Timemanager : MonoBehaviour
     GameObject boss1;
     Animator boss1_animator;
     Vortex_Projectiles vortex_Projectiles;
+    float boss1_speed = 0;
 
     void Start()
     {
@@ -136,8 +137,11 @@ public class Timemanager : MonoBehaviour
             }
             if(boss1_scene)
             {
+                boss1_speed = boss1_animator.GetFloat("Speed");
                 vortex_Projectiles.StopAllCoroutines();
                 boss1_animator.SetFloat("Speed", 0);
+                Look_At boss1_look = boss1.gameObject.GetComponent<Look_At>();
+                boss1_look.enabled = false;
             }
             StartCoroutine(ResetTime(time_amount));
             StartCoroutine(Cooldown_Timer());
@@ -174,7 +178,9 @@ public class Timemanager : MonoBehaviour
         if (boss1_scene)
         {
             vortex_Projectiles.Restart_Shooting();
-            boss1_animator.SetFloat("Speed", 1);
+            boss1_animator.SetFloat("Speed", boss1_speed);
+            Look_At boss1_look = boss1.gameObject.GetComponent<Look_At>();
+            boss1_look.enabled = true;
         }
     }
 

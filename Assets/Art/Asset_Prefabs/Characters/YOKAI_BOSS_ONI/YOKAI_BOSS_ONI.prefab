@@ -2309,6 +2309,7 @@ GameObject:
   - component: {fileID: 7506594792169176557}
   - component: {fileID: 3974597696625074066}
   - component: {fileID: 170766678429619516}
+  - component: {fileID: 981757057228711349}
   m_Layer: 7
   m_Name: YOKAI_BOSS_ONI
   m_TagString: Untagged
@@ -2374,6 +2375,19 @@ MonoBehaviour:
   spwaner1: {fileID: 5294653878683888721}
   rotating_spawner: {fileID: 4525120052981980913}
   weapon_collider: {fileID: 1103825648655304118}
+--- !u!114 &981757057228711349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7397641826439979445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0fdc4aac0c71c24d8f9c7f24b6cb85d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damping: 7
 --- !u!1 &7473336548515530664
 GameObject:
   m_ObjectHideFlags: 0

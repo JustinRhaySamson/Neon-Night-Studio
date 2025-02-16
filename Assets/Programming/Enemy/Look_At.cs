@@ -8,8 +8,10 @@ public class Look_At : MonoBehaviour
     public int damping;
     GameObject player;
     Transform player_transform;
+    int stored_damping;
     void Start()
     {
+        stored_damping = damping;
         player = GameObject.Find("Player");
         player_transform = player.transform;
     }
@@ -17,13 +19,21 @@ public class Look_At : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
         //transform.rotation = Quaternion.Euler(0, transform.rotation.y, transform.rotation.z);
         //transform.LookAt(player_transform.position, Vector3.up);
         var lookPos = player_transform.position - transform.position;
         lookPos.y = 0;
         var rotation = Quaternion.LookRotation(lookPos);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+    }
+
+    public void Damping_0()
+    {
+        damping = 0;
+    }
+
+    public void Reset_Damping()
+    {
+        damping = stored_damping;
     }
 }

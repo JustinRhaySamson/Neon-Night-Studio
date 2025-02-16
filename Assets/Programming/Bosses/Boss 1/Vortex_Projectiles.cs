@@ -13,13 +13,12 @@ public class Vortex_Projectiles : MonoBehaviour
     public float bullet_scale = 0.5f;
 
 
-    Transform parent_trasnform;
     int value = 0;
     bool started = false;
     // Start is called before the first frame update
     void Start()
     {
-        parent_trasnform = transform.parent;
+        
     }
 
     // Update is called once per frame
@@ -30,12 +29,12 @@ public class Vortex_Projectiles : MonoBehaviour
 
     public void DEParent()
     {
-        transform.parent = null;
+        
     }
 
     public void INParent()
     {
-        transform.parent = parent_trasnform;
+        
     }
 
     public void Start_Shooting()
@@ -85,7 +84,7 @@ public class Vortex_Projectiles : MonoBehaviour
         for (int i = 0; i < 2; i++)
         {
             GameObject bullet = Instantiate(projectile, transform.position,
-            Quaternion.Euler(0, 90 + 180*i,
+            Quaternion.Euler(0, transform.parent.eulerAngles.y - 90 + 180*i,
             0));
 
             bullet.transform.localScale = new Vector3(bullet_scale, bullet_scale, bullet_scale);

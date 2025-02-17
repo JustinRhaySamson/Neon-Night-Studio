@@ -20,6 +20,7 @@ public class Boss_HP : MonoBehaviour
         slider_animator = slider.GetComponent <Animator>();
         time_manager = GameObject.Find("Time manager");
         time_Script = time_manager.GetComponent<Timemanager>();
+        time_Script.Activate_Boss1(gameObject);
     }
 
     // Update is called once per frame

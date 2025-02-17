@@ -51,13 +51,6 @@ public class Timemanager : MonoBehaviour
             door_animator = door.GetComponent<Animator>();
             door_stopper = GameObject.Find("Door_Stopper");
         }
-        if (boss1_scene)
-        {
-            boss1 = GameObject.Find("YOKAI_BOSS_ONI");
-            boss1_animator = boss1.GetComponent<Animator>();
-            vortex_Projectiles = GameObject.Find("Vortex Bullet Spawner").GetComponent<Vortex_Projectiles>();
-            boss1_State_Manager = boss1.GetComponent<Boss1_State_Manager>();
-        }
     }
 
     // Update is called once per frame
@@ -196,5 +189,14 @@ public class Timemanager : MonoBehaviour
     {
         yield return new WaitForSeconds(7.1f);
         cooldown = false;
+    }
+
+    public void Activate_Boss1(GameObject boss)
+    {
+        boss1_scene = true;
+        boss1 = boss;
+        boss1_animator = boss1.GetComponent<Animator>();
+        vortex_Projectiles = GameObject.Find("Vortex Bullet Spawner").GetComponent<Vortex_Projectiles>();
+        boss1_State_Manager = boss1.GetComponent<Boss1_State_Manager>();
     }
 }

@@ -10,15 +10,23 @@ public class Boss1_State_Manager : MonoBehaviour
     public Boss1_State_Strong_Right strong_Right = new Boss1_State_Strong_Right();
     public Boss1_State_Death_Dive death_Dive = new Boss1_State_Death_Dive();
     public Boos1_State_Rolling_Thunder rolling_Thunder = new Boos1_State_Rolling_Thunder();
+    public Boss1_State_Center_Dash center_Dash = new Boss1_State_Center_Dash();
+    public Boss1_State_Vortex_Of_Pain vortex_Of_Pain = new Boss1_State_Vortex_Of_Pain();
 
     public Animator animator;
     public int random_number = 0;
     public int chain_attack = 1;
     public int random_chain_attack = 1;
     public bool inside_trigger = false;
-    // Start is called before the first frame update
+    public Transform room_center;
+    public Look_At look_at;
+    
+
+    public bool dashing_to_center = false;
+    
     void Start()
     {
+        look_at = gameObject.GetComponent<Look_At>();
         currentState = idle_state;
         currentState.EnterState(this);
         StartCoroutine(Timer());
@@ -28,6 +36,13 @@ public class Boss1_State_Manager : MonoBehaviour
     void Update()
     {
         currentState.UpdateState(this);
+
+        if (dashing_to_center)
+        {
+            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * 3000, ForceMode.Impulse);
+            look_at.Look_At_Center(room_center);
+        }
     }
 
     public void SwitchState(Boss1_Base_State state)
@@ -80,5 +95,16 @@ public class Boss1_State_Manager : MonoBehaviour
     {
         currentState = idle_state;
         currentState.EnterState(this);
+    }
+
+    public void Look_At_Center_State()
+    {
+        
+        dashing_to_center = true;
+    }
+
+    public void Look_At_Player_State()
+    {
+        look_at.Look_At_Player();
     }
 }

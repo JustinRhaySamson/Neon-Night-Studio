@@ -7,7 +7,7 @@ public class Look_At : MonoBehaviour
     // Start is called before the first frame update
     public int damping;
     GameObject player;
-    Transform player_transform;
+    public Transform player_transform;
     int stored_damping;
     void Start()
     {
@@ -35,5 +35,20 @@ public class Look_At : MonoBehaviour
     public void Reset_Damping()
     {
         damping = stored_damping;
+    }
+
+    public void Set_Damping(int number)
+    {
+        damping = number;
+    }
+
+    public void Look_At_Center(Transform center)
+    {
+        player_transform = center;
+    }
+
+    public void Look_At_Player()
+    {
+        player_transform = player.transform;
     }
 }

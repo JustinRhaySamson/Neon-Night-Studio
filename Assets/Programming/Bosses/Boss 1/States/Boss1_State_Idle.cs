@@ -9,6 +9,8 @@ public class Boss1_State_Idle : Boss1_Base_State
         state.animator.SetBool("Strong_Right", false);
         state.animator.SetBool("Death_Dive", false);
         state.animator.SetBool("Rolling_Thunder", false);
+        state.animator.SetBool("Vortex_Of_Pain", false);
+        state.animator.SetBool("Dash", false);
     }
 
     public override void UpdateState(Boss1_State_Manager state)
@@ -58,6 +60,7 @@ public class Boss1_State_Idle : Boss1_Base_State
                     state.SwitchState(state.rolling_Thunder);
                     break;
                 case 1:
+                    state.SwitchState(state.center_Dash);
                     break;
             }
         }

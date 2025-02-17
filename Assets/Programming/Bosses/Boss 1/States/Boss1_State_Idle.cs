@@ -11,6 +11,7 @@ public class Boss1_State_Idle : Boss1_Base_State
         state.animator.SetBool("Rolling_Thunder", false);
         state.animator.SetBool("Vortex_Of_Pain", false);
         state.animator.SetBool("Dash", false);
+        state.animator.SetBool("Running", true);
     }
 
     public override void UpdateState(Boss1_State_Manager state)
@@ -60,7 +61,10 @@ public class Boss1_State_Idle : Boss1_Base_State
                     state.SwitchState(state.rolling_Thunder);
                     break;
                 case 1:
-                    state.SwitchState(state.center_Dash);
+                    if(state.attacks_made >= 5)
+                    {
+                        state.SwitchState(state.center_Dash);
+                    }
                     break;
             }
         }

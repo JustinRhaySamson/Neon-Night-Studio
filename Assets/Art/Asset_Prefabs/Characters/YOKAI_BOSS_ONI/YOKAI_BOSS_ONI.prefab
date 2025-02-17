@@ -2346,9 +2346,10 @@ GameObject:
   - component: {fileID: 8311137597635648508}
   - component: {fileID: 7574042710869655460}
   - component: {fileID: 2640708276713273852}
+  - component: {fileID: 7280549729951358422}
   m_Layer: 7
   m_Name: YOKAI_BOSS_ONI
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2426,6 +2427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damping: 7
+  player_transform: {fileID: 0}
 --- !u!135 &3072369096483412730
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2462,10 +2464,13 @@ MonoBehaviour:
   animator: {fileID: 3974597696625074066}
   random_number: 0
   chain_attack: 1
+  attacks_made: 0
   random_chain_attack: 1
   inside_trigger: 0
   room_center: {fileID: 0}
   look_at: {fileID: 981757057228711349}
+  force: 3000
+  dashing_to_center: 0
 --- !u!136 &7574042710869655460
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2516,6 +2521,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &7280549729951358422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7397641826439979445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0198493206153694badfa657317a1994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 120
+  maxHP: 120
 --- !u!1 &7473336548515530664
 GameObject:
   m_ObjectHideFlags: 0

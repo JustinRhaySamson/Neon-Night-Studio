@@ -12,4 +12,8 @@ public class Dialogue
 	[TextArea(3, 10)]
 	public string[] sentences;
 
+	public bool events;
+
+	public Dialogue_Events dialogue_Events;
+
 }

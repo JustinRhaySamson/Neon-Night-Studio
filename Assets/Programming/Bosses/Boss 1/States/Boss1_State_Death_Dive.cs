@@ -9,6 +9,7 @@ public class Boss1_State_Death_Dive : Boss1_Base_State
         state.animator.SetBool("Death_Dive", true);
         state.chain_attack = 1;
         state.random_chain_attack = Random.Range(1, 4);
+        state.attacks_made++;
     }
 
     public override void UpdateState(Boss1_State_Manager state)

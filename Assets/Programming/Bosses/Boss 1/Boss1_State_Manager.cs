@@ -12,22 +12,25 @@ public class Boss1_State_Manager : MonoBehaviour
     public Boos1_State_Rolling_Thunder rolling_Thunder = new Boos1_State_Rolling_Thunder();
     public Boss1_State_Center_Dash center_Dash = new Boss1_State_Center_Dash();
     public Boss1_State_Vortex_Of_Pain vortex_Of_Pain = new Boss1_State_Vortex_Of_Pain();
+    public Boss1_State_Inactive inactive_state = new Boss1_State_Inactive();
 
     public Animator animator;
     public int random_number = 0;
     public int chain_attack = 1;
+    public int attacks_made = 0;
     public int random_chain_attack = 1;
     public bool inside_trigger = false;
     public Transform room_center;
     public Look_At look_at;
-    
+    public int force = 3000;
+
 
     public bool dashing_to_center = false;
     
     void Start()
     {
         look_at = gameObject.GetComponent<Look_At>();
-        currentState = idle_state;
+        currentState = inactive_state;
         currentState.EnterState(this);
         StartCoroutine(Timer());
     }
@@ -40,7 +43,7 @@ public class Boss1_State_Manager : MonoBehaviour
         if (dashing_to_center)
         {
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 3000, ForceMode.Impulse);
+            rb.AddForce(transform.forward * force, ForceMode.Impulse);
             look_at.Look_At_Center(room_center);
         }
     }
@@ -49,6 +52,7 @@ public class Boss1_State_Manager : MonoBehaviour
     {
         currentState = state;
         state.EnterState(this);
+        print("attacks made: " + attacks_made);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -99,8 +103,15 @@ public class Boss1_State_Manager : MonoBehaviour
 
     public void Look_At_Center_State()
     {
-        
         dashing_to_center = true;
+    }
+
+    public void No_Look_Center()
+    {
+        dashing_to_center = false;
+        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+        Look_At_Player_State();
     }
 
     public void Look_At_Player_State()

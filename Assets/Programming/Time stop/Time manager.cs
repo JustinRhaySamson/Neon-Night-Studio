@@ -35,7 +35,9 @@ public class Timemanager : MonoBehaviour
     GameObject boss1;
     Animator boss1_animator;
     Vortex_Projectiles vortex_Projectiles;
+    Boss1_State_Manager boss1_State_Manager;
     float boss1_speed = 0;
+    int boss1_force = 0;
 
     void Start()
     {
@@ -54,6 +56,7 @@ public class Timemanager : MonoBehaviour
             boss1 = GameObject.Find("YOKAI_BOSS_ONI");
             boss1_animator = boss1.GetComponent<Animator>();
             vortex_Projectiles = GameObject.Find("Vortex Bullet Spawner").GetComponent<Vortex_Projectiles>();
+            boss1_State_Manager = boss1.GetComponent<Boss1_State_Manager>();
         }
     }
 
@@ -142,6 +145,10 @@ public class Timemanager : MonoBehaviour
                 boss1_animator.SetFloat("Speed", 0);
                 Look_At boss1_look = boss1.gameObject.GetComponent<Look_At>();
                 boss1_look.enabled = false;
+                boss1_force = boss1_State_Manager.force;
+                boss1_State_Manager.force = 0;
+                Rigidbody rb = boss1.GetComponent<Rigidbody>();
+                rb.velocity = Vector3.zero;
             }
             StartCoroutine(ResetTime(time_amount));
             StartCoroutine(Cooldown_Timer());
@@ -181,6 +188,7 @@ public class Timemanager : MonoBehaviour
             boss1_animator.SetFloat("Speed", boss1_speed);
             Look_At boss1_look = boss1.gameObject.GetComponent<Look_At>();
             boss1_look.enabled = true;
+            boss1_State_Manager.force = boss1_force;
         }
     }
 

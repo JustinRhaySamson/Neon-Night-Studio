@@ -85,6 +85,10 @@ public class DialogueManager : MonoBehaviour
 	{
 		playerController.Change_Dialogue_False();
 		animator.SetBool("IsOpen", false);
+        if (dialogue1.events)
+        {
+			dialogue1.dialogue_Events.finish_dialogue.Invoke();
+        }
 	}
 
 	void Check_Image()

@@ -9,6 +9,7 @@ public class Boss1_State_Strong_Right : Boss1_Base_State
         state.animator.SetBool("Strong_Right", true);
         state.chain_attack = 1;
         state.random_chain_attack = Random.Range(1, 3);
+        state.attacks_made++;
     }
 
     public override void UpdateState(Boss1_State_Manager state)

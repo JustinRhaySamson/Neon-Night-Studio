@@ -19,10 +19,11 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: Event Reset_Damping has a time (6.344046) outside the
-      clip's valid range (0.000000..2.700000). It will never be firedEvent Look_At_Player
-      has a time (6.218266) outside the clip's valid range (0.000000..2.700000).
-      It will never be fired
+    animationImportWarnings: Event Look_At_Player has a time (5.720238) outside the
+      clip's valid range (0.000000..2.700000). It will never be firedEvent Reset_Damping
+      has a time (6.056722) outside the clip's valid range (0.000000..2.700000).
+      It will never be firedEvent Back_To_Idle has a time (6.374052) outside the
+      clip's valid range (0.000000..2.700000). It will never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -62,6 +63,13 @@ ModelImporter:
       events:
       - time: 0
         functionName: Damping_0
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0
+        functionName: No_Look_Center
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

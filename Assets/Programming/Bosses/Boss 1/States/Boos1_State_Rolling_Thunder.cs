@@ -7,6 +7,7 @@ public class Boos1_State_Rolling_Thunder : Boss1_Base_State
     public override void EnterState(Boss1_State_Manager state)
     {
         state.animator.SetBool("Rolling_Thunder", true);
+        state.attacks_made++;
     }
 
     public override void UpdateState(Boss1_State_Manager state)

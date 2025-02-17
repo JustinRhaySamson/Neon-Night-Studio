@@ -9,12 +9,13 @@ public class Boss1_State_Manager : MonoBehaviour
     public Boss1_State_Idle idle_state = new Boss1_State_Idle();
     public Boss1_State_Strong_Right strong_Right = new Boss1_State_Strong_Right();
     public Boss1_State_Death_Dive death_Dive = new Boss1_State_Death_Dive();
+    public Boos1_State_Rolling_Thunder rolling_Thunder = new Boos1_State_Rolling_Thunder();
 
     public Animator animator;
     public int random_number = 0;
     public int chain_attack = 1;
     public int random_chain_attack = 1;
-    public bool inside_trigger;
+    public bool inside_trigger = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,5 +74,11 @@ public class Boss1_State_Manager : MonoBehaviour
             random_number = Random.Range(0, 2);
             currentState.Timer_Inside_Trigger(this);
         }
+    }
+
+    public void Back_To_Idle()
+    {
+        currentState = idle_state;
+        currentState.EnterState(this);
     }
 }

@@ -530,6 +530,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1581827634461900348}
   m_LocalEulerAnglesHint: {x: -8.155832, y: 3.7605813, z: 1.4998522}
+--- !u!1 &920192562224409953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7840784507664224630}
+  m_Layer: 7
+  m_Name: Explosion Spawner2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7840784507664224630
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920192562224409953}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.8719534, y: -0.010616093, z: 0.48947355, w: -0.00045093888}
+  m_LocalPosition: {x: -0.064259864, y: -3.6621807, z: -0.032518867}
+  m_LocalScale: {x: 27.355324, y: 27.35534, z: 27.355307}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6887005767637120591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1188492350212380611
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,6 +1024,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7471903808489863922}
+  - {fileID: 7840784507664224630}
   m_Father: {fileID: 7506594792169176557}
   m_LocalEulerAnglesHint: {x: 179.359, y: -58.609985, z: 1.0359955}
 --- !u!23 &336511726148419794
@@ -2310,6 +2342,10 @@ GameObject:
   - component: {fileID: 3974597696625074066}
   - component: {fileID: 170766678429619516}
   - component: {fileID: 981757057228711349}
+  - component: {fileID: 3072369096483412730}
+  - component: {fileID: 8311137597635648508}
+  - component: {fileID: 7574042710869655460}
+  - component: {fileID: 2640708276713273852}
   m_Layer: 7
   m_Name: YOKAI_BOSS_ONI
   m_TagString: Untagged
@@ -2373,8 +2409,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spwaner1: {fileID: 5294653878683888721}
+  spwaner2: {fileID: 920192562224409953}
   rotating_spawner: {fileID: 4525120052981980913}
   weapon_collider: {fileID: 1103825648655304118}
+  weapon_collider2: {fileID: 5742557176198632129}
 --- !u!114 &981757057228711349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2388,6 +2426,94 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damping: 7
+--- !u!135 &3072369096483412730
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7397641826439979445}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8311137597635648508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7397641826439979445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dbb6d2f6ae7143458e5598ec56896b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3974597696625074066}
+  random_number: 0
+  chain_attack: 1
+  random_chain_attack: 1
+  inside_trigger: 0
+--- !u!136 &7574042710869655460
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7397641826439979445}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.67
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.33, z: 0}
+--- !u!54 &2640708276713273852
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7397641826439979445}
+  serializedVersion: 4
+  m_Mass: 1000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!1 &7473336548515530664
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,8 +5,10 @@ using UnityEngine;
 public class Boss1_Projectile_Spawn : MonoBehaviour
 {
     public GameObject spwaner1;
+    public GameObject spwaner2;
     public GameObject rotating_spawner;
     public Collider weapon_collider;
+    public Collider weapon_collider2;
     void Start()
     {
         
@@ -54,4 +56,14 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
         vortex_Projectiles.Rolling_Tunder_Bullets();
     }
 
+    public void Spawn_Explosion2(GameObject explosion)
+    {
+        weapon_collider2.enabled = false;
+        Instantiate(explosion, spwaner2.transform);
+    }
+
+    public void Activate_Weapon2()
+    {
+        weapon_collider2.enabled = true;
+    }
 }

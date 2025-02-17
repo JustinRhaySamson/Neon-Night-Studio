@@ -6,12 +6,14 @@ using UnityEngine.InputSystem;
 
 public class Show_Controls : MonoBehaviour
 {
-    GameObject controls;
+    public GameObject controls;
     bool active = false;
+    public GameObject reset_button;
+    bool reset_active = false;
     void Start()
     {
-        controls = GameObject.Find("Controls");
         controls.SetActive(false);
+        reset_button.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,6 +24,15 @@ public class Show_Controls : MonoBehaviour
             print("I pressed Menu");
             active = !active;
             controls.SetActive(active);
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            reset_active = !reset_active;
+            reset_button.SetActive(reset_active);
         }
     }
 }

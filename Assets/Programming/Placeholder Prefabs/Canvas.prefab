@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -273.9, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -275.96185, y: 4}
+  m_SizeDelta: {x: 104.1237, y: 135.343}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2922207887282371000
 CanvasRenderer:
@@ -862,11 +862,11 @@ MonoBehaviour:
   animator: {fileID: 4494644839002261217}
   playerController: {fileID: 0}
   speakers:
-  - Amogus 1
-  - Amogus 2
+  - Player
+  - Boss1
   speakerSprites:
-  - {fileID: 21300000, guid: 9b16ebddc2539a04fbd27bba4a696223, type: 3}
-  - {fileID: 21300000, guid: ee16069b27c9f114185366a89333f79e, type: 3}
+  - {fileID: 21300000, guid: 9419d06b96a35854185cb0ef4a0e4e4f, type: 3}
+  - {fileID: 21300000, guid: 3874767671406344bb9cf3a6960ba3eb, type: 3}
 --- !u!1 &2824919990452014463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,6 +1631,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daae656e3ccdec74ba3886b576fc19ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controls: {fileID: 7836836771707016711}
+  reset_button: {fileID: 7389223730836123150}
 --- !u!1 &4244475502161394630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2507,7 +2509,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3199,12 +3201,12 @@ GameObject:
   - component: {fileID: 3284991264885277896}
   - component: {fileID: 8681391808019705322}
   m_Layer: 5
-  m_Name: Reset Scene
+  m_Name: Reset Scene Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6539562456160317154
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3372,7 +3374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8141658783296111382
 RectTransform:
   m_ObjectHideFlags: 0

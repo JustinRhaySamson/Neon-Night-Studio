@@ -742,8 +742,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name:
-    - Amogus 1
-    - Amogus 2
+    - Player
+    - Boss1
     SentenceNameChange: 03000000
     sentences:
     - U are sus
@@ -7621,16 +7621,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name:
-    - Amogus 1
-    - Amogus 2
-    - Amogus 1
+    - Player
+    - Boss1
+    - Player
     SentenceNameChange: 020000000400000006000000
     sentences:
     - I hate u kiddo
     - Same here
     - brother
     - I hate u
-    - fuk u
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nisl
+      ut dolor interdum lobortis. Fusce sed quam et diam vulputate placerat et sed
+      magna. Nulla convallis id sapien eget vulputate.
     events: 0
     dialogue_Events: {fileID: 0}
 --- !u!4 &1567812222
@@ -8608,6 +8610,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7389223730836123150, guid: a5ad73a100f72f5428fdf466c444d671, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7555797223621506803, guid: a5ad73a100f72f5428fdf466c444d671, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8686,6 +8692,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7555797223621506803, guid: a5ad73a100f72f5428fdf466c444d671, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836836771707016711, guid: a5ad73a100f72f5428fdf466c444d671, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7977743208436460577, guid: a5ad73a100f72f5428fdf466c444d671, type: 3}

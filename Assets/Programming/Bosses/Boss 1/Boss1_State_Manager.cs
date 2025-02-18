@@ -23,6 +23,7 @@ public class Boss1_State_Manager : MonoBehaviour
     public Transform room_center;
     public Look_At look_at;
     public int force = 3000;
+    public GameObject dash_VFX;
 
 
     public bool dashing_to_center = false;
@@ -120,5 +121,14 @@ public class Boss1_State_Manager : MonoBehaviour
     public void Look_At_Player_State()
     {
         look_at.Look_At_Player();
+    }
+
+    public void Start_Dash_VFX()
+    {
+        dash_VFX.SetActive(true);
+    }
+    public void Stop_Dash_VFX()
+    {
+        dash_VFX.SetActive(false);
     }
 }

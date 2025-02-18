@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VFX;
 
 public class Timemanager : MonoBehaviour
 {
@@ -125,6 +126,16 @@ public class Timemanager : MonoBehaviour
             for (int i = 0; i < explosions.Length; i++)
             {
                 explosions[i].Stop_Explosion();
+                GameObject oni_Shockwave = explosions[i].transform.Find("Oni_Shockwave").gameObject; ;
+                GameObject electricity = oni_Shockwave.transform.Find("Electricity").gameObject;
+                GameObject indicator = oni_Shockwave.transform.Find("Indicator").gameObject;
+                GameObject sparks = oni_Shockwave.transform.Find("Sparks").gameObject;
+                ParticleSystem electricity_system = electricity.GetComponent<ParticleSystem>();
+                ParticleSystem indicator_system = indicator.GetComponent<ParticleSystem>();
+                ParticleSystem sparks_system = sparks.GetComponent<ParticleSystem>();
+                electricity_system.Pause(true);
+                indicator_system.Pause(true);
+                sparks_system.Pause(true);
             }
             if (doorBool)
             {
@@ -143,6 +154,7 @@ public class Timemanager : MonoBehaviour
                 Rigidbody rb = boss1.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.zero;
             }
+            
             StartCoroutine(ResetTime(time_amount));
             StartCoroutine(Cooldown_Timer());
         } 
@@ -169,6 +181,16 @@ public class Timemanager : MonoBehaviour
         for (int i = 0; i < explosions.Length; i++)
         {
             explosions[i].Restart_Explosion();
+            GameObject oni_Shockwave = explosions[i].transform.Find("Oni_Shockwave").gameObject; ;
+            GameObject electricity = oni_Shockwave.transform.Find("Electricity").gameObject;
+            GameObject indicator = oni_Shockwave.transform.Find("Indicator").gameObject;
+            GameObject sparks = oni_Shockwave.transform.Find("Sparks").gameObject;
+            ParticleSystem electricity_system = electricity.GetComponent<ParticleSystem>();
+            ParticleSystem indicator_system = indicator.GetComponent<ParticleSystem>();
+            ParticleSystem sparks_system = sparks.GetComponent<ParticleSystem>();
+            electricity_system.Play(true);
+            indicator_system.Play(true);
+            sparks_system.Play(true);
         }
         if (doorBool)
         {

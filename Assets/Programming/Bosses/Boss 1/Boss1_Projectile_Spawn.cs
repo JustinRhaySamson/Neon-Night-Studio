@@ -23,7 +23,8 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
     public void Spawn_Explosion(GameObject explosion)
     {
         Deactivate_Weapon();
-        Instantiate(explosion, spwaner1.transform);
+        GameObject explosion_object = Instantiate(explosion, spwaner1.transform.position, Quaternion.Euler(0,0,0));
+        explosion_object.transform.localScale = transform.localScale;
     }
 
     public void Spawn_Rotation()
@@ -59,7 +60,8 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
     public void Spawn_Explosion2(GameObject explosion)
     {
         weapon_collider2.enabled = false;
-        Instantiate(explosion, spwaner2.transform);
+        GameObject explosion_object = Instantiate(explosion, spwaner2.transform.position, Quaternion.Euler(0, 0, 0));
+        explosion_object.transform.localScale = transform.localScale;
     }
 
     public void Activate_Weapon2()

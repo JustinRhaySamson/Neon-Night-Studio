@@ -39,7 +39,10 @@ public class Boss1_State_Manager : MonoBehaviour
     void Update()
     {
         currentState.UpdateState(this);
+    }
 
+    private void FixedUpdate()
+    {
         if (dashing_to_center)
         {
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
@@ -88,7 +91,7 @@ public class Boss1_State_Manager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1.2f);
+            yield return new WaitForSeconds(.8f);
             print("The one bool in the state machine is: " + inside_trigger);
             random_number = Random.Range(0, 2);
             currentState.Timer_Inside_Trigger(this);

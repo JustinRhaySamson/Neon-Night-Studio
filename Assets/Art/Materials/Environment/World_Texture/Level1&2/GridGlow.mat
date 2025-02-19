@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RoadTest
+  m_Name: GridGlow
   m_Shader: {fileID: -6465566751694194690, guid: b22753eb34ffb9741aecdb6421e79836, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Base_Map:
-        m_Texture: {fileID: 2800000, guid: dffef66376be4fa480fb02b19edbe903, type: 3}
+        m_Texture: {fileID: 2800000, guid: c752e5c1f028c7a4cb91783d234882e5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Emission_Map:
-        m_Texture: {fileID: 2800000, guid: 15248e5c6e8cd11438453e9d297d6984, type: 3}
+        m_Texture: {fileID: 2800000, guid: 37e2774e4fecadf4899e383562adbcb3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -72,7 +72,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal_Map:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e41cc839ec021e84f911e188116e380f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -105,7 +105,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Adjust: 1
+    - _Adjust: 0.99
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -120,14 +120,14 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FlashTime: 1
+    - _FlashTime: 2.9
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
     - _MetallicControl: 0
-    - _NoiseScale: 1
-    - _Normal_Value: 1
+    - _NoiseScale: 44.4
+    - _Normal_Value: 0.29
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -145,10 +145,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.19999999, g: 0.19999999, b: 0.19999999, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissionColour: {r: 0.60839295, g: 0, b: 0, a: 1}
+    - _EmissionColour: {r: 0.5320754, g: 0.003011704, b: 0.022752902, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2723594926039462768

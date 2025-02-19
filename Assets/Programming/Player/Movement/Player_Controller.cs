@@ -20,6 +20,8 @@ public class Player_Controller : MonoBehaviour
 
     public GameObject DashVFX;
 
+    public Collider attack_collider;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -205,6 +207,16 @@ public class Player_Controller : MonoBehaviour
     public void Change_Dialogue_False()
     {
         dialogue = false;
+    }
+
+    public void True_Attack_Collider()
+    {
+        attack_collider.enabled = true;
+    }
+
+    public void False_Attack_Collider()
+    {
+        attack_collider.enabled = false;
     }
 }
 

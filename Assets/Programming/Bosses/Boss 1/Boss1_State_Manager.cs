@@ -93,7 +93,7 @@ public class Boss1_State_Manager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(.8f);
-            print("The one bool in the state machine is: " + inside_trigger);
+            //print("The one bool in the state machine is: " + inside_trigger);
             random_number = Random.Range(0, 2);
             currentState.Timer_Inside_Trigger(this);
         }

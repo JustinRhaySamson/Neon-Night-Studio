@@ -15,18 +15,12 @@ public class Room_Counter : MonoBehaviour
     void Start()
     {
         player_store_data = GameObject.Find("Player").GetComponent<Player_Store_Data>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void EnemyKilled()
-    {
-        enemies_killed++;
-
         if (enemies_killed >= requirements[requirements_met])
         {
             player_store_data.enemies_killed = requirements[requirements_met];
@@ -34,6 +28,11 @@ public class Room_Counter : MonoBehaviour
             Open_Doors();
             requirements_met++;
         }
+    }
+
+    public void EnemyKilled()
+    {
+        enemies_killed++;
     }
 
     void Open_Doors()

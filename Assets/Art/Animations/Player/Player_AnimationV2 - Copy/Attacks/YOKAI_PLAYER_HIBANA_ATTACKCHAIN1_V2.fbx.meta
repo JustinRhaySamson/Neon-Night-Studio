@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 79bd71ad8638ef148b75dae27d3046be
+guid: f0df313654ac4c048a9c18d237f011c0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,10 +33,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Player_AttackChain3
-      takeName: Armature|Player_AttackChain3
-      internalID: -4244682838054229082
-      firstFrame: 1
+      name: Player_AttackChain1
+      takeName: Player_AttackChain1
+      internalID: -1528226270865762519
+      firstFrame: 2
       lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
@@ -46,8 +46,8 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
@@ -56,28 +56,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0
-        functionName: NoChainAttack
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.270303
-        functionName: ActivateA3
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.51757574
-        functionName: DeactivateA3
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

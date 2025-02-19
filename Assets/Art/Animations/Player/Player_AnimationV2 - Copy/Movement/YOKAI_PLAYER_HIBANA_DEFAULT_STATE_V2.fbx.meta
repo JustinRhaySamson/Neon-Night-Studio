@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ad29905f584d18245abb8aeaa319c6d8
+guid: b8c451c0b237c3347b58cc904175e234
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Player_AttackChain2
-      takeName: Player_AttackChain2
-      internalID: 7303946304830263508
-      firstFrame: 2
-      lastFrame: 52
+      name: Default_State
+      takeName: Default_State
+      internalID: 5649258114285465612
+      firstFrame: 1
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -56,49 +56,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0
-        functionName: NoChainAttack
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.2509091
-        functionName: AttackChainTrue
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.63878787
-        functionName: AttackChainFalse
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.8181819
-        functionName: ChainFailed
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.3042424
-        functionName: ActivateA2
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.590303
-        functionName: DeactivateA2
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1e9683155966e6c4c9c37bd73debcd0b
+guid: c9990b02238ccee438a612dfc096f029
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,10 +33,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Player_AttackChain1
-      takeName: Player_AttackChain1
-      internalID: -1528226270865762519
-      firstFrame: 2
+      name: Armature|Player_AttackChain3
+      takeName: Armature|Player_AttackChain3
+      internalID: -4244682838054229082
+      firstFrame: 1
       lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
@@ -46,8 +46,8 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 1
-      loopBlendPositionY: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
@@ -56,49 +56,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0
-        functionName: NoChainFailed
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0
-        functionName: NoChainAttack
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.16848488
-        functionName: AttackChainTrue
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.25575757
-        functionName: ActivateA1
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.45939392
-        functionName: DeactivateA1
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.61939394
-        functionName: AttackChainFalse
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

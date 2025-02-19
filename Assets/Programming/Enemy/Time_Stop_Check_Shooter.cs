@@ -41,6 +41,7 @@ public class Time_Stop_Check_Shooter: MonoBehaviour
         look_at.enabled = false;
         //shoot_Bullet.StopShooting();
         bullet_shooter.SetActive(false);
+        navmesh_state = nav_Agent.enabled;
         nav_Agent.enabled = false;
         //sphere_Collider.enabled = false;
         //sphere_Collider2.enabled = false;

@@ -125,7 +125,7 @@ public class Player_Controller : MonoBehaviour
         if (callbackContext.performed && !dashing)
         {
             gameObject.tag = "Invincible";
-            animator.SetFloat("Dash_Speed", 3.2f);
+            animator.SetFloat("Dash_Speed", 4.8f);
             dashing = true;
             //animator.SetBool("Dash", true);
             DashVFX.SetActive(true);
@@ -137,7 +137,7 @@ public class Player_Controller : MonoBehaviour
     IEnumerator Dash_Speedup(float time)
     {
         yield return new WaitForSeconds(time);
-        animator.SetFloat("Dash_Speed", 1.6f);
+        animator.SetFloat("Dash_Speed", 2.4f);
         //animator.SetBool("Dash", false);
         gameObject.tag = "Player";
         DashVFX.SetActive(false);

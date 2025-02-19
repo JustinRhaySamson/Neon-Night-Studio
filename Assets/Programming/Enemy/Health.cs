@@ -6,7 +6,6 @@ public class Health : MonoBehaviour
 {
     int HP = 2;
     public bool shooter = true;
-    public GameObject explosion;
 
     Time_Stop_Check_Melee time_stop_check_melee;
     Time_Stop_Check_Shooter time_stop_check_shooter;
@@ -40,12 +39,6 @@ public class Health : MonoBehaviour
             {
                 time_stop_check_shooter = GetComponent<Time_Stop_Check_Shooter>();
                 time_stop_check_shooter.Die();
-            }
-            for (int i = 0; i < 3; i++)
-            {
-                GameObject explosion_object = Instantiate(explosion, gameObject.transform);
-                explosion_object.transform.parent = null;
-                explosion_object.transform.position = transform.position;
             }
             room_counter_script.EnemyKilled();
             Destroy(gameObject);

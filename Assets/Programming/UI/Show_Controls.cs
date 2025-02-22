@@ -30,16 +30,17 @@ public class Show_Controls : MonoBehaviour
             print("I pressed Menu");
             active = !active;
             pause_menu.SetActive(active);
+            var eventSystem = EventSystem.current;
             if (active)
             {
                 Time.timeScale = 0f;
+                eventSystem.SetSelectedGameObject(resume_button, new BaseEventData(eventSystem));
             }
             else if (!active)
             {
                 Time.timeScale = 1;
+                eventSystem.SetSelectedGameObject(null, new BaseEventData(eventSystem));
             }
-            var eventSystem = EventSystem.current;
-            eventSystem.SetSelectedGameObject(resume_button, new BaseEventData(eventSystem));
         }
     }
 
@@ -50,10 +51,6 @@ public class Show_Controls : MonoBehaviour
             reset_active = !reset_active;
             reset_button.SetActive(reset_active);
         }
-
-        var eventSystem = EventSystem.current;
-        arrow.position = eventSystem.currentSelectedGameObject.transform.position;
-
     }
 
     public void Resume_Button()
@@ -61,5 +58,7 @@ public class Show_Controls : MonoBehaviour
         active = !active;
         pause_menu.SetActive(active);
         Time.timeScale = 1;
+        var eventSystem = EventSystem.current;
+        eventSystem.SetSelectedGameObject(null, new BaseEventData(eventSystem));
     }
 }

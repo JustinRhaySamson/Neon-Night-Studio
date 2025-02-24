@@ -8,6 +8,7 @@ public class Button_Selected_Test : MonoBehaviour, IPointerEnterHandler, ISelect
 {
 
     public RectTransform arrow;
+    public float distance = .67f;
     RectTransform current_rect_transform;
 
     private void Start()
@@ -16,13 +17,13 @@ public class Button_Selected_Test : MonoBehaviour, IPointerEnterHandler, ISelect
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        arrow.position = new Vector3(current_rect_transform.position.x *.67f, 
+        arrow.position = new Vector3(current_rect_transform.position.x * distance, 
             current_rect_transform.position.y, 
             current_rect_transform.position.z);
     }
     public void OnSelect(BaseEventData eventData)
     {
-        arrow.position = new Vector3(current_rect_transform.position.x * .67f,
+        arrow.position = new Vector3(current_rect_transform.position.x * distance,
             current_rect_transform.position.y,
             current_rect_transform.position.z); ;
     }

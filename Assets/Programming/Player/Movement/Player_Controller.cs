@@ -52,7 +52,7 @@ public class Player_Controller : MonoBehaviour
         if (_input == Vector3.zero || dialogue) return;
 
         var rot = Quaternion.LookRotation(_input.ToIso(), Vector3.up);
-        if (!attacking)
+        if (!attacking && Time.timeScale != 0)
         {
             transform.rotation = rot;
         }

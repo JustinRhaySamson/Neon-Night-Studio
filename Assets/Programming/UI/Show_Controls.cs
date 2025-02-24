@@ -18,6 +18,8 @@ public class Show_Controls : MonoBehaviour
     public RectTransform arrow;
     public GameObject full_screen_toggle;
     public GameObject options_menu;
+
+    bool full_screened = true;
     void Start()
     {
         controls.SetActive(false);
@@ -94,5 +96,22 @@ public class Show_Controls : MonoBehaviour
     public void Change_Fulscreen(bool toggle)
     {
         Screen.fullScreen = toggle;
+        full_screened = toggle;
+    }
+
+    public void Change_Resolution(int i)
+    {
+        switch (i)
+        {
+            case 0:
+                Screen.SetResolution(1920, 1080, full_screened);
+                break;
+            case 1:
+                Screen.SetResolution(1280, 720, full_screened);
+                break;
+            case 2:
+                Screen.SetResolution(640, 480, full_screened);
+                break;
+        }
     }
 }

@@ -738,6 +738,7 @@ GameObject:
   - component: {fileID: 4175814980582728385}
   - component: {fileID: 266686604780910636}
   - component: {fileID: 8849482072005590524}
+  - component: {fileID: 2286393788257287297}
   m_Layer: 6
   m_Name: Player_BaseModel - Copy
   m_TagString: Player
@@ -1120,6 +1121,19 @@ MonoBehaviour:
   checkpoint_name: Checkpont 0
   origonal_checkpoint_name: Checkpont 0
   enemies_killed: 0
+--- !u!114 &2286393788257287297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572323173978580446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc4864e7aa9bb44e912f6725fd945a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
 --- !u!1 &1787180628525911099
 GameObject:
   m_ObjectHideFlags: 0

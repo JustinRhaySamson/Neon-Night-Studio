@@ -879,6 +879,7 @@ MonoBehaviour:
   max_HP: 2
   VFX: {fileID: 4486815572572192254}
   HealVFX: {fileID: 5592507445605779405}
+  refill_timer_health: 0
 --- !u!114 &3554760698466611302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2085,6 +2086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f2fc024dbf6344fba464607d292ec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1572323173978580446}
 --- !u!114 &2258425851393043579
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,6 +29,8 @@ public class Player_Health : MonoBehaviour
     Player_Controller controller;
     Animator animator;
 
+    public int refill_timer_health = 0;
+
     private void Start()
     {
         UI_Text = GameObject.Find("HP number");
@@ -95,12 +97,13 @@ public class Player_Health : MonoBehaviour
             if (Time.time > heal_start + heal_end)
             {
                 HP++;
+                refill_timer_health = 0;
                 UI_HP.text = HP.ToString();
                 heal_start = Time.time;
                 cooldown = true;
                 slider_component.value = slider_component.value * 2.35294117647f;
                 slider_value = slider_component.value;
-                slider_component.maxValue = 4f;
+                slider_component.maxValue = 20f;
                 slider_time = Time.time;
                 HealVFX.SetActive(false);
             }
@@ -108,7 +111,7 @@ public class Player_Health : MonoBehaviour
 
         if (!healing && cooldown)
         {
-            slider_component.value = (Time.time - slider_time) + slider_value;
+            slider_component.value = (Time.time - slider_time) + slider_value + 3 * refill_timer_health;
 
             if (slider_component.value == slider_component.maxValue)
             {

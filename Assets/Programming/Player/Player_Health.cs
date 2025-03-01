@@ -8,8 +8,8 @@ using UnityEngine.InputSystem;
 
 public class Player_Health : MonoBehaviour
 {
-    public int HP = 2;
-    public int max_HP = 2;
+    public int HP = 3;
+    public int max_HP = 3;
     GameObject UI_Text;
     TMP_Text UI_HP;
     GameObject slider;
@@ -19,6 +19,7 @@ public class Player_Health : MonoBehaviour
     bool healing = false;
     GameObject health_1;
     GameObject health_2;
+    GameObject health_3;
 
     public GameObject VFX,HealVFX;
 
@@ -29,7 +30,7 @@ public class Player_Health : MonoBehaviour
     Player_Controller controller;
     Animator animator;
 
-    public int refill_timer_health = 0;
+    public float refill_timer_health = 0;
 
     private void Start()
     {
@@ -39,8 +40,9 @@ public class Player_Health : MonoBehaviour
         slider = GameObject.Find("Slider_new");
         slider_component = slider.GetComponent<Slider>();
         controller = gameObject.GetComponent<Player_Controller>();
-        health_1 = GameObject.Find("Health1 2");
-        health_2 = GameObject.Find("Health1");
+        health_1 = GameObject.Find("Health1 3");
+        health_2 = GameObject.Find("Health1 2");
+        health_3 = GameObject.Find("Health1");
         animator = GetComponent<Animator>();
     }
 
@@ -54,7 +56,7 @@ public class Player_Health : MonoBehaviour
         }
         if (HP <= 0)
         {
-            health_2.SetActive(false);
+            health_3.SetActive(false);
             Invincible_Tag();
             animator.SetBool("Dead", true);
         }
@@ -91,7 +93,7 @@ public class Player_Health : MonoBehaviour
 
     private void Update()
     {
-        if (healing)
+        if (healing && !cooldown)
         {
             slider_component.value = heal_end - (Time.time - heal_start);
             if (Time.time > heal_start + heal_end)
@@ -126,10 +128,20 @@ public class Player_Health : MonoBehaviour
 
         if (HP < 2)
         {
-            health_1.SetActive(false);
+            health_2.SetActive(false);
         }
 
         else if (HP == 2)
+        {
+            health_2.SetActive(true);
+        }
+
+        if (HP < 3)
+        {
+            health_1.SetActive(false);
+        }
+
+        else if (HP == 3)
         {
             health_1.SetActive(true);
         }

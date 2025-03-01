@@ -40,8 +40,8 @@ public class Attack_Check : MonoBehaviour
         {
             boss_HP = other.gameObject.GetComponent<Boss_HP>();
             boss_HP.Get_Hit();
-            time_manager_script.refill_timer++;
-            player_health.refill_timer_health++;
+            time_manager_script.refill_timer += 0.5f;
+            player_health.refill_timer_health += 0.5f;
         }
     }
 }

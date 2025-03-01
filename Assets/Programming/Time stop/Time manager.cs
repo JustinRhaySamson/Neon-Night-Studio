@@ -40,7 +40,7 @@ public class Timemanager : MonoBehaviour
     float boss1_speed = 0;
     int boss1_force = 0;
 
-    public int refill_timer = 0;
+    public float refill_timer = 0;
 
     void Start()
     {

@@ -105,7 +105,6 @@ public class Player_Health : MonoBehaviour
                 cooldown = true;
                 slider_component.value = slider_component.value * 2.35294117647f;
                 slider_value = slider_component.value;
-                slider_component.maxValue = 20f;
                 slider_time = Time.time;
                 HealVFX.SetActive(false);
             }
@@ -113,6 +112,7 @@ public class Player_Health : MonoBehaviour
 
         if (!healing && cooldown)
         {
+            slider_component.maxValue = 20f;
             slider_component.value = (Time.time - slider_time) + slider_value + 3 * refill_timer_health;
 
             if (slider_component.value == slider_component.maxValue)

@@ -9,6 +9,7 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
     public GameObject rotating_spawner;
     public Collider weapon_collider;
     public Collider weapon_collider2;
+    float force = 10;
     void Start()
     {
         
@@ -67,5 +68,13 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
     public void Activate_Weapon2()
     {
         weapon_collider2.enabled = true;
+    }
+
+    public void Spawn_Wave(GameObject wave)
+    {
+        GameObject wave_object = Instantiate(wave, spwaner1.transform.position, 
+            gameObject.transform.rotation);
+        Rigidbody rb = wave_object.GetComponent<Rigidbody>();
+        rb.AddForce(wave_object.transform.forward * force, ForceMode.Impulse);
     }
 }

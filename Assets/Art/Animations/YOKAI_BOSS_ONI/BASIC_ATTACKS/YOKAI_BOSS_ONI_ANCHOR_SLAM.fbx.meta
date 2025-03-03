@@ -37,7 +37,7 @@ ModelImporter:
       takeName: Armature|YOKAI_ONI_ANCHOR_SLAM
       internalID: 2327552656072208432
       firstFrame: 1
-      lastFrame: 106
+      lastFrame: 134
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -56,7 +56,49 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.028404962
+        functionName: Damping_0
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.40713763
+        functionName: Spawn_Explosion
+        data: 
+        objectReferenceParameter: {fileID: 6172784697011332984, guid: 0f76877460523f1488c0c4afb03395e0, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6168972
+        functionName: Spawn_Explosion
+        data: 
+        objectReferenceParameter: {fileID: 6172784697011332984, guid: 0f76877460523f1488c0c4afb03395e0, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.82665706
+        functionName: Spawn_Explosion
+        data: 
+        objectReferenceParameter: {fileID: 6172784697011332984, guid: 0f76877460523f1488c0c4afb03395e0, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9402768
+        functionName: Back_To_Idle
+        data: 
+        objectReferenceParameter: {fileID: 6172784697011332984, guid: 0f76877460523f1488c0c4afb03395e0, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.14202476
+        functionName: Set_Anim_Speed
+        data: 
+        objectReferenceParameter: {fileID: 6172784697011332984, guid: 0f76877460523f1488c0c4afb03395e0, type: 3}
+        floatParameter: 1.7
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

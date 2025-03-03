@@ -13,6 +13,8 @@ public class Boss1_State_Manager : MonoBehaviour
     public Boss1_State_Center_Dash center_Dash = new Boss1_State_Center_Dash();
     public Boss1_State_Vortex_Of_Pain vortex_Of_Pain = new Boss1_State_Vortex_Of_Pain();
     public Boss1_State_Inactive inactive_state = new Boss1_State_Inactive();
+    public Boss1_State_Anchor_Slam anchor_Slam = new Boss1_State_Anchor_Slam();
+    public Boss1_State_Front_Slam front_Slam = new Boss1_State_Front_Slam();
     
     
     public Boss1_2_State_Idle phase2_idle_state = new Boss1_2_State_Idle();
@@ -67,7 +69,7 @@ public class Boss1_State_Manager : MonoBehaviour
         if (other.CompareTag("Player") || other.CompareTag("Invincible"))
         {
             inside_trigger = true;
-            random_number = Random.Range(0, 2);
+            random_number = Random.Range(0, 3);
             currentState.OnTriggerEnter(this);
         }
     }
@@ -97,7 +99,7 @@ public class Boss1_State_Manager : MonoBehaviour
         {
             yield return new WaitForSeconds(.8f);
             //print("The one bool in the state machine is: " + inside_trigger);
-            random_number = Random.Range(0, 2);
+            random_number = Random.Range(0, 3);
             currentState.Timer_Inside_Trigger(this);
         }
     }

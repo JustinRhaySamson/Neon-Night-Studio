@@ -5547,6 +5547,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6639336090963671550, guid: 8452caa88a586364ab46b826b4170a8b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639336090963671550, guid: 8452caa88a586364ab46b826b4170a8b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.38728592
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639336090963671550, guid: 8452caa88a586364ab46b826b4170a8b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.3685882
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639336090963671550, guid: 8452caa88a586364ab46b826b4170a8b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.94509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639336090963671550, guid: 8452caa88a586364ab46b826b4170a8b, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.04045032
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639336090963671550, guid: 8452caa88a586364ab46b826b4170a8b, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.5576681
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639336090963671550, guid: 8452caa88a586364ab46b826b4170a8b, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639336090963671550, guid: 8452caa88a586364ab46b826b4170a8b, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 360
+      objectReference: {fileID: 0}
     - target: {fileID: 7695793807696145953, guid: 8452caa88a586364ab46b826b4170a8b, type: 3}
       propertyPath: m_Name
       value: Oni_Shockwave
@@ -11202,17 +11234,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3746708542154448977, guid: 0ce6bea2c3d19894083e53c9e62857b2, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4674354225409428374, guid: 0ce6bea2c3d19894083e53c9e62857b2, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7533222090543745711, guid: 0ce6bea2c3d19894083e53c9e62857b2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.69
+      value: -1.62
       objectReference: {fileID: 0}
     - target: {fileID: 7533222090543745711, guid: 0ce6bea2c3d19894083e53c9e62857b2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11220,7 +11244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7533222090543745711, guid: 0ce6bea2c3d19894083e53c9e62857b2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.06
+      value: -2.52
       objectReference: {fileID: 0}
     - target: {fileID: 7533222090543745711, guid: 0ce6bea2c3d19894083e53c9e62857b2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11250,17 +11274,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7911407476784244999, guid: 0ce6bea2c3d19894083e53c9e62857b2, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8076647800153365604, guid: 0ce6bea2c3d19894083e53c9e62857b2, type: 3}
       propertyPath: m_Name
       value: VFX_OniLightningStrike
-      objectReference: {fileID: 0}
-    - target: {fileID: 8076647800153365604, guid: 0ce6bea2c3d19894083e53c9e62857b2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

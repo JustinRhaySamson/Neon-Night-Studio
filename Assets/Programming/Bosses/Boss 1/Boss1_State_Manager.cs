@@ -13,6 +13,9 @@ public class Boss1_State_Manager : MonoBehaviour
     public Boss1_State_Center_Dash center_Dash = new Boss1_State_Center_Dash();
     public Boss1_State_Vortex_Of_Pain vortex_Of_Pain = new Boss1_State_Vortex_Of_Pain();
     public Boss1_State_Inactive inactive_state = new Boss1_State_Inactive();
+    
+    
+    public Boss1_2_State_Idle phase2_idle_state = new Boss1_2_State_Idle();
 
     public Animator animator;
     public int random_number = 0;

@@ -56,7 +56,7 @@ public class Boss1_State_Idle : Boss1_Base_State
                     state.SwitchState(state.death_Dive);
                     break;
                 case 2:
-                    if (state.attacks_made >= 4)
+                    if (state.attacks_made >= 7)
                     {
                         state.SwitchState(state.anchor_Slam);
                     }

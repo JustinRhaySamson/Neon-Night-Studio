@@ -11,6 +11,8 @@ public class Boss1_2_State_Idle : Boss1_Base_State
         state.animator.SetBool("Rolling_Thunder", false);
         state.animator.SetBool("Vortex_Of_Pain", false);
         state.animator.SetBool("Dash", false);
+        state.animator.SetBool("Thunder_Fall", false);
+        state.animator.SetBool("Flash_Step", false);
         state.animator.SetBool("Running", true);
     }
 
@@ -24,7 +26,7 @@ public class Boss1_2_State_Idle : Boss1_Base_State
         switch (state.random_number)
         {
             case 0:
-                //state.SwitchState(state.strong_Right);
+                state.SwitchState(state.flash_Step);
                 break;
             case 1:
                 //state.SwitchState(state.death_Dive);
@@ -45,7 +47,7 @@ public class Boss1_2_State_Idle : Boss1_Base_State
             switch (state.random_number)
             {
                 case 0:
-                    //state.SwitchState(state.strong_Right);
+                    state.SwitchState(state.flash_Step);
                     break;
                 case 1:
                     //state.SwitchState(state.death_Dive);
@@ -58,7 +60,7 @@ public class Boss1_2_State_Idle : Boss1_Base_State
             switch (state.random_number)
             {
                 case 0:
-                    //state.SwitchState(state.rolling_Thunder);
+                    state.SwitchState(state.thunderfall);
                     break;
                 case 1:
                     /*if (state.attacks_made >= 5)

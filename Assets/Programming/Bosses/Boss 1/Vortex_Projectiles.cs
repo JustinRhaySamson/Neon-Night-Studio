@@ -93,4 +93,19 @@ public class Vortex_Projectiles : MonoBehaviour
             rb.AddForce(bullet.transform.forward * force, ForceMode.Impulse);
         }
     }
+
+    public void Flash_Step_Bullets()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject bullet = Instantiate(projectile, transform.position,
+            Quaternion.Euler(0, transform.parent.eulerAngles.y + i * 180 / 5 - 70,
+            0));
+
+            bullet.transform.localScale = new Vector3(bullet_scale, bullet_scale, bullet_scale);
+
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            rb.AddForce(bullet.transform.forward * force, ForceMode.Impulse);
+        }
+    }
 }

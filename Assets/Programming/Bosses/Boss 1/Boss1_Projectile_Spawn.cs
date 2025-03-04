@@ -9,6 +9,8 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
     public GameObject rotating_spawner;
     public Collider weapon_collider;
     public Collider weapon_collider2;
+    public GameObject lightning;
+    public GameObject big_lightning;
     float force = 10;
     void Start()
     {
@@ -76,5 +78,16 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
             gameObject.transform.rotation);
         Rigidbody rb = wave_object.GetComponent<Rigidbody>();
         rb.AddForce(wave_object.transform.forward * force, ForceMode.Impulse);
+    }
+
+    public void Spawn_Big_Lightning()
+    {
+        Instantiate(big_lightning, gameObject.transform.position, Quaternion.Euler(0, 0, 0));
+    }
+
+    public void Flash_Step_Bullets()
+    {
+        Vortex_Projectiles vortex_Projectiles = rotating_spawner.GetComponent<Vortex_Projectiles>();
+        vortex_Projectiles.Flash_Step_Bullets();
     }
 }

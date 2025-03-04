@@ -18,6 +18,8 @@ public class Boss1_State_Manager : MonoBehaviour
     
     
     public Boss1_2_State_Idle phase2_idle_state = new Boss1_2_State_Idle();
+    public Boss1_2_State_Thunderfall thunderfall = new Boss1_2_State_Thunderfall();
+    public Boss1_2_State_Flash_Step flash_Step = new Boss1_2_State_Flash_Step();
 
     public Animator animator;
     public int random_number = 0;
@@ -32,13 +34,24 @@ public class Boss1_State_Manager : MonoBehaviour
 
 
     public bool dashing_to_center = false;
+    [SerializeField] bool phase2 = false;
+
+    Boss1_Projectile_Spawn projectile_Spawn;
+
     
     void Start()
     {
         look_at = gameObject.GetComponent<Look_At>();
+        projectile_Spawn = gameObject.GetComponent<Boss1_Projectile_Spawn>();
         currentState = inactive_state;
         currentState.EnterState(this);
         StartCoroutine(Timer());
+        if (phase2)
+        {
+            animator.SetBool("Phase2", true);
+            currentState = phase2_idle_state;
+            currentState.EnterState(this);
+        }
     }
 
     // Update is called once per frame
@@ -110,6 +123,12 @@ public class Boss1_State_Manager : MonoBehaviour
         currentState.EnterState(this);
     }
 
+    public void Back_To_Idle2()
+    {
+        currentState = phase2_idle_state;
+        currentState.EnterState(this);
+    }
+
     public void Look_At_Center_State()
     {
         dashing_to_center = true;
@@ -135,5 +154,23 @@ public class Boss1_State_Manager : MonoBehaviour
     public void Stop_Dash_VFX()
     {
         dash_VFX.SetActive(false);
+    }
+
+    public void Deactivate_Hitbox()
+    {
+        CapsuleCollider capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
+        capsuleCollider.enabled = false;
+    }
+
+    public void Activate_Hitbox()
+    {
+        CapsuleCollider capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
+        capsuleCollider.enabled = true;
+    }
+
+    public void Teleport_Player()
+    {
+        gameObject.transform.position = look_at.player_transform.position;
+        projectile_Spawn.Spawn_Big_Lightning();
     }
 }

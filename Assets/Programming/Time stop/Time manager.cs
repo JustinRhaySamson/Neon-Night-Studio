@@ -16,6 +16,7 @@ public class Timemanager : MonoBehaviour
     public Time_Stop_Check_Melee[] enemies_melee;
     public Basic_Bullet[] bullets;
     public Explosion_Script[] explosions;
+    public Lightning_Script[] lightnings;
     
 
     bool LB_Press = false;
@@ -144,6 +145,10 @@ public class Timemanager : MonoBehaviour
                 indicator_system.Pause(true);
                 sparks_system.Pause(true);
             }
+            foreach(Lightning_Script lightning in lightnings)
+            {
+                lightning.Time_Stop_Pause();
+            }
             if (doorBool)
             {
                 door_animator.SetFloat("Speed", 0);
@@ -199,6 +204,10 @@ public class Timemanager : MonoBehaviour
             electricity_system.Play(true);
             indicator_system.Play(true);
             sparks_system.Play(true);
+        }
+        foreach (Lightning_Script lightning in lightnings)
+        {
+            lightning.Time_Stop_Restart();
         }
         if (doorBool)
         {

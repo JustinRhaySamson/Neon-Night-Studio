@@ -12,10 +12,11 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
     public GameObject lightning;
     public GameObject big_lightning;
     public BoxCollider slash_hitbox;
+    GameObject mace;
     float force = 10;
     void Start()
     {
-        
+        mace = GameObject.Find("Tetsubo");
     }
 
     // Update is called once per frame
@@ -135,5 +136,11 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
     public void Deactivate_Slash()
     {
         slash_hitbox.enabled = false;
+    }
+
+    public void Destroy_Mace()
+    {
+        Object.Destroy(mace);
+        print("I destroyed the mace");
     }
 }

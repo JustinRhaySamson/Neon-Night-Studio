@@ -11,6 +11,7 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
     public Collider weapon_collider2;
     public GameObject lightning;
     public GameObject big_lightning;
+    public BoxCollider slash_hitbox;
     float force = 10;
     void Start()
     {
@@ -100,7 +101,39 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
 
     public void Thunder_Strike_1()
     {
-        Vector3 random_pos = new Vector3(Random.Range(-10, 10), transform.position.y, Random.Range(-10, 10));
-        Instantiate(lightning, random_pos, Quaternion.identity);
+        Vector3 random_pos = new Vector3(transform.position.x + Random.Range(-10, 10), 
+            transform.position.y,
+            transform.position.z + Random.Range(-10, 10));
+        GameObject lightning_spawn = Instantiate(lightning, random_pos, Quaternion.identity);
+        lightning_spawn.transform.parent = null;
+        lightning_spawn.transform.position = random_pos;
+    }
+
+    public void Scatter_Bolt_1()
+    {
+        Vortex_Projectiles vortex_Projectiles = rotating_spawner.GetComponent<Vortex_Projectiles>();
+        vortex_Projectiles.Scatter_Bolt_Projectiles(true);
+    }
+
+    public void Scatter_Bolt_2()
+    {
+        Vortex_Projectiles vortex_Projectiles = rotating_spawner.GetComponent<Vortex_Projectiles>();
+        vortex_Projectiles.Scatter_Bolt_Projectiles(false);
+    }
+
+    public void Scatter_Bolt_3(GameObject wave)
+    {
+        Vortex_Projectiles vortex_Projectiles = rotating_spawner.GetComponent<Vortex_Projectiles>();
+        vortex_Projectiles.Scatter_Bolt_Waves(wave);
+    }
+
+    public void Activate_Slash()
+    {
+        slash_hitbox.enabled = true;
+    }
+
+    public void Deactivate_Slash()
+    {
+        slash_hitbox.enabled = false;
     }
 }

@@ -110,6 +110,84 @@ public class Vortex_Projectiles : MonoBehaviour
         }
     }
 
+    public void Scatter_Bolt_Projectiles(bool left)
+    {
+        StartCoroutine(Scatter_Bolt_Shooting(0, left));
+    }
+
+    IEnumerator Scatter_Bolt_Shooting(int i, bool left)
+    {
+        while (i < 5)
+        {
+            yield return new WaitForSeconds(shooting_time);
+            if (left)
+            {
+                GameObject bullet = Instantiate(projectile, transform.position,
+                Quaternion.Euler(0, transform.parent.eulerAngles.y - i * 135 / 5 + 54,
+                0));
+                bullet.transform.localScale = new Vector3(bullet_scale, bullet_scale, bullet_scale);
+
+                Rigidbody rb = bullet.GetComponent<Rigidbody>();
+                rb.AddForce(bullet.transform.forward * force, ForceMode.Impulse);
+            }
+            else if (!left)
+            {
+                GameObject bullet = Instantiate(projectile, transform.position,
+                Quaternion.Euler(0, transform.parent.eulerAngles.y + i * 135 / 5 - 54,
+                0));
+                bullet.transform.localScale = new Vector3(bullet_scale, bullet_scale, bullet_scale);
+
+                Rigidbody rb = bullet.GetComponent<Rigidbody>();
+                rb.AddForce(bullet.transform.forward * force, ForceMode.Impulse);
+            }
+            i++;
+        }
+    }
+
+    public void Scatter_Bolt_Waves(GameObject wave)
+    {
+        StartCoroutine(Scatter_Bolt_Waves_Shooting(0,wave,true));
+    }
+
+    IEnumerator Scatter_Bolt_Waves_Shooting(int i, GameObject wave, bool first)
+    {
+        while (i < 2)
+        {
+            yield return new WaitForSeconds(.2f);
+            if (first)
+            {
+                GameObject wave_object = Instantiate(wave, 
+                    new Vector3(transform.position.x, transform.position.y-1, transform.position.z),
+                    transform.parent.rotation);
+                wave_object.transform.localScale = new Vector3(bullet_scale, bullet_scale, bullet_scale);
+
+                Rigidbody rb = wave_object.GetComponent<Rigidbody>();
+                rb.AddForce(wave_object.transform.forward * force, ForceMode.Impulse);
+            }
+            else if (!first)
+            {
+                for(int j = 0; j < 2; j++)
+                {
+                    GameObject wave_object = Instantiate(wave,
+                        new Vector3(transform.position.x, transform.position.y - 1, transform.position.z),
+                        Quaternion.Euler(0, transform.parent.eulerAngles.y + j * 180 / 2 - 45,
+                        0));
+                    wave_object.transform.localScale = new Vector3(bullet_scale, bullet_scale, bullet_scale);
+
+                    Rigidbody rb = wave_object.GetComponent<Rigidbody>();
+                    rb.AddForce(wave_object.transform.forward * force, ForceMode.Impulse);
+                } 
+            }
+            first = false;
+            i++;
+        }
+    }
+
+    public void Scatter_Bolt_Stop()
+    {
+        StopAllCoroutines();
+    }
+
     public void Lightning_Spwaner(int mult)
     {
         for (int i = 0; i < 2; i++)

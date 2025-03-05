@@ -23,6 +23,8 @@ public class Boss1_State_Manager : MonoBehaviour
     public Boss1_2_State_Cross_Lightning cross_Lightning = new Boss1_2_State_Cross_Lightning();
     public Boss1_2_State_Dash2 dash2 = new Boss1_2_State_Dash2();
     public Boss1_2_State_Thunder_Strike thunder_Strike = new Boss1_2_State_Thunder_Strike();
+    public Boss1_2_State_Scatter_Bolt scatter_Bolt = new Boss1_2_State_Scatter_Bolt();
+    public Boss1_2_State_Slash slash_state = new Boss1_2_State_Slash();
 
     public Animator animator;
     public int random_number = 0;
@@ -169,6 +171,18 @@ public class Boss1_State_Manager : MonoBehaviour
     {
         CapsuleCollider capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
         capsuleCollider.enabled = true;
+    }
+
+    public void Deactivate_Trigger()
+    {
+        SphereCollider sphereCollider = gameObject.GetComponent<SphereCollider>();
+        sphereCollider.enabled = false;
+    }
+
+    public void Activate_Trigger()
+    {
+        SphereCollider sphereCollider = gameObject.GetComponent<SphereCollider>();
+        sphereCollider.enabled = true;
     }
 
     public void Teleport_Player()

@@ -16,6 +16,7 @@ public class Boss1_2_State_Idle : Boss1_Base_State
         state.animator.SetBool("Cross_Lightning", false);
         state.animator.SetBool("Thunder_Strike", false);
         state.animator.SetBool("Dash2", false);
+        state.animator.SetBool("Scatter_Bolt", false);
         state.animator.SetBool("Running", true);
     }
 
@@ -33,6 +34,9 @@ public class Boss1_2_State_Idle : Boss1_Base_State
                 break;
             case 1:
                 state.SwitchState(state.cross_Lightning);
+                break;
+            case 2:
+                state.SwitchState(state.slash_state);
                 break;
         }
 
@@ -55,6 +59,9 @@ public class Boss1_2_State_Idle : Boss1_Base_State
                 case 1:
                     state.SwitchState(state.cross_Lightning);
                     break;
+                case 2:
+                    state.SwitchState(state.slash_state);
+                    break;
             }
         }
 
@@ -70,6 +77,9 @@ public class Boss1_2_State_Idle : Boss1_Base_State
                     {
                         state.SwitchState(state.dash2);
                     }
+                    break;
+                case 2:
+                    state.SwitchState(state.scatter_Bolt);
                     break;
             }
         }

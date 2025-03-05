@@ -56,7 +56,28 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.0373333
+        functionName: Set_Damping
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 40
+        messageOptions: 0
+      - time: 0.095026456
+        functionName: Look_At_Center_State
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 40
+        messageOptions: 0
+      - time: 0.20634921
+        functionName: Start_Dash_VFX
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 40
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

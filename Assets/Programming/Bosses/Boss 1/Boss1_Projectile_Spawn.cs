@@ -97,4 +97,10 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
         Vortex_Projectiles vortex_Projectiles = rotating_spawner.GetComponent<Vortex_Projectiles>();
         vortex_Projectiles.Lightning_Spwaner(multi);
     }
+
+    public void Thunder_Strike_1()
+    {
+        Vector3 random_pos = new Vector3(Random.Range(-10, 10), transform.position.y, Random.Range(-10, 10));
+        Instantiate(lightning, random_pos, Quaternion.identity);
+    }
 }

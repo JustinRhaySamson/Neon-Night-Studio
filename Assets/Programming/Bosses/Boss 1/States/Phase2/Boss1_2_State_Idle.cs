@@ -14,6 +14,8 @@ public class Boss1_2_State_Idle : Boss1_Base_State
         state.animator.SetBool("Thunder_Fall", false);
         state.animator.SetBool("Flash_Step", false);
         state.animator.SetBool("Cross_Lightning", false);
+        state.animator.SetBool("Thunder_Strike", false);
+        state.animator.SetBool("Dash2", false);
         state.animator.SetBool("Running", true);
     }
 
@@ -64,10 +66,10 @@ public class Boss1_2_State_Idle : Boss1_Base_State
                     state.SwitchState(state.thunderfall);
                     break;
                 case 1:
-                    /*if (state.attacks_made >= 5)
+                    if (state.attacks_made >= 5)
                     {
-                        state.SwitchState(state.center_Dash);
-                    }*/
+                        state.SwitchState(state.dash2);
+                    }
                     break;
             }
         }

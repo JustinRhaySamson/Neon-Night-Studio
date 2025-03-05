@@ -53,7 +53,7 @@ public class Lightning_Spawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!other.CompareTag("Player") || !other.CompareTag("Invincible") || !other.CompareTag("Boss"))
+        if(other.CompareTag("Untagged"))
         {
             time_manager.lightning_spawns = (Lightning_Spawner[])ae.Remove(lightning_Spawner, time_manager.lightning_spawns);
             Destroy(gameObject);

@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss1_2_State_Thunderfall : Boss1_Base_State
+public class Boss1_2_State_Thunder_Strike : Boss1_Base_State
 {
     public override void EnterState(Boss1_State_Manager state)
     {
-        state.animator.SetBool("Thunder_Fall", true);
-        state.attacks_made++;
+        state.animator.SetBool("Thunder_Strike", true);
+        state.dash_VFX.SetActive(false);
+        Rigidbody rb = state.gameObject.GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+        state.dashing_to_center = false;
+        state.attacks_made = 0;
     }
 
     public override void UpdateState(Boss1_State_Manager state)
     {
-
+        
     }
 
     public override void OnTriggerEnter(Boss1_State_Manager state)

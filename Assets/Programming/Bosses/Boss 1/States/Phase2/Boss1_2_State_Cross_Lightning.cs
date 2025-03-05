@@ -7,6 +7,7 @@ public class Boss1_2_State_Cross_Lightning : Boss1_Base_State
     public override void EnterState(Boss1_State_Manager state)
     {
         state.animator.SetBool("Cross_Lightning", true);
+        state.attacks_made++;
     }
 
     public override void UpdateState(Boss1_State_Manager state)

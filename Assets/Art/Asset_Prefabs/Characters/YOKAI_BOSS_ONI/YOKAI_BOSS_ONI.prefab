@@ -1349,6 +1349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rot_trans: {fileID: 285155714599022111}
   projectile: {fileID: 5827592893953670912, guid: 70e09bb06ce779d4588037453229a85a, type: 3}
+  spawner: {fileID: 5827592893953670912, guid: f2ed7db9fa56c3640a2c2b908c6b4abb, type: 3}
   shooting_time: 0.1
   force: 10
   bullet_number: 8
@@ -2475,6 +2476,7 @@ MonoBehaviour:
   force: 1000
   dash_VFX: {fileID: 8184729381273501576}
   dashing_to_center: 0
+  phase2: 0
 --- !u!136 &7574042710869655460
 CapsuleCollider:
   m_ObjectHideFlags: 0

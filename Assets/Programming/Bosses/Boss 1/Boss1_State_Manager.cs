@@ -20,6 +20,7 @@ public class Boss1_State_Manager : MonoBehaviour
     public Boss1_2_State_Idle phase2_idle_state = new Boss1_2_State_Idle();
     public Boss1_2_State_Thunderfall thunderfall = new Boss1_2_State_Thunderfall();
     public Boss1_2_State_Flash_Step flash_Step = new Boss1_2_State_Flash_Step();
+    public Boss1_2_State_Cross_Lightning cross_Lightning = new Boss1_2_State_Cross_Lightning();
 
     public Animator animator;
     public int random_number = 0;

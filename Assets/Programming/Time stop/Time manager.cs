@@ -17,6 +17,7 @@ public class Timemanager : MonoBehaviour
     public Basic_Bullet[] bullets;
     public Explosion_Script[] explosions;
     public Lightning_Script[] lightnings;
+    public Lightning_Spawner[] lightning_spawns;
     
 
     bool LB_Press = false;
@@ -149,6 +150,10 @@ public class Timemanager : MonoBehaviour
             {
                 lightning.Time_Stop_Pause();
             }
+            foreach(Lightning_Spawner spawner in lightning_spawns)
+            {
+                spawner.Time_Stop();
+            }
             if (doorBool)
             {
                 door_animator.SetFloat("Speed", 0);
@@ -208,6 +213,10 @@ public class Timemanager : MonoBehaviour
         foreach (Lightning_Script lightning in lightnings)
         {
             lightning.Time_Stop_Restart();
+        }
+        foreach (Lightning_Spawner spawner in lightning_spawns)
+        {
+            spawner.Time_Reset();
         }
         if (doorBool)
         {

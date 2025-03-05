@@ -6,6 +6,7 @@ public class Vortex_Projectiles : MonoBehaviour
 {
     public Transform rot_trans;
     public GameObject projectile;
+    public GameObject spawner;
     public float shooting_time = 0.1f;
     public float force = 1;
     public float bullet_number = 8;
@@ -100,6 +101,21 @@ public class Vortex_Projectiles : MonoBehaviour
         {
             GameObject bullet = Instantiate(projectile, transform.position,
             Quaternion.Euler(0, transform.parent.eulerAngles.y + i * 180 / 5 - 70,
+            0));
+
+            bullet.transform.localScale = new Vector3(bullet_scale, bullet_scale, bullet_scale);
+
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            rb.AddForce(bullet.transform.forward * force, ForceMode.Impulse);
+        }
+    }
+
+    public void Lightning_Spwaner(int mult)
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            GameObject bullet = Instantiate(spawner, transform.position,
+            Quaternion.Euler(0, transform.parent.eulerAngles.y - 90 + 180 * i + 90 * mult,
             0));
 
             bullet.transform.localScale = new Vector3(bullet_scale, bullet_scale, bullet_scale);

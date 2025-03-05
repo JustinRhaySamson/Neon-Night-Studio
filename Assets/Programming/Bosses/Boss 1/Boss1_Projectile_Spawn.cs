@@ -90,4 +90,11 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
         Vortex_Projectiles vortex_Projectiles = rotating_spawner.GetComponent<Vortex_Projectiles>();
         vortex_Projectiles.Flash_Step_Bullets();
     }
+
+    public void Lightning_Spawner_1(int multi)
+    {
+        //Object.Destroy(gameObject);
+        Vortex_Projectiles vortex_Projectiles = rotating_spawner.GetComponent<Vortex_Projectiles>();
+        vortex_Projectiles.Lightning_Spwaner(multi);
+    }
 }

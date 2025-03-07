@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 
@@ -14,8 +15,9 @@ public class AudioManager : MonoBehaviour
 // CHANGE MUSIC (might not even need)
   public void ChangeMusicParameter(string musicParameter)
   {
-	  Debug.Log("changing music to "musicParameter);
-	  RuntimeManager.StudioSystem.setParameterByName("Music Parameter", musicParameter);
-  }
+	  Debug.Log("changing music to "+musicParameter);
+	  //RuntimeManager.StudioSystem.setParameterByName("Music Parameter", musicParameter);
+	  RuntimeManager.StudioSystem.setParameterByNameWithLabel("Music Parameter", musicParameter);
+    }
 
 }

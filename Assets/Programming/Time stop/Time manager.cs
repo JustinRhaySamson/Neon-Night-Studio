@@ -16,6 +16,8 @@ public class Timemanager : MonoBehaviour
     public Time_Stop_Check_Melee[] enemies_melee;
     public Basic_Bullet[] bullets;
     public Explosion_Script[] explosions;
+    public Lightning_Script[] lightnings;
+    public Lightning_Spawner[] lightning_spawns;
     
 
     bool LB_Press = false;
@@ -40,6 +42,8 @@ public class Timemanager : MonoBehaviour
     float boss1_speed = 0;
     int boss1_force = 0;
 
+    public float refill_timer = 0;
+
     void Start()
     {
         slider = GameObject.Find("Slider_new");
@@ -63,7 +67,12 @@ public class Timemanager : MonoBehaviour
         }
         if(!Time_Stopped && cooldown)
         {
-            slider_component.value = Time.time - slider_time2;
+            slider_component.value = Time.time - slider_time2 + 3 * refill_timer;
+            
+            if (slider_component.value == slider_component.maxValue)
+            {
+                cooldown = false;
+            }
         }
     }
 
@@ -137,6 +146,14 @@ public class Timemanager : MonoBehaviour
                 indicator_system.Pause(true);
                 sparks_system.Pause(true);
             }
+            foreach(Lightning_Script lightning in lightnings)
+            {
+                lightning.Time_Stop_Pause();
+            }
+            foreach(Lightning_Spawner spawner in lightning_spawns)
+            {
+                spawner.Time_Stop();
+            }
             if (doorBool)
             {
                 door_animator.SetFloat("Speed", 0);
@@ -156,7 +173,7 @@ public class Timemanager : MonoBehaviour
             }
             
             StartCoroutine(ResetTime(time_amount));
-            StartCoroutine(Cooldown_Timer());
+            //StartCoroutine(Cooldown_Timer());
         } 
     }
 
@@ -164,7 +181,8 @@ public class Timemanager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Time_Stopped = false;
-        slider_component.maxValue = 4;
+        refill_timer = 0;
+        slider_component.maxValue = 20;
         slider_time2 = Time.time;
         for (int i = 0; i < enemies_shooter.Length; i++)
         {
@@ -192,6 +210,14 @@ public class Timemanager : MonoBehaviour
             indicator_system.Play(true);
             sparks_system.Play(true);
         }
+        foreach (Lightning_Script lightning in lightnings)
+        {
+            lightning.Time_Stop_Restart();
+        }
+        foreach (Lightning_Spawner spawner in lightning_spawns)
+        {
+            spawner.Time_Reset();
+        }
         if (doorBool)
         {
             door_animator.SetFloat("Speed", 1);
@@ -209,7 +235,7 @@ public class Timemanager : MonoBehaviour
 
     IEnumerator Cooldown_Timer()
     {
-        yield return new WaitForSeconds(7.1f);
+        yield return new WaitForSeconds(23.1f);
         cooldown = false;
     }
 

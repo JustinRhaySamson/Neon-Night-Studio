@@ -13,6 +13,18 @@ public class Boss1_State_Manager : MonoBehaviour
     public Boss1_State_Center_Dash center_Dash = new Boss1_State_Center_Dash();
     public Boss1_State_Vortex_Of_Pain vortex_Of_Pain = new Boss1_State_Vortex_Of_Pain();
     public Boss1_State_Inactive inactive_state = new Boss1_State_Inactive();
+    public Boss1_State_Anchor_Slam anchor_Slam = new Boss1_State_Anchor_Slam();
+    public Boss1_State_Front_Slam front_Slam = new Boss1_State_Front_Slam();
+    
+    
+    public Boss1_2_State_Idle phase2_idle_state = new Boss1_2_State_Idle();
+    public Boss1_2_State_Thunderfall thunderfall = new Boss1_2_State_Thunderfall();
+    public Boss1_2_State_Flash_Step flash_Step = new Boss1_2_State_Flash_Step();
+    public Boss1_2_State_Cross_Lightning cross_Lightning = new Boss1_2_State_Cross_Lightning();
+    public Boss1_2_State_Dash2 dash2 = new Boss1_2_State_Dash2();
+    public Boss1_2_State_Thunder_Strike thunder_Strike = new Boss1_2_State_Thunder_Strike();
+    public Boss1_2_State_Scatter_Bolt scatter_Bolt = new Boss1_2_State_Scatter_Bolt();
+    public Boss1_2_State_Slash slash_state = new Boss1_2_State_Slash();
 
     public Animator animator;
     public int random_number = 0;
@@ -27,13 +39,24 @@ public class Boss1_State_Manager : MonoBehaviour
 
 
     public bool dashing_to_center = false;
+    [SerializeField] bool phase2 = false;
+
+    Boss1_Projectile_Spawn projectile_Spawn;
+
     
     void Start()
     {
         look_at = gameObject.GetComponent<Look_At>();
+        projectile_Spawn = gameObject.GetComponent<Boss1_Projectile_Spawn>();
         currentState = inactive_state;
         currentState.EnterState(this);
         StartCoroutine(Timer());
+        if (phase2)
+        {
+            animator.SetBool("Phase2", true);
+            currentState = phase2_idle_state;
+            currentState.EnterState(this);
+        }
     }
 
     // Update is called once per frame
@@ -64,7 +87,7 @@ public class Boss1_State_Manager : MonoBehaviour
         if (other.CompareTag("Player") || other.CompareTag("Invincible"))
         {
             inside_trigger = true;
-            random_number = Random.Range(0, 2);
+            random_number = Random.Range(0, 3);
             currentState.OnTriggerEnter(this);
         }
     }
@@ -94,7 +117,7 @@ public class Boss1_State_Manager : MonoBehaviour
         {
             yield return new WaitForSeconds(.8f);
             //print("The one bool in the state machine is: " + inside_trigger);
-            random_number = Random.Range(0, 2);
+            random_number = Random.Range(0, 3);
             currentState.Timer_Inside_Trigger(this);
         }
     }
@@ -102,6 +125,12 @@ public class Boss1_State_Manager : MonoBehaviour
     public void Back_To_Idle()
     {
         currentState = idle_state;
+        currentState.EnterState(this);
+    }
+
+    public void Back_To_Idle2()
+    {
+        currentState = phase2_idle_state;
         currentState.EnterState(this);
     }
 
@@ -130,5 +159,35 @@ public class Boss1_State_Manager : MonoBehaviour
     public void Stop_Dash_VFX()
     {
         dash_VFX.SetActive(false);
+    }
+
+    public void Deactivate_Hitbox()
+    {
+        CapsuleCollider capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
+        capsuleCollider.enabled = false;
+    }
+
+    public void Activate_Hitbox()
+    {
+        CapsuleCollider capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
+        capsuleCollider.enabled = true;
+    }
+
+    public void Deactivate_Trigger()
+    {
+        SphereCollider sphereCollider = gameObject.GetComponent<SphereCollider>();
+        sphereCollider.enabled = false;
+    }
+
+    public void Activate_Trigger()
+    {
+        SphereCollider sphereCollider = gameObject.GetComponent<SphereCollider>();
+        sphereCollider.enabled = true;
+    }
+
+    public void Teleport_Player()
+    {
+        gameObject.transform.position = look_at.player_transform.position;
+        projectile_Spawn.Spawn_Big_Lightning();
     }
 }

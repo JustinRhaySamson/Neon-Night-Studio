@@ -875,10 +875,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41540631dc3d7d94ca47dbce4f9772c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 2
-  max_HP: 2
+  HP: 3
+  max_HP: 3
   VFX: {fileID: 4486815572572192254}
   HealVFX: {fileID: 5592507445605779405}
+  refill_timer_health: 0
 --- !u!114 &3554760698466611302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -921,19 +922,7 @@ MonoBehaviour:
     m_ActionId: 2d19b09f-f1f3-41bc-8c7d-be344400ae67
     m_ActionName: Player/Attack A[/Mouse/leftButton,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4125534195079011581}
-        m_TargetAssemblyTypeName: Player_Controller, Assembly-CSharp
-        m_MethodName: Attack_B
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 3d1eac3b-6119-4c05-90a4-2ac34e642812
     m_ActionName: Player/Attack B[/Mouse/rightButton,/XInputControllerWindows/buttonEast]
   - m_PersistentCalls:
@@ -2085,6 +2074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f2fc024dbf6344fba464607d292ec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1572323173978580446}
 --- !u!114 &2258425851393043579
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,6 +18,8 @@ public class Show_Controls : MonoBehaviour
     public RectTransform arrow;
     public GameObject full_screen_toggle;
     public GameObject options_menu;
+    public GameObject controls_menu;
+    public GameObject back_pause;
 
     bool full_screened = true;
     void Start()
@@ -91,6 +93,7 @@ public class Show_Controls : MonoBehaviour
             resume_transform.position.z);
         vertical_list_menu.SetActive(true);
         options_menu.SetActive(false);
+        controls_menu.SetActive(false);
     }
 
     public void Change_Fulscreen(bool toggle)
@@ -113,5 +116,17 @@ public class Show_Controls : MonoBehaviour
                 Screen.SetResolution(640, 480, full_screened);
                 break;
         }
+    }
+
+    public void Controls_Menu()
+    {
+        var eventSystem = EventSystem.current;
+        eventSystem.SetSelectedGameObject(back_pause, new BaseEventData(eventSystem));
+        RectTransform Back_Pause_transform = back_pause.GetComponent<RectTransform>();
+        arrow.position = new Vector3(Back_Pause_transform.position.x * .75f,
+            Back_Pause_transform.position.y,
+            Back_Pause_transform.position.z);
+        vertical_list_menu.SetActive(false);
+        controls_menu.SetActive(true);
     }
 }

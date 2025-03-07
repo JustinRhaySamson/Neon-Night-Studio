@@ -11,6 +11,8 @@ public class Boss1_State_Idle : Boss1_Base_State
         state.animator.SetBool("Rolling_Thunder", false);
         state.animator.SetBool("Vortex_Of_Pain", false);
         state.animator.SetBool("Dash", false);
+        state.animator.SetBool("Anchor_Slam", false);
+        state.animator.SetBool("Front_Slam", false);
         state.animator.SetBool("Running", true);
     }
 
@@ -28,6 +30,12 @@ public class Boss1_State_Idle : Boss1_Base_State
                 break;
             case 1:
                 state.SwitchState(state.death_Dive);
+                break;
+            case 2:
+                if (state.attacks_made >= 7)
+                {
+                    state.SwitchState(state.anchor_Slam);
+                }
                 break;
         }
         
@@ -50,6 +58,12 @@ public class Boss1_State_Idle : Boss1_Base_State
                 case 1:
                     state.SwitchState(state.death_Dive);
                     break;
+                case 2:
+                    if (state.attacks_made >= 7)
+                    {
+                        state.SwitchState(state.anchor_Slam);
+                    }
+                    break;
             }
         }
 
@@ -65,6 +79,9 @@ public class Boss1_State_Idle : Boss1_Base_State
                     {
                         state.SwitchState(state.center_Dash);
                     }
+                    break;
+                case 2:
+                    state.SwitchState(state.front_Slam);
                     break;
             }
         }

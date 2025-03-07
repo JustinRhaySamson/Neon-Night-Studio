@@ -12,6 +12,11 @@ public class Boss_HP : MonoBehaviour
     Animator slider_animator;
     GameObject time_manager;
     Timemanager time_Script;
+    Animator animator;
+    Boss1_State_Manager state_manager;
+    bool life_regen = false;
+
+    bool phase1 = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +26,21 @@ public class Boss_HP : MonoBehaviour
         time_manager = GameObject.Find("Time manager");
         time_Script = time_manager.GetComponent<Timemanager>();
         time_Script.Activate_Boss1(gameObject);
+        animator = gameObject.GetComponent<Animator>();
+        state_manager = gameObject.GetComponent<Boss1_State_Manager>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (life_regen)
+        {
+            slider_component.value = Mathf.Lerp(slider_component.value, maxHP + 30, .02f);
+            if(slider_component.value >= maxHP)
+            {
+                life_regen = false;
+            }
+        }
     }
 
     public void Start_Fight()
@@ -40,7 +54,15 @@ public class Boss_HP : MonoBehaviour
     {
         HP--;
         slider_component.value = HP;
-        if (HP <= 0)
+        if (HP <= 0 && phase1 && !life_regen)
+        {
+            state_manager.SwitchState(state_manager.phase2_idle_state);
+            HP = maxHP;
+            life_regen = true;
+            animator.SetBool("Phase2", true);
+            phase1 = false;
+        }
+        else if (HP <= 0 && !phase1 && !life_regen)
         {
             time_Script.boss1_scene = false;
             slider_animator.SetBool("Active", false);

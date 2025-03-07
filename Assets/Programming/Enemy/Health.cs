@@ -16,12 +16,14 @@ public class Health : MonoBehaviour
     MeshRenderer renderer;
 
     GameObject hit_vfx;
+    Wave_System wave_system;
     private void Start()
     {
         renderer = GetComponent<MeshRenderer>();
         GameObject room_counter = GameObject.Find("Room_Counter");
         room_counter_script = room_counter.GetComponent<Room_Counter>();
         hit_vfx = transform.Find("HitEffect").gameObject;
+        wave_system = GameObject.Find("Wave Manager").GetComponent<Wave_System>();
     }
 
     public void Get_Hit()
@@ -45,6 +47,7 @@ public class Health : MonoBehaviour
             explosion_object.transform.parent = null;
             explosion_object.transform.position = gameObject.transform.position;
             room_counter_script.EnemyKilled();
+            wave_system.Enemy_Killed();
             Destroy(gameObject);
         }
         StartCoroutine(ChangeColor());

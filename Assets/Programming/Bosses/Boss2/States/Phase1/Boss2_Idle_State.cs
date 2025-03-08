@@ -10,6 +10,7 @@ public class Boss2_Idle_State : Boss2_Base_State
         //state.animator.SetBool("Storm", false);
         state.animator.SetBool("Spin",false);
         state.animator.SetBool("Boomerang", false);
+        state.animator.SetBool("Divine", false);
         if (state.shoulder_count >= 5)
         {
             state.animator.SetBool("Shoulder", false);
@@ -82,9 +83,9 @@ public class Boss2_Idle_State : Boss2_Base_State
                 case 1:
                     state.SwitchState(state.boomerang_State);
                     break;
-                /*case 2:
-                    state.SwitchState(state.scatter_Bolt);
-                    break;*/
+                case 2:
+                    state.SwitchState(state.divine_punishment);
+                    break;
             }
         }
     }

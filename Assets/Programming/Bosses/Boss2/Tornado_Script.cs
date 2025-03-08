@@ -6,8 +6,15 @@ public class Tornado_Script : MonoBehaviour
 {
     Animator animator;
     float speed;
+    Timemanager time_manager;
+    ArrayExtensionMethods ae;
+    Tornado_Script script;
     void Start()
     {
+        script = GetComponent<Tornado_Script>();
+        time_manager = GameObject.Find("Time manager").GetComponent<Timemanager>();
+        ae = GameObject.Find("Time manager").GetComponent<ArrayExtensionMethods>();
+        time_manager.tornado_scripts = (Tornado_Script[])ae.AddToArray(script, time_manager.tornado_scripts);
         animator = GetComponent<Animator>();
         speed = animator.GetFloat("Speed");
     }
@@ -20,6 +27,7 @@ public class Tornado_Script : MonoBehaviour
 
     public void Die()
     {
+        time_manager.tornado_scripts = (Tornado_Script[])ae.Remove(script, time_manager.tornado_scripts);
         Object.Destroy(gameObject);
     }
 

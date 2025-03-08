@@ -14,6 +14,7 @@ public class Boss2_State_Manager : MonoBehaviour
     public Boss2_Shoulder_Bash_State shoulder_bash = new Boss2_Shoulder_Bash_State();
     public Boss2_Spin_State spin_state = new Boss2_Spin_State();
     public Boss2_Boomerang_State boomerang_State = new Boss2_Boomerang_State();
+    public Boss2_Divine_Punishment_State divine_punishment = new Boss2_Divine_Punishment_State();
 
     public Animator animator;
     public int random_number = 0;

@@ -41,6 +41,7 @@ public class Boss_HP : MonoBehaviour
         {
             health_checks = maxHP / 2;
             health_checks2 = maxHP / 4;
+            time_Script.Activate_Boss2(gameObject);
         }
         animator = gameObject.GetComponent<Animator>();
         if (boss1)
@@ -111,7 +112,9 @@ public class Boss_HP : MonoBehaviour
 
             else if (HP <= 0 && phase1 && !life_regen)
             {
-                //time_Script.boss1_scene = false;
+                GameObject rotating_orbs = GameObject.Find("Rotating_Orbs");
+                Object.Destroy(rotating_orbs);
+                time_Script.boss2_Scene = false;
                 slider_animator.SetBool("Active", false);
                 Destroy(gameObject);
             }

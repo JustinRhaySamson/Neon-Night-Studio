@@ -11,6 +11,7 @@ public class Timemanager : MonoBehaviour
     public bool cooldown = false;
     public bool doorBool = false;
     public bool boss1_scene = false;
+    public bool boss2_Scene = false;
 
     public Time_Stop_Check_Shooter[] enemies_shooter;
     public Time_Stop_Check_Melee[] enemies_melee;
@@ -18,6 +19,7 @@ public class Timemanager : MonoBehaviour
     public Explosion_Script[] explosions;
     public Lightning_Script[] lightnings;
     public Lightning_Spawner[] lightning_spawns;
+    public Tornado_Script[] tornado_scripts;
     
 
     bool LB_Press = false;
@@ -41,6 +43,13 @@ public class Timemanager : MonoBehaviour
     Boss1_State_Manager boss1_State_Manager;
     float boss1_speed = 0;
     int boss1_force = 0;
+
+    GameObject boss2;
+    Animator boss2_animator;
+    //Vortex_Projectiles vortex_Projectiles;
+    Boss2_State_Manager boss2_State_Manager;
+    float boss2_speed = 0;
+    int boss2_force = 0;
 
     public float refill_timer = 0;
 
@@ -154,6 +163,10 @@ public class Timemanager : MonoBehaviour
             {
                 spawner.Time_Stop();
             }
+            foreach(Tornado_Script tornado in tornado_scripts)
+            {
+                tornado.Time_Stop();
+            }
             if (doorBool)
             {
                 door_animator.SetFloat("Speed", 0);
@@ -169,6 +182,17 @@ public class Timemanager : MonoBehaviour
                 boss1_force = boss1_State_Manager.force;
                 boss1_State_Manager.force = 0;
                 Rigidbody rb = boss1.GetComponent<Rigidbody>();
+                rb.velocity = Vector3.zero;
+            }
+            if (boss2_Scene)
+            {
+                boss2_speed = boss2_animator.GetFloat("Speed");
+                boss2_animator.SetFloat("Speed", 0);
+                Look_At boss2_look = boss2.gameObject.GetComponent<Look_At>();
+                boss2_look.enabled = false;
+                boss2_force = boss2_State_Manager.force;
+                boss2_State_Manager.force = 0;
+                Rigidbody rb = boss2.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.zero;
             }
             
@@ -218,6 +242,10 @@ public class Timemanager : MonoBehaviour
         {
             spawner.Time_Reset();
         }
+        foreach (Tornado_Script tornado in tornado_scripts)
+        {
+            tornado.Time_Reset();
+        }
         if (doorBool)
         {
             door_animator.SetFloat("Speed", 1);
@@ -230,6 +258,13 @@ public class Timemanager : MonoBehaviour
             Look_At boss1_look = boss1.gameObject.GetComponent<Look_At>();
             boss1_look.enabled = true;
             boss1_State_Manager.force = boss1_force;
+        }
+        if (boss2_Scene)
+        {
+            boss2_animator.SetFloat("Speed", boss2_speed);
+            Look_At boss2_look = boss2.gameObject.GetComponent<Look_At>();
+            boss2_look.enabled = true;
+            boss2_State_Manager.force = boss2_force;
         }
     }
 
@@ -246,5 +281,13 @@ public class Timemanager : MonoBehaviour
         boss1_animator = boss1.GetComponent<Animator>();
         vortex_Projectiles = GameObject.Find("Vortex Bullet Spawner").GetComponent<Vortex_Projectiles>();
         boss1_State_Manager = boss1.GetComponent<Boss1_State_Manager>();
+    }
+
+    public void Activate_Boss2(GameObject boss)
+    {
+        boss2_Scene = true;
+        boss2 = boss;
+        boss2_animator = boss2.GetComponent<Animator>();
+        boss2_State_Manager = boss2.GetComponent<Boss2_State_Manager>();
     }
 }

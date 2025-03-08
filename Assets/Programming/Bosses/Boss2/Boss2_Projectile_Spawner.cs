@@ -14,6 +14,8 @@ public class Boss2_Projectile_Spawner : MonoBehaviour
     public GameObject tornado;
     public GameObject bullets_3;
     public GameObject expanding_wave;
+    public GameObject divine_punishment_projectiles;
+
     int orbs_number = -1;
     float force = 10;
     void Start()
@@ -72,6 +74,13 @@ public class Boss2_Projectile_Spawner : MonoBehaviour
     {
         GameObject expanding_wave_spawn = Instantiate(expanding_wave, 
             center_spawner.transform.position, 
+            transform.rotation * Quaternion.Euler(0, -90, 0));
+    }
+
+    public void Spawn_Divine_Punishment()
+    {
+        GameObject divine_spawn = Instantiate(divine_punishment_projectiles,
+            center_spawner.transform.position,
             transform.rotation * Quaternion.Euler(0, -90, 0));
     }
 }

@@ -2,16 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss2_Storm_State : Boss2_Base_State
+public class Boss2_Divine_Punishment_State : Boss2_Base_State
 {
     public override void EnterState(Boss2_State_Manager state)
     {
-        state.animator.SetBool("Cyclonic_Slash", false);
-        state.animator.SetBool("Spin", false);
-        state.animator.SetBool("Shoulder", false);
-        state.animator.SetBool("Boomerang", false);
-        state.animator.SetBool("Divine", false);
-        state.animator.SetBool("Storm", true);
+        state.animator.SetBool("Divine", true);
+        state.attacks_made++;
     }
 
     public override void UpdateState(Boss2_State_Manager state)

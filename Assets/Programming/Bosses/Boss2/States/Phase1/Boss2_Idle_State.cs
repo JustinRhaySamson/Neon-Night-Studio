@@ -6,6 +6,7 @@ public class Boss2_Idle_State : Boss2_Base_State
 {
     public override void EnterState(Boss2_State_Manager state)
     {
+        state.animator.SetBool("Cyclonic_Slash", false);
         state.animator.SetBool("Intro", true);
         state.animator.SetBool("Running", true);
     }
@@ -17,18 +18,18 @@ public class Boss2_Idle_State : Boss2_Base_State
 
     public override void OnTriggerEnter(Boss2_State_Manager state)
     {
-        /*switch (state.random_number)
+        switch (state.random_number)
         {
             case 0:
-                state.SwitchState(state.flash_Step);
+                state.SwitchState(state.cyclonic_Slah);
                 break;
-            case 1:
+            /*case 1:
                 state.SwitchState(state.cross_Lightning);
                 break;
             case 2:
                 state.SwitchState(state.slash_state);
-                break;
-        }*/
+                break;*/
+        }
 
     }
 
@@ -44,23 +45,23 @@ public class Boss2_Idle_State : Boss2_Base_State
 
     public override void Timer_Inside_Trigger(Boss2_State_Manager state)
     {
-        /*if (state.inside_trigger)
+        if (state.inside_trigger)
         {
             switch (state.random_number)
             {
                 case 0:
-                    state.SwitchState(state.flash_Step);
+                    state.SwitchState(state.cyclonic_Slah);
                     break;
-                case 1:
+                /*case 1:
                     state.SwitchState(state.cross_Lightning);
                     break;
                 case 2:
                     state.SwitchState(state.slash_state);
-                    break;
+                    break;*/
             }
         }
 
-        else if (!state.inside_trigger)
+        /*else if (!state.inside_trigger)
         {
             switch (state.random_number)
             {

@@ -8,6 +8,7 @@ public class Boss2_State_Manager : MonoBehaviour
 
     public Boss2_Inactive_State inactive_state = new Boss2_Inactive_State();
     public Boss2_Idle_State idle_state = new Boss2_Idle_State();
+    public Boss2_Cyclonic_Slah cyclonic_Slah = new Boss2_Cyclonic_Slah();
 
     public Animator animator;
     public int random_number = 0;
@@ -24,13 +25,13 @@ public class Boss2_State_Manager : MonoBehaviour
     public bool dashing_to_center = false;
     [SerializeField] bool phase2 = false;
 
-    Boss1_Projectile_Spawn projectile_Spawn;
+    Boss2_Projectile_Spawner projectile_Spawn;
 
 
     void Start()
     {
         look_at = gameObject.GetComponent<Look_At>();
-        projectile_Spawn = gameObject.GetComponent<Boss1_Projectile_Spawn>();
+        projectile_Spawn = gameObject.GetComponent<Boss2_Projectile_Spawner>();
         currentState = inactive_state;
         currentState.EnterState(this);
         StartCoroutine(Timer());
@@ -166,11 +167,5 @@ public class Boss2_State_Manager : MonoBehaviour
     {
         SphereCollider sphereCollider = gameObject.GetComponent<SphereCollider>();
         sphereCollider.enabled = true;
-    }
-
-    public void Teleport_Player()
-    {
-        gameObject.transform.position = look_at.player_transform.position;
-        projectile_Spawn.Spawn_Big_Lightning();
     }
 }

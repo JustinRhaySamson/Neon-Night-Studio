@@ -7,6 +7,8 @@ public class Boss_HP : MonoBehaviour
 {
     public int HP;
     public int maxHP;
+    int health_checks = 0;
+    int health_checks2 = 0;  
     GameObject slider;
     Slider slider_component;
     Animator slider_animator;
@@ -18,6 +20,8 @@ public class Boss_HP : MonoBehaviour
     bool life_regen = false;
 
     bool phase1 = true;
+
+    
 
     [SerializeField] bool boss1 = false;
     [SerializeField] bool boss2 = false;
@@ -35,7 +39,8 @@ public class Boss_HP : MonoBehaviour
         }
         else if (boss2)
         {
-
+            health_checks = maxHP / 2;
+            health_checks2 = maxHP / 4;
         }
         animator = gameObject.GetComponent<Animator>();
         if (boss1)
@@ -92,7 +97,19 @@ public class Boss_HP : MonoBehaviour
         
         else if (boss2)
         {
-            if (HP <= 0 && phase1 && !life_regen)
+            if(HP <= health_checks)
+            {
+                health_checks = -20;
+                state_manager2.SwitchState(state_manager2.storm_state);
+            }
+
+            else if(HP <= health_checks2)
+            {
+                health_checks2 = -20;
+                state_manager2.SwitchState(state_manager2.storm_state);
+            }
+
+            else if (HP <= 0 && phase1 && !life_regen)
             {
                 //time_Script.boss1_scene = false;
                 slider_animator.SetBool("Active", false);

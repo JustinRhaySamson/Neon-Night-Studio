@@ -9,6 +9,11 @@ public class Boss2_State_Manager : MonoBehaviour
     public Boss2_Inactive_State inactive_state = new Boss2_Inactive_State();
     public Boss2_Idle_State idle_state = new Boss2_Idle_State();
     public Boss2_Cyclonic_Slah cyclonic_Slah = new Boss2_Cyclonic_Slah();
+    public Boss2_Storm_State storm_state = new Boss2_Storm_State();
+    public Boss2_Wall_State wall_state = new Boss2_Wall_State();
+    public Boss2_Shoulder_Bash_State shoulder_bash = new Boss2_Shoulder_Bash_State();
+    public Boss2_Spin_State spin_state = new Boss2_Spin_State();
+    public Boss2_Boomerang_State boomerang_State = new Boss2_Boomerang_State();
 
     public Animator animator;
     public int random_number = 0;
@@ -16,10 +21,12 @@ public class Boss2_State_Manager : MonoBehaviour
     public int attacks_made = 0;
     public int random_chain_attack = 1;
     public bool inside_trigger = false;
-    public Transform room_center;
     public Look_At look_at;
-    public int force = 3000;
+    public int force = 5000;
     public GameObject dash_VFX;
+    public GameObject[] arena_points = new GameObject[8];
+    [HideInInspector] public Transform point_to_look;
+    [HideInInspector] public int shoulder_count = 0;
 
 
     public bool dashing_to_center = false;
@@ -47,6 +54,7 @@ public class Boss2_State_Manager : MonoBehaviour
     void Update()
     {
         currentState.UpdateState(this);
+        //print(point_to_look);
     }
 
     private void FixedUpdate()
@@ -55,15 +63,15 @@ public class Boss2_State_Manager : MonoBehaviour
         {
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * force, ForceMode.Impulse);
-            look_at.Look_At_Center(room_center);
+            look_at.Look_At_Center(point_to_look);
         }
     }
 
     public void SwitchState(Boss2_Base_State state)
     {
         currentState = state;
+        print("The current state is " + currentState.ToString());
         state.EnterState(this);
-        print("attacks made: " + attacks_made);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -85,6 +93,14 @@ public class Boss2_State_Manager : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Wall")
+        {
+            currentState.OnCollisionEnter(this);
+        }
+    }
+
     public void Set_Anim_Speed(float speed)
     {
         animator.SetFloat("Speed", speed);
@@ -102,6 +118,7 @@ public class Boss2_State_Manager : MonoBehaviour
             yield return new WaitForSeconds(.8f);
             //print("The one bool in the state machine is: " + inside_trigger);
             random_number = Random.Range(0, 3);
+            print("The random number is " + random_number);
             currentState.Timer_Inside_Trigger(this);
         }
     }
@@ -167,5 +184,26 @@ public class Boss2_State_Manager : MonoBehaviour
     {
         SphereCollider sphereCollider = gameObject.GetComponent<SphereCollider>();
         sphereCollider.enabled = true;
+    }
+
+    public void Set_Storm_False()
+    {
+        animator.SetBool("Storm",false);
+    }
+
+    public void Look_At_Wall()
+    {
+        look_at.Look_At_Center(point_to_look);
+    }
+
+    public void Shoulder_Dash()
+    {
+        look_at.Damping_0();
+        dashing_to_center = true;
+    }
+
+    public void Look_Player()
+    {
+        look_at.Look_At_Player();
     }
 }

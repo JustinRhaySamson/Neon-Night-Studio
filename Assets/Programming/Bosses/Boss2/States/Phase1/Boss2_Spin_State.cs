@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss2_Cyclonic_Slah : Boss2_Base_State
+public class Boss2_Spin_State : Boss2_Base_State
 {
     public override void EnterState(Boss2_State_Manager state)
     {
-        state.animator.SetBool("Cyclonic_Slash", true);
-        state.attacks_made++;
+        state.animator.SetBool("Spin", true);
     }
 
     public override void UpdateState(Boss2_State_Manager state)

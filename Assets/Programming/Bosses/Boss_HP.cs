@@ -14,9 +14,13 @@ public class Boss_HP : MonoBehaviour
     Timemanager time_Script;
     Animator animator;
     Boss1_State_Manager state_manager;
+    Boss2_State_Manager state_manager2;
     bool life_regen = false;
 
     bool phase1 = true;
+
+    [SerializeField] bool boss1 = false;
+    [SerializeField] bool boss2 = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +29,23 @@ public class Boss_HP : MonoBehaviour
         slider_animator = slider.GetComponent <Animator>();
         time_manager = GameObject.Find("Time manager");
         time_Script = time_manager.GetComponent<Timemanager>();
-        time_Script.Activate_Boss1(gameObject);
+        if (boss1)
+        {
+            time_Script.Activate_Boss1(gameObject);
+        }
+        else if (boss2)
+        {
+
+        }
         animator = gameObject.GetComponent<Animator>();
-        state_manager = gameObject.GetComponent<Boss1_State_Manager>();
+        if (boss1)
+        {
+            state_manager = gameObject.GetComponent<Boss1_State_Manager>();
+        }
+        else if (boss2)
+        {
+            state_manager2 = gameObject.GetComponent<Boss2_State_Manager>();
+        }
     }
 
     // Update is called once per frame
@@ -54,19 +72,32 @@ public class Boss_HP : MonoBehaviour
     {
         HP--;
         slider_component.value = HP;
-        if (HP <= 0 && phase1 && !life_regen)
+        if (boss1)
         {
-            state_manager.SwitchState(state_manager.phase2_idle_state);
-            HP = maxHP;
-            life_regen = true;
-            animator.SetBool("Phase2", true);
-            phase1 = false;
+            if (HP <= 0 && phase1 && !life_regen)
+            {
+                state_manager.SwitchState(state_manager.phase2_idle_state);
+                HP = maxHP;
+                life_regen = true;
+                animator.SetBool("Phase2", true);
+                phase1 = false;
+            }
+            else if (HP <= 0 && !phase1 && !life_regen)
+            {
+                time_Script.boss1_scene = false;
+                slider_animator.SetBool("Active", false);
+                Destroy(gameObject);
+            }
         }
-        else if (HP <= 0 && !phase1 && !life_regen)
+        
+        else if (boss2)
         {
-            time_Script.boss1_scene = false;
-            slider_animator.SetBool("Active", false);
-            Destroy(gameObject);
+            if (HP <= 0 && phase1 && !life_regen)
+            {
+                //time_Script.boss1_scene = false;
+                slider_animator.SetBool("Active", false);
+                Destroy(gameObject);
+            }
         }
     }
 }

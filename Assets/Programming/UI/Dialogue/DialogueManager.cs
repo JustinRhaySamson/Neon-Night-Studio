@@ -6,20 +6,30 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-	public TMP_Text nameText;
+	public TMP_Text leftNameText;
+	public TMP_Text rightNameText;
 	public TMP_Text dialogueText;
-	public Image speakerImage;
+	public Image leftSpeakerImage;
+	public Image rightSpeakerImage;
+	public Image dialogueBox;
 
 	public Animator animator;
 	public Player_Controller playerController;
 
 	[Header("Speakers Names")]
 
-	public string[] speakers;
+	public string[] leftSpeakers;
+	public string[] rightSpeakers;
 
 	[Header("Speaker Images")]
 
-	public Sprite[] speakerSprites;
+	public Sprite[] leftSpeakerSprites;
+	public Sprite[] rightSpeakerSprites;
+
+	[Header("Dialogue Boxes")]
+
+	public Sprite[] leftDialogueBoxes;
+	public Sprite[] rightDialogueBoxes;
 
 	private Queue<string> sentences;
 	Dialogue dialogue1 = null;
@@ -30,6 +40,8 @@ public class DialogueManager : MonoBehaviour
 	void Start()
 	{
 		sentences = new Queue<string>();
+		leftSpeakerImage.enabled = false;
+		rightSpeakerImage.enabled = false;
 	}
 
 	public void StartDialogue(Dialogue dialogue)
@@ -39,7 +51,7 @@ public class DialogueManager : MonoBehaviour
 
 		speakerNumber = 0;
 
-		nameText.text = dialogue.name[0];
+		leftNameText.text = dialogue.name[0];
 		Check_Image();
 
 		sentences.Clear();
@@ -64,7 +76,7 @@ public class DialogueManager : MonoBehaviour
 			print("I am displaying next sentence");
 			speakerNumber++;
 			Check_Image();
-			nameText.text = dialogue1.name[speakerNumber];
+			//leftNameText.text = dialogue1.name[speakerNumber];
 		}
 		string sentence = sentences.Dequeue();
 		StopAllCoroutines();
@@ -93,13 +105,54 @@ public class DialogueManager : MonoBehaviour
 
 	void Check_Image()
     {
-		for(int i = 0; i < speakers.Length; i++)
+		bool left_grey = true;
+		bool right_grey = true;
+		for(int i = 0; i < leftSpeakers.Length; i++)
         {
-			if (speakers[i].ToLower() == dialogue1.name[speakerNumber].ToLower())
+			if (leftSpeakers[i].ToLower() == dialogue1.name[speakerNumber].ToLower())
             {
-				speakerImage.sprite = speakerSprites[i];
+				leftSpeakerImage.sprite = leftSpeakerSprites[i];
+				dialogueBox.sprite = leftDialogueBoxes[i];
+				left_grey = false;
 			}
         }
-    }
+
+		if (left_grey)
+        {
+			leftSpeakerImage.color = Color.grey;
+			leftNameText.text = " ";
+        }
+
+		else if (!left_grey)
+        {
+			leftSpeakerImage.color= Color.white;
+			leftSpeakerImage.enabled = true;
+			leftNameText.text = dialogue1.name[speakerNumber];
+			print(leftNameText.text);
+		}
+
+		for (int i = 0; i < rightSpeakers.Length; i++)
+		{
+			if (rightSpeakers[i].ToLower() == dialogue1.name[speakerNumber].ToLower())
+			{
+				rightSpeakerImage.sprite = rightSpeakerSprites[i];
+				dialogueBox.sprite = rightDialogueBoxes[i];
+				right_grey = false;
+			}
+		}
+
+		if (right_grey)
+		{
+			rightSpeakerImage.color = Color.grey;
+			rightNameText.text = " ";
+		}
+
+		else if (!right_grey)
+		{
+			rightSpeakerImage.color = Color.white;
+			rightSpeakerImage.enabled = true;
+			rightNameText.text = dialogue1.name[speakerNumber];
+		}
+	}
 
 }

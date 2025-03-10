@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Boss_HP : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class Boss_HP : MonoBehaviour
 
     [SerializeField] bool boss1 = false;
     [SerializeField] bool boss2 = false;
+
+    public UnityEvent die;
     // Start is called before the first frame update
     void Start()
     {
@@ -92,6 +95,7 @@ public class Boss_HP : MonoBehaviour
             {
                 time_Script.boss1_scene = false;
                 slider_animator.SetBool("Active", false);
+                die.Invoke();
                 Destroy(gameObject);
             }
         }
@@ -112,6 +116,7 @@ public class Boss_HP : MonoBehaviour
 
             else if (HP <= 0 && phase1 && !life_regen)
             {
+                die.Invoke();
                 GameObject rotating_orbs = GameObject.Find("Rotating_Orbs");
                 Object.Destroy(rotating_orbs);
                 time_Script.boss2_Scene = false;

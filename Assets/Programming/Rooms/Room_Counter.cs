@@ -24,7 +24,7 @@ public class Room_Counter : MonoBehaviour
         if (enemies_killed >= requirements[requirements_met])
         {
             player_store_data.enemies_killed = requirements[requirements_met];
-            print(player_store_data.enemies_killed);
+            //print(player_store_data.enemies_killed);
             Open_Doors();
             requirements_met++;
         }

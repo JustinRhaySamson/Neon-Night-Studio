@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shoot_bullet : MonoBehaviour
 {
-    public int reload_time;
+    public float reload_time;
     public int force;
     public GameObject bullet;
     public Transform firepoint;

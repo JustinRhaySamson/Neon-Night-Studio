@@ -22,6 +22,10 @@ public class Time_Stop_Check_Melee : MonoBehaviour
         time_manager = Manager.GetComponent<Timemanager>();
         ae = Manager.GetComponent<ArrayExtensionMethods>();
         time_manager.enemies_melee = (Time_Stop_Check_Melee[])ae.AddToArray(time_stop_check_melee, time_manager.enemies_melee);
+        if (time_manager.Time_Stopped)
+        {
+            StopEnemy();
+        }
     }
 
     // Update is called once per frame
@@ -38,7 +42,7 @@ public class Time_Stop_Check_Melee : MonoBehaviour
         look_at.enabled = false;
         nav_Agent.enabled = false;
         animator.SetFloat("Animation_Speed", 0);
-        //sphere_Collider.enabled = false;
+        sphere_Collider.enabled = false;
     }
 
     public void RestartEnemy()

@@ -129,22 +129,22 @@ public class Timemanager : MonoBehaviour
             slider_component.maxValue = 2.9f;
             slider_component.value = 2.9f;
             slider_time = Time.time;
-            for (int i = 0; i < enemies_shooter.Length; i++)
+            foreach(Time_Stop_Check_Shooter shooter in enemies_shooter)
             {
-                enemies_shooter[i].StopEnemy();
+                shooter.StopEnemy();
             }
-            for (int i = 0; i < enemies_melee.Length; i++)
+            foreach(Time_Stop_Check_Melee melee in enemies_melee)
             {
-                enemies_melee[i].StopEnemy();
+                melee.StopEnemy();
             }
-            for (int i = 0; i < bullets.Length; i++)
+            foreach(Basic_Bullet bullet in bullets)
             {
-                bullets[i].StopBullet();
+                bullet.StopBullet();
             }
-            for (int i = 0; i < explosions.Length; i++)
+            foreach(Explosion_Script explosion in explosions)
             {
-                explosions[i].Stop_Explosion();
-                GameObject oni_Shockwave = explosions[i].transform.Find("Oni_Shockwave").gameObject; ;
+                explosion.Stop_Explosion();
+                GameObject oni_Shockwave = explosion.transform.Find("Oni_Shockwave").gameObject; ;
                 GameObject electricity = oni_Shockwave.transform.Find("Electricity").gameObject;
                 GameObject indicator = oni_Shockwave.transform.Find("Indicator").gameObject;
                 GameObject sparks = oni_Shockwave.transform.Find("Sparks").gameObject;
@@ -208,22 +208,22 @@ public class Timemanager : MonoBehaviour
         refill_timer = 0;
         slider_component.maxValue = 20;
         slider_time2 = Time.time;
-        for (int i = 0; i < enemies_shooter.Length; i++)
+        foreach (Time_Stop_Check_Shooter shooter in enemies_shooter)
         {
-            enemies_shooter[i].RestartEnemy();
+            shooter.RestartEnemy();
         }
-        for (int i = 0; i < enemies_melee.Length; i++)
+        foreach (Time_Stop_Check_Melee melee in enemies_melee)
         {
-            enemies_melee[i].RestartEnemy();
+            melee.RestartEnemy();
         }
-        for (int i = 0; i < bullets.Length; i++)
+        foreach (Basic_Bullet bullet in bullets)
         {
-            bullets[i].RestartBullet();
+            bullet.RestartBullet();
         }
-        for (int i = 0; i < explosions.Length; i++)
+        foreach (Explosion_Script explosion in explosions)
         {
-            explosions[i].Restart_Explosion();
-            GameObject oni_Shockwave = explosions[i].transform.Find("Oni_Shockwave").gameObject; ;
+            explosion.Restart_Explosion();
+            GameObject oni_Shockwave = explosion.transform.Find("Oni_Shockwave").gameObject; ;
             GameObject electricity = oni_Shockwave.transform.Find("Electricity").gameObject;
             GameObject indicator = oni_Shockwave.transform.Find("Indicator").gameObject;
             GameObject sparks = oni_Shockwave.transform.Find("Sparks").gameObject;

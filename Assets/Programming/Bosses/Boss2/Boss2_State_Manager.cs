@@ -116,7 +116,7 @@ public class Boss2_State_Manager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(.8f);
+            yield return new WaitForSeconds(1.1f);
             //print("The one bool in the state machine is: " + inside_trigger);
             random_number = Random.Range(0, 3);
             print("The random number is " + random_number);

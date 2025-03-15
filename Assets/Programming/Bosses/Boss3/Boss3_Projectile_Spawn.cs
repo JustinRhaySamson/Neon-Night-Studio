@@ -9,14 +9,14 @@ public class Boss3_Projectile_Spawn : MonoBehaviour
     public GameObject center_spawner;
     public Collider weapon_collider;
     public Collider weapon_collider2;
-    public GameObject lightning;
-    public GameObject tornado;
+    public GameObject icicles_ground;
+    public GameObject shattering_snowflakes;
     public GameObject bullets_3;
     public GameObject expanding_wave;
     public GameObject divine_punishment_projectiles;
 
     int orbs_number = -1;
-    float force = 10;
+    float force = 20;
     void Start()
     {
 
@@ -49,23 +49,23 @@ public class Boss3_Projectile_Spawn : MonoBehaviour
         weapon_collider2.enabled = false;
     }
 
-    public void Spawn_Tornado()
+    public void Spawn_Icicles_Ground()
     {
-        GameObject tornado_spawn = Instantiate(tornado,
-            new Vector3(transform.position.x, transform.position.y + 2, transform.position.z), Quaternion.Euler(90, 0, 90));
-        tornado_spawn.transform.SetParent(gameObject.transform);
-        tornado.transform.rotation = Quaternion.Euler(90, 0, 0);
+        GameObject icicles_spawn = Instantiate(icicles_ground, gameObject.transform.position, gameObject.transform.rotation);
+        //icicles_spawn.transform.parent = gameObject.transform;
     }
 
-    public void Spawn_3_Bullets()
+    public void Spawn_Bullet()
     {
-        GameObject bullets_3_spawn = Instantiate(bullets_3, spwaner1.transform.position,
-            transform.rotation * Quaternion.Euler(0, -90, 0));
+        GameObject bullet = Instantiate(bullets_3, center_spawner.transform.position,
+            transform.rotation);
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        rb.AddForce(bullet.transform.forward * force, ForceMode.Impulse);
     }
 
-    public void Expanding_Wave()
+    public void Shattering_Snowflakes()
     {
-        GameObject expanding_wave_spawn = Instantiate(expanding_wave,
+        GameObject expanding_wave_spawn = Instantiate(shattering_snowflakes,
             center_spawner.transform.position,
             transform.rotation * Quaternion.Euler(0, -90, 0));
     }

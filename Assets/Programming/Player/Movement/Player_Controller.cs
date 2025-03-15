@@ -125,6 +125,7 @@ public class Player_Controller : MonoBehaviour
         if (callbackContext.performed && !dashing)
         {
             gameObject.tag = "Invincible";
+            gameObject.layer = LayerMask.NameToLayer("Invincible");
             animator.SetFloat("Dash_Speed", 3.4f);
             dashing = true;
             //animator.SetBool("Dash", true);
@@ -140,6 +141,7 @@ public class Player_Controller : MonoBehaviour
         animator.SetFloat("Dash_Speed", 1.7f);
         //animator.SetBool("Dash", false);
         gameObject.tag = "Player";
+        gameObject.layer = LayerMask.NameToLayer("Player");
         DashVFX.SetActive(false);
     }
 

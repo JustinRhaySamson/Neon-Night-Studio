@@ -18,6 +18,7 @@ public class Boss_HP : MonoBehaviour
     Animator animator;
     Boss1_State_Manager state_manager;
     Boss2_State_Manager state_manager2;
+    Boss3_State_Manager state_manager3;
     bool life_regen = false;
 
     bool phase1 = true;
@@ -26,6 +27,7 @@ public class Boss_HP : MonoBehaviour
 
     [SerializeField] bool boss1 = false;
     [SerializeField] bool boss2 = false;
+    [SerializeField] bool boss3 = false;
 
     public UnityEvent die;
     // Start is called before the first frame update
@@ -54,6 +56,10 @@ public class Boss_HP : MonoBehaviour
         else if (boss2)
         {
             state_manager2 = gameObject.GetComponent<Boss2_State_Manager>();
+        }
+        else if (boss3)
+        {
+            state_manager3 = gameObject.GetComponent<Boss3_State_Manager>();
         }
     }
 
@@ -121,6 +127,16 @@ public class Boss_HP : MonoBehaviour
                 Object.Destroy(rotating_orbs);
                 time_Script.boss2_Scene = false;
                 slider_animator.SetBool("Active", false);
+                Destroy(gameObject);
+            }
+        }
+
+        else if (boss3)
+        {
+            if (HP <= 0 && phase1 && !life_regen)
+            {
+                slider_animator.SetBool("Active", false);
+                die.Invoke();
                 Destroy(gameObject);
             }
         }

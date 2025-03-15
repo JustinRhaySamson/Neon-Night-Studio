@@ -34,8 +34,10 @@ public class Boss3_State_Manager : MonoBehaviour
     [SerializeField] bool phase2 = false;
 
     Boss3_Projectile_Spawn projectile_Spawn;
+    GameObject ice_wall;
+    
 
-    int walls_broken = 0;
+    public int walls_broken = 0;
 
 
     void Start()
@@ -207,5 +209,17 @@ public class Boss3_State_Manager : MonoBehaviour
     {
         transform.position = ice_wall_teleports[walls_broken].transform.position;
         walls_broken++;
+    }
+
+    public void Break_Wall()
+    {
+        ice_wall = projectile_Spawn.ice_walls_spawn;
+        Animator ice_animator = ice_wall.GetComponent<Animator>();
+        ice_animator.SetInteger("Walls_Broken", walls_broken);
+    }
+
+    public void Reset_Walls_Broken()
+    {
+        walls_broken = 0;
     }
 }

@@ -20,7 +20,7 @@ public class Boss3_Projectile_Spawn : MonoBehaviour
     int orbs_number = -1;
     float force = 20;
 
-    GameObject ice_walls_spawn;
+    public GameObject ice_walls_spawn;
     void Start()
     {
 

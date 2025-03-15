@@ -2,20 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss2_State_Manager : MonoBehaviour
+public class Boss3_State_Manager : MonoBehaviour
 {
-    Boss2_Base_State currentState;
+    Boss3_Base_State currentState;
 
-    public Boss2_Inactive_State inactive_state = new Boss2_Inactive_State();
-    public Boss2_Idle_State idle_state = new Boss2_Idle_State();
-    public Boss2_Cyclonic_Slah cyclonic_Slah = new Boss2_Cyclonic_Slah();
-    public Boss2_Storm_State storm_state = new Boss2_Storm_State();
-    public Boss2_Wall_State wall_state = new Boss2_Wall_State();
-    public Boss2_Shoulder_Bash_State shoulder_bash = new Boss2_Shoulder_Bash_State();
-    public Boss2_Spin_State spin_state = new Boss2_Spin_State();
-    public Boss2_Boomerang_State boomerang_State = new Boss2_Boomerang_State();
-    public Boss2_Divine_Punishment_State divine_punishment = new Boss2_Divine_Punishment_State();
+    public Boss3_idle_State idle_state = new Boss3_idle_State();
+    public Boss3_Inactive_State inactive_state = new Boss3_Inactive_State();
+    public Boss3_Advancing_Frost_State advancing_frost = new Boss3_Advancing_Frost_State();
+    public Boss3_Right_Shattering_State right_shattering = new Boss3_Right_Shattering_State();
+    public Boss3_Left_Shattering_State left_shattering = new Boss3_Left_Shattering_State();
 
+
+    public GameObject player;
     public Animator animator;
     public int random_number = 0;
     public int chain_attack = 1;
@@ -25,7 +23,6 @@ public class Boss2_State_Manager : MonoBehaviour
     public Look_At look_at;
     public int force = 5000;
     public GameObject dash_VFX;
-    public GameObject[] arena_points = new GameObject[8];
     [HideInInspector] public Transform point_to_look;
     [HideInInspector] public int shoulder_count = 0;
 
@@ -33,13 +30,14 @@ public class Boss2_State_Manager : MonoBehaviour
     public bool dashing_to_center = false;
     [SerializeField] bool phase2 = false;
 
-    Boss2_Projectile_Spawner projectile_Spawn;
+    Boss3_Projectile_Spawn projectile_Spawn;
 
 
     void Start()
-    {
+    { 
         look_at = gameObject.GetComponent<Look_At>();
-        projectile_Spawn = gameObject.GetComponent<Boss2_Projectile_Spawner>();
+        print("wtf");
+        projectile_Spawn = gameObject.GetComponent<Boss3_Projectile_Spawn>();
         currentState = inactive_state;
         currentState.EnterState(this);
         StartCoroutine(Timer());
@@ -68,7 +66,7 @@ public class Boss2_State_Manager : MonoBehaviour
         }
     }
 
-    public void SwitchState(Boss2_Base_State state)
+    public void SwitchState(Boss3_Base_State state)
     {
         currentState = state;
         print("The current state is " + currentState.ToString());
@@ -96,7 +94,7 @@ public class Boss2_State_Manager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "Wall")
         {
             currentState.OnCollisionEnter(this);
         }
@@ -119,7 +117,7 @@ public class Boss2_State_Manager : MonoBehaviour
             yield return new WaitForSeconds(1.1f);
             //print("The one bool in the state machine is: " + inside_trigger);
             random_number = Random.Range(0, 3);
-            //print("The random number is " + random_number);
+            print("The random number is " + random_number);
             currentState.Timer_Inside_Trigger(this);
         }
     }
@@ -187,20 +185,9 @@ public class Boss2_State_Manager : MonoBehaviour
         sphereCollider.enabled = true;
     }
 
-    public void Set_Storm_False()
-    {
-        animator.SetBool("Storm",false);
-    }
-
     public void Look_At_Wall()
     {
         look_at.Look_At_Center(point_to_look);
-    }
-
-    public void Shoulder_Dash()
-    {
-        look_at.Damping_0();
-        dashing_to_center = true;
     }
 
     public void Look_Player()

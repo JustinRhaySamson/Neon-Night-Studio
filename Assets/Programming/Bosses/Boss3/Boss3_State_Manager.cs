@@ -26,11 +26,16 @@ public class Boss3_State_Manager : MonoBehaviour
     [HideInInspector] public Transform point_to_look;
     [HideInInspector] public int shoulder_count = 0;
 
+    public GameObject[] ice_wall_teleports;
+    Teleporter_Script[] teleporter_scripts;
+    public GameObject teleports_parent;
 
     public bool dashing_to_center = false;
     [SerializeField] bool phase2 = false;
 
     Boss3_Projectile_Spawn projectile_Spawn;
+
+    int walls_broken = 0;
 
 
     void Start()
@@ -46,6 +51,10 @@ public class Boss3_State_Manager : MonoBehaviour
             animator.SetBool("Phase2", true);
             //currentState = phase2_idle_state;
             currentState.EnterState(this);
+        }
+        for (int i = 0; i < ice_wall_teleports.Length; i++)
+        {
+            teleporter_scripts[i] = ice_wall_teleports[i].GetComponent<Teleporter_Script>();
         }
     }
 
@@ -117,7 +126,7 @@ public class Boss3_State_Manager : MonoBehaviour
             yield return new WaitForSeconds(1.1f);
             //print("The one bool in the state machine is: " + inside_trigger);
             random_number = Random.Range(0, 3);
-            print("The random number is " + random_number);
+            //print("The random number is " + random_number);
             currentState.Timer_Inside_Trigger(this);
         }
     }
@@ -193,5 +202,10 @@ public class Boss3_State_Manager : MonoBehaviour
     public void Look_Player()
     {
         look_at.Look_At_Player();
+    }
+    public void Teleport_To_Wall()
+    {
+        transform.position = ice_wall_teleports[walls_broken].transform.position;
+        walls_broken++;
     }
 }

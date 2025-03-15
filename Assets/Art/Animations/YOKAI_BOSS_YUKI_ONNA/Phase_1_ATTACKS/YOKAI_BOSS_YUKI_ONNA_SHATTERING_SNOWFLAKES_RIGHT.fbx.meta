@@ -57,15 +57,22 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.93986934
-        functionName: Back_To_Idle
+      - time: 0
+        functionName: Set_Damping
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 40
+        messageOptions: 0
+      - time: 0.32257873
+        functionName: Shattering_Snowflakes
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.34379083
-        functionName: Shattering_Snowflakes
+      - time: 0.93986934
+        functionName: Back_To_Idle
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

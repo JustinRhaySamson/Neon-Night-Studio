@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy_Melee_Attack : MonoBehaviour
 {
     public Animator animator;
+    public CapsuleCollider weapon;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") || other.CompareTag("Invincible"))
@@ -19,6 +20,16 @@ public class Enemy_Melee_Attack : MonoBehaviour
         {
             animator.SetBool("Swing", false);
         }
+    }
+
+    public void Activate_Weapon()
+    {
+        weapon.enabled = true;
+    }
+
+    public void Deactivate_Weapon()
+    {
+        weapon.enabled = false;
     }
 
 

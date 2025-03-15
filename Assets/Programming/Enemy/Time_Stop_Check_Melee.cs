@@ -10,11 +10,13 @@ public class Time_Stop_Check_Melee : MonoBehaviour
     Timemanager time_manager;
     Time_Stop_Check_Melee time_stop_check_melee;
     ArrayExtensionMethods ae;
+    bool weapon_state;
 
     public Look_At look_at;
     public Animator animator;
     public NavMeshAgent nav_Agent;
     public SphereCollider sphere_Collider;
+    public CapsuleCollider weapon;
     void Start()
     {
         time_stop_check_melee = GetComponent<Time_Stop_Check_Melee>();
@@ -39,10 +41,12 @@ public class Time_Stop_Check_Melee : MonoBehaviour
 
     public void StopEnemy()
     {
+        weapon_state = weapon.enabled;
         look_at.enabled = false;
         nav_Agent.enabled = false;
         animator.SetFloat("Animation_Speed", 0);
         sphere_Collider.enabled = false;
+        weapon.enabled = false;
     }
 
     public void RestartEnemy()
@@ -51,6 +55,7 @@ public class Time_Stop_Check_Melee : MonoBehaviour
         nav_Agent.enabled = true;
         animator.SetFloat("Animation_Speed", 1);
         sphere_Collider.enabled = true;
+        weapon.enabled = weapon_state;
     }
 
     public void Die()

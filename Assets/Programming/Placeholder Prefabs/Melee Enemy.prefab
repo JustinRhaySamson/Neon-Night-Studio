@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3541572938082691266}
+  weapon: {fileID: 3887438830426614698}
 --- !u!1 &2755342874958695952
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +458,7 @@ MonoBehaviour:
   animator: {fileID: 3541572938082691266}
   nav_Agent: {fileID: 6490552439390253990}
   sphere_Collider: {fileID: 8757973174620304670}
+  weapon: {fileID: 3887438830426614698}
 --- !u!54 &2774333531203446697
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -792,6 +794,11 @@ Transform:
 --- !u!95 &3541572938082691266 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4084313892864495619, guid: 5f7b928128301b446a4dab8cde65dbb8, type: 3}
+  m_PrefabInstance: {fileID: 686891346038864065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &3887438830426614698 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 4357972676209070955, guid: 5f7b928128301b446a4dab8cde65dbb8, type: 3}
   m_PrefabInstance: {fileID: 686891346038864065}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &4415984957159709806 stripped

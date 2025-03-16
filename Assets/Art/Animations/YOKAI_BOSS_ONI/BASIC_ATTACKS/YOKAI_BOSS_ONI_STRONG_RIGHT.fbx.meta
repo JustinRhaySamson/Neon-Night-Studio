@@ -22,7 +22,8 @@ ModelImporter:
     animationImportWarnings: Event Deactivate_Weapon has a time (2.481624) outside
       the clip's valid range (0.000000..1.633333). It will never be firedEvent Chain_Attack_Up
       has a time (2.830698) outside the clip's valid range (0.000000..1.633333).
-      It will never be fired
+      It will never be firedEvent A1Off has a time (2.360784) outside the clip's
+      valid range (0.000000..1.633333). It will never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -67,6 +68,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.4129358
+        functionName: ActivateA1
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.43036377
         functionName: Damping_0
         data: 
@@ -90,6 +98,13 @@ ModelImporter:
         messageOptions: 0
       - time: 0.98745275
         functionName: Chain_Attack_Up
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.8235294
+        functionName: DeactivateA1
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

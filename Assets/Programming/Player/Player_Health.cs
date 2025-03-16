@@ -102,6 +102,7 @@ public class Player_Health : MonoBehaviour
             if (Time.time > heal_start + heal_end)
             {
                 HP++;
+                slider_component.maxValue = 20;
                 refill_timer_health = 0;
                 UI_HP.text = HP.ToString();
                 heal_start = Time.time;

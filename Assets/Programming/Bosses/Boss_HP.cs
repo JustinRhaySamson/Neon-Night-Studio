@@ -48,6 +48,10 @@ public class Boss_HP : MonoBehaviour
             health_checks2 = maxHP / 4;
             time_Script.Activate_Boss2(gameObject);
         }
+        else if (boss3)
+        {
+            time_Script.Activate_Boss3(gameObject);
+        }
         animator = gameObject.GetComponent<Animator>();
         if (boss1)
         {
@@ -135,6 +139,7 @@ public class Boss_HP : MonoBehaviour
         {
             if (HP <= 0 && phase1 && !life_regen)
             {
+                time_Script.boss3_Scene = false;
                 slider_animator.SetBool("Active", false);
                 die.Invoke();
                 Destroy(gameObject);

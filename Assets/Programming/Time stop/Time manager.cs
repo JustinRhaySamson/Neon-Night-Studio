@@ -12,6 +12,7 @@ public class Timemanager : MonoBehaviour
     public bool doorBool = false;
     public bool boss1_scene = false;
     public bool boss2_Scene = false;
+    public bool boss3_Scene = false;
 
     public Time_Stop_Check_Shooter[] enemies_shooter;
     public Time_Stop_Check_Melee[] enemies_melee;
@@ -50,6 +51,12 @@ public class Timemanager : MonoBehaviour
     Boss2_State_Manager boss2_State_Manager;
     float boss2_speed = 0;
     int boss2_force = 0;
+
+    GameObject boss3;
+    Animator boss3_animator;
+    Boss3_State_Manager boss3_State_Manager;
+    float boss3_speed = 0;
+    int boss3_force = 0;
 
     public float refill_timer = 0;
 
@@ -195,6 +202,17 @@ public class Timemanager : MonoBehaviour
                 Rigidbody rb = boss2.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.zero;
             }
+            if (boss3_Scene)
+            {
+                boss3_speed = boss3_animator.GetFloat("Speed");
+                boss3_animator.SetFloat("Speed", 0);
+                Look_At boss3_look = boss3.gameObject.GetComponent<Look_At>();
+                boss3_look.enabled = false;
+                boss3_force = boss2_State_Manager.force;
+                boss3_State_Manager.force = 0;
+                Rigidbody rb = boss2.GetComponent<Rigidbody>();
+                rb.velocity = Vector3.zero;
+            }
             
             StartCoroutine(ResetTime(time_amount));
             //StartCoroutine(Cooldown_Timer());
@@ -266,6 +284,13 @@ public class Timemanager : MonoBehaviour
             boss2_look.enabled = true;
             boss2_State_Manager.force = boss2_force;
         }
+        if (boss3_Scene)
+        {
+            boss3_animator.SetFloat("Speed", boss3_speed);
+            Look_At boss3_look = boss3.gameObject.GetComponent<Look_At>();
+            boss3_look.enabled = true;
+            boss3_State_Manager.force = boss2_force;
+        }
     }
 
     IEnumerator Cooldown_Timer()
@@ -289,5 +314,13 @@ public class Timemanager : MonoBehaviour
         boss2 = boss;
         boss2_animator = boss2.GetComponent<Animator>();
         boss2_State_Manager = boss2.GetComponent<Boss2_State_Manager>();
+    }
+
+    public void Activate_Boss3(GameObject boss)
+    {
+        boss3_Scene = true;
+        boss3 = boss;
+        boss3_animator = boss3.GetComponent<Animator>();
+        boss3_State_Manager = boss3.GetComponent<Boss3_State_Manager>();
     }
 }

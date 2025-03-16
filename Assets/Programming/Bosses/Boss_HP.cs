@@ -44,8 +44,8 @@ public class Boss_HP : MonoBehaviour
         }
         else if (boss2)
         {
-            health_checks = maxHP / 2;
-            health_checks2 = maxHP / 4;
+            health_checks = (maxHP/4) * 3;
+            health_checks2 = maxHP / 2;
             time_Script.Activate_Boss2(gameObject);
         }
         else if (boss3)
@@ -114,13 +114,13 @@ public class Boss_HP : MonoBehaviour
         {
             if(HP <= health_checks)
             {
-                health_checks = -20;
+                health_checks = -200;
                 state_manager2.SwitchState(state_manager2.storm_state);
             }
 
             else if(HP <= health_checks2)
             {
-                health_checks2 = -20;
+                health_checks2 = -200;
                 state_manager2.SwitchState(state_manager2.storm_state);
             }
 

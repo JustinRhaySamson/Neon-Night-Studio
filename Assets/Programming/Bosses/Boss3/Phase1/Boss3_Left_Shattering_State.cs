@@ -7,6 +7,7 @@ public class Boss3_Left_Shattering_State : Boss3_Base_State
     public override void EnterState(Boss3_State_Manager state)
     {
         state.animator.SetBool("Left_Shattering", true);
+        state.attacks_made++;
     }
 
     public override void UpdateState(Boss3_State_Manager state)

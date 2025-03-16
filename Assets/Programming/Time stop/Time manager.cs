@@ -208,9 +208,9 @@ public class Timemanager : MonoBehaviour
                 boss3_animator.SetFloat("Speed", 0);
                 Look_At boss3_look = boss3.gameObject.GetComponent<Look_At>();
                 boss3_look.enabled = false;
-                boss3_force = boss2_State_Manager.force;
+                boss3_force = boss3_State_Manager.force;
                 boss3_State_Manager.force = 0;
-                Rigidbody rb = boss2.GetComponent<Rigidbody>();
+                Rigidbody rb = boss3.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.zero;
             }
             
@@ -289,7 +289,7 @@ public class Timemanager : MonoBehaviour
             boss3_animator.SetFloat("Speed", boss3_speed);
             Look_At boss3_look = boss3.gameObject.GetComponent<Look_At>();
             boss3_look.enabled = true;
-            boss3_State_Manager.force = boss2_force;
+            boss3_State_Manager.force = boss3_force;
         }
     }
 

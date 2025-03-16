@@ -998,12 +998,17 @@ MonoBehaviour:
   random_chain_attack: 1
   inside_trigger: 0
   look_at: {fileID: 0}
-  force: 5000
+  arena_center: {fileID: 0}
+  force: 200
   dash_VFX: {fileID: 0}
   point_to_look: {fileID: 0}
   shoulder_count: 0
+  ice_wall_teleports: []
+  ice_wall_look: []
+  teleports_parent: {fileID: 0}
   dashing_to_center: 0
   phase2: 0
+  walls_broken: 0
 --- !u!114 &6752066483759700523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,8 +1029,11 @@ MonoBehaviour:
   icicles_ground: {fileID: 8153267679708092165, guid: 22aa478ec29b1844dadb3bdb459a0273, type: 3}
   shattering_snowflakes: {fileID: 5205258890243408529, guid: f3177cbdfadd8af4fbe8bd9028fb9a80, type: 3}
   bullets_3: {fileID: 5827592893953670912, guid: a09d722e7c150b9478c5760f9d3f22e8, type: 3}
-  expanding_wave: {fileID: 0}
-  divine_punishment_projectiles: {fileID: 0}
+  ice_walls: {fileID: 3817107224204246000, guid: e3215699607588d499067f01b4ebc055, type: 3}
+  flash_freeze: {fileID: 3041252447156974409, guid: d18ef3f6bf29a26469b8de54b421ce5d, type: 3}
+  player_transform: {fileID: 0}
+  teleport_points_parent: {fileID: 0}
+  ice_walls_spawn: {fileID: 0}
 --- !u!114 &2027535838287368227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,8 +1060,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0198493206153694badfa657317a1994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 50
-  maxHP: 50
+  HP: 60
+  maxHP: 60
   boss1: 0
   boss2: 0
   boss3: 1

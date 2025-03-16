@@ -11,6 +11,9 @@ public class Boss3_State_Manager : MonoBehaviour
     public Boss3_Advancing_Frost_State advancing_frost = new Boss3_Advancing_Frost_State();
     public Boss3_Right_Shattering_State right_shattering = new Boss3_Right_Shattering_State();
     public Boss3_Left_Shattering_State left_shattering = new Boss3_Left_Shattering_State();
+    public Boss3_Flash_Freeze_State flash_freeze = new Boss3_Flash_Freeze_State();
+    public Boss3_Dash_State dash_State = new Boss3_Dash_State();
+    public Boss3_Walls_State walls_State = new Boss3_Walls_State();
 
 
     public GameObject player;
@@ -21,12 +24,14 @@ public class Boss3_State_Manager : MonoBehaviour
     public int random_chain_attack = 1;
     public bool inside_trigger = false;
     public Look_At look_at;
+    public Transform arena_center;
     public int force = 5000;
     public GameObject dash_VFX;
     [HideInInspector] public Transform point_to_look;
     [HideInInspector] public int shoulder_count = 0;
 
     public GameObject[] ice_wall_teleports;
+    public Transform[] ice_wall_look;
     Teleporter_Script[] teleporter_scripts;
     public GameObject teleports_parent;
 
@@ -73,7 +78,7 @@ public class Boss3_State_Manager : MonoBehaviour
         {
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * force, ForceMode.Impulse);
-            look_at.Look_At_Center(point_to_look);
+            look_at.Look_At_Center(arena_center);
         }
     }
 
@@ -125,9 +130,9 @@ public class Boss3_State_Manager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1.1f);
+            yield return new WaitForSeconds(.8f);
             //print("The one bool in the state machine is: " + inside_trigger);
-            random_number = Random.Range(0, 3);
+            random_number = Random.Range(0, 2);
             //print("The random number is " + random_number);
             currentState.Timer_Inside_Trigger(this);
         }
@@ -208,6 +213,7 @@ public class Boss3_State_Manager : MonoBehaviour
     public void Teleport_To_Wall()
     {
         transform.position = ice_wall_teleports[walls_broken].transform.position;
+        look_at.Look_At_Center(ice_wall_look[walls_broken]);
         walls_broken++;
     }
 
@@ -221,5 +227,13 @@ public class Boss3_State_Manager : MonoBehaviour
     public void Reset_Walls_Broken()
     {
         walls_broken = 0;
+    }
+
+    public void All_Walls_Broken()
+    {
+        if(walls_broken > 5)
+        {
+            Back_To_Idle();
+        }
     }
 }

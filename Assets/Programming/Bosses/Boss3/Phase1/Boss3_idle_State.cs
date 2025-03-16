@@ -9,8 +9,13 @@ public class Boss3_idle_State : Boss3_Base_State
         state.animator.SetBool("Advancing_Frost", false);
         state.animator.SetBool("Right_Shattering", false);
         state.animator.SetBool("Left_Shattering", false);
+        state.animator.SetBool("Flash_Freeze", false);
+        state.animator.SetBool("Dash", false);
+        state.animator.SetBool("Walls", false);
         state.animator.SetBool("Start", true);
         state.animator.SetBool("Running", true);
+        Rigidbody rb = state.gameObject.GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
     }
 
     public override void UpdateState(Boss3_State_Manager state)
@@ -39,8 +44,8 @@ public class Boss3_idle_State : Boss3_Base_State
                     state.SwitchState(state.left_shattering);
                 }
                 break;
-            /*case 1:
-                state.SwitchState(state.spin_state);
+            case 1:
+                state.SwitchState(state.flash_freeze);
                 break;
                 /*case 2:
                     state.SwitchState(state.slash_state);
@@ -70,8 +75,8 @@ public class Boss3_idle_State : Boss3_Base_State
                         state.SwitchState(state.left_shattering);
                     }
                     break;
-                /*case 1:
-                    state.SwitchState(state.spin_state);
+                case 1:
+                    state.SwitchState(state.flash_freeze);
                     break;
                     /*case 2:
                         state.SwitchState(state.slash_state);
@@ -86,10 +91,13 @@ public class Boss3_idle_State : Boss3_Base_State
                 case 0:
                     state.SwitchState(state.advancing_frost);
                     break;
-                /*case 1:
-                    state.SwitchState(state.boomerang_State);
+                case 1:
+                    if(state.attacks_made >= 4)
+                    {
+                        state.SwitchState(state.dash_State);
+                    }
                     break;
-                case 2:
+                /*case 2:
                     state.SwitchState(state.divine_punishment);
                     break;*/
             }

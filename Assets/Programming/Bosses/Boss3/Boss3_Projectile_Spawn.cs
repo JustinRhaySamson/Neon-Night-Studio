@@ -13,7 +13,7 @@ public class Boss3_Projectile_Spawn : MonoBehaviour
     public GameObject shattering_snowflakes;
     public GameObject bullets_3;
     public GameObject ice_walls;
-    public GameObject divine_punishment_projectiles;
+    public GameObject flash_freeze;
     public Transform player_transform;
     public Transform teleport_points_parent;
 
@@ -74,11 +74,11 @@ public class Boss3_Projectile_Spawn : MonoBehaviour
             transform.rotation * Quaternion.Euler(0, -90, 0));
     }
 
-    public void Spawn_Divine_Punishment()
+    public void Spawn_Flash_Freeze()
     {
-        GameObject divine_spawn = Instantiate(divine_punishment_projectiles,
+        GameObject flash_spawn = Instantiate(flash_freeze,
             center_spawner.transform.position,
-            transform.rotation * Quaternion.Euler(0, -90, 0));
+            transform.rotation * Quaternion.identity);
     }
 
     public void Spawn_Ice_Walls()

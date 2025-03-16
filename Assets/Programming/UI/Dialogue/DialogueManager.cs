@@ -8,10 +8,12 @@ public class DialogueManager : MonoBehaviour
 {
 	public TMP_Text leftNameText;
 	public TMP_Text rightNameText;
-	public TMP_Text dialogueText;
+	public TMP_Text dialogueTextLeft;
+	public TMP_Text dialogueTextRight;
 	public Image leftSpeakerImage;
 	public Image rightSpeakerImage;
 	public Image dialogueBox;
+	public RectTransform dialogueBoxTransform;
 
 	public Animator animator;
 	public Player_Controller playerController;
@@ -35,6 +37,8 @@ public class DialogueManager : MonoBehaviour
 	Dialogue dialogue1 = null;
 
 	int speakerNumber = 0;
+	bool left = false;
+	bool right = false;
 
 	// Use this for initialization
 	void Start()
@@ -80,15 +84,34 @@ public class DialogueManager : MonoBehaviour
 		}
 		string sentence = sentences.Dequeue();
 		StopAllCoroutines();
-		StartCoroutine(TypeSentence(sentence));
+        if (left)
+        {
+			StartCoroutine(TypeSentenceLeft(sentence));
+		}
+		else if (right)
+        {
+			StartCoroutine(TypeSentenceRight(sentence));
+		}
 	}
 
-	IEnumerator TypeSentence(string sentence)
+	IEnumerator TypeSentenceLeft(string sentence)
 	{
-		dialogueText.text = "";
+		dialogueTextLeft.text = "";
+		dialogueTextRight.text = "";
 		foreach (char letter in sentence.ToCharArray())
 		{
-			dialogueText.text += letter;
+			dialogueTextLeft.text += letter;
+			yield return null;
+		}
+	}
+
+	IEnumerator TypeSentenceRight(string sentence)
+	{
+		dialogueTextLeft.text = "";
+		dialogueTextRight.text = "";
+		foreach (char letter in sentence.ToCharArray())
+		{
+			dialogueTextRight.text += letter;
 			yield return null;
 		}
 	}
@@ -113,6 +136,9 @@ public class DialogueManager : MonoBehaviour
             {
 				leftSpeakerImage.sprite = leftSpeakerSprites[i];
 				dialogueBox.sprite = leftDialogueBoxes[i];
+				dialogueBoxTransform.localScale = new Vector3(Mathf.Abs(dialogueBoxTransform.localScale.x),
+					dialogueBoxTransform.localScale.y,
+					dialogueBoxTransform.localScale.z);
 				left_grey = false;
 			}
         }
@@ -121,6 +147,7 @@ public class DialogueManager : MonoBehaviour
         {
 			leftSpeakerImage.color = Color.grey;
 			leftNameText.text = " ";
+			left = false;
         }
 
 		else if (!left_grey)
@@ -129,6 +156,7 @@ public class DialogueManager : MonoBehaviour
 			leftSpeakerImage.enabled = true;
 			leftNameText.text = dialogue1.name[speakerNumber];
 			print(leftNameText.text);
+			left = true;
 		}
 
 		for (int i = 0; i < rightSpeakers.Length; i++)
@@ -137,6 +165,9 @@ public class DialogueManager : MonoBehaviour
 			{
 				rightSpeakerImage.sprite = rightSpeakerSprites[i];
 				dialogueBox.sprite = rightDialogueBoxes[i];
+				dialogueBoxTransform.localScale = new Vector3(dialogueBoxTransform.localScale.x * -1, 
+					dialogueBoxTransform.localScale.y, 
+					dialogueBoxTransform.localScale.z);
 				right_grey = false;
 			}
 		}
@@ -145,6 +176,7 @@ public class DialogueManager : MonoBehaviour
 		{
 			rightSpeakerImage.color = Color.grey;
 			rightNameText.text = " ";
+			right = false;
 		}
 
 		else if (!right_grey)
@@ -152,6 +184,7 @@ public class DialogueManager : MonoBehaviour
 			rightSpeakerImage.color = Color.white;
 			rightSpeakerImage.enabled = true;
 			rightNameText.text = dialogue1.name[speakerNumber];
+			right = true;
 		}
 	}
 

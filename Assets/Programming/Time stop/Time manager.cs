@@ -21,6 +21,8 @@ public class Timemanager : MonoBehaviour
     public Lightning_Script[] lightnings;
     public Lightning_Spawner[] lightning_spawns;
     public Tornado_Script[] tornado_scripts;
+    public VFX_Time_Stop[] vfx_scripts;
+    public Particle_Time_Stop[] particle_scripts;
     
 
     bool LB_Press = false;
@@ -174,6 +176,10 @@ public class Timemanager : MonoBehaviour
             {
                 tornado.Time_Stop();
             }
+            foreach(VFX_Time_Stop vfx in vfx_scripts)
+            {
+                vfx.Time_Stop_Pause();
+            }
             if (doorBool)
             {
                 door_animator.SetFloat("Speed", 0);
@@ -263,6 +269,10 @@ public class Timemanager : MonoBehaviour
         foreach (Tornado_Script tornado in tornado_scripts)
         {
             tornado.Time_Reset();
+        }
+        foreach (VFX_Time_Stop vfx in vfx_scripts)
+        {
+            vfx.Time_Stop_Restart();
         }
         if (doorBool)
         {

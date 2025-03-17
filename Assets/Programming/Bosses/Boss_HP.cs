@@ -128,7 +128,11 @@ public class Boss_HP : MonoBehaviour
             {
                 die.Invoke();
                 GameObject rotating_orbs = GameObject.Find("Rotating_Orbs");
-                Object.Destroy(rotating_orbs);
+                Tornado_Script tornado = rotating_orbs.GetComponent<Tornado_Script>();
+                VFX_Time_Stop vfx = rotating_orbs.GetComponent<VFX_Time_Stop>();
+                vfx.Die();  
+                tornado.Die();
+                //Object.Destroy(rotating_orbs);
                 time_Script.boss2_Scene = false;
                 slider_animator.SetBool("Active", false);
                 Destroy(gameObject);

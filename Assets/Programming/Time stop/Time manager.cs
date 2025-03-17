@@ -180,6 +180,10 @@ public class Timemanager : MonoBehaviour
             {
                 vfx.Time_Stop_Pause();
             }
+            foreach (Particle_Time_Stop particle in particle_scripts)
+            {
+                particle.Time_Stop_Pause();
+            }
             if (doorBool)
             {
                 door_animator.SetFloat("Speed", 0);
@@ -273,6 +277,10 @@ public class Timemanager : MonoBehaviour
         foreach (VFX_Time_Stop vfx in vfx_scripts)
         {
             vfx.Time_Stop_Restart();
+        }
+        foreach (Particle_Time_Stop particle in particle_scripts)
+        {
+            particle.Time_Stop_Restart();
         }
         if (doorBool)
         {

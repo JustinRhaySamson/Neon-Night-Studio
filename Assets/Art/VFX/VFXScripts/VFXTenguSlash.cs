@@ -5,6 +5,7 @@ using UnityEngine;
 public class VFXYukiSlash : MonoBehaviour
 {
     public GameObject VFXA1, VFXA2, VFXA3;
+    public bool vfx_activated = false;
 
     public void ActivateA1()
     {
@@ -20,6 +21,7 @@ public class VFXYukiSlash : MonoBehaviour
     
     public void ActivateA2()
     {
+        vfx_activated = true;
         VFXA2.SetActive(true);
         //Debug.Log("VFX activated");
     }
@@ -38,6 +40,7 @@ public class VFXYukiSlash : MonoBehaviour
     
     public void DeactivateA3()
     {
+        vfx_activated = false;
         VFXA3.SetActive(false);
         //Debug.Log("VFX deactivated");
     }

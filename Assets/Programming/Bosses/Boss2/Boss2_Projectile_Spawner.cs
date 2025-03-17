@@ -9,6 +9,7 @@ public class Boss2_Projectile_Spawner : MonoBehaviour
     public GameObject center_spawner;
     public Collider weapon_collider;
     public Collider weapon_collider2;
+    public GameObject tornado_collider;
     public GameObject lightning;
     public GameObject[] orbs = new GameObject[2];
     public GameObject tornado;
@@ -82,5 +83,17 @@ public class Boss2_Projectile_Spawner : MonoBehaviour
         GameObject divine_spawn = Instantiate(divine_punishment_projectiles,
             center_spawner.transform.position,
             transform.rotation * Quaternion.Euler(0, -90, 0));
+    }
+
+    public void Activate_Tornado_Slash()
+    {
+        Activate_Weapon();
+        tornado_collider.SetActive(true);
+    }
+
+    public void Deactivate_Tornado_Slash()
+    {
+        Deactivate_Weapon();
+        tornado_collider.SetActive(false);
     }
 }

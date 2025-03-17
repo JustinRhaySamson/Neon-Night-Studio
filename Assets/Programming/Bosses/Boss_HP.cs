@@ -130,7 +130,9 @@ public class Boss_HP : MonoBehaviour
                 GameObject rotating_orbs = GameObject.Find("Rotating_Orbs");
                 Tornado_Script tornado = rotating_orbs.GetComponent<Tornado_Script>();
                 VFX_Time_Stop vfx = rotating_orbs.GetComponent<VFX_Time_Stop>();
-                vfx.Die();  
+                Particle_Time_Stop particle_Time_Stop = GetComponent<Particle_Time_Stop>();
+                particle_Time_Stop.Die_Particles();
+                vfx.Die();
                 tornado.Die();
                 //Object.Destroy(rotating_orbs);
                 time_Script.boss2_Scene = false;

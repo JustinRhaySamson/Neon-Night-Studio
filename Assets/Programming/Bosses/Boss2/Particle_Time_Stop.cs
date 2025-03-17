@@ -12,12 +12,13 @@ public class Particle_Time_Stop : MonoBehaviour
     Timemanager time_manager;
     ArrayExtensionMethods ae;
     Particle_Time_Stop script;
+    public VFXYukiSlash tengu_slash;
     void Start()
     {
         Manager = GameObject.Find("Time manager");
         time_manager = Manager.GetComponent<Timemanager>();
         ae = Manager.GetComponent<ArrayExtensionMethods>();
-        script = this;
+        script = GetComponent<Particle_Time_Stop>();
         time_manager.particle_scripts = (Particle_Time_Stop[])ae.AddToArray(script, time_manager.particle_scripts);
     }
 
@@ -27,24 +28,30 @@ public class Particle_Time_Stop : MonoBehaviour
         
     }
 
-    public void Die()
+    public void Die_Particles()
     {
         time_manager.particle_scripts = (Particle_Time_Stop[])ae.Remove(script, time_manager.particle_scripts);
     }
 
     public void Time_Stop_Pause()
     {
-        foreach (ParticleSystem particleSystem in particle_systems)
+        if (tengu_slash.vfx_activated)
         {
-            particleSystem.Pause(true);
-        }
+            foreach (ParticleSystem particleSystem in particle_systems)
+            {
+                particleSystem.Pause(true);
+            }
+        } 
     }
 
     public void Time_Stop_Restart()
     {
-        foreach (ParticleSystem particleSystem in particle_systems)
+        if (tengu_slash.vfx_activated)
         {
-            particleSystem.Play(true);
-        }
+            foreach (ParticleSystem particleSystem in particle_systems)
+            {
+                particleSystem.Play(true);
+            }
+        } 
     }
 }

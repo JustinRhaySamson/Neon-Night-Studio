@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VFXYukiSlash : MonoBehaviour
+public class VFXTenguSlash : MonoBehaviour
 {
     public GameObject VFXA1, VFXA2, VFXA3;
 

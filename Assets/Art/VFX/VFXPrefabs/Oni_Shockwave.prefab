@@ -222,8 +222,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.9882353, g: 0.7529412, b: 0.11764706, a: 1}
-      maxColor: {r: 0.6320754, g: 0, b: 0.021305757, a: 1}
+      minColor: {r: 0.9528302, g: 0.5576681, b: 0.04045032, a: 1}
+      maxColor: {r: 0.94509804, g: 0.3685882, b: 0.38728592, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.6509434, g: 0.26099145, b: 0.26099145, a: 1}
@@ -5499,7 +5499,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -8567,7 +8567,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -8636,7 +8636,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2

@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4801103991306698657}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.03, y: 0, z: -5.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4801103991510204359}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!2083052967 &4801103991306698658
 VisualEffect:
@@ -46,11 +46,12 @@ VisualEffect:
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 1.15
+      - m_Value: 1
         m_Name: Delay
         m_Overridden: 1
       - m_Value: 0.05
@@ -59,12 +60,57 @@ VisualEffect:
       - m_Value: 0.79
         m_Name: TornadoLayer2Dissolve
         m_Overridden: 1
+      - m_Value: 1
+        m_Name: TopRingsSize
+        m_Overridden: 1
+      - m_Value: 0.88
+        m_Name: TopRing04Dissolve
+        m_Overridden: 1
+      - m_Value: 0.88
+        m_Name: BottomRingsDissolve
+        m_Overridden: 1
+      - m_Value: 1.1
+        m_Name: BottomRingSize
+        m_Overridden: 1
+      - m_Value: 0.9
+        m_Name: BottomRing04Dissolve
+        m_Overridden: 1
+      - m_Value: 0.88
+        m_Name: TopRingsDissolve
+        m_Overridden: 1
+      - m_Value: 0.92
+        m_Name: TornadoLayer3Dissolve
+        m_Overridden: 1
+      - m_Value: 0.84
+        m_Name: TornadoLayer1Dissolve
+        m_Overridden: 1
+      - m_Value: 0.68
+        m_Name: CoreDissolve
+        m_Overridden: 1
+      - m_Value: 5
+        m_Name: WobbleFrequency
+        m_Overridden: 1
+      - m_Value: 5
+        m_Name: WobbleIntensity
+        m_Overridden: 1
+      - m_Value: 10
+        m_Name: WobbleSpeed
+        m_Overridden: 1
+      - m_Value: 3
+        m_Name: Duration
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
       m_Array:
       - m_Value: {x: 0, y: 1.2, z: 0}
         m_Name: BottomRingsPosition
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 9.24, z: 0}
+        m_Name: TopRingsPosition
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 0.75}
+        m_Name: Scale
         m_Overridden: 1
     m_Vector4f:
       m_Array:
@@ -86,6 +132,15 @@ VisualEffect:
       - m_Value: {x: 21.324078, y: 49.537827, z: 6.7433677, w: 1}
         m_Name: ParticlesTColor
         m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1, w: 1}
+        m_Name: TornadoLayer2Color
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1, w: 1}
+        m_Name: TopRing04Color
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1, w: 1}
+        m_Name: BottomRing04Color
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
@@ -98,47 +153,11 @@ VisualEffect:
           serializedVersion: 2
           m_Curve:
           - serializedVersion: 3
-            time: -0.001373291
-            value: 0.068374634
-            inSlope: 20.869102
-            outSlope: 20.869102
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
             tangentMode: 34
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.049321957
-            value: 1.126339
-            inSlope: 9.2609215
-            outSlope: 9.2609215
-            tangentMode: 34
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.12914604
-            value: 0.93897116
-            inSlope: -0.7652756
-            outSlope: -0.7652756
-            tangentMode: 34
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.24750045
-            value: 1.0356321
-            inSlope: 0.11033318
-            outSlope: 0.11033318
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 0.4085884
-            value: 1.0000002
-            inSlope: 0.015611734
-            outSlope: 0.015611734
-            tangentMode: 0
             weightedMode: 0
             inWeight: 0
             outWeight: 0
@@ -147,7 +166,7 @@ VisualEffect:
             value: 1
             inSlope: 0
             outSlope: 0
-            tangentMode: 0
+            tangentMode: 34
             weightedMode: 0
             inWeight: 0
             outWeight: 0
@@ -162,36 +181,18 @@ VisualEffect:
           - serializedVersion: 3
             time: 0
             value: 1
-            inSlope: -0.002868269
-            outSlope: -0.002868269
+            inSlope: 0
+            outSlope: 0
             tangentMode: 34
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.09448985
-            value: 0.999729
-            inSlope: -0.0053534
-            outSlope: -0.0053534
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.8013793
-            value: 1
-            inSlope: 0.027579194
-            outSlope: 0.027579194
-            tangentMode: 0
             weightedMode: 0
             inWeight: 0
             outWeight: 0
           - serializedVersion: 3
-            time: 1.0080264
-            value: 1.5013769
-            inSlope: 6.5994577
-            outSlope: 6.5994577
-            tangentMode: 0
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 34
             weightedMode: 0
             inWeight: 0
             outWeight: 0
@@ -204,47 +205,11 @@ VisualEffect:
           serializedVersion: 2
           m_Curve:
           - serializedVersion: 3
-            time: -0.001373291
-            value: 0.068374634
-            inSlope: 15.7278805
-            outSlope: 15.7278805
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
             tangentMode: 34
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.065893516
-            value: 1.126339
-            inSlope: 6.6735983
-            outSlope: 6.6735983
-            tangentMode: 34
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.14675373
-            value: 0.93383634
-            inSlope: -0.7314186
-            outSlope: -0.7314186
-            tangentMode: 34
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.25206646
-            value: 1.0304973
-            inSlope: 0.11033318
-            outSlope: 0.11033318
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 0.44862232
-            value: 0.9948654
-            inSlope: 0.015611734
-            outSlope: 0.015611734
-            tangentMode: 0
             weightedMode: 0
             inWeight: 0
             outWeight: 0
@@ -253,7 +218,7 @@ VisualEffect:
             value: 1
             inSlope: 0
             outSlope: 0
-            tangentMode: 0
+            tangentMode: 34
             weightedMode: 0
             inWeight: 0
             outWeight: 0
@@ -266,47 +231,11 @@ VisualEffect:
           serializedVersion: 2
           m_Curve:
           - serializedVersion: 3
-            time: -0.001373291
-            value: 0.068374634
-            inSlope: 16.361616
-            outSlope: 16.361616
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
             tangentMode: 34
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.06313116
-            value: 1.1237717
-            inSlope: 7.1216316
-            outSlope: 7.1216316
-            tangentMode: 34
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.1540049
-            value: 0.93126905
-            inSlope: -0.6508223
-            outSlope: -0.6508223
-            tangentMode: 34
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.2723593
-            value: 1.02793
-            inSlope: 0.11033318
-            outSlope: 0.11033318
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 0.41409913
-            value: 0.9974327
-            inSlope: 0.015611734
-            outSlope: 0.015611734
-            tangentMode: 0
             weightedMode: 0
             inWeight: 0
             outWeight: 0
@@ -315,7 +244,7 @@ VisualEffect:
             value: 1
             inSlope: 0
             outSlope: 0
-            tangentMode: 0
+            tangentMode: 34
             weightedMode: 0
             inWeight: 0
             outWeight: 0
@@ -323,6 +252,32 @@ VisualEffect:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_Name: ScaleOverLifeZ
+        m_Overridden: 1
+      - m_Value:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_Name: RingsDissolveCurve
         m_Overridden: 1
     m_Gradient:
       m_Array:
@@ -353,6 +308,7 @@ VisualEffect:
           atime6: 0
           atime7: 0
           m_Mode: 0
+          m_ColorSpace: -1
           m_NumColorKeys: 2
           m_NumAlphaKeys: 4
         m_Name: ExplosionGradient
@@ -384,6 +340,7 @@ VisualEffect:
           atime6: 0
           atime7: 0
           m_Mode: 0
+          m_ColorSpace: -1
           m_NumColorKeys: 2
           m_NumAlphaKeys: 2
         m_Name: TrailsGradient
@@ -455,12 +412,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4801103991510204356}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 15}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4801103991306698656}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

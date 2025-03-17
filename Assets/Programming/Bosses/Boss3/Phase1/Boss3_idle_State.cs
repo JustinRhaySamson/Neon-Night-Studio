@@ -16,6 +16,7 @@ public class Boss3_idle_State : Boss3_Base_State
         state.animator.SetBool("Running", true);
         Rigidbody rb = state.gameObject.GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
+        state.trigger_sphere.enabled = true;   
     }
 
     public override void UpdateState(Boss3_State_Manager state)

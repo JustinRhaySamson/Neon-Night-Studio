@@ -40,13 +40,15 @@ public class Boss3_State_Manager : MonoBehaviour
 
     Boss3_Projectile_Spawn projectile_Spawn;
     GameObject ice_wall;
-    
+
+    [HideInInspector] public SphereCollider trigger_sphere;
 
     public int walls_broken = 0;
 
 
     void Start()
     { 
+        trigger_sphere = GetComponent<SphereCollider>();
         look_at = gameObject.GetComponent<Look_At>();
         print("wtf");
         projectile_Spawn = gameObject.GetComponent<Boss3_Projectile_Spawn>();
@@ -231,7 +233,7 @@ public class Boss3_State_Manager : MonoBehaviour
 
     public void All_Walls_Broken()
     {
-        if(walls_broken > 5)
+        if(walls_broken >= 6)
         {
             Back_To_Idle();
         }

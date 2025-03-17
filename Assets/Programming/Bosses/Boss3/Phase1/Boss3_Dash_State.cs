@@ -8,6 +8,7 @@ public class Boss3_Dash_State : Boss3_Base_State
     {
         state.animator.SetBool("Dash", true);
         state.walls_broken = 0;
+        //state.trigger_sphere.enabled = false;
         //state.dashing_to_center = true;
     }
 

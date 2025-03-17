@@ -124,6 +124,7 @@ public class DialogueManager : MonoBehaviour
         {
 			dialogue1.dialogue_Events.finish_dialogue.Invoke();
         }
+		dialogue1 = null;
 	}
 
 	void Check_Image()

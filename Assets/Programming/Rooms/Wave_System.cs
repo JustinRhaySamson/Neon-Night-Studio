@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Wave_System : MonoBehaviour
 {
-    GameObject[] enemies;
-    int enemies_to_kill;
-    int enemies_count = 0; 
-    bool wave = false;
+    [SerializeField] GameObject[] enemies;
+    [SerializeField] int enemies_to_kill;
+    [SerializeField] int enemies_count = 0;
+    [SerializeField] bool wave = false;
     // Start is called before the first frame update
     void Start()
     {

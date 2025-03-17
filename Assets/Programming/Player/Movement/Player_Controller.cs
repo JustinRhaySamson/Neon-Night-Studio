@@ -17,6 +17,7 @@ public class Player_Controller : MonoBehaviour
     bool healing = false;
     bool active_gravity = false;
     bool dialogue = false;
+    bool dead = false;
 
     public GameObject DashVFX;
 
@@ -52,7 +53,7 @@ public class Player_Controller : MonoBehaviour
         if (_input == Vector3.zero || dialogue) return;
 
         var rot = Quaternion.LookRotation(_input.ToIso(), Vector3.up);
-        if (!attacking && Time.timeScale != 0)
+        if (!attacking && Time.timeScale != 0 && !dead)
         {
             transform.rotation = rot;
         }
@@ -219,6 +220,11 @@ public class Player_Controller : MonoBehaviour
     public void False_Attack_Collider()
     {
         attack_collider.enabled = false;
+    }
+
+    public void Dead_Bool()
+    {
+        dead = true;
     }
 }
 

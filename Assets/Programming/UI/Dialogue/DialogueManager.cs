@@ -56,6 +56,8 @@ public class DialogueManager : MonoBehaviour
 		speakerNumber = 0;
 
 		leftNameText.text = dialogue.name[0];
+		rightSpeakerImage.enabled = false;
+		leftSpeakerImage.enabled = false;
 		Check_Image();
 
 		sentences.Clear();

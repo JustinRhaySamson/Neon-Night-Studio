@@ -15,4 +15,14 @@ public class FmodPlayer : MonoBehaviour
 
         FMODUnity.RuntimeManager.PlayOneShotAttached(FMODEvent, Target);
     }
+
+    public void PlaySound2 (string FMODEvent)
+    {
+        if (Target == null)
+        {
+            Target = gameObject;
+        }
+
+        FMODUnity.RuntimeManager.PlayOneShotAttached(FMODEvent, Target);
+    }
 }

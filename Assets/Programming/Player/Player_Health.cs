@@ -106,11 +106,11 @@ public class Player_Health : MonoBehaviour
                 refill_timer_health = 0;
                 UI_HP.text = HP.ToString();
                 heal_start = Time.time;
-                cooldown = true;
                 //slider_component.value = slider_component.value * 11.76f;
                 //slider_value = slider_component.value;
                 slider_time = Time.time;
                 HealVFX.SetActive(false);
+                cooldown = true;
             }
         }
 

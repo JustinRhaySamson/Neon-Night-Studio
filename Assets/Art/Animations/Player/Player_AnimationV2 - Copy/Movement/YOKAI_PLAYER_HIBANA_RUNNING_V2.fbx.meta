@@ -58,18 +58,18 @@ ModelImporter:
       curves: []
       events:
       - time: 0.25092366
-        functionName: PlaySound
-        data: event:/Sound Effects/Player/Movement/Player Step
+        functionName: PlayOneShot
+        data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
-        intParameter: 0
+        intParameter: 1
         messageOptions: 0
       - time: 0.7489793
-        functionName: PlaySound2
-        data: event:/Sound Effects/Player/Movement/Player Step
+        functionName: PlayOneShot
+        data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
-        intParameter: 0
+        intParameter: 1
         messageOptions: 0
       - time: 0.92237204
         functionName: Player_Tag

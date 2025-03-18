@@ -13,6 +13,8 @@ public class Shoot_bullet : MonoBehaviour
 
     public bool restartShooting;
 
+    public OneShotSender OneShotSender;
+
     void Start()
     {
         //StartCoroutine(Shoot());
@@ -61,6 +63,10 @@ public class Shoot_bullet : MonoBehaviour
         GameObject bullet2 = Instantiate(bullet, firepoint.position, firepoint.rotation);
         Rigidbody rb = bullet2.GetComponent<Rigidbody>();
         rb.AddForce(firepoint.forward * force, ForceMode.Impulse);
+
+        //AUDIO
+        OneShotSender.PlayOneShot(1);
+
     }
 
     public void Stop_Shooting_Now()

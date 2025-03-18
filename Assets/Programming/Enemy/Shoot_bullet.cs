@@ -54,4 +54,22 @@ public class Shoot_bullet : MonoBehaviour
             rb.AddForce(firepoint.forward * force, ForceMode.Impulse);
         }
     }
+
+    public void Shoot_Now()
+    {
+        StartCoroutine(Shoot_Now_Coroutine());
+    }
+
+    public void Stop_Shooting_Now()
+    {
+        StopCoroutine(Shoot_Now_Coroutine());
+    }
+
+    IEnumerator Shoot_Now_Coroutine()
+    {
+        yield return new WaitForSeconds(.4f);
+        GameObject bullet2 = Instantiate(bullet, firepoint.position, firepoint.rotation);
+        Rigidbody rb = bullet2.GetComponent<Rigidbody>();
+        rb.AddForce(firepoint.forward * force, ForceMode.Impulse);
+    }
 }

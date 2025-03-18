@@ -804,6 +804,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4357972676209070955, guid: 5f7b928128301b446a4dab8cde65dbb8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6006716763355396820, guid: 5f7b928128301b446a4dab8cde65dbb8, type: 3}
       propertyPath: m_Name
       value: Kama Drone Assets
@@ -819,6 +823,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6006716763355396820, guid: 5f7b928128301b446a4dab8cde65dbb8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 186038915972613377}
+    - targetCorrespondingSourceObject: {fileID: 6006716763355396820, guid: 5f7b928128301b446a4dab8cde65dbb8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2669239778523103670}
     - targetCorrespondingSourceObject: {fileID: 5183053623741437065, guid: 5f7b928128301b446a4dab8cde65dbb8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8744847984493781514}
@@ -884,6 +891,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VFXA1: {fileID: 4415984957159709806}
+--- !u!114 &2669239778523103670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6544980508344910357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48525b57983ad30408f9e730ddd900b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitbox: {fileID: 3887438830426614698}
 --- !u!1001 &5062986886076667904
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -50,7 +50,7 @@ public class Health : MonoBehaviour
             wave_system.Enemy_Killed();
             Destroy(gameObject);
         }
-        StartCoroutine(ChangeColor());
+        //StartCoroutine(ChangeColor());
     }
 
     IEnumerator ChangeColor()

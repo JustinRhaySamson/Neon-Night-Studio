@@ -1234,6 +1234,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a88862e28a01b045bc4141c1abd8228, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4976916210811419692}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a88862e28a01b045bc4141c1abd8228, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6156914160420626672}
   m_SourcePrefab: {fileID: 100100000, guid: 2a88862e28a01b045bc4141c1abd8228, type: 3}
 --- !u!4 &3704649693655686463 stripped
 Transform:
@@ -1279,6 +1282,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 2440565176841629441}
+--- !u!114 &6156914160420626672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044900866261190533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dd0b4b2b4f5c74bac159a9d6e2974e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+  - Guid:
+      Data1: 1075993100
+      Data2: 1108833818
+      Data3: -707640650
+      Data4: 1336121102
+    Path: event:/Sound Effects/Enemy/Common/Hair/Hair Hurt
+  - Guid:
+      Data1: 842608568
+      Data2: 1158336914
+      Data3: 1995688852
+      Data4: 1027431861
+    Path: event:/Sound Effects/Enemy/Common/Hair/Hair Attack
+  - Guid:
+      Data1: 1143925655
+      Data2: 1263736115
+      Data3: 1218221488
+      Data4: -537048662
+    Path: event:/Sound Effects/Enemy/Common/Hair/Hair Dye
 --- !u!4 &8189977937163753211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4993247010217307183, guid: 2a88862e28a01b045bc4141c1abd8228, type: 3}

@@ -7,6 +7,7 @@ public class Boss2_Arena_Script : MonoBehaviour
     public GameObject player;
     public GameObject rising_platform;
     public MeshCollider arena_collider;
+    public Camera_Follow camera_Follow;
     Animator animator;
     void Start()
     {
@@ -22,11 +23,14 @@ public class Boss2_Arena_Script : MonoBehaviour
     public void Child_Player()
     {
         player.transform.parent = rising_platform.transform;
+        //player.transform.SetParent(null);
+        camera_Follow.Smooth_To_0();
     }
 
-    public void Dechild_Player()
+    public void Player_Change_Parent()
     {
-        player.transform.parent = null;
+        player.transform.SetParent(null);
+        camera_Follow.Revert_Smooth();
     }
 
     public void Activate_Collider()

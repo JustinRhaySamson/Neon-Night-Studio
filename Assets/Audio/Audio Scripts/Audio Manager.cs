@@ -64,7 +64,7 @@ public class AudioManager : MonoBehaviour
         musicInstance = RuntimeManager.CreateInstance(music[SoundNumber]);
         musicInstance.start();
        
-    }
+    } 
 
     public void Stop()
     {

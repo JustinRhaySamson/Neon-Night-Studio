@@ -33,4 +33,9 @@ public class Weapon_Interaction : MonoBehaviour
             trigger_exited.Invoke();
         }
     }
+
+    public void Kill()
+    {
+        Object.Destroy(gameObject);
+    }
 }

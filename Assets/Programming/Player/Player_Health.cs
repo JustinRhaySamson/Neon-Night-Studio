@@ -82,10 +82,13 @@ public class Player_Health : MonoBehaviour
             {
                 HealVFX.SetActive(false);
                 slider_time = Time.time;
-                slider_component.maxValue = 4;
-                slider_component.value = slider_component.value * 2.35294117647f;
-                slider_value = slider_component.value;
+                slider_component.maxValue = 20;
+                //slider_component.value = slider_component.value * 5f;
+                slider_value = slider_component.value * 11.76f;
+                print("The slider value is" + slider_component.value);
+                print("The value of the slider should be " + slider_value);
                 cooldown = true;
+                refill_timer_health = 0;
             }
             healing = false;
         }
@@ -99,14 +102,15 @@ public class Player_Health : MonoBehaviour
             if (Time.time > heal_start + heal_end)
             {
                 HP++;
+                //slider_component.maxValue = 20;
                 refill_timer_health = 0;
                 UI_HP.text = HP.ToString();
                 heal_start = Time.time;
-                cooldown = true;
-                slider_component.value = slider_component.value * 2.35294117647f;
-                slider_value = slider_component.value;
+                //slider_component.value = slider_component.value * 11.76f;
+                //slider_value = slider_component.value;
                 slider_time = Time.time;
                 HealVFX.SetActive(false);
+                cooldown = true;
             }
         }
 

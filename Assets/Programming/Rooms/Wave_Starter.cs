@@ -7,6 +7,8 @@ public class Wave_Starter : MonoBehaviour
     public GameObject[] enemies_to_spawn;
     public int enemies_to_kill;
     Wave_System wave_system;
+
+    bool stay = false;
     // Start is called before the first frame update
     void Start()
     {

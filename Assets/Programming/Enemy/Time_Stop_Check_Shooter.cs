@@ -28,6 +28,10 @@ public class Time_Stop_Check_Shooter: MonoBehaviour
         time_manager = Manager.GetComponent<Timemanager>();
         ae = Manager.GetComponent<ArrayExtensionMethods>();
         time_manager.enemies_shooter = (Time_Stop_Check_Shooter[])ae.AddToArray(time_stop_check_shooter, time_manager.enemies_shooter);
+        if(time_manager.Time_Stopped)
+        {
+            StopEnemy();
+        }
     }
 
     // Update is called once per frame

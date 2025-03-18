@@ -11,6 +11,8 @@ public class Timemanager : MonoBehaviour
     public bool cooldown = false;
     public bool doorBool = false;
     public bool boss1_scene = false;
+    public bool boss2_Scene = false;
+    public bool boss3_Scene = false;
 
     public Time_Stop_Check_Shooter[] enemies_shooter;
     public Time_Stop_Check_Melee[] enemies_melee;
@@ -18,6 +20,9 @@ public class Timemanager : MonoBehaviour
     public Explosion_Script[] explosions;
     public Lightning_Script[] lightnings;
     public Lightning_Spawner[] lightning_spawns;
+    public Tornado_Script[] tornado_scripts;
+    public VFX_Time_Stop[] vfx_scripts;
+    public Particle_Time_Stop[] particle_scripts;
     
 
     bool LB_Press = false;
@@ -41,6 +46,19 @@ public class Timemanager : MonoBehaviour
     Boss1_State_Manager boss1_State_Manager;
     float boss1_speed = 0;
     int boss1_force = 0;
+
+    GameObject boss2;
+    Animator boss2_animator;
+    //Vortex_Projectiles vortex_Projectiles;
+    Boss2_State_Manager boss2_State_Manager;
+    float boss2_speed = 0;
+    int boss2_force = 0;
+
+    GameObject boss3;
+    Animator boss3_animator;
+    Boss3_State_Manager boss3_State_Manager;
+    float boss3_speed = 0;
+    int boss3_force = 0;
 
     public float refill_timer = 0;
 
@@ -120,22 +138,22 @@ public class Timemanager : MonoBehaviour
             slider_component.maxValue = 2.9f;
             slider_component.value = 2.9f;
             slider_time = Time.time;
-            for (int i = 0; i < enemies_shooter.Length; i++)
+            foreach(Time_Stop_Check_Shooter shooter in enemies_shooter)
             {
-                enemies_shooter[i].StopEnemy();
+                shooter.StopEnemy();
             }
-            for (int i = 0; i < enemies_melee.Length; i++)
+            foreach(Time_Stop_Check_Melee melee in enemies_melee)
             {
-                enemies_melee[i].StopEnemy();
+                melee.StopEnemy();
             }
-            for (int i = 0; i < bullets.Length; i++)
+            foreach(Basic_Bullet bullet in bullets)
             {
-                bullets[i].StopBullet();
+                bullet.StopBullet();
             }
-            for (int i = 0; i < explosions.Length; i++)
+            foreach(Explosion_Script explosion in explosions)
             {
-                explosions[i].Stop_Explosion();
-                GameObject oni_Shockwave = explosions[i].transform.Find("Oni_Shockwave").gameObject; ;
+                explosion.Stop_Explosion();
+                GameObject oni_Shockwave = explosion.transform.Find("Oni_Shockwave").gameObject; ;
                 GameObject electricity = oni_Shockwave.transform.Find("Electricity").gameObject;
                 GameObject indicator = oni_Shockwave.transform.Find("Indicator").gameObject;
                 GameObject sparks = oni_Shockwave.transform.Find("Sparks").gameObject;
@@ -154,6 +172,18 @@ public class Timemanager : MonoBehaviour
             {
                 spawner.Time_Stop();
             }
+            foreach(Tornado_Script tornado in tornado_scripts)
+            {
+                tornado.Time_Stop();
+            }
+            foreach(VFX_Time_Stop vfx in vfx_scripts)
+            {
+                vfx.Time_Stop_Pause();
+            }
+            foreach (Particle_Time_Stop particle in particle_scripts)
+            {
+                particle.Time_Stop_Pause();
+            }
             if (doorBool)
             {
                 door_animator.SetFloat("Speed", 0);
@@ -171,6 +201,28 @@ public class Timemanager : MonoBehaviour
                 Rigidbody rb = boss1.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.zero;
             }
+            if (boss2_Scene)
+            {
+                boss2_speed = boss2_animator.GetFloat("Speed");
+                boss2_animator.SetFloat("Speed", 0);
+                Look_At boss2_look = boss2.gameObject.GetComponent<Look_At>();
+                boss2_look.enabled = false;
+                boss2_force = boss2_State_Manager.force;
+                boss2_State_Manager.force = 0;
+                Rigidbody rb = boss2.GetComponent<Rigidbody>();
+                rb.velocity = Vector3.zero;
+            }
+            if (boss3_Scene)
+            {
+                boss3_speed = boss3_animator.GetFloat("Speed");
+                boss3_animator.SetFloat("Speed", 0);
+                Look_At boss3_look = boss3.gameObject.GetComponent<Look_At>();
+                boss3_look.enabled = false;
+                boss3_force = boss3_State_Manager.force;
+                boss3_State_Manager.force = 0;
+                Rigidbody rb = boss3.GetComponent<Rigidbody>();
+                rb.velocity = Vector3.zero;
+            }
             
             StartCoroutine(ResetTime(time_amount));
             //StartCoroutine(Cooldown_Timer());
@@ -184,22 +236,22 @@ public class Timemanager : MonoBehaviour
         refill_timer = 0;
         slider_component.maxValue = 20;
         slider_time2 = Time.time;
-        for (int i = 0; i < enemies_shooter.Length; i++)
+        foreach (Time_Stop_Check_Shooter shooter in enemies_shooter)
         {
-            enemies_shooter[i].RestartEnemy();
+            shooter.RestartEnemy();
         }
-        for (int i = 0; i < enemies_melee.Length; i++)
+        foreach (Time_Stop_Check_Melee melee in enemies_melee)
         {
-            enemies_melee[i].RestartEnemy();
+            melee.RestartEnemy();
         }
-        for (int i = 0; i < bullets.Length; i++)
+        foreach (Basic_Bullet bullet in bullets)
         {
-            bullets[i].RestartBullet();
+            bullet.RestartBullet();
         }
-        for (int i = 0; i < explosions.Length; i++)
+        foreach (Explosion_Script explosion in explosions)
         {
-            explosions[i].Restart_Explosion();
-            GameObject oni_Shockwave = explosions[i].transform.Find("Oni_Shockwave").gameObject; ;
+            explosion.Restart_Explosion();
+            GameObject oni_Shockwave = explosion.transform.Find("Oni_Shockwave").gameObject; ;
             GameObject electricity = oni_Shockwave.transform.Find("Electricity").gameObject;
             GameObject indicator = oni_Shockwave.transform.Find("Indicator").gameObject;
             GameObject sparks = oni_Shockwave.transform.Find("Sparks").gameObject;
@@ -218,6 +270,18 @@ public class Timemanager : MonoBehaviour
         {
             spawner.Time_Reset();
         }
+        foreach (Tornado_Script tornado in tornado_scripts)
+        {
+            tornado.Time_Reset();
+        }
+        foreach (VFX_Time_Stop vfx in vfx_scripts)
+        {
+            vfx.Time_Stop_Restart();
+        }
+        foreach (Particle_Time_Stop particle in particle_scripts)
+        {
+            particle.Time_Stop_Restart();
+        }
         if (doorBool)
         {
             door_animator.SetFloat("Speed", 1);
@@ -230,6 +294,20 @@ public class Timemanager : MonoBehaviour
             Look_At boss1_look = boss1.gameObject.GetComponent<Look_At>();
             boss1_look.enabled = true;
             boss1_State_Manager.force = boss1_force;
+        }
+        if (boss2_Scene)
+        {
+            boss2_animator.SetFloat("Speed", boss2_speed);
+            Look_At boss2_look = boss2.gameObject.GetComponent<Look_At>();
+            boss2_look.enabled = true;
+            boss2_State_Manager.force = boss2_force;
+        }
+        if (boss3_Scene)
+        {
+            boss3_animator.SetFloat("Speed", boss3_speed);
+            Look_At boss3_look = boss3.gameObject.GetComponent<Look_At>();
+            boss3_look.enabled = true;
+            boss3_State_Manager.force = boss3_force;
         }
     }
 
@@ -246,5 +324,21 @@ public class Timemanager : MonoBehaviour
         boss1_animator = boss1.GetComponent<Animator>();
         vortex_Projectiles = GameObject.Find("Vortex Bullet Spawner").GetComponent<Vortex_Projectiles>();
         boss1_State_Manager = boss1.GetComponent<Boss1_State_Manager>();
+    }
+
+    public void Activate_Boss2(GameObject boss)
+    {
+        boss2_Scene = true;
+        boss2 = boss;
+        boss2_animator = boss2.GetComponent<Animator>();
+        boss2_State_Manager = boss2.GetComponent<Boss2_State_Manager>();
+    }
+
+    public void Activate_Boss3(GameObject boss)
+    {
+        boss3_Scene = true;
+        boss3 = boss;
+        boss3_animator = boss3.GetComponent<Animator>();
+        boss3_State_Manager = boss3.GetComponent<Boss3_State_Manager>();
     }
 }

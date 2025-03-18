@@ -10,6 +10,7 @@ public class Room_Counter : MonoBehaviour
     public GameObject[] doors;
 
     [SerializeField] int requirements_met = 0;
+    int requirements_done = 0;
 
     Player_Store_Data player_store_data;
     void Start()
@@ -24,9 +25,10 @@ public class Room_Counter : MonoBehaviour
         if (enemies_killed >= requirements[requirements_met])
         {
             player_store_data.enemies_killed = requirements[requirements_met];
-            print(player_store_data.enemies_killed);
+            //print(player_store_data.enemies_killed);
             Open_Doors();
             requirements_met++;
+            
         }
     }
 
@@ -37,7 +39,11 @@ public class Room_Counter : MonoBehaviour
 
     void Open_Doors()
     {
-        Destroy(doors[requirements_met]);
+        doors[requirements_met].SetActive(false);
+        if(requirements_met >= 1)
+        {
+            doors[requirements_met - 1].SetActive(true);
+        }
     }
     
     public void Set_Enemies_Killed(int killed)

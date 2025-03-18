@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class Health : MonoBehaviour
 {
+    OneShotSender playSound;
+
     int HP = 2;
     public bool shooter = true;
     public GameObject explosion;
@@ -24,10 +27,14 @@ public class Health : MonoBehaviour
         room_counter_script = room_counter.GetComponent<Room_Counter>();
         hit_vfx = transform.Find("HitEffect").gameObject;
         wave_system = GameObject.Find("Wave Manager").GetComponent<Wave_System>();
+
+        playSound = gameObject.GetComponent<OneShotSender>();
     }
 
     public void Get_Hit()
     {
+        playSound.PlayOneShot(0);
+
         renderer.material.color = Color.red;
         HP--;
         hit_vfx.SetActive(true);

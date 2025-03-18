@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 8987702324068644634}
   - component: {fileID: 2894197649022245733}
   - component: {fileID: 5941127673568638423}
+  - component: {fileID: -6972740634389823008}
   m_Layer: 7
   m_Name: Shooting Enemy
   m_TagString: Enemy
@@ -386,6 +387,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6c302fa7d8a41b4bbd917e6ba23e61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6972740634389823008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2274122134893758058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dd0b4b2b4f5c74bac159a9d6e2974e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+  - Guid:
+      Data1: -616565379
+      Data2: 1160582892
+      Data3: -1830868043
+      Data4: -97641990
+    Path: event:/Sound Effects/Enemy/Common/Shooter/Shooter Hurt
+  - Guid:
+      Data1: -975156936
+      Data2: 1074518037
+      Data3: -913228378
+      Data4: 360969722
+    Path: event:/Sound Effects/Enemy/Common/Shooter/Shooter Attack
+  - Guid:
+      Data1: 1489636093
+      Data2: 1268739018
+      Data3: -1180594001
+      Data4: -1138063111
+    Path: event:/Sound Effects/Enemy/Common/Shooter/Shooter Die
 --- !u!1 &4473821668508542798
 GameObject:
   m_ObjectHideFlags: 0

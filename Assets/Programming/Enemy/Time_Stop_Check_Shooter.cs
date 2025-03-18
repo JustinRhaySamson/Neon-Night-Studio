@@ -17,6 +17,7 @@ public class Time_Stop_Check_Shooter: MonoBehaviour
     public NavMeshAgent nav_Agent;
     public SphereCollider sphere_Collider;
     public SphereCollider sphere_Collider2;
+    public Animator animator;
 
     bool restart;
     bool bullet_shooter_state;
@@ -44,9 +45,10 @@ public class Time_Stop_Check_Shooter: MonoBehaviour
     {
         look_at.enabled = false;
         //shoot_Bullet.StopShooting();
-        bullet_shooter.SetActive(false);
+        //bullet_shooter.SetActive(false);
         navmesh_state = nav_Agent.enabled;
         nav_Agent.enabled = false;
+        animator.SetFloat("Speed", 0);
         //sphere_Collider.enabled = false;
         //sphere_Collider2.enabled = false;
     }
@@ -57,11 +59,12 @@ public class Time_Stop_Check_Shooter: MonoBehaviour
         nav_Agent.enabled = navmesh_state;
         //sphere_Collider2.enabled = true;
         //sphere_Collider.enabled = true;
-        bullet_shooter.SetActive(bullet_shooter_state);
+        /*bullet_shooter.SetActive(bullet_shooter_state);
         if (bullet_shooter_state)
         {
             shoot_Bullet.StartShooting();
-        }
+        }*/
+        animator.SetFloat("Speed", .7f);
     }
 
     public void Die()
@@ -71,20 +74,22 @@ public class Time_Stop_Check_Shooter: MonoBehaviour
 
     public void Enter_Shooting_Sphere()
     {
-        if (!time_manager.Time_Stopped)
+        /*if (!time_manager.Time_Stopped)
         {
             bullet_shooter.SetActive(true);
             shoot_Bullet.StartShooting();
-        }
+        }*/
+        animator.SetBool("Shooting", true);
         bullet_shooter_state = true;
     }
 
     public void Exit_Shooting_Sphere()
     {
-        if (!time_manager.Time_Stopped)
+        /*if (!time_manager.Time_Stopped)
         {
             bullet_shooter.SetActive(false);
-        }
+        }*/
+        animator.SetBool("Shooting", false);
         bullet_shooter_state = false;
     }
 

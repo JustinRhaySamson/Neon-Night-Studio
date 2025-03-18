@@ -9,8 +9,11 @@ public class Shoot_bullet : MonoBehaviour
     public GameObject bullet;
     public Transform firepoint;
     public bool not_stopped = true;
+    public Animator animator;
 
     public bool restartShooting;
+
+    public OneShotSender OneShotSender;
 
     void Start()
     {
@@ -57,7 +60,13 @@ public class Shoot_bullet : MonoBehaviour
 
     public void Shoot_Now()
     {
-        StartCoroutine(Shoot_Now_Coroutine());
+        GameObject bullet2 = Instantiate(bullet, firepoint.position, firepoint.rotation);
+        Rigidbody rb = bullet2.GetComponent<Rigidbody>();
+        rb.AddForce(firepoint.forward * force, ForceMode.Impulse);
+
+        //AUDIO
+        OneShotSender.PlayOneShot(1);
+
     }
 
     public void Stop_Shooting_Now()
@@ -67,9 +76,6 @@ public class Shoot_bullet : MonoBehaviour
 
     IEnumerator Shoot_Now_Coroutine()
     {
-        yield return new WaitForSeconds(.4f);
-        GameObject bullet2 = Instantiate(bullet, firepoint.position, firepoint.rotation);
-        Rigidbody rb = bullet2.GetComponent<Rigidbody>();
-        rb.AddForce(firepoint.forward * force, ForceMode.Impulse);
+        yield return new WaitForSeconds(.4f); 
     }
 }

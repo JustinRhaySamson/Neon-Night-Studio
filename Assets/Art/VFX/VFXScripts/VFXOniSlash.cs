@@ -8,6 +8,7 @@ public class VFXOniSlash : MonoBehaviour
 
     public void ActivateA1()
     {
+        //Slash
         VFXA1.SetActive(true);
         //Debug.Log("VFX activated");
     }
@@ -20,6 +21,7 @@ public class VFXOniSlash : MonoBehaviour
     
     public void ActivateA2()
     {
+        //Phase 2 Claw Slash
         VFXA2.SetActive(true);
         //Debug.Log("VFX activated");
     }
@@ -32,6 +34,7 @@ public class VFXOniSlash : MonoBehaviour
     
     public void ActivateA3()
     {
+        //Phase 2 Claw Slash
         VFXA3.SetActive(true);
         //Debug.Log("VFX activated");
     }
@@ -44,6 +47,7 @@ public class VFXOniSlash : MonoBehaviour
     
         public void ActivateA4()
         {
+            //Phase 2 Oni Aura
             VFXA4.SetActive(true);
             //Debug.Log("VFX activated");
         }

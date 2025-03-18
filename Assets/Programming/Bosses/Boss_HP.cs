@@ -9,7 +9,9 @@ public class Boss_HP : MonoBehaviour
     public int HP;
     public int maxHP;
     int health_checks = 0;
-    int health_checks2 = 0;  
+    int health_checks2 = 0;
+    public Sprite heathbar_1;
+    public Sprite heathbar_2;
     GameObject slider;
     Slider slider_component;
     Animator slider_animator;
@@ -19,6 +21,7 @@ public class Boss_HP : MonoBehaviour
     Boss1_State_Manager state_manager;
     Boss2_State_Manager state_manager2;
     Boss3_State_Manager state_manager3;
+    Image healthbar_image;
     bool life_regen = false;
 
     bool phase1 = true;
@@ -38,6 +41,7 @@ public class Boss_HP : MonoBehaviour
         slider_animator = slider.GetComponent <Animator>();
         time_manager = GameObject.Find("Time manager");
         time_Script = time_manager.GetComponent<Timemanager>();
+        healthbar_image = GameObject.Find("Boss_Health_Image").GetComponent<Image>();
         if (boss1)
         {
             time_Script.Activate_Boss1(gameObject);
@@ -85,6 +89,7 @@ public class Boss_HP : MonoBehaviour
         slider_component.maxValue = maxHP;
         slider_component.value = HP;
         slider_animator.SetBool("Active", true);
+        healthbar_image.sprite = heathbar_1;
     }
 
     public void Get_Hit()
@@ -100,6 +105,7 @@ public class Boss_HP : MonoBehaviour
                 life_regen = true;
                 animator.SetBool("Phase2", true);
                 phase1 = false;
+                healthbar_image.sprite = heathbar_2;
             }
             else if (HP <= 0 && !phase1 && !life_regen)
             {

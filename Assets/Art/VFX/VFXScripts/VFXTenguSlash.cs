@@ -9,6 +9,7 @@ public class VFXYukiSlash : MonoBehaviour
 
     public void ActivateA1()
     {
+        //Slash
         VFXA1.SetActive(true);
         //Debug.Log("VFX activated");
     }
@@ -21,6 +22,7 @@ public class VFXYukiSlash : MonoBehaviour
     
     public void ActivateA2()
     {
+        //Attack indicator (so probably no sfx)
         vfx_activated = true;
         VFXA2.SetActive(true);
         //Debug.Log("VFX activated");
@@ -34,6 +36,7 @@ public class VFXYukiSlash : MonoBehaviour
     
     public void ActivateA3()
     {
+        //Attack indicator (so probably no sfx)
         VFXA3.SetActive(true);
         //Debug.Log("VFX activated");
     }

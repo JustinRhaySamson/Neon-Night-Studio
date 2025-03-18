@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 2774333531203446697}
   - component: {fileID: 3103529605618190852}
   - component: {fileID: 8576078247600238608}
+  - component: {fileID: -2854909900609883868}
   m_Layer: 7
   m_Name: Hair Enemy
   m_TagString: Enemy
@@ -521,6 +522,37 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.77
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2854909900609883868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998742055313279325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dd0b4b2b4f5c74bac159a9d6e2974e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+  - Guid:
+      Data1: 1075993100
+      Data2: 1108833818
+      Data3: -707640650
+      Data4: 1336121102
+    Path: event:/Sound Effects/Enemy/Common/Hair/Hair Hurt
+  - Guid:
+      Data1: 842608568
+      Data2: 1158336914
+      Data3: 1995688852
+      Data4: 1027431861
+    Path: event:/Sound Effects/Enemy/Common/Hair/Hair Attack
+  - Guid:
+      Data1: 1143925655
+      Data2: 1263736115
+      Data3: 1218221488
+      Data4: -537048662
+    Path: event:/Sound Effects/Enemy/Common/Hair/Hair Dye
 --- !u!1 &8182296136425976745
 GameObject:
   m_ObjectHideFlags: 0

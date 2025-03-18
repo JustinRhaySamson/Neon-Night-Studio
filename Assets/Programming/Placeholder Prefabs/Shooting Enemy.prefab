@@ -112,7 +112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8140825543900782714
 Transform:
   m_ObjectHideFlags: 0
@@ -145,6 +145,7 @@ MonoBehaviour:
   bullet: {fileID: 5827592893953670912, guid: 5e41aa6a7927c344c9fc22baa4158f66, type: 3}
   firepoint: {fileID: 6979664726679794263}
   not_stopped: 1
+  animator: {fileID: 0}
   restartShooting: 0
 --- !u!1 &2274122134893758058
 GameObject:
@@ -345,6 +346,7 @@ MonoBehaviour:
   nav_Agent: {fileID: 809091954251022376}
   sphere_Collider: {fileID: 4178232099878184693}
   sphere_Collider2: {fileID: 5500770368430190212}
+  animator: {fileID: 2106981372032170372}
 --- !u!54 &2894197649022245733
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -548,18 +550,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1499571587749511192}
-        m_TargetAssemblyTypeName: Shoot_bullet, Assembly-CSharp
-        m_MethodName: Shoot_Now
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   trigger_exited:
     m_PersistentCalls:
       m_Calls:
@@ -682,6 +672,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68cb83ae76b100c4581147b10fe1c1ef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2106981372032170372}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 68cb83ae76b100c4581147b10fe1c1ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7180437405044758002}
   m_SourcePrefab: {fileID: 100100000, guid: 68cb83ae76b100c4581147b10fe1c1ef, type: 3}
 --- !u!4 &1456755166576364259 stripped
 Transform:
@@ -714,6 +707,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7180437405044758002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2268899107383775321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185a1ab0dfc097e4487212e99fcb1960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reload_time: 1.8
+  force: 27
+  bullet: {fileID: 5827592893953670912, guid: 5e41aa6a7927c344c9fc22baa4158f66, type: 3}
+  firepoint: {fileID: 6979664726679794263}
+  not_stopped: 1
+  animator: {fileID: 2106981372032170372}
+  restartShooting: 0
 --- !u!1001 &6293542072501906506
 PrefabInstance:
   m_ObjectHideFlags: 0

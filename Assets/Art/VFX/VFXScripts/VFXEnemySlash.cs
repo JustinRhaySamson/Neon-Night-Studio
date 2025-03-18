@@ -8,6 +8,7 @@ public class VFXEnemySlash : MonoBehaviour
 
     public void ActivateA1()
     {
+        //Slash
         VFXA1.SetActive(true);
         //Debug.Log("VFX activated");
     }

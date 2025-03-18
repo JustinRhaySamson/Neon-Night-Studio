@@ -8,6 +8,7 @@ public class VFXTenguSlash : MonoBehaviour
 
     public void ActivateA1()
     {
+        //Slash
         VFXA1.SetActive(true);
         //Debug.Log("VFX activated");
     }
@@ -20,6 +21,7 @@ public class VFXTenguSlash : MonoBehaviour
     
     public void ActivateA2()
     {
+        //Slash
         VFXA2.SetActive(true);
         //Debug.Log("VFX activated");
     }

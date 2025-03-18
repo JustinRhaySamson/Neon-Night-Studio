@@ -6,20 +6,24 @@ public class VFXAudioEvents : MonoBehaviour
 {
     public GameObject VFXA1,VFXA2,VFXA3;
 
+    //this is for the player
     public void ActivateA1()
     {
+        //Slash
         VFXA1.SetActive(true);
         //Debug.Log("VFX activated");
     }
 
     public void ActivateA2()
     {
+        //Slash
         VFXA2.SetActive(true);
         //Debug.Log("VFX activated");
     }
 
     public void ActivateA3()
     {
+        //Slash
         VFXA3.SetActive(true);
         //Debug.Log("VFX activated");
     }

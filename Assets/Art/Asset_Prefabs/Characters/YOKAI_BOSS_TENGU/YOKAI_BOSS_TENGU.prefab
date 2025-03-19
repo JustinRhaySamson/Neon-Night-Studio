@@ -2600,6 +2600,7 @@ GameObject:
   - component: {fileID: 8151572478149899161}
   - component: {fileID: 5615025528192981172}
   - component: {fileID: 4404393595699822394}
+  - component: {fileID: -2174951573275331570}
   m_Layer: 7
   m_Name: YOKAI_BOSS_TENGU
   m_TagString: Boss
@@ -2879,6 +2880,25 @@ MonoBehaviour:
   - {fileID: 1627053669146722560}
   - {fileID: 8916668574161405592}
   tengu_slash: {fileID: 5615025528192981172}
+--- !u!114 &-2174951573275331570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5262151795378118052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dd0b4b2b4f5c74bac159a9d6e2974e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+  - Guid:
+      Data1: -55645024
+      Data2: 1319506653
+      Data3: 857966485
+      Data4: 750186429
+    Path: event:/Sound Effects/Enemy/Boss/GUNDAM/Gundam Hurt
 --- !u!1 &5370087191789679656
 GameObject:
   m_ObjectHideFlags: 0

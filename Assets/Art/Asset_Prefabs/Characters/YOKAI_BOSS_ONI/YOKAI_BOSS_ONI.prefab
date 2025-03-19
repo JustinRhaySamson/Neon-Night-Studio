@@ -2475,6 +2475,7 @@ GameObject:
   - component: {fileID: 2640708276713273852}
   - component: {fileID: 7280549729951358422}
   - component: {fileID: 8726684108015022988}
+  - component: {fileID: -8764528085644833106}
   m_Layer: 7
   m_Name: YOKAI_BOSS_ONI
   m_TagString: Boss
@@ -2696,6 +2697,25 @@ MonoBehaviour:
   VFXA2: {fileID: 3975166806434105716}
   VFXA3: {fileID: 6662100799368977246}
   VFXA4: {fileID: 1665424995291006093}
+--- !u!114 &-8764528085644833106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7397641826439979445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dd0b4b2b4f5c74bac159a9d6e2974e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+  - Guid:
+      Data1: 1601637600
+      Data2: 1145933596
+      Data3: 1597327500
+      Data4: -2073400543
+    Path: event:/Sound Effects/Enemy/Boss/ONI/Oni Hurt
 --- !u!1 &7473336548515530664
 GameObject:
   m_ObjectHideFlags: 0

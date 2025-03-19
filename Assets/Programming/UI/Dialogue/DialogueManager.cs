@@ -120,7 +120,10 @@ public class DialogueManager : MonoBehaviour
 
 	void EndDialogue()
 	{
-		playerController.Change_Dialogue_False();
+		if(dialogue1 != null)
+        {
+			playerController.Change_Dialogue_False();
+		}
 		animator.SetBool("IsOpen", false);
         if (dialogue1.events)
         {

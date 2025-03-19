@@ -371,6 +371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1398147223801865522}
   - component: {fileID: 4084313892864495619}
+  - component: {fileID: 3121631045364648144}
   m_Layer: 0
   m_Name: Kama Drone Assets
   m_TagString: Untagged
@@ -416,6 +417,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3121631045364648144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006716763355396820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dd0b4b2b4f5c74bac159a9d6e2974e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+  - Guid:
+      Data1: 1075993100
+      Data2: 1108833818
+      Data3: -707640650
+      Data4: 1336121102
+    Path: event:/Sound Effects/Enemy/Common/Hair/Hair Hurt
+  - Guid:
+      Data1: 842608568
+      Data2: 1158336914
+      Data3: 1995688852
+      Data4: 1027431861
+    Path: event:/Sound Effects/Enemy/Common/Hair/Hair Attack
+  - Guid:
+      Data1: 1143925655
+      Data2: 1263736115
+      Data3: 1218221488
+      Data4: -537048662
+    Path: event:/Sound Effects/Enemy/Common/Hair/Hair Dye
 --- !u!1 &6309464881402767109
 GameObject:
   m_ObjectHideFlags: 0

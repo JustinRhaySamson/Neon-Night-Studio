@@ -26,7 +26,8 @@ public class Boss_HP : MonoBehaviour
 
     bool phase1 = true;
 
-    
+    //SOUND!!!
+    OneShotSender playSound;
 
     [SerializeField] bool boss1 = false;
     [SerializeField] bool boss2 = false;
@@ -69,6 +70,8 @@ public class Boss_HP : MonoBehaviour
         {
             state_manager3 = gameObject.GetComponent<Boss3_State_Manager>();
         }
+
+        playSound = gameObject.GetComponent<OneShotSender>();
     }
 
     // Update is called once per frame
@@ -94,6 +97,9 @@ public class Boss_HP : MonoBehaviour
 
     public void Get_Hit()
     {
+        //Play Hit Sound
+        playSound.PlayOneShot(0);
+
         HP--;
         slider_component.value = HP;
         if (boss1)

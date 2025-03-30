@@ -2,6 +2,8 @@
 
 Yok.AI is an action based game focused on making the player feel cool with an emphasis on bosses.
 
+[Video of the beta playthrough](https://www.linkedin.com/in/michele-marchese-andreu-786650339/)
+
 ## Bosses
 
 - Reiju - Oni - First Boss

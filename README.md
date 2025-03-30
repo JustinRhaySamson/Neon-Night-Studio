@@ -2,7 +2,7 @@
 
 Yok.AI is an action based game focused on making the player feel cool with an emphasis on bosses.
 
-[Video of the beta playthrough](https://www.linkedin.com/in/michele-marchese-andreu-786650339/)
+[Video of the beta playthrough](https://www.youtube.com/watch?v=DX1cG8md4XM&t=6s&ab_channel=MicheleMarcheseAndreu)
 
 ## Bosses
 

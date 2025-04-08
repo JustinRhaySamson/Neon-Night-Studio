@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VFXYukiSlash : MonoBehaviour
 {
-    public GameObject VFXA1, VFXA2, VFXA3, VFXA4, VFXA5, VFXA6;
+    public GameObject VFXA1, VFXA2, VFXA3, VFXA4, VFXA5, VFXA6, VFXA7;
     public bool vfx_activated = false;
 
     public void ActivateA1()
@@ -81,6 +81,18 @@ public class VFXYukiSlash : MonoBehaviour
     public void DeactivateA6()
     {
         VFXA6.SetActive(false);
+        //Debug.Log("VFX deactivated");
+    }
+    
+    public void ActivateA7()
+    {
+        VFXA7.SetActive(true);
+        //Debug.Log("VFX activated");
+    }
+    
+    public void DeactivateA7()
+    {
+        VFXA7.SetActive(false);
         //Debug.Log("VFX deactivated");
     }
 }

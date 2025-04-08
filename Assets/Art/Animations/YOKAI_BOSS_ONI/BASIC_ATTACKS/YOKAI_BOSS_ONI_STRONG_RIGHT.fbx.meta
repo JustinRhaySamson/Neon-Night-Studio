@@ -20,10 +20,10 @@ ModelImporter:
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: Event Deactivate_Weapon has a time (2.481624) outside
-      the clip's valid range (0.000000..1.633333). It will never be firedEvent Chain_Attack_Up
-      has a time (2.830698) outside the clip's valid range (0.000000..1.633333).
-      It will never be firedEvent A1Off has a time (2.360784) outside the clip's
-      valid range (0.000000..1.633333). It will never be fired
+      the clip's valid range (0.000000..1.533333). It will never be firedEvent Chain_Attack_Up
+      has a time (2.830698) outside the clip's valid range (0.000000..1.533333).
+      It will never be firedEvent DeactivateA1 has a time (2.360784) outside the
+      clip's valid range (0.000000..1.533333). It will never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -68,29 +68,36 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.4129358
+      - time: 0.2559372
         functionName: ActivateA1
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.43036377
+      - time: 0.2779828
         functionName: Damping_0
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.49064508
+      - time: 0.29901445
         functionName: Activate_Weapon
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.8656827
+      - time: 0.40045896
         functionName: Deactivate_Weapon
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.425261
+        functionName: DeactivateA1
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
@@ -98,13 +105,6 @@ ModelImporter:
         messageOptions: 0
       - time: 0.98745275
         functionName: Chain_Attack_Up
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.8235294
-        functionName: DeactivateA1
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

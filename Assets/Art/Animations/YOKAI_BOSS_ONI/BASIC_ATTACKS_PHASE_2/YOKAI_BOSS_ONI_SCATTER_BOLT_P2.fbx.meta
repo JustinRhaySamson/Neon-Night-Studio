@@ -57,21 +57,35 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.096296296
+      - time: 0.024338637
+        functionName: Set_Damping
+        data: 
+        objectReferenceParameter: {fileID: 5827592893953670912, guid: afa62cbbb2d85d244a7eb5da19f4859c, type: 3}
+        floatParameter: 0
+        intParameter: 3
+        messageOptions: 0
+      - time: 0.06859067
         functionName: Scatter_Bolt_1
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.46421164
+      - time: 0.436506
         functionName: Scatter_Bolt_2
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.87513226
+      - time: 0.83280414
+        functionName: Damping_0
+        data: 
+        objectReferenceParameter: {fileID: 5827592893953670912, guid: afa62cbbb2d85d244a7eb5da19f4859c, type: 3}
+        floatParameter: 0
+        intParameter: 3
+        messageOptions: 0
+      - time: 0.88667625
         functionName: Scatter_Bolt_3
         data: 
         objectReferenceParameter: {fileID: 5827592893953670912, guid: afa62cbbb2d85d244a7eb5da19f4859c, type: 3}
@@ -84,20 +98,6 @@ ModelImporter:
         objectReferenceParameter: {fileID: 5827592893953670912, guid: afa62cbbb2d85d244a7eb5da19f4859c, type: 3}
         floatParameter: 0
         intParameter: 0
-        messageOptions: 0
-      - time: 0.024338637
-        functionName: Set_Damping
-        data: 
-        objectReferenceParameter: {fileID: 5827592893953670912, guid: afa62cbbb2d85d244a7eb5da19f4859c, type: 3}
-        floatParameter: 0
-        intParameter: 3
-        messageOptions: 0
-      - time: 0.83280414
-        functionName: Damping_0
-        data: 
-        objectReferenceParameter: {fileID: 5827592893953670912, guid: afa62cbbb2d85d244a7eb5da19f4859c, type: 3}
-        floatParameter: 0
-        intParameter: 3
         messageOptions: 0
       transformMask: []
       maskType: 3

@@ -16,7 +16,7 @@ public class Player_Controller : MonoBehaviour
     bool attack_chain = false;
     bool healing = false;
     bool active_gravity = false;
-    bool dialogue = false;
+    [HideInInspector] public bool dialogue = false;
     bool dead = false;
 
     public GameObject DashVFX;

@@ -7,7 +7,7 @@ public class Boss1_State_Front_Slam : Boss1_Base_State
     public override void EnterState(Boss1_State_Manager state)
     {
         state.animator.SetBool("Front_Slam", true);
-        state.attacks_made = 0;
+        state.attacks_made++;
     }
 
     public override void UpdateState(Boss1_State_Manager state)

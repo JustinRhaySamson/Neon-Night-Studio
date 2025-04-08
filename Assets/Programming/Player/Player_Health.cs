@@ -50,9 +50,11 @@ public class Player_Health : MonoBehaviour
     {
         HP--;
         UI_HP.text = HP.ToString();
+        Invincible_Tag();
         if(HP > 0)
         {
             animator.SetBool("Stagger", true);
+            StartCoroutine(Remove_Invincible());
         }
         if (HP <= 0)
         {
@@ -62,9 +64,15 @@ public class Player_Health : MonoBehaviour
         }
     }
 
+    IEnumerator Remove_Invincible()
+    {
+        yield return new WaitForSeconds(2);
+        Player_Tag();
+    }
+
     public void Heal(InputAction.CallbackContext callbackContext)
     {
-        if (callbackContext.performed && slider_component.value == slider_component.maxValue)
+        if (callbackContext.performed && slider_component.value == slider_component.maxValue && !controller.dialogue)
         {
             if (HP < max_HP && controller.public_input == Vector3.zero)
             {
@@ -149,6 +157,12 @@ public class Player_Health : MonoBehaviour
         {
             health_1.SetActive(true);
         }
+    }
+
+    public void Max_Heal()
+    {
+        HP = max_HP;
+        HealVFX.SetActive(false);
     }
 
     public void Restart_Scene()

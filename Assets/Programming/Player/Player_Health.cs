@@ -32,6 +32,8 @@ public class Player_Health : MonoBehaviour
 
     public float refill_timer_health = 0;
 
+    Camera_Shake camera_Shake;
+
     private void Start()
     {
         UI_Text = GameObject.Find("HP number");
@@ -44,12 +46,14 @@ public class Player_Health : MonoBehaviour
         health_2 = GameObject.Find("Health1 2");
         health_3 = GameObject.Find("Health1");
         animator = GetComponent<Animator>();
+        camera_Shake = GameObject.Find("Main Camera").GetComponent<Camera_Shake>();
     }
 
     public void Get_Hit()
     {
         HP--;
         UI_HP.text = HP.ToString();
+        camera_Shake.ShakeIt();
         Invincible_Tag();
         if(HP > 0)
         {

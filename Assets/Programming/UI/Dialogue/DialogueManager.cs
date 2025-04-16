@@ -190,6 +190,11 @@ public class DialogueManager : MonoBehaviour
 			rightSpeakerImage.color = Color.white;
 			rightSpeakerImage.enabled = true;
 			rightNameText.text = dialogue1.name[speakerNumber];
+            if (rightNameText.text.Contains("_Right"))
+            {
+				rightNameText.text = rightNameText.text.Replace("_Right", "");
+
+			}
 			right = true;
 		}
 	}

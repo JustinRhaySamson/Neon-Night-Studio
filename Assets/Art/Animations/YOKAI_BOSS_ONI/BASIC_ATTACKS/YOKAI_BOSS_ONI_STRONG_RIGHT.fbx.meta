@@ -19,10 +19,10 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: Event Deactivate_Weapon has a time (2.481624) outside
-      the clip's valid range (0.000000..1.533333). It will never be firedEvent Chain_Attack_Up
+    animationImportWarnings: Event DeactivateA1 has a time (1.734669) outside the
+      clip's valid range (0.000000..1.533333). It will never be firedEvent Chain_Attack_Up
       has a time (2.830698) outside the clip's valid range (0.000000..1.533333).
-      It will never be firedEvent DeactivateA1 has a time (2.360784) outside the
+      It will never be firedEvent DeactivateA6 has a time (1.709941) outside the
       clip's valid range (0.000000..1.533333). It will never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
@@ -68,13 +68,6 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.2559372
-        functionName: ActivateA1
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       - time: 0.2779828
         functionName: Damping_0
         data: 
@@ -89,6 +82,20 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.3530595
+        functionName: ActivateA1
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.35789475
+        functionName: ActivateA6
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.40045896
         functionName: Deactivate_Weapon
         data: 
@@ -96,7 +103,14 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.425261
+      - time: 0.48421052
+        functionName: DeactivateA6
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4893276
         functionName: DeactivateA1
         data: 
         objectReferenceParameter: {instanceID: 0}

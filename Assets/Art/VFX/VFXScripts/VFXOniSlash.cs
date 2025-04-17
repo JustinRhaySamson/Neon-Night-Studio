@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VFXOniSlash : MonoBehaviour
 {
-    public GameObject VFXA1, VFXA2, VFXA3, VFXA4;
+    public GameObject VFXA1, VFXA2, VFXA3, VFXA4, VFXA5, VFXA6;
 
     public void ActivateA1()
     {
@@ -44,17 +44,42 @@ public class VFXOniSlash : MonoBehaviour
         VFXA3.SetActive(false);
         //Debug.Log("VFX deactivated");
     }
-    
-        public void ActivateA4()
-        {
-            //Phase 2 Oni Aura
-            VFXA4.SetActive(true);
-            //Debug.Log("VFX activated");
-        }
+    public void ActivateA4()
+    {
+        //Phase 2 Oni Aura
+        VFXA4.SetActive(true);
+        //Debug.Log("VFX activated");
+    }
         
-        public void DeactivateA4()
-        {
-            VFXA4.SetActive(false);
-            //Debug.Log("VFX deactivated");
-        }
+    public void DeactivateA4()
+    {
+        VFXA4.SetActive(false);
+        //Debug.Log("VFX deactivated");
+    }
+        
+    public void ActivateA5()
+    {
+        //Phase 2 Oni Aura
+        VFXA5.SetActive(true);
+        //Debug.Log("VFX activated");
+    }
+                
+    public void DeactivateA5()
+    {
+        VFXA5.SetActive(false);
+        //Debug.Log("VFX deactivated");
+    }
+    
+    public void ActivateA6()
+    {
+        //Phase 2 Oni Aura
+        VFXA6.SetActive(true);
+        //Debug.Log("VFX activated");
+    }
+                
+    public void DeactivateA6()
+    {
+        VFXA6.SetActive(false);
+        //Debug.Log("VFX deactivated");
+    }
 }

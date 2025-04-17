@@ -33,12 +33,18 @@ public class DialogueManager : MonoBehaviour
 	public Sprite[] leftDialogueBoxes;
 	public Sprite[] rightDialogueBoxes;
 
+	[Header("Text Speed")]
+	[Range(0.01f,0.05f)]public float speed = 0.02f;
+
 	private Queue<string> sentences;
 	Dialogue dialogue1 = null;
 
 	int speakerNumber = 0;
 	bool left = false;
 	bool right = false;
+	bool writing = false;
+	string stored_sentence;
+	Show_Controls showControls;
 
 	// Use this for initialization
 	void Start()
@@ -46,10 +52,12 @@ public class DialogueManager : MonoBehaviour
 		sentences = new Queue<string>();
 		leftSpeakerImage.enabled = false;
 		rightSpeakerImage.enabled = false;
+		showControls = FindFirstObjectByType<Show_Controls>();
 	}
 
 	public void StartDialogue(Dialogue dialogue)
 	{
+		writing = false;
 		dialogue1 = dialogue;
 		animator.SetBool("IsOpen", true);
 
@@ -77,22 +85,43 @@ public class DialogueManager : MonoBehaviour
 			EndDialogue();
 			return;
 		}
-		if (dialogue1.sentences.Length - sentences.Count + 1 == dialogue1.SentenceNameChange[speakerNumber])
+		if (!showControls.active)
 		{
-			print("I am displaying next sentence");
-			speakerNumber++;
-			Check_Image();
-			//leftNameText.text = dialogue1.name[speakerNumber];
-		}
-		string sentence = sentences.Dequeue();
-		StopAllCoroutines();
-        if (left)
-        {
-			StartCoroutine(TypeSentenceLeft(sentence));
-		}
-		else if (right)
-        {
-			StartCoroutine(TypeSentenceRight(sentence));
+			if (!writing)
+			{
+				writing = true;
+				if (dialogue1.sentences.Length - sentences.Count + 1 == dialogue1.SentenceNameChange[speakerNumber])
+				{
+					print("I am displaying next sentence");
+					speakerNumber++;
+					Check_Image();
+					//leftNameText.text = dialogue1.name[speakerNumber];
+				}
+				string sentence = sentences.Dequeue();
+				stored_sentence = sentence;
+				StopAllCoroutines();
+				if (left)
+				{
+					StartCoroutine(TypeSentenceLeft(sentence));
+				}
+				else if (right)
+				{
+					StartCoroutine(TypeSentenceRight(sentence));
+				}
+			}
+			else if (writing)
+			{
+				writing = false;
+				StopAllCoroutines();
+				if (left)
+				{
+					dialogueTextLeft.text = stored_sentence;
+				}
+				else if (right)
+				{
+					dialogueTextRight.text = stored_sentence;
+				}
+			}
 		}
 	}
 
@@ -103,7 +132,11 @@ public class DialogueManager : MonoBehaviour
 		foreach (char letter in sentence.ToCharArray())
 		{
 			dialogueTextLeft.text += letter;
-			yield return null;
+			if (dialogueTextLeft.text == sentence)
+			{
+				writing = false;
+			}
+			yield return new WaitForSeconds(speed);
 		}
 	}
 
@@ -114,7 +147,11 @@ public class DialogueManager : MonoBehaviour
 		foreach (char letter in sentence.ToCharArray())
 		{
 			dialogueTextRight.text += letter;
-			yield return null;
+			if (dialogueTextRight.text == sentence)
+			{
+				writing = false;
+			}
+			yield return new WaitForSeconds(speed);
 		}
 	}
 
@@ -190,8 +227,17 @@ public class DialogueManager : MonoBehaviour
 			rightSpeakerImage.color = Color.white;
 			rightSpeakerImage.enabled = true;
 			rightNameText.text = dialogue1.name[speakerNumber];
+            if (rightNameText.text.Contains("_Right"))
+            {
+				rightNameText.text = rightNameText.text.Replace("_Right", "");
+
+			}
 			right = true;
 		}
 	}
 
+	public void Text_Speed(float number)
+    {
+		speed = Mathf.Abs(number);
+    }
 }

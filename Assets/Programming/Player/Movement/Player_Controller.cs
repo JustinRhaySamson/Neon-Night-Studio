@@ -85,7 +85,7 @@ public class Player_Controller : MonoBehaviour
             if (callbackContext.performed && healing == false)
             {
                 animator.SetBool("Attack1", true);
-                StartCoroutine(Finish_Animation(.7f, "Attack1"));
+                StartCoroutine(Finish_Animation(.2f, "Attack1"));
                 attacking = true;
                 //attack.enabled = true;
             }

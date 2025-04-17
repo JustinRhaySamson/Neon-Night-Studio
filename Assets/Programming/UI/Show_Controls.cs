@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class Show_Controls : MonoBehaviour
 {
     public GameObject controls;
-    bool active = false;
+    [HideInInspector] public bool active = false;
     public GameObject reset_button;
     bool reset_active = false;
     public GameObject resume_button;

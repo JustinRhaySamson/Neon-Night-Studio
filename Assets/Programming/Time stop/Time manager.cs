@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.VFX;
+using UnityEngine.Rendering.Universal;
 
 public class Timemanager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Timemanager : MonoBehaviour
     public bool boss1_scene = false;
     public bool boss2_Scene = false;
     public bool boss3_Scene = false;
+    [SerializeField] ScriptableRendererFeature feature;
 
     public Time_Stop_Check_Shooter[] enemies_shooter;
     public Time_Stop_Check_Melee[] enemies_melee;
@@ -74,6 +76,7 @@ public class Timemanager : MonoBehaviour
             door_animator = door.GetComponent<Animator>();
             door_stopper = GameObject.Find("Door_Stopper");
         }
+        feature.SetActive(false);
     }
 
     // Update is called once per frame
@@ -132,6 +135,7 @@ public class Timemanager : MonoBehaviour
     {
         if (!cooldown && slider_component.value == slider_component.maxValue)
         {
+            feature.SetActive(true);
             trail_script.Start_Trail();
             cooldown = true;
             Time_Stopped = true;
@@ -232,6 +236,7 @@ public class Timemanager : MonoBehaviour
     IEnumerator ResetTime(float time)
     {
         yield return new WaitForSeconds(time);
+        feature.SetActive(false);
         Time_Stopped = false;
         refill_timer = 0;
         slider_component.maxValue = 20;

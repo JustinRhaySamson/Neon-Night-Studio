@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 public class Player_Health : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class Player_Health : MonoBehaviour
     public float refill_timer_health = 0;
 
     Camera_Shake camera_Shake;
+    [SerializeField] ScriptableRendererFeature feature;
 
     private void Start()
     {
@@ -47,6 +49,7 @@ public class Player_Health : MonoBehaviour
         health_3 = GameObject.Find("Health1");
         animator = GetComponent<Animator>();
         camera_Shake = GameObject.Find("Main Camera").GetComponent<Camera_Shake>();
+        Deactivate_Vignette();
     }
 
     public void Get_Hit()
@@ -114,6 +117,7 @@ public class Player_Health : MonoBehaviour
             if (Time.time > heal_start + heal_end)
             {
                 HP++;
+                Deactivate_Vignette();
                 //slider_component.maxValue = 20;
                 refill_timer_health = 0;
                 UI_HP.text = HP.ToString();
@@ -145,6 +149,7 @@ public class Player_Health : MonoBehaviour
         if (HP < 2)
         {
             health_2.SetActive(false);
+            feature.SetActive(true);
         }
 
         else if (HP == 2)
@@ -167,6 +172,7 @@ public class Player_Health : MonoBehaviour
     {
         HP = max_HP;
         HealVFX.SetActive(false);
+        Deactivate_Vignette();
     }
 
     public void Restart_Scene()
@@ -198,5 +204,10 @@ public class Player_Health : MonoBehaviour
     public void Player_Tag()
     {
         gameObject.tag = "Player";
+    }
+
+    void Deactivate_Vignette()
+    {
+        feature.SetActive(false);
     }
 }

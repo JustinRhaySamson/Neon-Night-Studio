@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Hand_HP : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Hand_HP : MonoBehaviour
 
     public Boss2_Phase2_HP real_HP;
     [SerializeField] GameObject[] hand_parts;
+    public UnityEvent hand_die;
 
     public int HP;
     void Start()
@@ -30,6 +32,7 @@ public class Hand_HP : MonoBehaviour
             foreach(GameObject part in hand_parts)
             {
                 part.SetActive(false);
+                hand_die.Invoke();
             }
         }
     }

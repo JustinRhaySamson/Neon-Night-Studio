@@ -135,6 +135,9 @@ MonoBehaviour:
   - {fileID: 5963781465542627738}
   - {fileID: 7995231030920002516}
   - {fileID: 691973249597957668}
+  hand_die:
+    m_PersistentCalls:
+      m_Calls: []
   HP: 30
 --- !u!1 &4897326571987237649
 GameObject:
@@ -319,6 +322,21 @@ MonoBehaviour:
   - {fileID: 7995231030920002516}
   - {fileID: 691973249597957668}
   - {fileID: 5293586202414177994}
+  hand_die:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8660231478991355713}
+        m_TargetAssemblyTypeName: Boss2_Phase2_State_Machine, Assembly-CSharp
+        m_MethodName: RHand_Break
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   HP: 30
 --- !u!1 &6173346210228206055
 GameObject:
@@ -455,6 +473,9 @@ MonoBehaviour:
   - {fileID: 8957709480332187765}
   - {fileID: 737945927541891974}
   - {fileID: 8206157443341348564}
+  hand_die:
+    m_PersistentCalls:
+      m_Calls: []
   HP: 30
 --- !u!1 &9102125019524132571
 GameObject:
@@ -592,6 +613,21 @@ MonoBehaviour:
   - {fileID: 737945927541891974}
   - {fileID: 8206157443341348564}
   - {fileID: 9102125019524132571}
+  hand_die:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8660231478991355713}
+        m_TargetAssemblyTypeName: Boss2_Phase2_State_Machine, Assembly-CSharp
+        m_MethodName: LHand_Break
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   HP: 30
 --- !u!1001 &3052475481208902068
 PrefabInstance:
@@ -900,7 +936,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 288987939662243828, guid: a5d807dfa0f574f4490936cb7a7871d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1474340689795392932}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6597565709598803294, guid: a5d807dfa0f574f4490936cb7a7871d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8660231478991355713}
   m_SourcePrefab: {fileID: 100100000, guid: a5d807dfa0f574f4490936cb7a7871d3, type: 3}
 --- !u!1 &259124039186516424 stripped
 GameObject:
@@ -945,6 +984,11 @@ GameObject:
 --- !u!1 &1829249027580469106 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3692492147868716742, guid: a5d807dfa0f574f4490936cb7a7871d3, type: 3}
+  m_PrefabInstance: {fileID: 3052475481208902068}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1946158574176305626 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3557481616212742254, guid: a5d807dfa0f574f4490936cb7a7871d3, type: 3}
   m_PrefabInstance: {fileID: 3052475481208902068}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1988283873624918849 stripped
@@ -1062,6 +1106,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6492069768456719902, guid: a5d807dfa0f574f4490936cb7a7871d3, type: 3}
   m_PrefabInstance: {fileID: 3052475481208902068}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8202129460819170538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6597565709598803294, guid: a5d807dfa0f574f4490936cb7a7871d3, type: 3}
+  m_PrefabInstance: {fileID: 3052475481208902068}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8660231478991355713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202129460819170538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79bf31d42418834393e588f7b7f62a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1946158574176305626}
+  random_number: 0
+  broken_RHand: 0
+  broken_LHand: 0
 --- !u!1 &8206157443341348564 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6610918048805306208, guid: a5d807dfa0f574f4490936cb7a7871d3, type: 3}

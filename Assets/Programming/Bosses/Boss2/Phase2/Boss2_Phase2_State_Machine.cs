@@ -11,7 +11,11 @@ public class Boss2_Phase2_State_Machine : MonoBehaviour
     public Boss2_Phase2_Idle_Left_State idle_Left_State = new Boss2_Phase2_Idle_Left_State();
     public Boss2_Phase2_Seeeping_Laser1 sweeping_laser1 = new Boss2_Phase2_Seeeping_Laser1();
     public Boss2_Phase2_Arm_Slam_R1 arm_Slam_R1 = new Boss2_Phase2_Arm_Slam_R1();
+    public Boss2_Phase2_Arm_Slam_R2 arm_Slam_R2 = new Boss2_Phase2_Arm_Slam_R2();
     public Boss2_Phase2_Arm_Slam_M1 arm_Slam_M1 = new Boss2_Phase2_Arm_Slam_M1();
+    public Boss2_Phase2_Arm_Slam_M2 arm_Slam_M2 = new Boss2_Phase2_Arm_Slam_M2();
+    public Boss2_Phase2_Laser_SPread_State laser_Spread_State = new Boss2_Phase2_Laser_SPread_State();
+    public Boss2_Phase2_Laser_Cross laser_Cross_State = new Boss2_Phase2_Laser_Cross();
 
     public Animator animator;
     public int random_number = 0;

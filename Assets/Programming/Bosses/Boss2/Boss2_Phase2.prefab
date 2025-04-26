@@ -697,6 +697,10 @@ PrefabInstance:
       propertyPath: m_UpdateWhenOffscreen
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3557481616212742254, guid: a5d807dfa0f574f4490936cb7a7871d3, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3686097681274498895, guid: a5d807dfa0f574f4490936cb7a7871d3, type: 3}
       propertyPath: m_UpdateWhenOffscreen
       value: 1
@@ -1125,6 +1129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1946158574176305626}
   random_number: 0
+  max_Random: 3
   broken_RHand: 0
   broken_LHand: 0
 --- !u!1 &8206157443341348564 stripped

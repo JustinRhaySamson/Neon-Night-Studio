@@ -7,6 +7,7 @@ public class Attack_Check : MonoBehaviour
 {
     Health health;
     Boss_HP boss_HP;
+    Hand_HP hand_HP;
 
     GameObject slider;
     Slider slider_component;
@@ -36,12 +37,20 @@ public class Attack_Check : MonoBehaviour
             player_health.refill_timer_health++;
         }
 
-        if (other.CompareTag("Boss"))
+        else if (other.CompareTag("Boss"))
         {
             boss_HP = other.gameObject.GetComponent<Boss_HP>();
             boss_HP.Get_Hit();
             time_manager_script.refill_timer += 0.5f;
             player_health.refill_timer_health += 0.5f;
+        }
+
+        else if (other.CompareTag("Hand"))
+        {
+            hand_HP = other.gameObject.GetComponent<Hand_HP>();
+            hand_HP.Get_Hit();
+            time_manager_script.refill_timer++;
+            player_health.refill_timer_health++;
         }
     }
 }

@@ -26,7 +26,7 @@ public class Hand_HP : MonoBehaviour
     public void Get_Hit()
     {
         HP--;
-        real_HP.HP--;
+        real_HP.Got_Hit();
         if(HP <= 0)
         {
             foreach(GameObject part in hand_parts)

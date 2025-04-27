@@ -134,9 +134,9 @@ GameObject:
   m_Component:
   - component: {fileID: 595025661375553441}
   - component: {fileID: 8809553342803811729}
-  - component: {fileID: 1403178798398821552}
+  - component: {fileID: 5057942079820986217}
   m_Layer: 0
-  m_Name: Boss2_Big_Laser
+  m_Name: Boss2_Short_Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd6d3d0a8828cb4e95b5baf3c8007c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1403178798398821552
+--- !u!95 &5057942079820986217
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -181,7 +181,7 @@ Animator:
   m_GameObject: {fileID: 7435343319534963759}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b4185c78bcb1c3a44925b2064863c7e2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6ab8b61895003104d9bb593bf9ec73f3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -242,11 +242,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 834062091255923347, guid: 1f3ef314fd148c44ea36ba31416528e5, type: 3}
       propertyPath: m_PropertySheet.m_AnimationCurve.m_Array.Array.data[1].m_Value.m_Curve.Array.data[1].time
-      value: 0.07780609
+      value: 0.08436869
       objectReference: {fileID: 0}
     - target: {fileID: 834062091255923347, guid: 1f3ef314fd148c44ea36ba31416528e5, type: 3}
       propertyPath: m_PropertySheet.m_AnimationCurve.m_Array.Array.data[1].m_Value.m_Curve.Array.data[2].time
-      value: 1.0224609
+      value: 1.0009766
       objectReference: {fileID: 0}
     - target: {fileID: 834062091255923347, guid: 1f3ef314fd148c44ea36ba31416528e5, type: 3}
       propertyPath: m_PropertySheet.m_AnimationCurve.m_Array.Array.data[0].m_Value.m_Curve.Array.data[1].value
@@ -270,11 +270,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 834062091255923347, guid: 1f3ef314fd148c44ea36ba31416528e5, type: 3}
       propertyPath: m_PropertySheet.m_AnimationCurve.m_Array.Array.data[1].m_Value.m_Curve.Array.data[1].value
-      value: 1.4637527
+      value: 1.0602847
       objectReference: {fileID: 0}
     - target: {fileID: 834062091255923347, guid: 1f3ef314fd148c44ea36ba31416528e5, type: 3}
       propertyPath: m_PropertySheet.m_AnimationCurve.m_Array.Array.data[1].m_Value.m_Curve.Array.data[2].value
-      value: 1.8843231
+      value: 1.0639343
       objectReference: {fileID: 0}
     - target: {fileID: 5649669959408252117, guid: 1f3ef314fd148c44ea36ba31416528e5, type: 3}
       propertyPath: m_LocalPosition.x

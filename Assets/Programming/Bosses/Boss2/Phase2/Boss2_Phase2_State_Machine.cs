@@ -57,7 +57,10 @@ public class Boss2_Phase2_State_Machine : MonoBehaviour
 
     public void Back_To_Idle()
     {
-        currentState = idle_state;
+        if(currentState != idle_Right_State || currentState != idle_Left_State)
+        {
+            currentState = idle_state;
+        }
         currentState.EnterState(this);
     }
 

@@ -9,6 +9,7 @@ public class Camera_Shake : MonoBehaviour
     public float duration = 0.3f;
     Transform realStartPos;
     public Transform camera2;
+    float camera_distance;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -48,5 +49,17 @@ public class Camera_Shake : MonoBehaviour
         }
 
         transform.localPosition = startPos;
+    }
+
+    public void Change_Distance()
+    {
+        Animator animator = GetComponent<Animator>();
+        animator.SetBool("Move", true);
+    }
+
+    public void Return_Distance()
+    {
+        Animator animator = GetComponent<Animator>();
+        animator.SetBool("Move",false);
     }
 }

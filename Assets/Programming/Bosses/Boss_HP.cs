@@ -149,7 +149,8 @@ public class Boss_HP : MonoBehaviour
                 //Object.Destroy(rotating_orbs);
                 time_Script.boss2_Scene = false;
                 slider_animator.SetBool("Active", false);
-                Destroy(gameObject);
+                animator.SetBool("Staggered", true);
+                //Destroy(gameObject);
             }
         }
 

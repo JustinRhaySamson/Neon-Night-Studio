@@ -13,6 +13,7 @@ public class Timemanager : MonoBehaviour
     public bool doorBool = false;
     public bool boss1_scene = false;
     public bool boss2_Scene = false;
+    public bool boss2_2_Scene = false;
     public bool boss3_Scene = false;
     [SerializeField] ScriptableRendererFeature feature;
 
@@ -55,6 +56,7 @@ public class Timemanager : MonoBehaviour
     Boss2_State_Manager boss2_State_Manager;
     float boss2_speed = 0;
     int boss2_force = 0;
+    [HideInInspector] public Boss2_Phase2_HP boss2_Phase2_HP;
 
     GameObject boss3;
     Animator boss3_animator;
@@ -216,6 +218,10 @@ public class Timemanager : MonoBehaviour
                 Rigidbody rb = boss2.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.zero;
             }
+            if (boss2_2_Scene)
+            {
+                boss2_Phase2_HP.Stop_Time();
+            }
             if (boss3_Scene)
             {
                 boss3_speed = boss3_animator.GetFloat("Speed");
@@ -306,6 +312,10 @@ public class Timemanager : MonoBehaviour
             Look_At boss2_look = boss2.gameObject.GetComponent<Look_At>();
             boss2_look.enabled = true;
             boss2_State_Manager.force = boss2_force;
+        }
+        if (boss2_2_Scene)
+        {
+            boss2_Phase2_HP.Reset_Time();
         }
         if (boss3_Scene)
         {

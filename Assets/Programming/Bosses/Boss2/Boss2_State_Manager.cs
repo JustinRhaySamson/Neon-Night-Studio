@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Boss2_State_Manager : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class Boss2_State_Manager : MonoBehaviour
     [SerializeField] bool phase2 = false;
 
     Boss2_Projectile_Spawner projectile_Spawn;
+
+    public UnityEvent die_Event;
 
 
     void Start()
@@ -206,5 +209,21 @@ public class Boss2_State_Manager : MonoBehaviour
     public void Look_Player()
     {
         look_at.Look_At_Player();
+    }
+
+    public void No_Stagger()
+    {
+        animator.SetBool("Staggered", false);
+    }
+
+    public void Set_Die_True()
+    {
+        animator.SetBool("Die", true);
+    }
+
+    public void Die_To_Phase2()
+    {
+        die_Event.Invoke();
+        Destroy(gameObject);
     }
 }

@@ -13,7 +13,10 @@ public class DialogueManager : MonoBehaviour
 	public Image leftSpeakerImage;
 	public Image rightSpeakerImage;
 	public Image dialogueBox;
+	public Image Background1;
+	public Image Background2;
 	public RectTransform dialogueBoxTransform;
+	public Animator bars;
 
 	public Animator animator;
 	public Player_Controller playerController;
@@ -60,6 +63,8 @@ public class DialogueManager : MonoBehaviour
 		writing = false;
 		dialogue1 = dialogue;
 		animator.SetBool("IsOpen", true);
+		bars.SetBool("Stay", false);
+		
 
 		speakerNumber = 0;
 
@@ -162,11 +167,11 @@ public class DialogueManager : MonoBehaviour
 			playerController.Change_Dialogue_False();
 		}
 		animator.SetBool("IsOpen", false);
-        if (dialogue1.events)
-        {
+		if (dialogue1.events)
+		{
 			dialogue1.dialogue_Events.finish_dialogue.Invoke();
-        }
-		dialogue1 = null;
+		}
+		bars.SetBool("Stay", true);
 	}
 
 	void Check_Image()

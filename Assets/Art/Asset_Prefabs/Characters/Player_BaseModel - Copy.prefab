@@ -1044,6 +1044,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9199dc36-cace-4cb5-bc2e-40f65241f83e
     m_ActionName: Player/Open Menu[/XInputControllerWindows/start,/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8800a501-2544-48b6-966c-1db7bf823a9b
+    m_ActionName: Player/Detect Controller[/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonNorth,/XInputControllerWindows/buttonWest,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/left,/XInputControllerWindows/leftTrigger,/XInputControllerWindows/leftShoulder,/XInputControllerWindows/rightTrigger,/XInputControllerWindows/rightShoulder,/XInputControllerWindows/leftStickPress,/XInputControllerWindows/rightStickPress,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/rightStick/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f93c1201-0c1b-493a-9cbf-16befda39934
+    m_ActionName: Player/Detect Mouse[/Mouse/leftButton,/Mouse/rightButton,/Mouse/middleButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1113,6 +1121,9 @@ MonoBehaviour:
   checkpoint_name: Checkpont 0
   origonal_checkpoint_name: Checkpont 0
   enemies_killed: 0
+  full_screen: 0
+  resolution: 0
+  text_speed: 0
 --- !u!114 &2286393788257287297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2004,7 +2015,7 @@ Transform:
   m_GameObject: {fileID: 5480804251092740248}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.028599743, y: 4.9, z: 4.07}
+  m_LocalPosition: {x: -0.028599743, y: 3.8, z: 4.07}
   m_LocalScale: {x: 0.1338, y: 0.1338, z: 0.21793362}
   m_ConstrainProportionsScale: 0
   m_Children: []

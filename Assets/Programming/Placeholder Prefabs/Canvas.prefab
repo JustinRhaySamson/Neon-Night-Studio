@@ -361,6 +361,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &284231216909354860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1783,6 +1795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2095797128668736495}
   - component: {fileID: 2217455820700575169}
+  - component: {fileID: 4504499198544389604}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -1852,6 +1865,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8bc139f771d2a9640873def99f03f40a, type: 3}
   - {fileID: 21300000, guid: 229b27ee59258d04a87ad22f1fe144a8, type: 3}
   speed: 0.02
+--- !u!114 &4504499198544389604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2700641849663005409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a023f3d085f869d4d8284e30bf9b21a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedSlider: {fileID: 4653166768990594634}
 --- !u!1 &2726623320767633306
 GameObject:
   m_ObjectHideFlags: 0
@@ -2447,6 +2473,7 @@ GameObject:
   - component: {fileID: 4208294313619756377}
   - component: {fileID: 8507329640500166513}
   - component: {fileID: 8442200774195370945}
+  - component: {fileID: 7085643996369461138}
   m_Layer: 5
   m_Name: Resolution
   m_TagString: Untagged
@@ -2585,6 +2612,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Show_Controls, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &8442200774195370945
 MonoBehaviour:
@@ -2600,6 +2639,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrow: {fileID: 4985230095479447235}
   distance: 0.19
+--- !u!114 &7085643996369461138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058199503529565962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4516b114990415f49ae811e9705f85d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0
 --- !u!1 &3179600667961067122
 GameObject:
   m_ObjectHideFlags: 0
@@ -4009,36 +4061,6 @@ MonoBehaviour:
   options_menu: {fileID: 6381892146288183910}
   controls_menu: {fileID: 7836836771707016711}
   back_pause: {fileID: 2800744455697811717}
-  unityEvent2:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3583188357149920542}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  toggleEvent2:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3583188357149920542}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4244475502161394630
 GameObject:
   m_ObjectHideFlags: 0
@@ -4244,6 +4266,7 @@ GameObject:
   - component: {fileID: 697867484126042566}
   - component: {fileID: 1284807362728703520}
   - component: {fileID: 5695472455781575883}
+  - component: {fileID: 2705245460939975183}
   m_Layer: 5
   m_Name: Full Screen
   m_TagString: Untagged
@@ -4331,6 +4354,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Show_Controls, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!114 &5695472455781575883
 MonoBehaviour:
@@ -4346,6 +4381,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrow: {fileID: 4985230095479447235}
   distance: 0.3
+--- !u!114 &2705245460939975183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4374625186796419175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19882d31b28496a4980bff423ee469e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4508373521203097885
 GameObject:
   m_ObjectHideFlags: 0
@@ -7290,6 +7337,30 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Start_Screen
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Scene_Controller, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Scene_Controller, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1556728818506524958

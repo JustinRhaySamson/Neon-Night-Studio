@@ -10,15 +10,18 @@ public class Player_Store_Data : MonoBehaviour
     public string checkpoint_name = "Checkpont 0";
     public string origonal_checkpoint_name = "Checkpont 0";
     public int enemies_killed;
+    public bool full_screen;
+    public int resolution;
+    public float text_speed;
 
     Room_Counter room_counter;
 
-    void Start()
+    void Awake()
     {
         if (!start_screen)
         {
             scene = SceneManager.GetActiveScene().name;
-            room_counter = GameObject.Find("Room_Counter").GetComponent<Room_Counter>();
+            //room_counter = GameObject.Find("Room_Counter").GetComponent<Room_Counter>();
         }
         Load_player();
     }
@@ -48,7 +51,10 @@ public class Player_Store_Data : MonoBehaviour
         scene = data.scene;
         print(data.scene);
         checkpoint_name = data.checkpoint_name;
-        room_counter.Set_Enemies_Killed(data.enemies_killed);
+        enemies_killed = data.enemies_killed;
+        full_screen = data.full_screen;
+        resolution = data.resolution;
+        text_speed = data.text_speed;
 
         //SceneManager.LoadScene(scene);
         
@@ -72,5 +78,20 @@ public class Player_Store_Data : MonoBehaviour
         scene = level1;
         enemies_killed = 0;
         Save_player();
+    }
+
+    public void Full_Screen(bool fullscreen)
+    {
+        full_screen = fullscreen;
+    }
+
+    public void Resolution(int res_number)
+    {
+        resolution = res_number;
+    }
+
+    public void Text_Speed(float speed)
+    {
+        text_speed = speed;
     }
 }

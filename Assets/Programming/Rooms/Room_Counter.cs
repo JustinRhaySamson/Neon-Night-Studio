@@ -16,6 +16,7 @@ public class Room_Counter : MonoBehaviour
     void Start()
     {
         player_store_data = GameObject.Find("Player").GetComponent<Player_Store_Data>();
+        enemies_killed = player_store_data.enemies_killed;
         
     }
 
@@ -24,7 +25,7 @@ public class Room_Counter : MonoBehaviour
     {
         if (enemies_killed >= requirements[requirements_met])
         {
-            player_store_data.enemies_killed = requirements[requirements_met];
+            //player_store_data.enemies_killed = requirements[requirements_met];
             //print(player_store_data.enemies_killed);
             Open_Doors();
             requirements_met++;
@@ -49,6 +50,11 @@ public class Room_Counter : MonoBehaviour
     public void Set_Enemies_Killed(int killed)
     {
         enemies_killed = killed;
+    }
+
+    public void Save_Enemies()
+    {
+        player_store_data.enemies_killed = enemies_killed;
     }
 
 }

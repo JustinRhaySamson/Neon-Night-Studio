@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 
@@ -20,13 +21,20 @@ public class Show_Controls : MonoBehaviour
     public GameObject options_menu;
     public GameObject controls_menu;
     public GameObject back_pause;
-
     bool full_screened = true;
+    bool mouse = false;
+
+    bool normal_pause = false;
+    bool controls_pause = false;
+    bool options_pause = false;
     void Start()
     {
         controls.SetActive(false);
         reset_button.SetActive(false);
         Time.timeScale = 1;
+        normal_pause = false;
+        controls_pause = false;
+        options_pause = false;
     }
 
     // Update is called once per frame
@@ -44,11 +52,17 @@ public class Show_Controls : MonoBehaviour
             {
                 Time.timeScale = 0f;
                 eventSystem.SetSelectedGameObject(resume_button, new BaseEventData(eventSystem));
+                normal_pause = true;
+                controls_pause = false;
+                options_pause = false;
             }
             else if (!active)
             {
                 Time.timeScale = 1;
                 eventSystem.SetSelectedGameObject(null, new BaseEventData(eventSystem));
+                normal_pause = false;
+                controls_pause = false;
+                options_pause = false;
             }
         }
     }
@@ -81,6 +95,9 @@ public class Show_Controls : MonoBehaviour
             fullscree_transform.position.z);
         vertical_list_menu.SetActive(false);
         options_menu.SetActive(true);
+        normal_pause = false;
+        controls_pause = false;
+        options_pause = true;
     }
 
     public void Back_To_Pause()
@@ -94,6 +111,9 @@ public class Show_Controls : MonoBehaviour
         vertical_list_menu.SetActive(true);
         options_menu.SetActive(false);
         controls_menu.SetActive(false);
+        normal_pause = true;
+        controls_pause = false;
+        options_pause = false;
     }
 
     public void Change_Fulscreen(bool toggle)
@@ -128,5 +148,49 @@ public class Show_Controls : MonoBehaviour
             Back_Pause_transform.position.z);
         vertical_list_menu.SetActive(false);
         controls_menu.SetActive(true);
+        normal_pause = false;
+        controls_pause = true;
+        options_pause = false;
+    }
+
+    public void Detect_Controller(InputAction.CallbackContext callbackContext)
+    {
+        if (active && mouse)
+        {
+            mouse = false;
+            var eventSystem = EventSystem.current;
+            if (normal_pause)
+            { 
+                eventSystem.SetSelectedGameObject(resume_button, new BaseEventData(eventSystem));
+                RectTransform resume_transform = resume_button.GetComponent<RectTransform>();
+                arrow.position = new Vector3(resume_transform.position.x * .67f,
+                    resume_transform.position.y,
+                    resume_transform.position.z);
+            }
+            else if (controls_pause)
+            {
+                eventSystem.SetSelectedGameObject(back_pause, new BaseEventData(eventSystem));
+                RectTransform Back_Pause_transform = back_pause.GetComponent<RectTransform>();
+                arrow.position = new Vector3(Back_Pause_transform.position.x * .75f,
+                    Back_Pause_transform.position.y,
+                    Back_Pause_transform.position.z);
+            }
+            else if (options_pause)
+            {
+                eventSystem.SetSelectedGameObject(full_screen_toggle, new BaseEventData(eventSystem));
+                RectTransform fullscree_transform = full_screen_toggle.GetComponent<RectTransform>();
+                arrow.position = new Vector3(fullscree_transform.position.x * .3f,
+                    fullscree_transform.position.y,
+                    fullscree_transform.position.z);
+            }
+        }
+    }
+
+    public void Detect_Mouse(InputAction.CallbackContext callbackContext)
+    {
+        if (active && !mouse)
+        {
+            mouse = true;
+        }
     }
 }

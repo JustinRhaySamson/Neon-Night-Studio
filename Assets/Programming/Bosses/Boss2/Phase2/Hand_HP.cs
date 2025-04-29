@@ -9,6 +9,7 @@ public class Hand_HP : MonoBehaviour
 
     public Boss2_Phase2_HP real_HP;
     [SerializeField] GameObject[] hand_parts;
+    [SerializeField] GameObject broken_hand;
     public UnityEvent hand_die;
 
     public int HP;
@@ -34,6 +35,7 @@ public class Hand_HP : MonoBehaviour
                 part.SetActive(false);
                 hand_die.Invoke();
             }
+            broken_hand.SetActive(true);
         }
     }
 }

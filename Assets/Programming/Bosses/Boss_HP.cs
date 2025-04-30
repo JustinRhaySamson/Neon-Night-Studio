@@ -147,7 +147,7 @@ public class Boss_HP : MonoBehaviour
                 vfx.Die();
                 tornado.Die();
                 //Object.Destroy(rotating_orbs);
-                time_Script.boss2_Scene = false;
+                //time_Script.boss2_Scene = false;
                 slider_animator.SetBool("Active", false);
                 animator.SetBool("Staggered", true);
                 //Destroy(gameObject);

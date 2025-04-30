@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Boss2_Phase2_State_Machine : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Boss2_Phase2_State_Machine : MonoBehaviour
 
     public Animator animator;
     public int random_number = 0;
+    public UnityEvent die;
+    Timemanager time_Script;
     [HideInInspector] public int max_Random = 3;
 
     public bool broken_RHand;
@@ -28,6 +31,7 @@ public class Boss2_Phase2_State_Machine : MonoBehaviour
         currentState = idle_state;
         currentState.EnterState(this);
         StartCoroutine(Timer());
+        time_Script = FindObjectOfType<Timemanager>();
     }
 
     // Update is called once per frame
@@ -76,5 +80,12 @@ public class Boss2_Phase2_State_Machine : MonoBehaviour
         broken_LHand = true;
         currentState = idle_Left_State;
         currentState.EnterState(this);
+    }
+
+    public void Death_Anim()
+    {
+        time_Script.boss2_2_Scene = false;
+        die.Invoke();
+        Destroy(gameObject);
     }
 }

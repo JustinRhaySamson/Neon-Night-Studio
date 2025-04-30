@@ -35,6 +35,7 @@ public class Boss2_State_Manager : MonoBehaviour
     [SerializeField] bool phase2 = false;
 
     Boss2_Projectile_Spawner projectile_Spawn;
+    Timemanager time_Script;
 
     public UnityEvent die_Event;
 
@@ -52,6 +53,7 @@ public class Boss2_State_Manager : MonoBehaviour
             //currentState = phase2_idle_state;
             currentState.EnterState(this);
         }
+        time_Script = FindObjectOfType<Timemanager>();
     }
 
     // Update is called once per frame
@@ -223,6 +225,7 @@ public class Boss2_State_Manager : MonoBehaviour
 
     public void Die_To_Phase2()
     {
+        time_Script.boss2_Scene = false;
         die_Event.Invoke();
         Destroy(gameObject);
     }

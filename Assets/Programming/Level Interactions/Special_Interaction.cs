@@ -24,7 +24,7 @@ public class Special_Interaction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Invincible"))
         {
             playerInteraction = other.GetComponent<Player_Interaction>();
             playerInteraction.Set_Interaction(interaction);
@@ -33,7 +33,7 @@ public class Special_Interaction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Invincible"))
         {
             playerInteraction.Null_Interaction();
         }

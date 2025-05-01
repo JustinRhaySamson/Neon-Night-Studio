@@ -152,7 +152,7 @@ public class Player_Health : MonoBehaviour
             feature.SetActive(true);
         }
 
-        else if (HP == 2)
+        else if (HP >= 2)
         {
             health_2.SetActive(true);
         }

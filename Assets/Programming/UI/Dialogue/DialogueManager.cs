@@ -60,7 +60,10 @@ public class DialogueManager : MonoBehaviour
 
 	public void StartDialogue(Dialogue dialogue)
 	{
-		writing = false;
+        dialogueBoxTransform.localScale = new Vector3(Mathf.Abs(dialogueBoxTransform.localScale.x),
+                    dialogueBoxTransform.localScale.y,
+                    dialogueBoxTransform.localScale.z);
+        writing = false;
 		dialogue1 = dialogue;
 		animator.SetBool("IsOpen", true);
 		bars.SetBool("Stay", false);

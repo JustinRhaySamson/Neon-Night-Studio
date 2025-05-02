@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using FMODUnity;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -36,7 +37,12 @@ public class DialogueManager : MonoBehaviour
 	public Sprite[] leftDialogueBoxes;
 	public Sprite[] rightDialogueBoxes;
 
-	[Header("Text Speed")]
+    [Header("Dialogue Events")]
+	public EventReference[] leftDialogueEvents;
+    public EventReference[] rightDialogueEvents;
+
+
+    [Header("Text Speed")]
 	[Range(0.01f,0.05f)]public float speed = 0.02f;
 
 	private Queue<string> sentences;
@@ -48,6 +54,7 @@ public class DialogueManager : MonoBehaviour
 	bool writing = false;
 	string stored_sentence;
 	Show_Controls showControls;
+	EventReference sound;
 
 	// Use this for initialization
 	void Start()
@@ -140,7 +147,8 @@ public class DialogueManager : MonoBehaviour
 		foreach (char letter in sentence.ToCharArray())
 		{
 			dialogueTextLeft.text += letter;
-			if (dialogueTextLeft.text == sentence)
+            AudioManager.instance.PlaySoundOneShot(sound, gameObject);
+            if (dialogueTextLeft.text == sentence)
 			{
 				writing = false;
 			}
@@ -155,7 +163,8 @@ public class DialogueManager : MonoBehaviour
 		foreach (char letter in sentence.ToCharArray())
 		{
 			dialogueTextRight.text += letter;
-			if (dialogueTextRight.text == sentence)
+            AudioManager.instance.PlaySoundOneShot(sound, gameObject);
+            if (dialogueTextRight.text == sentence)
 			{
 				writing = false;
 			}
@@ -188,6 +197,7 @@ public class DialogueManager : MonoBehaviour
             {
 				leftSpeakerImage.sprite = leftSpeakerSprites[i];
 				dialogueBox.sprite = leftDialogueBoxes[i];
+				sound = leftDialogueEvents[i];
 				dialogueBoxTransform.localScale = new Vector3(Mathf.Abs(dialogueBoxTransform.localScale.x),
 					dialogueBoxTransform.localScale.y,
 					dialogueBoxTransform.localScale.z);
@@ -217,6 +227,8 @@ public class DialogueManager : MonoBehaviour
 			{
 				rightSpeakerImage.sprite = rightSpeakerSprites[i];
 				dialogueBox.sprite = rightDialogueBoxes[i];
+				sound = rightDialogueEvents[i];
+				print(sound);
 				dialogueBoxTransform.localScale = new Vector3(dialogueBoxTransform.localScale.x * -1, 
 					dialogueBoxTransform.localScale.y, 
 					dialogueBoxTransform.localScale.z);

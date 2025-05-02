@@ -28,6 +28,7 @@ public class Room_Counter : MonoBehaviour
             //player_store_data.enemies_killed = requirements[requirements_met];
             //print(player_store_data.enemies_killed);
             Open_Doors();
+            AudioManager.instance.ChangeMusicMode("Explore");
             requirements_met++;
             
         }

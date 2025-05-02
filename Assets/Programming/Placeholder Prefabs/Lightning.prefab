@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8663361389519294069}
   - component: {fileID: 6555727597369456259}
   - component: {fileID: 3960340105049065114}
+  - component: {fileID: 8278935242331905358}
   m_Layer: 0
   m_Name: Lightning
   m_TagString: Untagged
@@ -78,6 +79,25 @@ MonoBehaviour:
   - {fileID: 6660563463241100871}
   - {fileID: 1545328588375953801}
   idling: 0
+--- !u!114 &8278935242331905358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4304552093262838121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dd0b4b2b4f5c74bac159a9d6e2974e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+  - Guid:
+      Data1: 931130691
+      Data2: 1094730344
+      Data3: -542742105
+      Data4: -2102214202
+    Path: event:/Sound Effects/Enemy/Boss/ONI/General/Thunder
 --- !u!1001 &2987270999339243634
 PrefabInstance:
   m_ObjectHideFlags: 0

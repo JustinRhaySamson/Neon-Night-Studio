@@ -87,19 +87,37 @@ public class AudioManager : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShotAttached(fmodEvent, target);
     }
 
-    // CHANGE MUSIC (might not even need)
-    public void ChangeMusicParameter(string musicParameter)
+    // START IDLE LOOP
+
+    // STOP IDLE LOOP
+
+    // CHANGE MUSIC TRACK
+    public void ChangeMusicTrackParameter(string musicTrackParameter)
     {
-	    Debug.Log("changing music to "+musicParameter);
-	    RuntimeManager.StudioSystem.setParameterByNameWithLabel("Music Parameter", musicParameter);
+	    Debug.Log("changing music track to "+ musicTrackParameter);
+	    RuntimeManager.StudioSystem.setParameterByNameWithLabel("Music", musicTrackParameter);
     }
 
-    public void ChangeAmbienceParameter(string ambienceParameter)
+    // CHANGE AMBIENCE TRACK
+    public void ChangeAmbienceTrackParameter(string ambienceTrackParameter)
     {
-        Debug.Log("changing ambience to " + ambienceParameter);
-        RuntimeManager.StudioSystem.setParameterByNameWithLabel("Music Parameter", ambienceParameter);
+        Debug.Log("changing ambience track to " + ambienceTrackParameter);
+        RuntimeManager.StudioSystem.setParameterByNameWithLabel("Music Parameter", ambienceTrackParameter);
     }
 
+    // CHANGE MUSIC MODE
+    public void ChangeMusicMode(string musicModeParameter)
+    {
+        Debug.Log("changing music mode to " + musicModeParameter);
+        RuntimeManager.StudioSystem.setParameterByNameWithLabel("MusicMode", musicModeParameter);
+    }
+
+    // CHANGE AMBIENCE MODE
+    public void ChangeAmbienceMode(string ambienceModeParameter)
+    {
+        Debug.Log("changing ambience mode to " + ambienceModeParameter);
+        RuntimeManager.StudioSystem.setParameterByNameWithLabel("Music Parameter", ambienceModeParameter);
+    }
 
 
 }

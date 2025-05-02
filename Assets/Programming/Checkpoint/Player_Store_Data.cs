@@ -10,9 +10,12 @@ public class Player_Store_Data : MonoBehaviour
     public string checkpoint_name = "Checkpont 0";
     public string origonal_checkpoint_name = "Checkpont 0";
     public int enemies_killed;
-    public bool full_screen;
+    public bool full_screen = true;
     public int resolution;
-    public float text_speed;
+    public float text_speed = -.02f;
+    public float master_volume = 1;
+    public float music_volume = .5f;
+    public float SFX_volume = .5f;
 
     Room_Counter room_counter;
 
@@ -55,6 +58,9 @@ public class Player_Store_Data : MonoBehaviour
         full_screen = data.full_screen;
         resolution = data.resolution;
         text_speed = data.text_speed;
+        master_volume = data.master_volume;
+        music_volume = data.music_volume;
+        SFX_volume = data.SFX_volume;
 
         //SceneManager.LoadScene(scene);
         

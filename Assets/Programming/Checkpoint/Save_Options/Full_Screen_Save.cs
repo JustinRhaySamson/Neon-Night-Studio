@@ -8,7 +8,7 @@ public class Full_Screen_Save : MonoBehaviour
 {
     Player_Store_Data player_store_data;
     Toggle toggle;
-    bool fullscreen;
+    bool fullscreen = true;
     void Start()
     {
         player_store_data = FindObjectOfType<Player_Store_Data>();

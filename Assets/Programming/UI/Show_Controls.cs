@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using FMODUnity;
+using FMOD.Studio;
 
 
 public class Show_Controls : MonoBehaviour
@@ -27,14 +29,36 @@ public class Show_Controls : MonoBehaviour
     bool normal_pause = false;
     bool controls_pause = false;
     bool options_pause = false;
+
+    Bus Master;
+    Bus Music;
+    Bus SFX;
+    float master_volume = 1;
+    float music_volume = 0.5f;
+    float SFX_volume = 0.5f;
+    public Slider Master_slider;
+    public Slider Music_slider;
+    public Slider SFX_slider;
+    Player_Store_Data player_store_data;
     void Start()
     {
+        player_store_data = FindObjectOfType<Player_Store_Data>();
         controls.SetActive(false);
         reset_button.SetActive(false);
         Time.timeScale = 1;
         normal_pause = false;
         controls_pause = false;
         options_pause = false;
+        Master = RuntimeManager.GetBus("bus:/MASTER");
+        Music = RuntimeManager.GetBus("bus:/MASTER/Music");
+        SFX = RuntimeManager.GetBus("bus:/MASTER/Sound Effects");
+        master_volume = player_store_data.master_volume;
+        music_volume = player_store_data.music_volume;
+        SFX_volume = player_store_data.SFX_volume;
+        Master_slider.value = master_volume;
+        Music_slider.value = music_volume;
+        SFX_slider.value = SFX_volume;
+
     }
 
     // Update is called once per frame
@@ -192,5 +216,26 @@ public class Show_Controls : MonoBehaviour
         {
             mouse = true;
         }
+    }
+
+    public void Master_Change(float number)
+    {
+        master_volume = number;
+        player_store_data.master_volume = master_volume;
+        Master.setVolume(master_volume);
+    }
+
+    public void Music_Change(float number)
+    {
+        music_volume = number;
+        player_store_data.music_volume = music_volume;
+        Music.setVolume(music_volume);
+    }
+
+    public void SFX_Change(float number)
+    { 
+        SFX_volume = number;
+        player_store_data.SFX_volume = SFX_volume;
+        SFX.setVolume(SFX_volume);
     }
 }

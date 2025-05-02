@@ -65,9 +65,11 @@ public class Timemanager : MonoBehaviour
     int boss3_force = 0;
 
     public float refill_timer = 0;
+    ArrayExtensionMethods ae;
 
     void Start()
     {
+        ae = GetComponent<ArrayExtensionMethods>();
         slider = GameObject.Find("Slider_new");
         slider_component = slider.GetComponent<Slider>();
         player = GameObject.Find("Player");
@@ -146,49 +148,76 @@ public class Timemanager : MonoBehaviour
             slider_time = Time.time;
             foreach(Time_Stop_Check_Shooter shooter in enemies_shooter)
             {
-                shooter.StopEnemy();
+                if (shooter != null)
+                {
+                    shooter.StopEnemy();
+                }
             }
             foreach(Time_Stop_Check_Melee melee in enemies_melee)
             {
-                melee.StopEnemy();
+                if (melee != null)
+                {
+                    melee.StopEnemy();
+                }
             }
             foreach(Basic_Bullet bullet in bullets)
             {
-                bullet.StopBullet();
+                if (bullet != null)
+                {
+                    bullet.StopBullet();
+                } 
             }
             foreach(Explosion_Script explosion in explosions)
             {
-                explosion.Stop_Explosion();
-                GameObject oni_Shockwave = explosion.transform.Find("Oni_Shockwave").gameObject; ;
-                GameObject electricity = oni_Shockwave.transform.Find("Electricity").gameObject;
-                GameObject indicator = oni_Shockwave.transform.Find("Indicator").gameObject;
-                GameObject sparks = oni_Shockwave.transform.Find("Sparks").gameObject;
-                ParticleSystem electricity_system = electricity.GetComponent<ParticleSystem>();
-                ParticleSystem indicator_system = indicator.GetComponent<ParticleSystem>();
-                ParticleSystem sparks_system = sparks.GetComponent<ParticleSystem>();
-                electricity_system.Pause(true);
-                indicator_system.Pause(true);
-                sparks_system.Pause(true);
+                if (explosion != null)
+                {
+                    explosion.Stop_Explosion();
+                    GameObject oni_Shockwave = explosion.transform.Find("Oni_Shockwave").gameObject; ;
+                    GameObject electricity = oni_Shockwave.transform.Find("Electricity").gameObject;
+                    GameObject indicator = oni_Shockwave.transform.Find("Indicator").gameObject;
+                    GameObject sparks = oni_Shockwave.transform.Find("Sparks").gameObject;
+                    ParticleSystem electricity_system = electricity.GetComponent<ParticleSystem>();
+                    ParticleSystem indicator_system = indicator.GetComponent<ParticleSystem>();
+                    ParticleSystem sparks_system = sparks.GetComponent<ParticleSystem>();
+                    electricity_system.Pause(true);
+                    indicator_system.Pause(true);
+                    sparks_system.Pause(true);
+                }
             }
             foreach(Lightning_Script lightning in lightnings)
             {
-                lightning.Time_Stop_Pause();
+                if (lightning != null)
+                {
+                    lightning.Time_Stop_Pause();
+                }
             }
             foreach(Lightning_Spawner spawner in lightning_spawns)
             {
-                spawner.Time_Stop();
+                if (spawner != null)
+                {
+                    spawner.Time_Stop();
+                }
             }
             foreach(Tornado_Script tornado in tornado_scripts)
             {
-                tornado.Time_Stop();
+                if (tornado != null)
+                {
+                    tornado.Time_Stop();
+                }
             }
             foreach(VFX_Time_Stop vfx in vfx_scripts)
             {
-                vfx.Time_Stop_Pause();
+                if (vfx != null)
+                {
+                    vfx.Time_Stop_Pause();
+                }
             }
             foreach (Particle_Time_Stop particle in particle_scripts)
             {
-                particle.Time_Stop_Pause();
+                if (particle != null)
+                {
+                    particle.Time_Stop_Pause();
+                }
             }
             if (doorBool)
             {
@@ -249,49 +278,76 @@ public class Timemanager : MonoBehaviour
         slider_time2 = Time.time;
         foreach (Time_Stop_Check_Shooter shooter in enemies_shooter)
         {
-            shooter.RestartEnemy();
+            if (shooter != null)
+            {
+                shooter.RestartEnemy();
+            }
         }
-        foreach (Time_Stop_Check_Melee melee in enemies_melee)
+            foreach (Time_Stop_Check_Melee melee in enemies_melee)
         {
-            melee.RestartEnemy();
+            if (melee != null)
+            {
+                melee.RestartEnemy();
+            }
         }
         foreach (Basic_Bullet bullet in bullets)
         {
-            bullet.RestartBullet();
+            if (bullet != null)
+            {
+                bullet.RestartBullet();
+            }
         }
         foreach (Explosion_Script explosion in explosions)
         {
-            explosion.Restart_Explosion();
-            GameObject oni_Shockwave = explosion.transform.Find("Oni_Shockwave").gameObject; ;
-            GameObject electricity = oni_Shockwave.transform.Find("Electricity").gameObject;
-            GameObject indicator = oni_Shockwave.transform.Find("Indicator").gameObject;
-            GameObject sparks = oni_Shockwave.transform.Find("Sparks").gameObject;
-            ParticleSystem electricity_system = electricity.GetComponent<ParticleSystem>();
-            ParticleSystem indicator_system = indicator.GetComponent<ParticleSystem>();
-            ParticleSystem sparks_system = sparks.GetComponent<ParticleSystem>();
-            electricity_system.Play(true);
-            indicator_system.Play(true);
-            sparks_system.Play(true);
+            if (explosion != null)
+            {
+                explosion.Restart_Explosion();
+                GameObject oni_Shockwave = explosion.transform.Find("Oni_Shockwave").gameObject; ;
+                GameObject electricity = oni_Shockwave.transform.Find("Electricity").gameObject;
+                GameObject indicator = oni_Shockwave.transform.Find("Indicator").gameObject;
+                GameObject sparks = oni_Shockwave.transform.Find("Sparks").gameObject;
+                ParticleSystem electricity_system = electricity.GetComponent<ParticleSystem>();
+                ParticleSystem indicator_system = indicator.GetComponent<ParticleSystem>();
+                ParticleSystem sparks_system = sparks.GetComponent<ParticleSystem>();
+                electricity_system.Play(true);
+                indicator_system.Play(true);
+                sparks_system.Play(true);
+            }
         }
         foreach (Lightning_Script lightning in lightnings)
         {
-            lightning.Time_Stop_Restart();
+            if (lightning != null)
+            {
+                lightning.Time_Stop_Restart();
+            }
         }
         foreach (Lightning_Spawner spawner in lightning_spawns)
         {
-            spawner.Time_Reset();
+            if (spawner != null)
+            {
+                spawner.Time_Reset();
+            }
         }
         foreach (Tornado_Script tornado in tornado_scripts)
         {
-            tornado.Time_Reset();
+            if (tornado != null)
+            {
+                tornado.Time_Reset();
+            }  
         }
         foreach (VFX_Time_Stop vfx in vfx_scripts)
         {
-            vfx.Time_Stop_Restart();
+            if (vfx != null)
+            {
+                vfx.Time_Stop_Restart();
+            }
         }
         foreach (Particle_Time_Stop particle in particle_scripts)
         {
-            particle.Time_Stop_Restart();
+            if (particle != null)
+            {
+                particle.Time_Stop_Restart();
+            }
         }
         if (doorBool)
         {

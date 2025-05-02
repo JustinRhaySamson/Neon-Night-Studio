@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
 {
     OneShotSender playSound;
 
-    int HP = 2;
+    public int HP = 2;
     public bool shooter = true;
     public GameObject explosion;
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.VFX;
 
 public class Boss_HP : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Boss_HP : MonoBehaviour
     int health_checks2 = 0;
     public Sprite heathbar_1;
     public Sprite heathbar_2;
+    public VisualEffect hit_VFX;
     GameObject slider;
     Slider slider_component;
     Animator slider_animator;
@@ -103,23 +105,28 @@ public class Boss_HP : MonoBehaviour
 
         HP--;
         slider_component.value = HP;
+        hit_VFX.Play();
         if (boss1)
         {
             if (HP <= 0 && phase1 && !life_regen)
             {
                 state_manager.SwitchState(state_manager.phase2_idle_state);
-                HP = maxHP;
-                life_regen = true;
-                animator.SetBool("Phase2", true);
-                phase1 = false;
+                //HP = maxHP;
+                //life_regen = true;
+                animator.SetBool("Stagger", true);
+                //phase1 = false;
+                slider_animator.SetBool("Active", false);
+                phase2_dialague.SetActive(true);
                 healthbar_image.sprite = heathbar_2;
             }
             else if (HP <= 0 && !phase1 && !life_regen)
             {
-                time_Script.boss1_scene = false;
+                animator.SetBool("Dead", true);
                 slider_animator.SetBool("Active", false);
-                die.Invoke();
-                Destroy(gameObject);
+                CapsuleCollider col = GetComponent<CapsuleCollider>();
+                SphereCollider col2 = GetComponent<SphereCollider>();
+                col.enabled = false;
+                col2.enabled = false;
             }
         }
         
@@ -160,7 +167,7 @@ public class Boss_HP : MonoBehaviour
             if (HP <= 0 && phase1 && !life_regen)
             {
                 slider_animator.SetBool("Active", false);
-                state_manager3.SwitchState(state_manager3.idle2_state);
+                state_manager3.SwitchState(state_manager3.inactive_state);
                 //life_regen = true;
                 animator.SetBool("Stagger", true);
                 healthbar_image.sprite = heathbar_2;
@@ -168,10 +175,12 @@ public class Boss_HP : MonoBehaviour
             }
             else if (HP <= 0 && !phase1 && !life_regen)
             {
-                time_Script.boss3_Scene = false;
+                animator.SetBool("Dead", true);
                 slider_animator.SetBool("Active", false);
-                die.Invoke();
-                Destroy(gameObject);
+                CapsuleCollider col = GetComponent<CapsuleCollider>();
+                SphereCollider col2 = GetComponent<SphereCollider>();
+                col.enabled = false;
+                col2.enabled = false;
             }
         }
     }
@@ -183,5 +192,19 @@ public class Boss_HP : MonoBehaviour
         life_regen = true;
         slider_animator.SetBool("Active", true);
         animator.SetBool("Phase2", true);
+    }
+
+    public void Boss1_Death()
+    {
+        time_Script.boss1_scene = false;
+        die.Invoke();
+        Destroy(gameObject);
+    }
+
+    public void Boss3_Death() 
+    {
+        time_Script.boss3_Scene = false;
+        die.Invoke();
+        Destroy(gameObject);
     }
 }

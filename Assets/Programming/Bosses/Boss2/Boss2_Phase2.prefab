@@ -715,6 +715,7 @@ MonoBehaviour:
   hand_die:
     m_PersistentCalls:
       m_Calls: []
+  hit_VFX: {fileID: 0}
   HP: 30
 --- !u!1 &4897326571987237649
 GameObject:
@@ -781,6 +782,7 @@ GameObject:
   - component: {fileID: 2539036615708202820}
   - component: {fileID: 2448885950440702621}
   - component: {fileID: 6001273116004312640}
+  - component: {fileID: 7842212890471748258}
   m_Layer: 7
   m_Name: Hitbox_R
   m_TagString: Hand
@@ -800,7 +802,8 @@ Transform:
   m_LocalPosition: {x: 1.472, y: 19.1, z: -0.048}
   m_LocalScale: {x: 16.568537, y: 32.23228, z: 32.813644}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5888451822193460380}
   m_Father: {fileID: 4336077164794067332}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2755970302479109728
@@ -921,7 +924,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hit_VFX: {fileID: 9089819131330794086}
   HP: 25
+--- !u!114 &7842212890471748258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5293586202414177994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dd0b4b2b4f5c74bac159a9d6e2974e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+  - Guid:
+      Data1: -55645024
+      Data2: 1319506653
+      Data3: 857966485
+      Data4: 750186429
+    Path: event:/Sound Effects/Enemy/Boss/GUNDAM/Gundam Hurt
 --- !u!1 &5480758564801771567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1243,7 @@ MonoBehaviour:
   hand_die:
     m_PersistentCalls:
       m_Calls: []
+  hit_VFX: {fileID: 0}
   HP: 30
 --- !u!1 &6775062278796259164
 GameObject:
@@ -1410,6 +1434,7 @@ GameObject:
   - component: {fileID: 6891276698419763865}
   - component: {fileID: 206238646257569168}
   - component: {fileID: 798889215039410731}
+  - component: {fileID: 372741242867470916}
   m_Layer: 7
   m_Name: Hitbox_L
   m_TagString: Hand
@@ -1429,7 +1454,8 @@ Transform:
   m_LocalPosition: {x: -1.434, y: 20.6, z: -1.047}
   m_LocalScale: {x: 16.490105, y: 32.23228, z: 31.810349}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6815534858057464274}
   m_Father: {fileID: 3585013126379807079}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7319941098612692346
@@ -1550,7 +1576,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hit_VFX: {fileID: 8144717299381497640}
   HP: 25
+--- !u!114 &372741242867470916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9102125019524132571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dd0b4b2b4f5c74bac159a9d6e2974e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+  - Guid:
+      Data1: -55645024
+      Data2: 1319506653
+      Data3: 857966485
+      Data4: 750186429
+    Path: event:/Sound Effects/Enemy/Boss/GUNDAM/Gundam Hurt
 --- !u!1001 &3052475481208902068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2172,4 +2218,186 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6200540832346573249, guid: a5d807dfa0f574f4490936cb7a7871d3, type: 3}
   m_PrefabInstance: {fileID: 3052475481208902068}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5950084279317986582
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6256605603963129295}
+    m_Modifications:
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222172115136933744, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_InitialEventName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222172115136933744, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_InitialEventNameOverriden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5188525190330504548, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_Name
+      value: HitEffect (Enemy)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+--- !u!4 &5888451822193460380 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+  m_PrefabInstance: {fileID: 5950084279317986582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!2083052967 &9089819131330794086 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 3222172115136933744, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+  m_PrefabInstance: {fileID: 5950084279317986582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6751086386419007576
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1150102464482044265}
+    m_Modifications:
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222172115136933744, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_InitialEventName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222172115136933744, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_InitialEventNameOverriden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5188525190330504548, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+      propertyPath: m_Name
+      value: HitEffect (Enemy)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+--- !u!4 &6815534858057464274 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 226597919434062218, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+  m_PrefabInstance: {fileID: 6751086386419007576}
+  m_PrefabAsset: {fileID: 0}
+--- !u!2083052967 &8144717299381497640 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 3222172115136933744, guid: 0337bd11547744846b5504c39a6fb092, type: 3}
+  m_PrefabInstance: {fileID: 6751086386419007576}
   m_PrefabAsset: {fileID: 0}

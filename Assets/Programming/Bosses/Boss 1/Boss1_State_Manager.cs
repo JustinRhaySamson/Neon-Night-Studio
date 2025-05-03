@@ -190,4 +190,17 @@ public class Boss1_State_Manager : MonoBehaviour
         gameObject.transform.position = look_at.player_transform.position;
         projectile_Spawn.Spawn_Big_Lightning();
     }
+
+    public void Set_Stagger_False()
+    {
+        animator.SetBool("Stagger", false);
+    }
+
+    public void Set_Dead_False()
+    {
+        animator.SetBool("Dead", false);
+        dashing_to_center = false;
+        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+    }
 }

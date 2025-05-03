@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.VFX;
 
 public class Hand_HP : MonoBehaviour
 {
@@ -12,11 +13,13 @@ public class Hand_HP : MonoBehaviour
     [SerializeField] GameObject broken_hand;
     [SerializeField] GameObject explosion;
     public UnityEvent hand_die;
+    public VisualEffect hit_VFX;
+    OneShotSender playSound;
 
     public int HP;
     void Start()
     {
-        
+        playSound = gameObject.GetComponent<OneShotSender>();
     }
 
     // Update is called once per frame
@@ -27,8 +30,10 @@ public class Hand_HP : MonoBehaviour
 
     public void Get_Hit()
     {
+        playSound.PlayOneShot(0);
         HP--;
         real_HP.Got_Hit();
+        hit_VFX.Play();
         if(HP <= 0)
         {
             foreach(GameObject part in hand_parts)

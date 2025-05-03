@@ -275,4 +275,12 @@ public class Boss3_State_Manager : MonoBehaviour
     {
         look_at.enabled = true;
     }
+
+    public void Set_Dead_False()
+    {
+        animator.SetBool("Dead", false);
+        dashing_to_center = false;
+        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+    }
 }

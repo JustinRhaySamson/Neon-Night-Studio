@@ -19,11 +19,8 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: Event DeactivateA1 has a time (1.734669) outside the
-      clip's valid range (0.000000..1.533333). It will never be firedEvent Chain_Attack_Up
-      has a time (2.830698) outside the clip's valid range (0.000000..1.533333).
-      It will never be firedEvent DeactivateA6 has a time (1.709941) outside the
-      clip's valid range (0.000000..1.533333). It will never be fired
+    animationImportWarnings: Event Chain_Attack_Up has a time (2.830698) outside
+      the clip's valid range (0.000000..1.533333). It will never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -81,6 +78,13 @@ ModelImporter:
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
+        messageOptions: 0
+      - time: 0.33967733
+        functionName: PlayOneShot
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 1
         messageOptions: 0
       - time: 0.3530595
         functionName: ActivateA1

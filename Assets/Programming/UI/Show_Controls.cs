@@ -30,12 +30,12 @@ public class Show_Controls : MonoBehaviour
     bool controls_pause = false;
     bool options_pause = false;
 
-    Bus Master;
-    Bus Music;
-    Bus SFX;
-    float master_volume = 1;
-    float music_volume = 0.5f;
-    float SFX_volume = 0.5f;
+    VCA Master;
+    VCA Music;
+    VCA SFX;
+    float master_volume = 2;
+    float music_volume = 1f;
+    float SFX_volume = 1f;
     public Slider Master_slider;
     public Slider Music_slider;
     public Slider SFX_slider;
@@ -49,9 +49,9 @@ public class Show_Controls : MonoBehaviour
         normal_pause = false;
         controls_pause = false;
         options_pause = false;
-        Master = RuntimeManager.GetBus("bus:/MASTER");
-        Music = RuntimeManager.GetBus("bus:/MASTER/Music");
-        SFX = RuntimeManager.GetBus("bus:/MASTER/Sound Effects");
+        Master = RuntimeManager.GetVCA("vca:/MASTER");
+        Music = RuntimeManager.GetVCA("vca:/MUSIC");
+        SFX = RuntimeManager.GetVCA("vca:/MUSIC");
         master_volume = player_store_data.master_volume;
         music_volume = player_store_data.music_volume;
         SFX_volume = player_store_data.SFX_volume;

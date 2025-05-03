@@ -1034,7 +1034,7 @@ MonoBehaviour:
   spwaner2: {fileID: 0}
   center_spawner: {fileID: 1690391412522277397}
   weapon_collider: {fileID: 7447248839199935300}
-  weapon_collider2: {fileID: 0}
+  weapon_collider2: {fileID: 3105534019424580086}
   icicles_ground: {fileID: 8153267679708092165, guid: 22aa478ec29b1844dadb3bdb459a0273, type: 3}
   shattering_snowflakes: {fileID: 5205258890243408529, guid: f3177cbdfadd8af4fbe8bd9028fb9a80, type: 3}
   bullets_3: {fileID: 5827592893953670912, guid: a09d722e7c150b9478c5760f9d3f22e8, type: 3}
@@ -1042,6 +1042,8 @@ MonoBehaviour:
   flash_freeze: {fileID: 3041252447156974409, guid: d18ef3f6bf29a26469b8de54b421ce5d, type: 3}
   player_transform: {fileID: 0}
   teleport_points_parent: {fileID: 0}
+  dummy: {fileID: 2292900166951387978, guid: 6597a3f3ee2ae83439cf9db2daccb292, type: 3}
+  blizzard: {fileID: 5563479158169616600, guid: d77eeae327395a0488ec7eb9cecac874, type: 3}
   ice_walls_spawn: {fileID: 0}
 --- !u!114 &2027535838287368227
 MonoBehaviour:
@@ -1079,7 +1081,19 @@ MonoBehaviour:
   boss3: 1
   die:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6752066483759700523}
+        m_TargetAssemblyTypeName: Boss3_Projectile_Spawn, Assembly-CSharp
+        m_MethodName: Destroy_Wall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!136 &6538221238923395567
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2017,13 +2031,15 @@ GameObject:
   - component: {fileID: 7112481338573811018}
   - component: {fileID: 6579595820183670241}
   - component: {fileID: 982731208490373904}
+  - component: {fileID: 3105534019424580086}
+  - component: {fileID: 4319465411911264719}
   m_Layer: 7
   m_Name: YOKAI_BOSS_YUKI_ONNA_SWORD_OFFHAND
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7112481338573811018
 Transform:
   m_ObjectHideFlags: 0
@@ -2054,7 +2070,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4183029562989364178}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2089,6 +2105,47 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &3105534019424580086
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183029562989364178}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.004886604
+  m_Height: 0.020039419
+  m_Direction: 2
+  m_Center: {x: 0.00000006142619, y: 0.00000008178464, z: -0.005306104}
+--- !u!114 &4319465411911264719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183029562989364178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d66cc4e695a7df4b95e4c615452fb04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger_entered:
+    m_PersistentCalls:
+      m_Calls: []
+  trigger_exited:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4411636678619535023
 GameObject:
   m_ObjectHideFlags: 0

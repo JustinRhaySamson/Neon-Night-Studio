@@ -16,6 +16,8 @@ public class Boss3_Projectile_Spawn : MonoBehaviour
     public GameObject flash_freeze;
     public Transform player_transform;
     public Transform teleport_points_parent;
+    public GameObject dummy;
+    public GameObject blizzard;
 
     int orbs_number = -1;
     float force = 20;
@@ -50,6 +52,18 @@ public class Boss3_Projectile_Spawn : MonoBehaviour
 
     public void Deactivate_Weapon2()
     {
+        weapon_collider2.enabled = false;
+    }
+
+    public void Activate_Both()
+    {
+        weapon_collider.enabled = true;
+        weapon_collider2.enabled = true;
+    }
+
+    public void Deactivate_Both()
+    {
+        weapon_collider.enabled = false;
         weapon_collider2.enabled = false;
     }
 
@@ -122,5 +136,24 @@ public class Boss3_Projectile_Spawn : MonoBehaviour
             ice_walls_spawn.transform.rotation = Quaternion.Euler(0, 60, 0);
             teleport_points_parent.transform.rotation = Quaternion.Euler(0, 60, 0);
         }
+    }
+
+    public void Destroy_Wall()
+    {
+        if (ice_walls_spawn != null)
+        {
+            Tornado_Script tornado_Script = ice_walls_spawn.GetComponent<Tornado_Script>();
+            tornado_Script.Die();
+        }
+    }
+
+    public void Spawn_Dummy()
+    {
+        GameObject dummy2 = Instantiate(dummy, gameObject.transform.position, gameObject.transform.rotation);
+    }
+
+    public void Spawn_Blizzard()
+    {
+        GameObject blizzard2 = Instantiate(blizzard, center_spawner.transform.position + new Vector3(0,-2.2f,0), Quaternion.identity);
     }
 }

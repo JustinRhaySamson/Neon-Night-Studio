@@ -21,6 +21,7 @@ public class Boss3_P2_Idle_State : Boss3_Base_State
         //state.animator.SetBool("Phase2",true);
         Rigidbody rb = state.gameObject.GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
+        state.dashing_to_center = false;
         state.trigger_sphere.enabled = true;
     }
 

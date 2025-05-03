@@ -18,6 +18,9 @@ public class Boss3_State_Manager : MonoBehaviour
     public Boss3_P2_Idle_State idle2_state = new Boss3_P2_Idle_State();
     public Boss3_P2_Right_Slide right_Slide = new Boss3_P2_Right_Slide();
     public Boss3_P2_Left_Slide left_Slide = new Boss3_P2_Left_Slide();
+    public Boss3_P2_Reflection reflection_state = new Boss3_P2_Reflection();
+    public Boss3_P2_Blizzard blizzard_state = new Boss3_P2_Blizzard();
+    public Boss3_P2_BDash BDash_state = new Boss3_P2_BDash();
 
 
 
@@ -49,6 +52,9 @@ public class Boss3_State_Manager : MonoBehaviour
     [HideInInspector] public SphereCollider trigger_sphere;
 
     public int walls_broken = 0;
+
+    public MeshRenderer sword2;
+    bool active_weapon = false;
 
 
     void Start()
@@ -253,5 +259,20 @@ public class Boss3_State_Manager : MonoBehaviour
     public void False_Stagger()
     {
         animator.SetBool("Stagger", false);
+    }
+
+    public void Activate_Sword()
+    {
+        sword2.enabled = true;
+    }
+
+    public void Disable_Look_At()
+    {
+        look_at.enabled = false;
+    }
+
+    public void Enable_Look_At()
+    {
+        look_at.enabled = true;
     }
 }

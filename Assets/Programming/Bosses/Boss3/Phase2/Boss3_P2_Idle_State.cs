@@ -14,6 +14,8 @@ public class Boss3_P2_Idle_State : Boss3_Base_State
         state.animator.SetBool("Walls", false);
         state.animator.SetBool("Right_Slide", false);
         state.animator.SetBool("Left_Slide", false);
+        state.animator.SetBool("Blizzard", false);
+        state.animator.SetBool("Reflection", false);
         state.animator.SetBool("Start", true);
         state.animator.SetBool("Running", true);
         //state.animator.SetBool("Phase2",true);
@@ -43,7 +45,7 @@ public class Boss3_P2_Idle_State : Boss3_Base_State
                 }
                 break;
             case 1:
-                state.SwitchState(state.flash_freeze);
+                state.SwitchState(state.reflection_state);
                 break;
                 /*case 2:
                     state.SwitchState(state.slash_state);
@@ -79,7 +81,7 @@ public class Boss3_P2_Idle_State : Boss3_Base_State
                     }
                     break;
                 case 1:
-                    state.SwitchState(state.flash_freeze);
+                    state.SwitchState(state.reflection_state);
                     break;
                     /*case 2:
                         state.SwitchState(state.slash_state);
@@ -92,7 +94,7 @@ public class Boss3_P2_Idle_State : Boss3_Base_State
             switch (state.random_number)
             {
                 case 0:
-                    state.SwitchState(state.advancing_frost);
+                    state.SwitchState(state.BDash_state);
                     break;
                 case 1:
                     if (state.attacks_made >= 4)

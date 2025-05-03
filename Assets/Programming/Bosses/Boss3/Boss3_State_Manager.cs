@@ -15,6 +15,11 @@ public class Boss3_State_Manager : MonoBehaviour
     public Boss3_Dash_State dash_State = new Boss3_Dash_State();
     public Boss3_Walls_State walls_State = new Boss3_Walls_State();
 
+    public Boss3_P2_Idle_State idle2_state = new Boss3_P2_Idle_State();
+    public Boss3_P2_Right_Slide right_Slide = new Boss3_P2_Right_Slide();
+    public Boss3_P2_Left_Slide left_Slide = new Boss3_P2_Left_Slide();
+
+
 
     public GameObject player;
     public Animator animator;
@@ -146,6 +151,12 @@ public class Boss3_State_Manager : MonoBehaviour
         currentState.EnterState(this);
     }
 
+    public void Back_To_Idle2()
+    {
+        currentState = idle2_state;
+        currentState.EnterState(this);
+    }
+
     /*public void Back_To_Idle2()
     {
         currentState = phase2_idle_state;
@@ -235,7 +246,12 @@ public class Boss3_State_Manager : MonoBehaviour
     {
         if(walls_broken >= 6)
         {
-            Back_To_Idle();
+            Back_To_Idle2();
         }
+    }
+
+    public void False_Stagger()
+    {
+        animator.SetBool("Stagger", false);
     }
 }

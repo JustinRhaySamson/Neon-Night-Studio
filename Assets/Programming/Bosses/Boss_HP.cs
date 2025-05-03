@@ -25,6 +25,7 @@ public class Boss_HP : MonoBehaviour
     bool life_regen = false;
 
     bool phase1 = true;
+    public GameObject phase2_dialague;
 
     //SOUND!!!
     OneShotSender playSound;
@@ -158,11 +159,29 @@ public class Boss_HP : MonoBehaviour
         {
             if (HP <= 0 && phase1 && !life_regen)
             {
+                slider_animator.SetBool("Active", false);
+                state_manager3.SwitchState(state_manager3.idle2_state);
+                //life_regen = true;
+                animator.SetBool("Stagger", true);
+                healthbar_image.sprite = heathbar_2;
+                phase2_dialague.SetActive(true);
+            }
+            else if (HP <= 0 && !phase1 && !life_regen)
+            {
                 time_Script.boss3_Scene = false;
                 slider_animator.SetBool("Active", false);
                 die.Invoke();
                 Destroy(gameObject);
             }
         }
+    }
+
+    public void Life_Regen()
+    {
+        phase1 = false;
+        HP = maxHP;
+        life_regen = true;
+        slider_animator.SetBool("Active", true);
+        animator.SetBool("Phase2", true);
     }
 }

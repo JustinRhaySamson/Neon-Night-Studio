@@ -85,7 +85,6 @@ public class AudioManager : MonoBehaviour
     public void PlaySoundOneShot (EventReference fmodEvent, GameObject target)
     {
         FMODUnity.RuntimeManager.PlayOneShotAttached(fmodEvent, target);
-        print("i am playing: " + fmodEvent.ToString());
     }
 
     // START IDLE LOOP

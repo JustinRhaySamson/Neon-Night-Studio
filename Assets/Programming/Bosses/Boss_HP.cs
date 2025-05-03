@@ -159,7 +159,6 @@ public class Boss_HP : MonoBehaviour
         {
             if (HP <= 0 && phase1 && !life_regen)
             {
-                print("dead");
                 slider_animator.SetBool("Active", false);
                 state_manager3.SwitchState(state_manager3.idle2_state);
                 //life_regen = true;

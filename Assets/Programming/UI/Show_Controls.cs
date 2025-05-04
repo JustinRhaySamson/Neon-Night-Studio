@@ -23,6 +23,7 @@ public class Show_Controls : MonoBehaviour
     public GameObject options_menu;
     public GameObject controls_menu;
     public GameObject back_pause;
+    public GameObject load_Screen;
     bool full_screened = true;
     bool mouse = false;
 
@@ -33,13 +34,21 @@ public class Show_Controls : MonoBehaviour
     VCA Master;
     VCA Music;
     VCA SFX;
+    VCA Pause;
     float master_volume = 2;
     float music_volume = 1f;
     float SFX_volume = 1f;
+    float pause_volume = 1;
     public Slider Master_slider;
     public Slider Music_slider;
     public Slider SFX_slider;
     Player_Store_Data player_store_data;
+
+    private void Awake()
+    {
+        load_Screen.SetActive(true);
+    }
+
     void Start()
     {
         player_store_data = FindObjectOfType<Player_Store_Data>();
@@ -52,13 +61,14 @@ public class Show_Controls : MonoBehaviour
         Master = RuntimeManager.GetVCA("vca:/MASTER");
         Music = RuntimeManager.GetVCA("vca:/MUSIC");
         SFX = RuntimeManager.GetVCA("vca:/EFFECTS");
+        Pause = RuntimeManager.GetVCA("vca:/Pause Macro");
         master_volume = player_store_data.master_volume;
         music_volume = player_store_data.music_volume;
         SFX_volume = player_store_data.SFX_volume;
         Master_slider.value = master_volume;
         Music_slider.value = music_volume;
         SFX_slider.value = SFX_volume;
-
+        Pause.getVolume(out pause_volume);
     }
 
     // Update is called once per frame
@@ -79,6 +89,8 @@ public class Show_Controls : MonoBehaviour
                 normal_pause = true;
                 controls_pause = false;
                 options_pause = false;
+                Pause.setVolume(0);
+                print("The menu volume is: " + pause_volume);
             }
             else if (!active)
             {
@@ -87,6 +99,7 @@ public class Show_Controls : MonoBehaviour
                 normal_pause = false;
                 controls_pause = false;
                 options_pause = false;
+                Pause.setVolume(pause_volume);
             }
         }
     }
@@ -107,6 +120,7 @@ public class Show_Controls : MonoBehaviour
         Time.timeScale = 1;
         var eventSystem = EventSystem.current;
         eventSystem.SetSelectedGameObject(null, new BaseEventData(eventSystem));
+        Pause.setVolume(pause_volume);
     }
 
     public void Options_Menu()

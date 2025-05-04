@@ -207,4 +207,5 @@ public class Boss_HP : MonoBehaviour
         die.Invoke();
         Destroy(gameObject);
     }
+
 }

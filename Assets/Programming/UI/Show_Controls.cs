@@ -62,6 +62,7 @@ public class Show_Controls : MonoBehaviour
         Music = RuntimeManager.GetVCA("vca:/MUSIC");
         SFX = RuntimeManager.GetVCA("vca:/EFFECTS");
         Pause = RuntimeManager.GetVCA("vca:/Pause Macro");
+        Pause.setVolume(1);
         master_volume = player_store_data.master_volume;
         music_volume = player_store_data.music_volume;
         SFX_volume = player_store_data.SFX_volume;

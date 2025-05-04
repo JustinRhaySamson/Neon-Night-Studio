@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5567273825917301950}
   - component: {fileID: 2847700343657015039}
   - component: {fileID: 4331624474499419359}
+  - component: {fileID: 7169976714359724047}
   m_Layer: 0
   m_Name: Tornado
   m_TagString: Untagged
@@ -162,6 +163,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd6d3d0a8828cb4e95b5baf3c8007c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7169976714359724047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032068605584500888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bcee10259aa2614ba2e95dfe51a871d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+    Guid:
+      Data1: -1699060352
+      Data2: 1242491552
+      Data3: -1570753124
+      Data4: -1208167252
+    Path: event:/Sound Effects/Enemy/Boss/GUNDAM/Tengu (Phase 1)/Tengu Blast
 --- !u!1001 &6758839979765799150
 PrefabInstance:
   m_ObjectHideFlags: 0

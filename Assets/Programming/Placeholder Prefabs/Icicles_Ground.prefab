@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 277011890735710597}
   - component: {fileID: 255293672617094790}
   - component: {fileID: 277711588690341785}
+  - component: {fileID: 3080692430365389490}
   m_Layer: 0
   m_Name: Icicles_Ground
   m_TagString: Untagged
@@ -191,6 +192,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3080692430365389490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8153267679708092165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bcee10259aa2614ba2e95dfe51a871d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+    Guid:
+      Data1: 1671153835
+      Data2: 1307413571
+      Data3: -74656339
+      Data4: 290080571
+    Path: event:/Sound Effects/Enemy/Boss/ICE FREAK/Yuki Temp/Temp Ice Ground
 --- !u!1001 &86423814839516366
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2860931755910989114}
   - component: {fileID: 3088477927871885912}
   - component: {fileID: 5681785981319497925}
+  - component: {fileID: 7067532843621254615}
   m_Layer: 0
   m_Name: Boss2_Small_Laser
   m_TagString: Untagged
@@ -68,6 +69,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd6d3d0a8828cb4e95b5baf3c8007c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7067532843621254615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244406791111584985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ee836d401363b4fada2c546c10522f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+    Guid:
+      Data1: -595503237
+      Data2: 1118743618
+      Data3: -1996186177
+      Data4: -1191195306
+    Path: event:/Sound Effects/Enemy/Boss/GUNDAM/Mech (Phase 2)/Mech Lazor Idle
+  isLooping: 0
+  isPlayingAuido: 1
+  playOnAwake: 0
 --- !u!1 &6878684010433011729
 GameObject:
   m_ObjectHideFlags: 0

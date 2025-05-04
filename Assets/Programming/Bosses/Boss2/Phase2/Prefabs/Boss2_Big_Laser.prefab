@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 595025661375553441}
   - component: {fileID: 8809553342803811729}
   - component: {fileID: 1403178798398821552}
+  - component: {fileID: 8961282330741944109}
   m_Layer: 0
   m_Name: Boss2_Big_Laser
   m_TagString: Untagged
@@ -193,6 +194,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8961282330741944109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7435343319534963759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ee836d401363b4fada2c546c10522f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+    Guid:
+      Data1: -595503237
+      Data2: 1118743618
+      Data3: -1996186177
+      Data4: -1191195306
+    Path: event:/Sound Effects/Enemy/Boss/GUNDAM/Mech (Phase 2)/Mech Lazor Idle
+  isLooping: 0
+  isPlayingAuido: 1
+  playOnAwake: 0
 --- !u!1001 &5817631292224710475
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8476266173072964043}
   - component: {fileID: 2889057783070965091}
   - component: {fileID: 6279494938866443886}
+  - component: {fileID: 3639925531415383975}
   m_Layer: 0
   m_Name: Expanding_Wave
   m_TagString: Untagged
@@ -67,6 +68,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd6d3d0a8828cb4e95b5baf3c8007c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3639925531415383975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49113902001011469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ee836d401363b4fada2c546c10522f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+    Guid:
+      Data1: 326264765
+      Data2: 1243578966
+      Data3: 434954650
+      Data4: 35702015
+    Path: event:/Sound Effects/Enemy/Boss/GUNDAM/Tengu (Phase 1)/Tengu Shield
+  isLooping: 0
+  isPlayingAuido: 1
+  playOnAwake: 0
 --- !u!1 &8685912237508287487
 GameObject:
   m_ObjectHideFlags: 0

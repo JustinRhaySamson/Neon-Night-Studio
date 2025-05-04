@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2291335718786108881}
   - component: {fileID: 3802721516658034872}
   - component: {fileID: 2359472151973204264}
+  - component: {fileID: 9110570333140321839}
   m_Layer: 0
   m_Name: Flash_Freeze_Slashes
   m_TagString: Untagged
@@ -67,6 +68,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9110570333140321839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3041252447156974409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dd0b4b2b4f5c74bac159a9d6e2974e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+  - Guid:
+      Data1: -961242741
+      Data2: 1326173904
+      Data3: -499243853
+      Data4: -1813407324
+    Path: event:/Sound Effects/Enemy/Boss/ICE FREAK/Yuki Temp/Naruto Slice
 --- !u!1 &5245705279096408641
 GameObject:
   m_ObjectHideFlags: 0

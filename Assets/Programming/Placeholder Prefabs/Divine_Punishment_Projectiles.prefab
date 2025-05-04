@@ -761,6 +761,7 @@ GameObject:
   - component: {fileID: 184083906253875205}
   - component: {fileID: 4571446446947896473}
   - component: {fileID: 4726282622791158262}
+  - component: {fileID: 5502742021931084938}
   m_Layer: 0
   m_Name: Divine_Punishment_Projectiles
   m_TagString: Untagged
@@ -824,6 +825,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd6d3d0a8828cb4e95b5baf3c8007c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5502742021931084938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991822010395240027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ee836d401363b4fada2c546c10522f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+    Guid:
+      Data1: 326264765
+      Data2: 1243578966
+      Data3: 434954650
+      Data4: 35702015
+    Path: event:/Sound Effects/Enemy/Boss/GUNDAM/Tengu (Phase 1)/Tengu Shield
+  isLooping: 0
+  isPlayingAuido: 1
+  playOnAwake: 0
 --- !u!1 &7560818544142134988
 GameObject:
   m_ObjectHideFlags: 0

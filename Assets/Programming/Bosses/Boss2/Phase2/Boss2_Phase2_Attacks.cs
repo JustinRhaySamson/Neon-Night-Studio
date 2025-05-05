@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class Boss2_Phase2_Attacks : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Boss2_Phase2_Attacks : MonoBehaviour
     public GameObject Big_Laser;
     public GameObject Small_Laser;
     public GameObject Short_Laser;
+    public EventReference sound;
     GameObject[] Lasers = new GameObject[6];
 
     public void Activate_Right()
@@ -34,16 +36,20 @@ public class Boss2_Phase2_Attacks : MonoBehaviour
 
     public void Deactivate_Right()
     {
+        AudioManager.instance.PlaySoundOneShot(sound, Hitbox_Right);
         Hitbox_Right.SetActive(false);
     }
 
     public void Deactivate_Left()
     {
+        AudioManager.instance.PlaySoundOneShot(sound, Hitbox_Left);
         Hitbox_Left.SetActive(false);
     }
 
     public void Deactivate_Both()
     {
+        AudioManager.instance.PlaySoundOneShot(sound, Hitbox_Right);
+        AudioManager.instance.PlaySoundOneShot(sound, Hitbox_Left);
         Hitbox_Right.SetActive(false);
         Hitbox_Left.SetActive(false);
     }

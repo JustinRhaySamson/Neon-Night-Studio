@@ -148,7 +148,7 @@ public class Timemanager : MonoBehaviour
             slider_component.maxValue = 2.9f;
             slider_component.value = 2.9f;
             slider_time = Time.time;
-            player_controller.Stop_Time();
+            //player_controller.Stop_Time();
             foreach(Time_Stop_Check_Shooter shooter in enemies_shooter)
             {
                 if (shooter != null)
@@ -238,6 +238,8 @@ public class Timemanager : MonoBehaviour
                 boss1_State_Manager.force = 0;
                 Rigidbody rb = boss1.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.zero;
+                Boss1_Projectile_Spawn projectile_Spawn = boss1.gameObject.GetComponent<Boss1_Projectile_Spawn>();
+                projectile_Spawn.Store_Hitboxes();
             }
             if (boss2_Scene)
             {
@@ -249,10 +251,14 @@ public class Timemanager : MonoBehaviour
                 boss2_State_Manager.force = 0;
                 Rigidbody rb = boss2.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.zero;
+                Boss2_Projectile_Spawner projectile_Spawn = boss2.gameObject.GetComponent<Boss2_Projectile_Spawner>();
+                projectile_Spawn.Store_Hitboxes();
             }
             if (boss2_2_Scene)
             {
                 boss2_Phase2_HP.Stop_Time();
+                Boss2_Phase2_Attacks attacks = FindFirstObjectByType<Boss2_Phase2_Attacks>();
+                attacks.Store_Hitboxes();
             }
             if (boss3_Scene)
             {
@@ -264,6 +270,8 @@ public class Timemanager : MonoBehaviour
                 boss3_State_Manager.force = 0;
                 Rigidbody rb = boss3.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.zero;
+                Boss3_Projectile_Spawn projectile_Spawn = boss3.gameObject.GetComponent<Boss3_Projectile_Spawn>();
+                projectile_Spawn.Store_Hitboxes();
             }
             
             StartCoroutine(ResetTime(time_amount));
@@ -279,7 +287,7 @@ public class Timemanager : MonoBehaviour
         refill_timer = 0;
         slider_component.maxValue = 20;
         slider_time2 = Time.time;
-        player_controller.Reset_Time();
+        //player_controller.Reset_Time();
         foreach (Time_Stop_Check_Shooter shooter in enemies_shooter)
         {
             if (shooter != null)
@@ -365,6 +373,8 @@ public class Timemanager : MonoBehaviour
             Look_At boss1_look = boss1.gameObject.GetComponent<Look_At>();
             boss1_look.enabled = true;
             boss1_State_Manager.force = boss1_force;
+            Boss1_Projectile_Spawn projectile_Spawn = boss1.gameObject.GetComponent<Boss1_Projectile_Spawn>();
+            projectile_Spawn.Restore_Hitboxes();
         }
         if (boss2_Scene)
         {
@@ -372,10 +382,14 @@ public class Timemanager : MonoBehaviour
             Look_At boss2_look = boss2.gameObject.GetComponent<Look_At>();
             boss2_look.enabled = true;
             boss2_State_Manager.force = boss2_force;
+            Boss2_Projectile_Spawner projectile_Spawn = boss2.gameObject.GetComponent<Boss2_Projectile_Spawner>();
+            projectile_Spawn.Restore_Hitboxes();
         }
         if (boss2_2_Scene)
         {
             boss2_Phase2_HP.Reset_Time();
+            Boss2_Phase2_Attacks attacks = FindFirstObjectByType<Boss2_Phase2_Attacks>();
+            attacks.Restore_Hitboxes();
         }
         if (boss3_Scene)
         {
@@ -383,6 +397,8 @@ public class Timemanager : MonoBehaviour
             Look_At boss3_look = boss3.gameObject.GetComponent<Look_At>();
             boss3_look.enabled = true;
             boss3_State_Manager.force = boss3_force;
+            Boss3_Projectile_Spawn projectile_Spawn = boss3.gameObject.GetComponent<Boss3_Projectile_Spawn>();
+            projectile_Spawn.Restore_Hitboxes();
         }
     }
 

@@ -21,6 +21,8 @@ public class Boss3_Projectile_Spawn : MonoBehaviour
 
     int orbs_number = -1;
     float force = 20;
+    bool weapon1 = false;
+    bool weapon2 = false;
 
     public GameObject ice_walls_spawn;
     void Start()
@@ -155,5 +157,19 @@ public class Boss3_Projectile_Spawn : MonoBehaviour
     public void Spawn_Blizzard()
     {
         GameObject blizzard2 = Instantiate(blizzard, center_spawner.transform.position + new Vector3(0,-2.2f,0), Quaternion.identity);
+    }
+
+    public void Store_Hitboxes()
+    {
+        weapon1 = weapon_collider.enabled;
+        weapon2 = weapon_collider2.enabled;
+        weapon_collider.enabled = false;
+        weapon_collider2.enabled = false;
+    }
+
+    public void Restore_Hitboxes()
+    {
+        weapon_collider.enabled = weapon1;
+        weapon_collider2.enabled = weapon2;
     }
 }

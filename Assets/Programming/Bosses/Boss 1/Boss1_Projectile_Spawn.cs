@@ -12,8 +12,12 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
     public GameObject lightning;
     public GameObject big_lightning;
     public BoxCollider slash_hitbox;
+    [SerializeField] GameObject death_vfx;
     GameObject mace;
     float force = 10;
+    bool weapon1 = false;
+    bool weapon2 = false;
+    bool weapon3 = false;
     void Start()
     {
         mace = GameObject.Find("Tetsubo");
@@ -142,5 +146,27 @@ public class Boss1_Projectile_Spawn : MonoBehaviour
     {
         Object.Destroy(mace);
         print("I destroyed the mace");
+    }
+
+    public void Store_Hitboxes()
+    {
+        weapon1 = weapon_collider.enabled;
+        weapon2 = weapon_collider2.enabled;
+        weapon3 = slash_hitbox.enabled;
+        weapon_collider.enabled = false;
+        weapon_collider2.enabled = false;
+        slash_hitbox.enabled = false;
+    }
+
+    public void Restore_Hitboxes()
+    {
+        weapon_collider.enabled = weapon1;
+        weapon_collider2.enabled = weapon2;
+        slash_hitbox.enabled = weapon3;
+    }
+
+    public void Death_VFX()
+    {
+        death_vfx.SetActive(true);
     }
 }

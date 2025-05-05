@@ -10,6 +10,7 @@ public class Boss2_Projectile_Spawner : MonoBehaviour
     public Collider weapon_collider;
     public Collider weapon_collider2;
     public GameObject tornado_collider;
+    public Collider tornado_hitbox;
     public GameObject lightning;
     public GameObject[] orbs = new GameObject[2];
     public GameObject tornado;
@@ -19,6 +20,9 @@ public class Boss2_Projectile_Spawner : MonoBehaviour
 
     int orbs_number = -1;
     float force = 10;
+    bool weapon1 = false;
+    bool weapon2 = false;
+    bool weapon3 = false;
     void Start()
     {
         
@@ -95,5 +99,22 @@ public class Boss2_Projectile_Spawner : MonoBehaviour
     {
         Deactivate_Weapon();
         tornado_collider.SetActive(false);
+    }
+
+    public void Store_Hitboxes()
+    {
+        weapon1 = weapon_collider.enabled;
+        weapon2 = weapon_collider2.enabled;
+        weapon3 = tornado_hitbox.enabled;
+        weapon_collider.enabled = false;
+        weapon_collider2.enabled = false;
+        tornado_hitbox.enabled = false;
+    }
+
+    public void Restore_Hitboxes()
+    {
+        weapon_collider.enabled = weapon1;
+        weapon_collider2.enabled = weapon2;
+        tornado_hitbox.enabled = weapon3;
     }
 }

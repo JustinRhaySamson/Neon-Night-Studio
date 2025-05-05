@@ -18,6 +18,9 @@ public class Boss2_Phase2_Attacks : MonoBehaviour
     public EventReference sound;
     GameObject[] Lasers = new GameObject[6];
 
+    bool weapon1 = false;
+    bool weapon2 = false;
+
     public void Activate_Right()
     {
         Hitbox_Right.SetActive(true);
@@ -121,5 +124,19 @@ public class Boss2_Phase2_Attacks : MonoBehaviour
             Right_Spawner.rotation * Quaternion.Euler(180, -90, 0));
         laser.transform.parent = Right_Spawner;
         Lasers[0] = laser;
+    }
+
+    public void Store_Hitboxes()
+    {
+        weapon1 = Hitbox_Left.activeInHierarchy;
+        weapon2 = Hitbox_Right.activeInHierarchy;
+        Hitbox_Left.SetActive(false);
+        Hitbox_Right.SetActive(false);
+    }
+
+    public void Restore_Hitboxes()
+    {
+        Hitbox_Left.SetActive(weapon1);
+        Hitbox_Right.SetActive(weapon2);
     }
 }

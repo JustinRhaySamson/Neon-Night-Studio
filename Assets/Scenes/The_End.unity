@@ -1317,7 +1317,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.035694957, g: 1, b: 0, a: 1}
@@ -1327,10 +1327,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 4257c0db40ccc4841b2a6fb4ac126dbd, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 4257c0db40ccc4841b2a6fb4ac126dbd, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 4257c0db40ccc4841b2a6fb4ac126dbd, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 4257c0db40ccc4841b2a6fb4ac126dbd, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1374,8 +1374,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b6a214d822921ee47a4422f9f856cc66, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1511,7 +1511,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249164004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -1687,7 +1687,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341729274}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -1722,11 +1722,23 @@ MonoBehaviour:
     m_ActionId: feebdf05-fd69-466a-8ff5-f95ccbb99403
     m_ActionName: Player/Time Stop 2[/Keyboard/e,/XInputControllerWindows/rightShoulder]
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e84fcdba-cc3e-45a4-970c-2efa6749cf0a
+    m_ActionName: Player/Dash[/Keyboard/shift,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 32113024-ab66-4920-b073-90c6571a617d
+    m_ActionName: Player/Heal[/XInputControllerWindows/buttonSouth,/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9199dc36-cace-4cb5-bc2e-40f65241f83e
+    m_ActionName: Player/Open Menu[/XInputControllerWindows/start,/Keyboard/enter]
+  - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1341729275}
-        m_TargetAssemblyTypeName: Scene_Controller, Assembly-CSharp
-        m_MethodName: Quit_Game
-        m_Mode: 1
+      - m_Target: {fileID: 1341729277}
+        m_TargetAssemblyTypeName: End_Screen_Button_Select, Assembly-CSharp
+        m_MethodName: Detect_Controller
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1735,28 +1747,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: e84fcdba-cc3e-45a4-970c-2efa6749cf0a
-    m_ActionName: Player/Dash[/Keyboard/shift,/XInputControllerWindows/buttonEast]
+    m_ActionId: 8800a501-2544-48b6-966c-1db7bf823a9b
+    m_ActionName: Player/Detect Controller[/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonNorth,/XInputControllerWindows/buttonWest,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/left,/XInputControllerWindows/leftTrigger,/XInputControllerWindows/leftShoulder,/XInputControllerWindows/rightTrigger,/XInputControllerWindows/rightShoulder,/XInputControllerWindows/leftStickPress,/XInputControllerWindows/rightStickPress,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/rightStick/left]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1341729275}
-        m_TargetAssemblyTypeName: Scene_Controller, Assembly-CSharp
-        m_MethodName: Change_Scene
-        m_Mode: 5
+      - m_Target: {fileID: 1341729277}
+        m_TargetAssemblyTypeName: End_Screen_Button_Select, Assembly-CSharp
+        m_MethodName: Detect_Mouse
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Start_Screen
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 32113024-ab66-4920-b073-90c6571a617d
-    m_ActionName: Player/Heal[/XInputControllerWindows/buttonSouth,/Keyboard/f]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9199dc36-cace-4cb5-bc2e-40f65241f83e
-    m_ActionName: Player/Open Menu[/XInputControllerWindows/start,/Keyboard/enter]
+    m_ActionId: f93c1201-0c1b-493a-9cbf-16befda39934
+    m_ActionName: Player/Detect Mouse[/Mouse/leftButton,/Mouse/rightButton,/Mouse/middleButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1793,7 +1801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1492681301
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2324,7 +2332,7 @@ RectTransform:
   m_GameObject: {fileID: 1655078846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.256288, y: 1.131791, z: 1.131791}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1249164005}
@@ -2332,7 +2340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -101}
+  m_AnchoredPosition: {x: 0, y: -99.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1655078848
@@ -2354,7 +2362,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0, g: 1, b: 0.03937912, a: 1}
@@ -2364,10 +2372,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 81e260ab611ef5146a2758955eb701b4, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 81e260ab611ef5146a2758955eb701b4, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 81e260ab611ef5146a2758955eb701b4, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 81e260ab611ef5146a2758955eb701b4, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2411,8 +2419,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 505ec24a22d9b0441b84680cdec37720, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

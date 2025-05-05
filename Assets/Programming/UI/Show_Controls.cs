@@ -129,7 +129,7 @@ public class Show_Controls : MonoBehaviour
         var eventSystem = EventSystem.current;
         eventSystem.SetSelectedGameObject(full_screen_toggle, new BaseEventData(eventSystem));
         RectTransform fullscree_transform = full_screen_toggle.GetComponent<RectTransform>();
-        arrow.position = new Vector3(fullscree_transform.position.x * .3f,
+        arrow.position = new Vector3(fullscree_transform.position.x * .18f,
             fullscree_transform.position.y,
             fullscree_transform.position.z);
         vertical_list_menu.SetActive(false);

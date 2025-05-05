@@ -13,6 +13,7 @@ public class Particle_Time_Stop : MonoBehaviour
     ArrayExtensionMethods ae;
     Particle_Time_Stop script;
     public VFXYukiSlash tengu_slash;
+    public VFXTenguP2 tengu2_vfx;
     void Start()
     {
         Manager = GameObject.Find("Time manager");
@@ -35,9 +36,9 @@ public class Particle_Time_Stop : MonoBehaviour
 
     public void Time_Stop_Pause()
     {
-        if (tengu_slash.vfx_activated)
+        foreach (ParticleSystem particleSystem in particle_systems)
         {
-            foreach (ParticleSystem particleSystem in particle_systems)
+            if (particleSystem.gameObject.activeInHierarchy)
             {
                 particleSystem.Pause(true);
             }
@@ -46,9 +47,9 @@ public class Particle_Time_Stop : MonoBehaviour
 
     public void Time_Stop_Restart()
     {
-        if (tengu_slash.vfx_activated)
+        foreach (ParticleSystem particleSystem in particle_systems)
         {
-            foreach (ParticleSystem particleSystem in particle_systems)
+            if (particleSystem.gameObject.activeInHierarchy)
             {
                 particleSystem.Play(true);
             }

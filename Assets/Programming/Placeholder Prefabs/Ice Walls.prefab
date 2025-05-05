@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 8581963583100483543}
   - component: {fileID: 317858484051144194}
   - component: {fileID: 6017209044601444950}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ Transform:
   m_GameObject: {fileID: 2386465350258850253}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.45, z: 0}
+  m_LocalPosition: {x: 0, y: 1.63, z: 0}
   m_LocalScale: {x: 5.9215, y: 0.7933626, z: 5.9215}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -449,7 +449,8 @@ GameObject:
   - component: {fileID: 2497801329996500045}
   - component: {fileID: 5484128889700763814}
   - component: {fileID: 7027558799609722046}
-  m_Layer: 0
+  - component: {fileID: 8170374478577726985}
+  m_Layer: 11
   m_Name: Ice Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,6 +544,20 @@ MonoBehaviour:
       Data3: -443975519
       Data4: -461186920
     Path: event:/Sound Effects/Enemy/Boss/ICE FREAK/Yuki Temp 2/Temp Icebreaker
+--- !u!114 &8170374478577726985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3817107224204246000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227c0a61fd2e4894bbf5a106cbb9a2be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ice_projectile: {fileID: 5827592893953670912, guid: a09d722e7c150b9478c5760f9d3f22e8, type: 3}
+  center: {fileID: 8396336547313086861}
 --- !u!1 &4232517463593812056
 GameObject:
   m_ObjectHideFlags: 0

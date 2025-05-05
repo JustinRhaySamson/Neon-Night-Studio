@@ -12,12 +12,14 @@ public class Player_Controller : MonoBehaviour
 
     public LayerMask enemy;
     bool dashing = false;
+    bool is_dashing = false;
     bool attacking = false;
     bool attack_chain = false;
     bool healing = false;
     bool active_gravity = false;
     [HideInInspector] public bool dialogue = false;
     bool dead = false;
+    bool time_stop = false;
 
     public GameObject DashVFX;
 
@@ -129,6 +131,7 @@ public class Player_Controller : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("Invincible");
             animator.SetFloat("Dash_Speed", 3.4f);
             dashing = true;
+            is_dashing = true;
             //animator.SetBool("Dash", true);
             DashVFX.SetActive(true);
             StartCoroutine(Dash_Speedup(.3f));
@@ -141,8 +144,12 @@ public class Player_Controller : MonoBehaviour
         yield return new WaitForSeconds(time);
         animator.SetFloat("Dash_Speed", 1.7f);
         //animator.SetBool("Dash", false);
-        gameObject.tag = "Player";
+        if (!time_stop)
+        {
+            gameObject.tag = "Player";
+        }
         gameObject.layer = LayerMask.NameToLayer("Player");
+        is_dashing = false;
         DashVFX.SetActive(false);
     }
 
@@ -225,6 +232,21 @@ public class Player_Controller : MonoBehaviour
     public void Dead_Bool()
     {
         dead = true;
+    }
+
+    public void Stop_Time()
+    {
+        time_stop = true;
+        gameObject.tag = "Invincible";
+    }
+
+    public void Reset_Time()
+    {
+        time_stop = false;
+        if (!is_dashing)
+        {
+            gameObject.tag = "Player";
+        }
     }
 }
 

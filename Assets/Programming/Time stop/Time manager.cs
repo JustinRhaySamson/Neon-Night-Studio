@@ -42,6 +42,7 @@ public class Timemanager : MonoBehaviour
 
     GameObject player;
     MeshTrail trail_script;
+    Player_Controller player_controller;
 
     GameObject boss1;
     Animator boss1_animator;
@@ -74,6 +75,7 @@ public class Timemanager : MonoBehaviour
         slider_component = slider.GetComponent<Slider>();
         player = GameObject.Find("Player");
         trail_script = player.GetComponent<MeshTrail>();
+        player_controller = player.GetComponent<Player_Controller>();
         if (doorBool)
         {
             door = GameObject.Find("TimeStop_Door");
@@ -146,6 +148,7 @@ public class Timemanager : MonoBehaviour
             slider_component.maxValue = 2.9f;
             slider_component.value = 2.9f;
             slider_time = Time.time;
+            player_controller.Stop_Time();
             foreach(Time_Stop_Check_Shooter shooter in enemies_shooter)
             {
                 if (shooter != null)
@@ -276,6 +279,7 @@ public class Timemanager : MonoBehaviour
         refill_timer = 0;
         slider_component.maxValue = 20;
         slider_time2 = Time.time;
+        player_controller.Reset_Time();
         foreach (Time_Stop_Check_Shooter shooter in enemies_shooter)
         {
             if (shooter != null)

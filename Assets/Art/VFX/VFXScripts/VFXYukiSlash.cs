@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VFXTenguSlash : MonoBehaviour
 {
-    public GameObject VFXA1, VFXA2, VFXA3;
+    public GameObject VFXA1, VFXA2, VFXA3,VFXA4;
 
     public void ActivateA1()
     {
@@ -43,4 +43,17 @@ public class VFXTenguSlash : MonoBehaviour
         VFXA3.SetActive(false);
         //Debug.Log("VFX deactivated");
     }
+    
+    public void ActivateA4()
+    {
+        VFXA4.SetActive(true);
+        //Debug.Log("VFX activated");
+    }
+        
+    public void DeactivateA4()
+     {
+        VFXA4.SetActive(false);
+        //Debug.Log("VFX deactivated");
+     }
 }
+

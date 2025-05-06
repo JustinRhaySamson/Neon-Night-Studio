@@ -141,6 +141,7 @@ public class Timemanager : MonoBehaviour
     {
         if (!cooldown && slider_component.value == slider_component.maxValue)
         {
+            StartCoroutine(ResetTime(time_amount));
             feature.SetActive(true);
             trail_script.Start_Trail();
             cooldown = true;
@@ -274,7 +275,7 @@ public class Timemanager : MonoBehaviour
                 projectile_Spawn.Store_Hitboxes();
             }
             
-            StartCoroutine(ResetTime(time_amount));
+            
             //StartCoroutine(Cooldown_Timer());
         } 
     }

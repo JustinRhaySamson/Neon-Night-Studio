@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using FMODUnity;
+using Unity.VisualScripting;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -113,7 +114,7 @@ public class DialogueManager : MonoBehaviour
 					//leftNameText.text = dialogue1.name[speakerNumber];
 				}
 				string sentence = sentences.Dequeue();
-				stored_sentence = sentence;
+				Store_Sentence_Text(sentence);
 				StopAllCoroutines();
 				if (left)
 				{
@@ -146,7 +147,40 @@ public class DialogueManager : MonoBehaviour
 		dialogueTextRight.text = "";
 		foreach (char letter in sentence.ToCharArray())
 		{
-			dialogueTextLeft.text += letter;
+			if (letter == '%')
+			{
+				string left_stick = "<size=18> <sprite=5> </size>";
+                dialogueTextLeft.text += left_stick;
+            }
+			else if(letter == '[')
+			{
+                string left_stick = "<size=18> <sprite=2> </size>";
+                dialogueTextLeft.text += left_stick;
+            }
+            else if (letter == ']')
+            {
+                string left_stick = "<size=18> <sprite=0> </size>";
+                dialogueTextLeft.text += left_stick;
+            }
+            else if (letter == '{')
+            {
+                string left_stick = "<size=18> <sprite=3> </size>";
+                dialogueTextLeft.text += left_stick;
+            }
+            else if (letter == '}')
+            {
+                string left_stick = "<size=18> <sprite=4> </size>";
+                dialogueTextLeft.text += left_stick;
+            }
+			else if (letter == '@')
+			{
+                string left_stick = "<size=18> <sprite=1> </size>";
+                dialogueTextLeft.text += left_stick;
+            }
+			else
+			{
+				dialogueTextLeft.text += letter;
+			}	
             AudioManager.instance.PlaySoundOneShot(sound, gameObject);
             if (dialogueTextLeft.text == sentence)
 			{
@@ -162,7 +196,40 @@ public class DialogueManager : MonoBehaviour
 		dialogueTextRight.text = "";
 		foreach (char letter in sentence.ToCharArray())
 		{
-			dialogueTextRight.text += letter;
+            if (letter == '%')
+            {
+                string left_stick = "<size=18> <sprite=5> </size>";
+                dialogueTextRight.text += left_stick;
+            }
+            else if (letter == '[')
+            {
+                string left_stick = "<size=18> <sprite=2> </size>";
+                dialogueTextRight.text += left_stick;
+            }
+            else if (letter == ']')
+            {
+                string left_stick = "<size=18> <sprite=0> </size>";
+                dialogueTextRight.text += left_stick;
+            }
+            else if (letter == '{')
+            {
+                string left_stick = "<size=18> <sprite=3> </size>";
+                dialogueTextRight.text += left_stick;
+            }
+            else if (letter == '}')
+            {
+                string left_stick = "<size=18> <sprite=4> </size>";
+                dialogueTextRight.text += left_stick;
+            }
+            else if (letter == '@')
+            {
+                string left_stick = "<size=18> <sprite=1> </size>";
+                dialogueTextRight.text += left_stick;
+            }
+            else
+            {
+                dialogueTextRight.text += letter;
+            }
             AudioManager.instance.PlaySoundOneShot(sound, gameObject);
             if (dialogueTextRight.text == sentence)
 			{
@@ -171,6 +238,48 @@ public class DialogueManager : MonoBehaviour
 			yield return new WaitForSeconds(speed);
 		}
 	}
+
+	public void Store_Sentence_Text(string sentence)
+	{
+		stored_sentence = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            if (letter == '%')
+            {
+                string left_stick = "<size=18> <sprite=5> </size>";
+                stored_sentence += left_stick;
+            }
+            else if (letter == '[')
+            {
+                string left_stick = "<size=18> <sprite=2> </size>";
+                stored_sentence += left_stick;
+            }
+            else if (letter == ']')
+            {
+                string left_stick = "<size=18> <sprite=0> </size>";
+                stored_sentence += left_stick;
+            }
+            else if (letter == '{')
+            {
+                string left_stick = "<size=18> <sprite=3> </size>";
+                stored_sentence += left_stick;
+            }
+            else if (letter == '}')
+            {
+                string left_stick = "<size=18> <sprite=4> </size>";
+                stored_sentence += left_stick;
+            }
+            else if (letter == '@')
+            {
+                string left_stick = "<size=18> <sprite=1> </size>";
+                stored_sentence += left_stick;
+            }
+            else
+            {
+                stored_sentence += letter;
+            }
+        }
+    }
 
 	void EndDialogue()
 	{

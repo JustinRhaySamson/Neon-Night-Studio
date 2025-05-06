@@ -107,11 +107,11 @@ public class Show_Controls : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U))
+        /*if (Input.GetKeyDown(KeyCode.U))
         {
             reset_active = !reset_active;
             reset_button.SetActive(reset_active);
-        }
+        }*/
     }
 
     public void Resume_Button()

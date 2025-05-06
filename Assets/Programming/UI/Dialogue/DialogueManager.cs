@@ -182,7 +182,7 @@ public class DialogueManager : MonoBehaviour
 				dialogueTextLeft.text += letter;
 			}	
             AudioManager.instance.PlaySoundOneShot(sound, gameObject);
-            if (dialogueTextLeft.text == sentence)
+            if (dialogueTextLeft.text == stored_sentence)
 			{
 				writing = false;
 			}
@@ -231,7 +231,7 @@ public class DialogueManager : MonoBehaviour
                 dialogueTextRight.text += letter;
             }
             AudioManager.instance.PlaySoundOneShot(sound, gameObject);
-            if (dialogueTextRight.text == sentence)
+            if (dialogueTextRight.text == stored_sentence)
 			{
 				writing = false;
 			}

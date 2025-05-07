@@ -57,15 +57,22 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.0054092053
-        functionName: No_Stagger
+      - time: 0
+        functionName: Deactivate_Every_VFX
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.024000002
+      - time: 0
         functionName: Deactivate_Tornado_Slash
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.012812664
+        functionName: No_Stagger
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

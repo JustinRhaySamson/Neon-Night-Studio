@@ -95,4 +95,15 @@ public class VFXYukiSlash : MonoBehaviour
         VFXA7.SetActive(false);
         //Debug.Log("VFX deactivated");
     }
+
+    public void Deactivate_Every_VFX()
+    {
+        VFXA1.SetActive(false);
+        VFXA2.SetActive(false);
+        VFXA3.SetActive(false);
+        VFXA4.SetActive(false);
+        VFXA5.SetActive(false);
+        VFXA6.SetActive(false);
+        VFXA7.SetActive(false);
+    }
 }

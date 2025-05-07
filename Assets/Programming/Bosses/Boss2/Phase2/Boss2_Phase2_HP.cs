@@ -18,6 +18,7 @@ public class Boss2_Phase2_HP : MonoBehaviour
     GameObject time_manager;
     Timemanager time_Script;
     Image healthbar_image;
+    [SerializeField] Particle_Time_Stop particle_script;
     float previous_speed;
     void Start()
     {
@@ -29,6 +30,7 @@ public class Boss2_Phase2_HP : MonoBehaviour
         healthbar_image = GameObject.Find("Boss_Health_Image").GetComponent<Image>();
         time_Script.boss2_2_Scene = true;
         time_Script.boss2_Phase2_HP = this;
+        particle_script = GetComponent<Particle_Time_Stop>();
         Start_Fight();
     }
 
@@ -52,7 +54,7 @@ public class Boss2_Phase2_HP : MonoBehaviour
         slider_component.value = HP;
         if (HP <= 0)
         {
-            time_Script.boss2_2_Scene = false;
+            //time_Script.boss2_2_Scene = false;
             slider_animator.SetBool("Active", false);
             die.Invoke();
             animator.SetBool("Dead", true);
@@ -69,5 +71,11 @@ public class Boss2_Phase2_HP : MonoBehaviour
     public void Reset_Time()
     {
         animator.SetFloat("Speed", previous_speed);
+    }
+
+    public void Remove_Timestop()
+    {
+        time_Script.boss2_2_Scene = false;
+        particle_script.Die_Particles();
     }
 }

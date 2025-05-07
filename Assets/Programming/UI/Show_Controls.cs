@@ -172,7 +172,7 @@ public class Show_Controls : MonoBehaviour
                 Screen.SetResolution(1280, 720, full_screened);
                 break;
             case 2:
-                Screen.SetResolution(640, 480, full_screened);
+                Screen.SetResolution(854, 480, full_screened);
                 break;
         }
     }

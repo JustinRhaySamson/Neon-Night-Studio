@@ -52,7 +52,7 @@ public class Boss2_Phase2_HP : MonoBehaviour
         slider_component.value = HP;
         if (HP <= 0)
         {
-            //time_Script.boss2_2_Scene = false;
+            time_Script.boss2_2_Scene = false;
             slider_animator.SetBool("Active", false);
             die.Invoke();
             animator.SetBool("Dead", true);

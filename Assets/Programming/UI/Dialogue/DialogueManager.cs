@@ -283,18 +283,19 @@ public class DialogueManager : MonoBehaviour
 
 	void EndDialogue()
 	{
-		if(dialogue1 != null)
-        {
-			playerController.Change_Dialogue_False();
-		}
 		animator.SetBool("IsOpen", false);
-		if (dialogue1.events && dialogue1 != null)
+        bars.SetBool("Stay", true);
+        if (dialogue1.events && dialogue1 != null)
 		{
 			dialogue1.dialogue_Events.finish_dialogue.Invoke();
-			dialogue1 = null;
 		}
-		bars.SetBool("Stay", true);
-	}
+        if (dialogue1 != null)
+        {
+            playerController.Change_Dialogue_False();
+            dialogue1 = null;
+        }
+
+    }
 
 	void Check_Image()
     {

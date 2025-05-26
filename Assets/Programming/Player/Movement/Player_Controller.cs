@@ -84,10 +84,10 @@ public class Player_Controller : MonoBehaviour
     {
         if (!dialogue)
         {
-            if (callbackContext.performed && healing == false)
+            if (callbackContext.performed && healing == false && !animator.GetBool("Attack1"))
             {
                 animator.SetBool("Attack1", true);
-                StartCoroutine(Finish_Animation(.2f, "Attack1"));
+                StartCoroutine(Finish_Animation(.3f, "Attack1"));
                 attacking = true;
                 //attack.enabled = true;
             }

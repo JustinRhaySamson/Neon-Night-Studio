@@ -770,6 +770,7 @@ MonoBehaviour:
   die:
     m_PersistentCalls:
       m_Calls: []
+  particle_script: {fileID: 0}
 --- !u!114 &5134146023736133293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,7 +958,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1609,7 +1610,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2551,6 +2552,10 @@ MonoBehaviour:
   max_Random: 3
   broken_RHand: 0
   broken_LHand: 0
+  R_Hitbox: {fileID: 2448885950440702621}
+  R_H_Hitbox: {fileID: 6210843670924421589}
+  L_Hitbox: {fileID: 206238646257569168}
+  L_H_Hitbox: {fileID: 8665733478000513827}
 --- !u!114 &7984765417280899362
 MonoBehaviour:
   m_ObjectHideFlags: 0

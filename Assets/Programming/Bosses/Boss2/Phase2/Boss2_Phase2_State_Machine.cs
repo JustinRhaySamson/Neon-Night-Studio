@@ -26,6 +26,8 @@ public class Boss2_Phase2_State_Machine : MonoBehaviour
 
     public bool broken_RHand;
     public bool broken_LHand;
+
+    public Collider R_Hitbox, R_H_Hitbox, L_Hitbox, L_H_Hitbox;
     void Start()
     {
         currentState = idle_state;
@@ -87,5 +89,17 @@ public class Boss2_Phase2_State_Machine : MonoBehaviour
         time_Script.boss2_2_Scene = false;
         die.Invoke();
         Destroy(gameObject);
+    }
+
+    public void Activate_Hand_Hitboxes()
+    {
+        R_Hitbox.enabled = true;
+        L_Hitbox.enabled = true;
+    }
+
+    public void Deactivate_Arm_Hitboxes()
+    {
+        R_H_Hitbox.enabled = false;
+        L_H_Hitbox.enabled = false;
     }
 }

@@ -16,6 +16,9 @@ public class Player_Store_Data : MonoBehaviour
     public float master_volume = 1;
     public float music_volume = .5f;
     public float SFX_volume = .5f;
+    public int boss_dialogues = -1;
+    public GameObject[] boss_dialogue_list;
+    public GameObject[] boss_activator_list;
 
     Room_Counter room_counter;
 
@@ -61,6 +64,8 @@ public class Player_Store_Data : MonoBehaviour
         master_volume = data.master_volume;
         music_volume = data.music_volume;
         SFX_volume = data.SFX_volume;
+        boss_dialogues = data.boss_dialogues;
+        Deactivate_Boss_Dialogues();
 
         //SceneManager.LoadScene(scene);
         
@@ -74,6 +79,7 @@ public class Player_Store_Data : MonoBehaviour
         checkpoint_name = origonal_checkpoint_name;
         scene = SceneManager.GetActiveScene().name;
         enemies_killed = 0;
+        boss_dialogues = -1;
         Save_player();
         SceneManager.LoadScene(scene);
     }
@@ -99,5 +105,19 @@ public class Player_Store_Data : MonoBehaviour
     public void Text_Speed(float speed)
     {
         text_speed = speed;
+    }
+
+    public void Increase_Boss_Dialogues()
+    {
+        boss_dialogues++;
+    }
+
+    void Deactivate_Boss_Dialogues()
+    {
+        for (int i = 0; i < boss_dialogues; i++)
+        {
+            boss_dialogue_list[i].SetActive(false);
+            boss_activator_list[i].SetActive(true);
+        }
     }
 }

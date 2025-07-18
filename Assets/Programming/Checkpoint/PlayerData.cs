@@ -16,6 +16,7 @@ public class PlayerData
     public float music_volume;
     public float SFX_volume;
     public int boss_dialogues;
+    public int boss_phase2;
 
     public PlayerData(Player_Store_Data player)
     {
@@ -29,5 +30,6 @@ public class PlayerData
         music_volume = player.music_volume;
         SFX_volume = player.SFX_volume;
         boss_dialogues = player.boss_dialogues;
+        boss_phase2 = player.boss_phase2;
     }
 }

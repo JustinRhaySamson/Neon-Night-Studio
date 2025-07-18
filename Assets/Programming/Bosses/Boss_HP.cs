@@ -28,6 +28,7 @@ public class Boss_HP : MonoBehaviour
 
     bool phase1 = true;
     public GameObject phase2_dialague;
+    public GameObject phase2_activator;
 
     //SOUND!!!
     OneShotSender playSound;
@@ -146,7 +147,7 @@ public class Boss_HP : MonoBehaviour
 
             else if (HP <= 0 && phase1 && !life_regen)
             {
-                die.Invoke();
+                //die.Invoke();
                 GameObject rotating_orbs = GameObject.Find("Rotating_Orbs");
                 Tornado_Script tornado = rotating_orbs.GetComponent<Tornado_Script>();
                 VFX_Time_Stop vfx = rotating_orbs.GetComponent<VFX_Time_Stop>();
@@ -158,6 +159,7 @@ public class Boss_HP : MonoBehaviour
                 //time_Script.boss2_Scene = false;
                 slider_animator.SetBool("Active", false);
                 animator.SetBool("Staggered", true);
+                phase2_dialague.SetActive(true);
                 //Destroy(gameObject);
             }
         }
@@ -206,6 +208,11 @@ public class Boss_HP : MonoBehaviour
         time_Script.boss3_Scene = false;
         die.Invoke();
         Destroy(gameObject);
+    }
+
+    public void Switch_Activators()
+    {
+        phase2_dialague = phase2_activator;
     }
 
 }

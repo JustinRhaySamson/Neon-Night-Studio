@@ -16,11 +16,14 @@ public class Player_Store_Data : MonoBehaviour
     public float master_volume = 1;
     public float music_volume = .5f;
     public float SFX_volume = .5f;
-    public int boss_dialogues = -1;
+    public int boss_dialogues = 0;
+    public int boss_phase2 = 0;
     public GameObject[] boss_dialogue_list;
     public GameObject[] boss_activator_list;
 
     Room_Counter room_counter;
+    public Boss_HP[] boss_HP;
+
 
     void Awake()
     {
@@ -28,6 +31,7 @@ public class Player_Store_Data : MonoBehaviour
         {
             scene = SceneManager.GetActiveScene().name;
             //room_counter = GameObject.Find("Room_Counter").GetComponent<Room_Counter>();
+            boss_HP = FindObjectsOfType<Boss_HP>();
         }
         Load_player();
     }
@@ -66,6 +70,8 @@ public class Player_Store_Data : MonoBehaviour
         SFX_volume = data.SFX_volume;
         boss_dialogues = data.boss_dialogues;
         Deactivate_Boss_Dialogues();
+        boss_phase2 = data.boss_phase2;
+        Change_Phase2();
 
         //SceneManager.LoadScene(scene);
         
@@ -79,7 +85,8 @@ public class Player_Store_Data : MonoBehaviour
         checkpoint_name = origonal_checkpoint_name;
         scene = SceneManager.GetActiveScene().name;
         enemies_killed = 0;
-        boss_dialogues = -1;
+        boss_dialogues = 0;
+        boss_phase2 = 0;
         Save_player();
         SceneManager.LoadScene(scene);
     }
@@ -89,6 +96,8 @@ public class Player_Store_Data : MonoBehaviour
         checkpoint_name = origonal_checkpoint_name;
         scene = level1;
         enemies_killed = 0;
+        boss_dialogues = 0;
+        boss_phase2 = 0;
         Save_player();
     }
 
@@ -118,6 +127,30 @@ public class Player_Store_Data : MonoBehaviour
         {
             boss_dialogue_list[i].SetActive(false);
             boss_activator_list[i].SetActive(true);
+        }
+    }
+
+    public void Increase_Boss_Phase2()
+    {
+        boss_phase2++;
+    }
+
+    void Change_Phase2()
+    {
+        switch (boss_phase2)
+        {
+            case 1:
+                boss_HP[2].Switch_Activators();
+                break;
+            case 2:
+                boss_HP[0].Switch_Activators();
+                boss_HP[2].Switch_Activators();
+                break;
+            case 3:
+                boss_HP[0].Switch_Activators();
+                boss_HP[1].Switch_Activators();
+                boss_HP[2].Switch_Activators();
+                break;
         }
     }
 }

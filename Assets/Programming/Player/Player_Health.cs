@@ -35,6 +35,7 @@ public class Player_Health : MonoBehaviour
 
     Camera_Shake camera_Shake;
     [SerializeField] ScriptableRendererFeature feature;
+    Promt_Manager promt_manager;
 
     private void Start()
     {
@@ -50,6 +51,7 @@ public class Player_Health : MonoBehaviour
         animator = GetComponent<Animator>();
         camera_Shake = GameObject.Find("Main Camera").GetComponent<Camera_Shake>();
         Deactivate_Vignette();
+        promt_manager = FindFirstObjectByType<Promt_Manager>();
     }
 
     public void Get_Hit()
@@ -127,6 +129,7 @@ public class Player_Health : MonoBehaviour
                 slider_time = Time.time;
                 HealVFX.SetActive(false);
                 cooldown = true;
+                promt_manager.Cross_Promt(2);
             }
         }
 

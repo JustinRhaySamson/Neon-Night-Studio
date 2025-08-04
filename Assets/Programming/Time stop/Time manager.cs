@@ -68,6 +68,8 @@ public class Timemanager : MonoBehaviour
     public float refill_timer = 0;
     ArrayExtensionMethods ae;
 
+    Promt_Manager promt_manager;
+
     void Start()
     {
         ae = GetComponent<ArrayExtensionMethods>();
@@ -83,6 +85,7 @@ public class Timemanager : MonoBehaviour
             door_stopper = GameObject.Find("Door_Stopper");
         }
         feature.SetActive(false);
+        promt_manager = FindFirstObjectByType<Promt_Manager>();
     }
 
     // Update is called once per frame
@@ -141,6 +144,7 @@ public class Timemanager : MonoBehaviour
     {
         if (!cooldown && slider_component.value == slider_component.maxValue)
         {
+            promt_manager.Cross_Promt(1);
             StartCoroutine(ResetTime(time_amount));
             feature.SetActive(true);
             trail_script.Start_Trail();

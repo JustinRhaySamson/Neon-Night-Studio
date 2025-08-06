@@ -4918,6 +4918,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2724521200962066987}
   - component: {fileID: 3850348225895213112}
+  - component: {fileID: 2040134494651474779}
+  - component: {fileID: 4716540068577432960}
   m_Layer: 0
   m_Name: YOKAI_CINEMATIC_SEQUENCE_1_ONI_INTRO
   m_TagString: Untagged
@@ -5012,8 +5014,55 @@ PlayableDirector:
     value: {fileID: 9060391781864192317}
   - key: {fileID: -458230663096469593, guid: e19dd19738aa86547a53b7eeb32f6f2e, type: 2}
     value: {fileID: 4221468303936517429}
+  - key: {fileID: 4291049634718081762, guid: e19dd19738aa86547a53b7eeb32f6f2e, type: 2}
+    value: {fileID: 4716540068577432960}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &2040134494651474779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6944963045696430897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfaa50b21c0747d42abca6d869079e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Activate:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4716540068577432960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6944963045696430897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: e9c29d4beb68bab4780563f939ab2c34, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6944963045696430897}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7080614269628471908
 GameObject:
   m_ObjectHideFlags: 0

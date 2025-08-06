@@ -5074,6 +5074,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2581834927662696190}
   - component: {fileID: 2396803503885781634}
+  - component: {fileID: 2267969168757509110}
+  - component: {fileID: 7072197978636695092}
   m_Layer: 0
   m_Name: YOKAI_CINEMATIC_SEQUENCE_2_ONI_PHASE_2
   m_TagString: Untagged
@@ -5149,8 +5151,56 @@ PlayableDirector:
     value: {fileID: 210169992215248029}
   - key: {fileID: 8286990804478550642, guid: 72b86f0dd6da8614dac1a1ae9e671030, type: 2}
     value: {fileID: 3805022804982262479}
+  - key: {fileID: -3980847299590341498, guid: 72b86f0dd6da8614dac1a1ae9e671030, type: 2}
+    value: {fileID: 2267969168757509110}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &2267969168757509110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714594542971953147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: ee414ac09a2fca240bec0b297fc2092c, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6714594542971953147}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &7072197978636695092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714594542971953147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfaa50b21c0747d42abca6d869079e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Activate:
+    m_PersistentCalls:
+      m_Calls: []
+  bars: {fileID: 0}
 --- !u!1 &7843209959683905794
 GameObject:
   m_ObjectHideFlags: 0

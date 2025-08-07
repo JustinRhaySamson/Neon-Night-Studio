@@ -129,7 +129,10 @@ public class Player_Health : MonoBehaviour
                 slider_time = Time.time;
                 HealVFX.SetActive(false);
                 cooldown = true;
-                promt_manager.Cross_Promt(2);
+                if (promt_manager.prompt_done[2])
+                {
+                    promt_manager.Cross_Promt(2);
+                }  
             }
         }
 

@@ -280,6 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3f86a40171c8746ba3c374e6877066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 2
   shooter: 1
   explosion: {fileID: 1466751886938907087, guid: 43743a89d5495c940a5fbcaa8d913006, type: 3}
 --- !u!114 &5717637102185672763
@@ -674,6 +675,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6652725513331149018, guid: 68cb83ae76b100c4581147b10fe1c1ef, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1c10fec411cdd184c8a577574a9ec10d, type: 2}
     - target: {fileID: 919132149155446097, guid: 68cb83ae76b100c4581147b10fe1c1ef, type: 3}
       propertyPath: m_Name
       value: NewSpiderOni

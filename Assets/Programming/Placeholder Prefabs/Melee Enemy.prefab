@@ -394,6 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3f86a40171c8746ba3c374e6877066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 2
   shooter: 0
   explosion: {fileID: 1466751886938907087, guid: 43743a89d5495c940a5fbcaa8d913006, type: 3}
 --- !u!114 &8564274878205136671
@@ -800,6 +801,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -106.307
       objectReference: {fileID: 0}
+    - target: {fileID: 3023201836797035392, guid: 5f7b928128301b446a4dab8cde65dbb8, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 91ce07c54a4a4d74187fed77ca95b686, type: 2}
     - target: {fileID: 3801300738975900847, guid: 5f7b928128301b446a4dab8cde65dbb8, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -812,6 +817,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kama Drone Assets
       objectReference: {fileID: 0}
+    - target: {fileID: 6202443384438464919, guid: 5f7b928128301b446a4dab8cde65dbb8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 91ce07c54a4a4d74187fed77ca95b686, type: 2}
+    - target: {fileID: 6488864992493297409, guid: 5f7b928128301b446a4dab8cde65dbb8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 91ce07c54a4a4d74187fed77ca95b686, type: 2}
     - target: {fileID: 6538155233909147501, guid: 5f7b928128301b446a4dab8cde65dbb8, type: 3}
       propertyPath: m_Enabled
       value: 0

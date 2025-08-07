@@ -144,7 +144,10 @@ public class Timemanager : MonoBehaviour
     {
         if (!cooldown && slider_component.value == slider_component.maxValue)
         {
-            promt_manager.Cross_Promt(1);
+            if (promt_manager.prompt_done[1])
+            {
+                promt_manager.Cross_Promt(1);
+            }
             StartCoroutine(ResetTime(time_amount));
             feature.SetActive(true);
             trail_script.Start_Trail();

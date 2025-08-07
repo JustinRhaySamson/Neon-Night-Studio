@@ -7,6 +7,7 @@ using TMPro;
 public class Promt_Manager : MonoBehaviour
 {
     public TMP_Text[] promt;
+    public bool[] prompt_done = new bool[3] { false, false, false };  
     string promt_text;
     Animator animator;
     int amount = 0;
@@ -31,6 +32,7 @@ public class Promt_Manager : MonoBehaviour
     {
         promt[i].text = promt_text;
         animator.SetBool("Appear", true);
+        prompt_done[i] = true;
     }
 
     public void Cross_Promt(int i)
@@ -41,5 +43,6 @@ public class Promt_Manager : MonoBehaviour
         {
             animator.SetBool("Appear", false);
         }
+        prompt_done[i] = false;
     }
 }
